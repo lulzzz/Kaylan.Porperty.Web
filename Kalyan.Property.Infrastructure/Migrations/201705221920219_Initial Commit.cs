@@ -1,0 +1,381 @@
+namespace Kalyan.Property.Infrastructure.Migrations
+{
+    using System;
+    using System.Data.Entity.Migrations;
+    
+    public partial class InitialCommit : DbMigration
+    {
+        public override void Up()
+        {
+            CreateTable(
+                "dbo.AgentInfo",
+                c => new
+                    {
+                        id = c.Int(nullable: false),
+                        PropertyDetailId = c.Int(nullable: false),
+                        FirstName = c.String(maxLength: 50),
+                        LastName = c.String(maxLength: 50),
+                        Phone = c.String(maxLength: 10, fixedLength: true),
+                        IsActive = c.Boolean(),
+                        Address1 = c.String(maxLength: 50),
+                        Address2 = c.String(maxLength: 50),
+                        City = c.String(maxLength: 10, fixedLength: true),
+                        State = c.String(maxLength: 10, fixedLength: true),
+                    })
+                .PrimaryKey(t => t.id)
+                .ForeignKey("dbo.PropertyDetail", t => t.PropertyDetailId)
+                .Index(t => t.PropertyDetailId);
+            
+            CreateTable(
+                "dbo.PropertyDetail",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        ContractType = c.String(maxLength: 50),
+                        FromPrice = c.String(maxLength: 50),
+                        Bedroom = c.Int(),
+                        Bathroom = c.Int(),
+                        Parking = c.Int(),
+                        AmenitiesID = c.Int(),
+                        Date = c.DateTime(),
+                        PropertyName = c.String(maxLength: 50),
+                        Address = c.String(maxLength: 50),
+                        PropertyDescription = c.String(maxLength: 50),
+                        FullName = c.String(maxLength: 50),
+                        Email = c.String(maxLength: 50),
+                        Phone = c.String(maxLength: 50),
+                        Comments = c.String(maxLength: 50),
+                        Images = c.String(maxLength: 50),
+                        Approved = c.String(maxLength: 1, unicode: false),
+                        Featured = c.String(maxLength: 1, unicode: false),
+                        Area = c.String(maxLength: 50),
+                        country = c.String(maxLength: 10, fixedLength: true),
+                        State = c.String(maxLength: 50),
+                        agent = c.Boolean(),
+                        city = c.String(maxLength: 10, fixedLength: true),
+                        DistrictId = c.String(maxLength: 10, fixedLength: true),
+                        ToPrice = c.String(maxLength: 50),
+                    })
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.Amenity", t => t.AmenitiesID)
+                .Index(t => t.AmenitiesID);
+            
+            CreateTable(
+                "dbo.Amenity",
+                c => new
+                    {
+                        Id = c.Int(nullable: false),
+                        ServiceId = c.Int(nullable: false),
+                        FeatureId = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.Feature", t => t.FeatureId)
+                .ForeignKey("dbo.Service", t => t.ServiceId)
+                .Index(t => t.ServiceId)
+                .Index(t => t.FeatureId);
+            
+            CreateTable(
+                "dbo.Feature",
+                c => new
+                    {
+                        Id = c.Int(nullable: false),
+                        Name = c.String(maxLength: 50),
+                    })
+                .PrimaryKey(t => t.Id);
+            
+            CreateTable(
+                "dbo.Service",
+                c => new
+                    {
+                        Id = c.Int(nullable: false),
+                        Name = c.String(maxLength: 50),
+                    })
+                .PrimaryKey(t => t.Id);
+            
+            CreateTable(
+                "dbo.PropertyImage",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        PropertyTypeId = c.Int(nullable: false),
+                        PropertyDetailId = c.Int(nullable: false),
+                        PropertyImage = c.Binary(nullable: false),
+                        Date = c.DateTime(nullable: false),
+                        ImagePath = c.String(maxLength: 50),
+                        IsActive = c.Boolean(nullable: false),
+                    })
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.PropertyType", t => t.PropertyTypeId)
+                .ForeignKey("dbo.PropertyDetail", t => t.PropertyDetailId)
+                .Index(t => t.PropertyTypeId)
+                .Index(t => t.PropertyDetailId);
+            
+            CreateTable(
+                "dbo.PropertyType",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Name = c.String(nullable: false, maxLength: 50),
+                        IsActive = c.Boolean(nullable: false),
+                    })
+                .PrimaryKey(t => t.Id);
+            
+            CreateTable(
+                "dbo.Area",
+                c => new
+                    {
+                        Id = c.Int(nullable: false),
+                        Name = c.String(maxLength: 50),
+                        IsActive = c.Boolean(),
+                        DistrictId = c.Int(),
+                    })
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.District", t => t.DistrictId)
+                .Index(t => t.DistrictId);
+            
+            CreateTable(
+                "dbo.District",
+                c => new
+                    {
+                        Id = c.Int(nullable: false),
+                        Name = c.String(maxLength: 50),
+                        IsActive = c.Boolean(),
+                        CityId = c.Int(),
+                    })
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.City", t => t.CityId)
+                .Index(t => t.CityId);
+            
+            CreateTable(
+                "dbo.City",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Name = c.String(maxLength: 50),
+                        IsActive = c.String(maxLength: 50),
+                        StateId = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.State", t => t.StateId)
+                .Index(t => t.StateId);
+            
+            CreateTable(
+                "dbo.State",
+                c => new
+                    {
+                        Id = c.Int(nullable: false),
+                        Name = c.String(maxLength: 50),
+                        IsActive = c.Boolean(),
+                        CountryId = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.Country", t => t.CountryId)
+                .Index(t => t.CountryId);
+            
+            CreateTable(
+                "dbo.Country",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Name = c.Int(nullable: false),
+                        IsActive = c.Boolean(),
+                    })
+                .PrimaryKey(t => t.Id);
+            
+            CreateTable(
+                "dbo.Contact",
+                c => new
+                    {
+                        Id = c.Int(nullable: false),
+                        Name = c.String(nullable: false, maxLength: 100, unicode: false),
+                        Email = c.String(nullable: false, maxLength: 50, unicode: false),
+                        Phone = c.Int(nullable: false),
+                        CreatedDate = c.DateTime(nullable: false),
+                        CreatedBy = c.String(maxLength: 10, fixedLength: true),
+                        Message = c.String(nullable: false),
+                        ContactTypeId = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.ContractType", t => t.ContactTypeId)
+                .Index(t => t.ContactTypeId);
+            
+            CreateTable(
+                "dbo.ContractType",
+                c => new
+                    {
+                        Id = c.Int(nullable: false),
+                        Conmmertial = c.String(maxLength: 50),
+                        Date = c.DateTime(),
+                        Rent = c.String(maxLength: 50),
+                        Sale = c.String(maxLength: 50),
+                    })
+                .PrimaryKey(t => t.Id);
+            
+            CreateTable(
+                "dbo.LoginPl",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Password = c.String(nullable: false, maxLength: 50),
+                        Email = c.String(nullable: false, maxLength: 50),
+                        Date = c.DateTime(nullable: false),
+                        LoginId = c.String(maxLength: 50),
+                    })
+                .PrimaryKey(t => t.Id);
+            
+            CreateTable(
+                "dbo.PropertyRequest",
+                c => new
+                    {
+                        PropRequestId = c.Int(nullable: false, identity: true),
+                        FullName = c.String(maxLength: 50),
+                        Email = c.String(maxLength: 50),
+                        PhoneNumber = c.String(maxLength: 50),
+                        ContractType = c.String(maxLength: 50),
+                        FromPrice = c.String(maxLength: 50),
+                        Date = c.DateTime(),
+                        AreaName = c.String(maxLength: 50),
+                        Contact = c.String(maxLength: 50),
+                        PropertyTypees = c.String(maxLength: 50),
+                        PropertyDescription = c.String(maxLength: 50),
+                        ToPrice = c.String(maxLength: 50),
+                        AreaId = c.String(maxLength: 50),
+                        CityId = c.String(maxLength: 50),
+                        CountryId = c.Int(),
+                        ContractId = c.String(maxLength: 50),
+                        ContactBy = c.String(maxLength: 50),
+                    })
+                .PrimaryKey(t => t.PropRequestId);
+            
+            CreateTable(
+                "dbo.Roles",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Name = c.String(nullable: false, maxLength: 256),
+                    })
+                .PrimaryKey(t => t.Id)
+                .Index(t => t.Name, unique: true, name: "RoleNameIndex");
+            
+            CreateTable(
+                "dbo.UserRoles",
+                c => new
+                    {
+                        UserId = c.Int(nullable: false),
+                        RoleId = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => new { t.UserId, t.RoleId })
+                .ForeignKey("dbo.Roles", t => t.RoleId, cascadeDelete: true)
+                .ForeignKey("dbo.Users", t => t.UserId, cascadeDelete: true)
+                .Index(t => t.UserId)
+                .Index(t => t.RoleId);
+            
+            CreateTable(
+                "dbo.Users",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        FirstName = c.String(),
+                        LastName = c.String(),
+                        Phone = c.String(),
+                        DateOfBirth = c.DateTime(nullable: false),
+                        Email = c.String(maxLength: 256),
+                        EmailConfirmed = c.Boolean(nullable: false),
+                        PasswordHash = c.String(),
+                        SecurityStamp = c.String(),
+                        PhoneNumber = c.String(),
+                        PhoneNumberConfirmed = c.Boolean(nullable: false),
+                        TwoFactorEnabled = c.Boolean(nullable: false),
+                        LockoutEndDateUtc = c.DateTime(),
+                        LockoutEnabled = c.Boolean(nullable: false),
+                        AccessFailedCount = c.Int(nullable: false),
+                        UserName = c.String(nullable: false, maxLength: 256),
+                    })
+                .PrimaryKey(t => t.Id)
+                .Index(t => t.UserName, unique: true, name: "UserNameIndex");
+            
+            CreateTable(
+                "dbo.UserClaims",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        UserId = c.Int(nullable: false),
+                        ClaimType = c.String(),
+                        ClaimValue = c.String(),
+                    })
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.Users", t => t.UserId, cascadeDelete: true)
+                .Index(t => t.UserId);
+            
+            CreateTable(
+                "dbo.UserLogins",
+                c => new
+                    {
+                        LoginProvider = c.String(nullable: false, maxLength: 128),
+                        ProviderKey = c.String(nullable: false, maxLength: 128),
+                        UserId = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => new { t.LoginProvider, t.ProviderKey, t.UserId })
+                .ForeignKey("dbo.Users", t => t.UserId, cascadeDelete: true)
+                .Index(t => t.UserId);
+            
+        }
+        
+        public override void Down()
+        {
+            DropForeignKey("dbo.UserRoles", "UserId", "dbo.Users");
+            DropForeignKey("dbo.UserLogins", "UserId", "dbo.Users");
+            DropForeignKey("dbo.UserClaims", "UserId", "dbo.Users");
+            DropForeignKey("dbo.UserRoles", "RoleId", "dbo.Roles");
+            DropForeignKey("dbo.Contact", "ContactTypeId", "dbo.ContractType");
+            DropForeignKey("dbo.State", "CountryId", "dbo.Country");
+            DropForeignKey("dbo.City", "StateId", "dbo.State");
+            DropForeignKey("dbo.District", "CityId", "dbo.City");
+            DropForeignKey("dbo.Area", "DistrictId", "dbo.District");
+            DropForeignKey("dbo.PropertyImage", "PropertyDetailId", "dbo.PropertyDetail");
+            DropForeignKey("dbo.PropertyImage", "PropertyTypeId", "dbo.PropertyType");
+            DropForeignKey("dbo.Amenity", "ServiceId", "dbo.Service");
+            DropForeignKey("dbo.PropertyDetail", "AmenitiesID", "dbo.Amenity");
+            DropForeignKey("dbo.Amenity", "FeatureId", "dbo.Feature");
+            DropForeignKey("dbo.AgentInfo", "PropertyDetailId", "dbo.PropertyDetail");
+            DropIndex("dbo.UserLogins", new[] { "UserId" });
+            DropIndex("dbo.UserClaims", new[] { "UserId" });
+            DropIndex("dbo.Users", "UserNameIndex");
+            DropIndex("dbo.UserRoles", new[] { "RoleId" });
+            DropIndex("dbo.UserRoles", new[] { "UserId" });
+            DropIndex("dbo.Roles", "RoleNameIndex");
+            DropIndex("dbo.Contact", new[] { "ContactTypeId" });
+            DropIndex("dbo.State", new[] { "CountryId" });
+            DropIndex("dbo.City", new[] { "StateId" });
+            DropIndex("dbo.District", new[] { "CityId" });
+            DropIndex("dbo.Area", new[] { "DistrictId" });
+            DropIndex("dbo.PropertyImage", new[] { "PropertyDetailId" });
+            DropIndex("dbo.PropertyImage", new[] { "PropertyTypeId" });
+            DropIndex("dbo.Amenity", new[] { "FeatureId" });
+            DropIndex("dbo.Amenity", new[] { "ServiceId" });
+            DropIndex("dbo.PropertyDetail", new[] { "AmenitiesID" });
+            DropIndex("dbo.AgentInfo", new[] { "PropertyDetailId" });
+            DropTable("dbo.UserLogins");
+            DropTable("dbo.UserClaims");
+            DropTable("dbo.Users");
+            DropTable("dbo.UserRoles");
+            DropTable("dbo.Roles");
+            DropTable("dbo.PropertyRequest");
+            DropTable("dbo.LoginPl");
+            DropTable("dbo.ContractType");
+            DropTable("dbo.Contact");
+            DropTable("dbo.Country");
+            DropTable("dbo.State");
+            DropTable("dbo.City");
+            DropTable("dbo.District");
+            DropTable("dbo.Area");
+            DropTable("dbo.PropertyType");
+            DropTable("dbo.PropertyImage");
+            DropTable("dbo.Service");
+            DropTable("dbo.Feature");
+            DropTable("dbo.Amenity");
+            DropTable("dbo.PropertyDetail");
+            DropTable("dbo.AgentInfo");
+        }
+    }
+}
