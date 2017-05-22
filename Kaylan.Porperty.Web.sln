@@ -7,6 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kaylan.Porperty.Web", "Kayl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kalyan.Property.Infrastructure", "Kalyan.Property.Infrastructure\Kalyan.Property.Infrastructure.csproj", "{FB5931C0-9A1C-47E5-8BEF-A94536CA63BB}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DatabaseScript", "DatabaseScript", "{030307E3-D1C2-41E6-AE7E-F16B390D3751}"
+	ProjectSection(SolutionItems) = preProject
+		KaylanProperty.sql = KaylanProperty.sql
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
