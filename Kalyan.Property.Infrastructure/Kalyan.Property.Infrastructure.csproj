@@ -92,6 +92,10 @@
     <Compile Include="Migrations\201705221920219_Initial Commit.Designer.cs">
       <DependentUpon>201705221920219_Initial Commit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705241639439_Country Changes.cs" />
+    <Compile Include="Migrations\201705241639439_Country Changes.Designer.cs">
+      <DependentUpon>201705241639439_Country Changes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AgentInfo.cs" />
     <Compile Include="Models\Amenity.cs" />
@@ -125,6 +129,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201705221920219_Initial Commit.resx">
       <DependentUpon>201705221920219_Initial Commit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705241639439_Country Changes.resx">
+      <DependentUpon>201705241639439_Country Changes.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

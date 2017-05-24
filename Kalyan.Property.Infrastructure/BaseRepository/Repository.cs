@@ -5,23 +5,14 @@ using System.Linq;
 
 namespace Kalyan.Property.Infrastructure.BaseRepository
 {
-
-    public abstract class Repository<T> where T : class
+    public class Repository<T> : IRepository<T> where T : class
     {
-        //private Application.Com.Models.ApplicationDbContext _dataContext;
-        //private readonly IDbSet<T> dbset;
-
         protected CustomeDbContext DbContext;
 
-        public Repository(IUnitOfWork unitOfWork)
+        public Repository(CustomeDbContext DbContext)
         {
-            this.DbContext = unitOfWork.DbContext;
+            this.DbContext = DbContext;
         }
-
-        //protected ApplicationDbContext DataContext
-        //{
-        //    get { return _dataContext ?? new ApplicationDbContext(); }
-        //}
 
         public virtual void Add(T entity)
         {

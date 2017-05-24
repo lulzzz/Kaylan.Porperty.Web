@@ -1,11 +1,14 @@
-﻿using System;
+﻿using Kalyan.Property.Infrastructure.BaseRepository;
+using System;
 
 namespace Kalyan.Property.Infrastructure
 {
     public interface IUnitOfWork : IDisposable
     {
-        CustomeDbContext DbContext { get; }
 
-        int Save();
+        IRepository<TEntity> Repository<TEntity>()
+                where TEntity : class;
+
+        bool Commit();
     }
 }

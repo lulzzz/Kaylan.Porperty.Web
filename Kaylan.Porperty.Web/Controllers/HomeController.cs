@@ -1,15 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using Kalyan.Property.Infrastructure;
+using Kalyan.Property.Infrastructure.Models;
 using System.Web.Mvc;
 
 namespace Kaylan.Porperty.Web.Controllers
 {
     public class HomeController : Controller
     {
+        private IUnitOfWork unitOfWork;
+
         public ActionResult Index()
         {
+            using (unitOfWork = new UnitOfWork())
+            {
+                unitOfWork.Repository<Country>().Add(new Country() { Name = "England" });
+                var result = unitOfWork.Commit();
+            }
+
             return View();
         }
 
