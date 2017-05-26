@@ -14,7 +14,10 @@ namespace Kaylan.Porperty.Web.Controllers
         {
             return View();
         }
-
+        public ActionResult Index(int id)
+        {
+            return View();
+        }
         public ActionResult CreatePropertyRequest()
         {
             return View(new PropertyRequest());
