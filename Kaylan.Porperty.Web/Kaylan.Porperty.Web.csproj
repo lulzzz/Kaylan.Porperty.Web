@@ -184,9 +184,18 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AreaController.cs" />
+    <Compile Include="Controllers\CityController.cs" />
+    <Compile Include="Controllers\CountryController.cs" />
+    <Compile Include="Controllers\DistrictController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PropertyDetailController.cs" />
     <Compile Include="Controllers\PropertyRequestController.cs" />
+    <Compile Include="Controllers\PropertyTypeController.cs" />
+    <Compile Include="Controllers\StateController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -252,9 +261,22 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\PropertyRequest\CreatePropertyRequest.cshtml" />
+    <Content Include="Views\Home\services.cshtml" />
+    <Content Include="Views\Home\Admin.cshtml" />
+    <Content Include="Views\Home\Membership.cshtml" />
+    <Content Include="Views\Home\Master.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Area\" />
+    <Folder Include="Views\City\" />
+    <Folder Include="Views\Country\" />
+    <Folder Include="Views\District\" />
+    <Folder Include="Views\Login\" />
+    <Folder Include="Views\PropertyDetail\" />
+    <Folder Include="Views\PropertyType\" />
+    <Folder Include="Views\State\" />
+    <Folder Include="Views\User\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

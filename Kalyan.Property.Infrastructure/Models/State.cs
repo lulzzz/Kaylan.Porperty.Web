@@ -27,6 +27,6 @@ namespace Kalyan.Property.Infrastructure.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<City> Cities { get; set; }
 
-        public virtual Country Country { get; set; }
+        public virtual Countries Country { get; set; }
     }
 }

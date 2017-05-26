@@ -1,7 +1,901 @@
-﻿@{
-    ViewBag.Title = "About";
-}
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
+﻿<!DOCTYPE HTML>
+<html lang="en-US" class="no-js">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Kalyan Property World</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
 
-<p>Use this area to provide additional information.</p>
+    <!-- CSS -->
+    <link rel="alternate" type="application/rss+xml" title="Real Spaces - Wordpress Real Estate Theme &raquo; Feed" href="http://preview.imithemes.com/real-spaces-wp/feed/" />
+    <link rel="alternate" type="application/rss+xml" title="Real Spaces - Wordpress Real Estate Theme &raquo; Comments Feed" href="http://preview.imithemes.com/real-spaces-wp/comments/feed/" />
+    <link rel="alternate" type="application/rss+xml" title="Real Spaces - Wordpress Real Estate Theme &raquo; Home Version 1 Comments Feed" href="http://preview.imithemes.com/real-spaces-wp/version-1/feed/" />
+    <link rel='stylesheet' href='@Url.Content("~/content/css/cf8bac.css")' type='text/css' media='all' />
+    <link rel='stylesheet' href='@Url.Content("~/content/css/dsidx-icons.css")' type='text/css' media='all' />
+    <link rel='stylesheet' href='@Url.Content("~/content/css/client.css")' type='text/css' media='all' />
+    <link rel='stylesheet' href='@Url.Content("~/content/css/client1.css")' type='text/css' media='all' />
+    <link rel='stylesheet' href='@Url.Content("~/content/css/settings.css")' type='text/css' media='all' />
+    <link rel='stylesheet' href='@Url.Content("~/content/css/bootstrap.css")' type='text/css' media='all' />
+    <link rel='stylesheet' href='@Url.Content("~/content/css/animations.css")' type='text/css' media='all' />
+    <link rel='stylesheet' href='@Url.Content("~/content/font-awesome-4.6.3/css/font-awesome.min.css")' type='text/css' media='all' />
+    <link rel='stylesheet' href='@Url.Content("~/content/css/style.css")' type='text/css' media='all' />
+    <link rel='stylesheet' href='@Url.Content("~/content/css/style2.css")' type='text/css' media='all' />
+    <link rel='stylesheet' href='@Url.Content("~/content/css/prettyPhoto.css")' type='text/css' media='all' />
+    <link rel='stylesheet' href='@Url.Content("~/content/css/owl.carousel.css")' type='text/css' media='all' />
+    <link rel='stylesheet' href='@Url.Content("~/content/css/owl.theme.css")' type='text/css' media='all' />
+    <link rel="stylesheet" href="@Url.Content("~/content/css/color1.css")" type="text/css">
+
+    <!-- Scripts -->
+    <script type='text/javascript' src="@Url.Content("~/scripts/jquery.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/jquery-migrate.min.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/23a23f.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/ajax-login-script.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/jquery.themepunch.tools.min.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/jquery.themepunch.revolution.min.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/modernizr.js")"></script>
+
+
+    <script type='text/javascript' src="@Url.Content("~/scripts/favorite.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/newslatter.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/prettyphoto.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/owl.carousel.min.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/jquery.flexslider.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/helper-plugins.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/bootstrap.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/waypoints.js")"></script>
+    @*<script type='text/javascript' src='@Url.Content("~/scripts/js.js")'></script>*@
+    <script type='text/javascript'>
+        /* <![CDATA[ */
+        var urlajax = { "url": "http:\/\/preview.imithemes.com\/real-spaces-wp\/wp-admin\/admin-ajax.php", "tmpurl": "http:\/\/preview.imithemes.com\/real-spaces-wp\/wp-content\/themes\/real-spaces", "is_property": "", "sticky": "1", "is_contact": "", "home_url": "http:\/\/preview.imithemes.com\/real-spaces-wp", "is_payment": "", "register_url": "http:\/\/preview.imithemes.com\/real-spaces-wp\/register-as-agent\/", "is_register": "", "is_login": "", "is_submit_property": "", "basic": "Basic", "advanced": "Advanced" };
+        /* ]]> */
+    </script>
+    <script type='text/javascript' src='@Url.Content("~/scripts/init.js")'></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/profile_validate.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/comment-reply.min.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/wp-embed.min.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/core.min.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/widget.min.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/position.min.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/menu.min.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/autocomplete.min.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/autocomplete.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/jquery_cookie.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/script.js")"></script>
+
+</head>
+<body class="home page page-id-223 page-template page-template-template-home page-template-template-home-php ">
+    <!--[if lt IE 7]>
+        <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+    <![endif]-->
+    <div class="body">
+        <header class="site-header">
+            <div class="top-header hidden-xs">
+                <div class="container-fluide">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12">
+                            <ul class="horiz-nav pull-right">
+                                <li class="dropdown">
+                                    <a href="../Home/Admin">Admin</a>
+
+                                <li class="dropdown">
+                                    <i class="fa fa-user"></i>
+                                    <a href="/Login/CreateLogin">Login</a>
+
+
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#" title="Favorite Properties">Favorite Properties</a></li>
+                                        <li><a href="#" title="Saved Searches">Saved Searches</a></li>
+                                        <li class="register"><a href="#" title="My Profile">My Profile</a></li>
+                                        <li class="login"><a href="#" title="Logout">Logout</a></li>
+                                    </ul>
+                                </li>
+                                </li>
+                                <li class="dropdown">
+                                    <i class="fa fa-check-circle"></i>
+                                    <a href="/User/CreateUser">Register</a>
+
+
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="middle-header">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-2 col-sm-8 col-xs-8">
+                            <h1 class="logo">
+                                <a href="#" title="Real Spaces - Wordpress Real Estate Theme">
+                                    <img src="@Url.Content("~/images/sample-10.png")" alt="Logo">
+                                </a>
+                            </h1>
+                        </div>
+                        <div class="col-md-5 col-sm-8 col-xs-8">
+                            <marquee style="width: 500px; font-size: 18px; margin-top: 30px; font-weight: bold">
+                                <b>
+                                    Kalyan Real Estate Property/Properties/Real Estate for Sale and Rent
+                                    Place your Kalyan property on the best Property Portal
+                                </b>
+                            </marquee>
+                        </div>
+
+                        <div class="col-md-5 col-sm-4 col-xs-4">
+
+                            <div class="contact-info-blocks hidden-sm hidden-xs">
+                                <div>
+                                    <i class="fa fa-phone"></i>Free Line For You
+                                    <span>0123456789</span>
+                                </div>
+                                <div>
+                                    <i class="fa fa-envelope"></i>Email Us
+                                    <span>example@gmail.com</span>
+                                </div>
+                                <!-- <div>
+                                        <i class="fa fa-clock-o"></i>Working Hours
+                                <span>09:00 to 17:00</span>
+                                    </div>-->
+                            </div>
+                            <a href="#" class="visible-sm visible-xs menu-toggle"><i class="fa fa-bars"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-menu-wrapper">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <nav class="navigation">
+                                <ul id="menu-main-menu" class="sf-menu">
+                                    <li id="menu-item-208" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-208">
+                                        @Html.ActionLink("Home", "Index", "Home")
+                                    </li>
+                                    <li id="menu-item-209" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-209"> @Html.ActionLink("About", "About", "Home")</li>
+                                    <li id="menu-item-225" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-225"> @Html.ActionLink("Services", "Services", "Home")</li>
+                                    <li id="menu-item-283" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-283"><a href="/PropertyRequest/CreatePropertyRequest">PropertyRequest</a></li>
+                                    @*                                   <li id="menu-item-226" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-226"> <a href="/PropertyDetail/CreatePropertyDetail">List your property</a></li>*@
+                                    <li id="menu-item-209" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-209"> @Html.ActionLink("Membership", "membership", "Home")</li>
+                                    <li id="menu-item-240" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-240">@Html.ActionLink("Contact", "Contact", "Home")</li>
+
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Start Site Header -->
+        @*<header class="site-header">
+                        <div class="top-header hidden-xs">
+                            <div class="container">
+                                <div class="row">
+                                   <div class="col-lg-9">
+                                     <marquee style="padding-top: 5px;font-size:18px; font-weight:bold;color:#FFF;">
+                                     <b>Kalyan Real Estate Property/Properties/Real Estate for Sale and Rent
+            Place your Kalyan property on the best Property Portal</b></marquee>
+
+                                   </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-12">
+                                         <ul class="horiz-nav pull-right">
+                                               <li class="dropdown">
+                                               <a href="../Home/Admin">Admin</a>
+                                                    <i class="fa fa-user"></i>
+                                            <li class="dropdown">
+                                               <a href="/Login/CreateLogin">Login</a>
+                                                    <i class="fa fa-user"></i>
+
+                                                    <ul class="dropdown-menu">
+                                                        <li><a href="#" title="Favorite Properties">Favorite Properties</a></li>
+                                                        <li><a href="#" title="Saved Searches">Saved Searches</a></li>
+                                                        <li class="register"><a href="#" title="My Profile">My Profile</a></li>
+                                                        <li class="login"><a href="#" title="Logout">Logout</a></li>
+                                                    </ul>
+                                             </li>
+                                              </li>
+                                              <li class="dropdown">
+                                               <a href="/User/CreateUser">Register</a>
+                                                    <i class="fa fa-user"></i>
+
+                                             </li>
+                                        </ul>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="middle-header">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-2 col-sm-8 col-xs-8">
+                                        <h1 class="logo">
+                                            <a href="#" title="Real Spaces - Wordpress Real Estate Theme">
+                                                <img src="@Url.Content("~/images/sample-10.png")" alt="Logo"></a>            </h1>
+                                    </div>
+                                     <div class="col-md-5 col-sm-8 col-xs-8">
+                                        <marquee style="width: 500px; font-size: 18px; margin-top: 30px; font-weight: bold"><b>Kalyan Real Estate Property/Properties/Real Estate for Sale and Rent
+            Place your Kalyan property on the best Property Portal</b></marquee>
+                                    </div>
+                                    <div class="col-md-5 col-sm-4 col-xs-4">
+
+                                        <div class="contact-info-blocks hidden-sm hidden-xs">
+                                            <div>
+                                                <i class="fa fa-phone"></i> Free Line For You
+                                        <span>0123456789</span>
+                                            </div>
+                                            <div>
+                                                <i class="fa fa-envelope"></i> Email Us
+                                        <span>example@gmail.com</span>
+                                            </div>
+                                           <!-- <div>
+                                                <i class="fa fa-clock-o"></i>Working Hours
+                                        <span>09:00 to 17:00</span>
+                                            </div>-->
+                                        </div>
+                                        <a href="#" class="visible-sm visible-xs menu-toggle"><i class="fa fa-bars"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="main-menu-wrapper">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <nav class="navigation">
+                                            <ul id="menu-main-menu" class="sf-menu">
+
+                                             <li id="menu-item-208" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-208">
+                                                    @Html.ActionLink("Home", "Index", "Home")
+                                               </li>
+                                               <li id="menu-item-209" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-209"> @Html.ActionLink("About", "About", "Home")</li>
+                                               <li id="menu-item-225" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-225"> @Html.ActionLink("Services","Services","Home")</li>
+                                               <li id="menu-item-283" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-283"><a href="/PropertyRequest/CreatePropertyRequest">PropertyRequest</a></li>
+
+                                               <li id="menu-item-209" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-209"> @Html.ActionLink("Membership", "membership", "Home")</li>
+                                               <li id="menu-item-240" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-240">@Html.ActionLink("Contact", "Contact", "Home")</li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </header>*@
+
+        <!-- End Site Header -->
+        <!-- Site Showcase -->
+        <div class="site-showcase">
+            <div class="slider-mask overlay-transparent"></div>
+            <!-- Start Hero Slider -->
+            <div class="hero-slider flexslider clearfix" data-autoplay="yes" data-pagination="no" data-arrows="yes" data-style="fade" data-pause="yes">
+                <ul class="slides">
+                    <li class=" parallax" style="background-image: url(/../images/slide1-1200x500.jpg)"></li>
+                    <li class=" parallax" style="background-image: url(/../images/slide2-1200x500.jpg)"></li>
+                </ul>
+            </div>
+            <!-- Site Search Module -->
+            <div class="site-search-module">
+                <div class="container">
+                    <div class="site-search-module-inside">
+                        <form method="get" action="search results.html">
+                            <input type="hidden" class="form-control" name="s" id="s" value="Search1" />
+                            <div class="row">
+
+                                <div class="col-md-8 search-fields">
+                                    <div class="search_by">
+                                        <div class="search-field">
+                                            <label>Property Type</label><select name="propery_type" class="form-control selectpicker">
+                                                <option selected>Property Type</option>
+                                                <option value='apartment'>Apartment</option>
+                                                <option value='family-house'>Family House</option>
+                                                <option value='cottage'>Cottage</option>
+                                                <option value='single-home'>Single Home</option>
+                                                <option value='villa'>Villa</option>
+                                            </select>
+                                        </div>
+                                        <div class="search-field">
+                                            <label>Country</label>
+                                            <select name="search_by" class="form-control selectpicker">
+                                                <option selected>Country</option>
+                                                <option value='India'>India</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="search-field">
+                                        <label>State</label><select name="propery_location" class="form-control selectpicker">
+                                            <option selected>State</option>
+                                            <option value='California'>Maharashtra</option>
+                                            <option value='Texas'>Gujrat</option>
+                                            <option value='New York'>Karnatak</option>
+                                            <option value='Florida'>Tamilnadu</option>
+                                            <option value='Illinois'>Andhra Pradesh</option>
+                                            <option value='Ohio'>Uttar Pradhesh</option>
+                                            <option value='Pennsylvania'>Bangal</option>
+                                            <option value='Massachusetts'>Bihar</option>
+                                            <option value='New Jersey'>Himachal Pradesh</option>
+                                            <option value='Arizona'>Haryana</option>
+                                            <option value='Michigan'>Punjab</option>
+                                        </select>
+                                    </div>
+                                    <div class="search-field">
+                                        <label>City</label><select name="property_city" class="form-control selectpicker">
+                                            <option selected>City</option>
+                                            <option value='waverly'>Waverly</option>
+                                        </select>
+                                    </div>
+                                    <div class="search-field">
+                                        <label>Area</label><select name="property_city" class="form-control selectpicker">
+                                            <option selected>Area</option>
+                                            <option value='waverly'>Khadakpada</option>
+                                            <option value='waverly'>Godrej Hill</option>
+                                            <option value='waverly'>Murbad Road</option>
+                                        </select>
+                                    </div>
+                                    <div class="search-field">
+                                        <label>Price</label><select name="propery_type" class="form-control selectpicker">
+                                            <option selected>Min Price</option>
+                                            <option value='apartment'>5 Lakh INR</option>
+                                            <option value='family-house'>21 Lakh INR</option>
+                                            <option value='cottage'>51 Lakh INR</option>
+                                            <option value='single-home'>1 CR INR</option>
+                                        </select>
+                                    </div>
+                                    <div class="search-field">
+                                        <label>&nbsp;</label><select name="propery_type" class="form-control selectpicker">
+                                            <option value='apartment'>Max Price</option>
+                                            <option value='family-house'>20 Lakh INR</option>
+                                            <option value='cottage'>50 Lakh INR</option>
+                                            <option value='single-home'>1 CR INR</option>
+                                            <option value='villa'>Onwards</option>
+                                        </select>
+                                    </div>
+                                    <div class="search-field">
+                                        <label>Contract Type</label><select name="propery_contract_type" class="form-control selectpicker">
+                                            <option selected>Contract</option>
+                                            <option value='sale'>Sale</option>
+                                            <option value='rent'>Rent</option>
+                                        </select>
+                                    </div>
+                                    <div class="search-field">
+                                        <label>Furnished</label>
+                                        <select name="min_price" class="form-control selectpicker">
+                                            <option selected>Any</option>
+                                            <option value='Unfuenished'>Unfurnished</option>
+                                            <option value='Semi Furnished'>Semi Furnished</option>
+                                            <option value='Fully Furnished'>Fully Furnished</option>
+
+                                        </select>
+                                    </div>
+                                    <div class="search-field">
+                                        <label>Agent</label>
+                                        <select name="max_price" class="form-control selectpicker">
+                                            <option selected>Any</option>
+                                            <option value='11stars properties'>11stars properties</option>
+                                            <option value='4 you properties'>4 you properties</option>
+                                            <option value='Ahad Holdings WLL'>Ahad Holdings WLL</option>
+                                            <option value='Al Rayes Real Estate'>Al Rayes Real Estate</option>
+                                            <option value='Alafif Real Estate'>Alafif Real Estate</option>
+
+                                        </select>
+                                    </div>
+                                    <div class="search-field">
+                                        <label>Min Area (Sq Ft)</label>
+                                        <input type="text" name="min_area" class="form-control" placeholder="Any">
+                                    </div>
+                                    <div class="search-field">
+                                        <label>Max Area (Sq Ft)</label>
+                                        <input type="text" name="max_area" class="form-control" placeholder="Any">
+                                    </div>
+                                    <div class="search-field">
+                                        <label>Min Bedrooms</label>
+                                        <select name="beds" class="form-control selectpicker">
+                                            <option selected>Any</option>
+                                            <option value='1'>1</option>
+                                            <option value='2'>2</option>
+                                            <option value='3'>3</option>
+                                            <option value='4'>4</option>
+                                            <option value='5'>5</option>
+                                            <option value='6'>6</option>
+                                            <option value='7'>7</option>
+                                            <option value='8'>8</option>
+                                            <option value='9'>9</option>
+                                            <option value='10'>10</option>
+                                        </select>
+                                    </div>
+                                    <div class="search-field">
+                                        <label>Min Bathrooms</label>
+                                        <select name="baths" class="form-control selectpicker">
+                                            <option selected>Any</option>
+                                            <option value='1'>1</option>
+                                            <option value='2'>2</option>
+                                            <option value='3'>3</option>
+                                            <option value='4'>4</option>
+                                            <option value='5'>5</option>
+                                            <option value='6'>6</option>
+                                            <option value='7'>7</option>
+                                            <option value='8'>8</option>
+                                            <option value='9'>9</option>
+                                            <option value='10'>10</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="search-field">
+                                        <label>Order By</label>
+                                        <select name="baths" class="form-control selectpicker">
+                                            <option selected>Any</option>
+                                            <option value='Newest Addition First'>Newest Addition First</option>
+                                            <option value='Highest Price First'>Highest Price First</option>
+                                            <option value='Lowest Price First'>Lowest Price First</option>
+                                        </select>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-4 search-buttons">
+                                    <div class="row">
+                                        <div class="search-button">
+                                            <button type="submit" class="btn btn-primary btn-block btn-lg"><i class="fa fa-search"></i>Search </button>
+                                        </div>
+                                        <div class="search-button">
+                                            <a href="#" id="ads-trigger" class="btn btn-default btn-block"><i class="fa fa-plus"></i><span>Advanced</span></a>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <br>
+                                        <div class="add-property">
+                                            <div class="block-heading">
+                                                <h4>
+                                                    <span class="heading-icon">
+                                                        <i class="fa fa-caret-right icon-design"></i><img src="@Url.Content("~/images/faa.png")">
+                                                    </span>ADD YOUR PROPERTY
+                                                </h4>
+                                            </div>
+                                            <ul>
+                                                <li>Company Logo with you property ads</li>
+                                                <li>Receive enquires via directly to your email</li>
+                                                <li>Receive Property Requests</li>
+                                                <li>Featured Properties</li>
+                                                <li>And lots more..!!</li>
+                                            </ul>
+                                            <a href="membership.html" class="btn btn-default  grid6">Add your property now!</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <!-- End Showcase -->
+        <!-- Start Content -->
+        <div class="main" role="main">
+            <div id="content" class="content full">
+                <!--  <div class="featured-blocks">
+                      <div class="container">
+                          <div class="row">
+                              <div class="col-md-4 col-sm-4 featured-block">
+                                  <img alt="featured block" src="images/ search-anywhere.jpg" class="img-thumbnail"><h3>Search From Anywhere</h3>
+                                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis egestas rhoncus. Donec facilisis fermentum sem, ac viverra ante luctus vel.
+                              </div>
+                              <div class="col-md-4 col-sm-4 featured-block">
+                                  <img alt="featured block" src="images/ friendly-agents.jpg" class="img-thumbnail"><h3>Friendly Agents</h3>
+                                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis egestas rhoncus. Donec facilisis fermentum sem, ac viverra ante luctus vel.
+                              </div>
+                              <div class="col-md-4 col-sm-4 featured-block">
+                                  <img alt="featured block" src="images/ buy-or-rent.jpg" class="img-thumbnail"><h3>Buy or Rent</h3>
+                                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis egestas rhoncus. Donec facilisis fermentum sem, ac viverra ante luctus vel.
+                              </div>
+                          </div>
+                      </div>
+                  </div>-->
+                <div class="spacer-20"></div>
+                <div class="container">
+                    <div class="row">
+                        <div class="property-columns" id="latest-properties">
+                            <div class="col-lg-12 col-md-12">
+                                <div class="block-heading">
+                                    <h4><span class="heading-icon"><img src="@Url.Content("~/images/faa.png")"></span>Recent Listed</h4>
+                                </div>
+                            </div>
+                            <ul>
+                                <li class="col-md-4 col-sm-6 type-rent">
+                                    <div class="property-block">
+                                        <a href="details.html" class="property-featured-image">
+                                            <img src="" class="attachment-600-400-size size-600-400-size wp-post-image" alt="slide1" srcset="@Url.Content("~/images/s1.jpg" )" sizes="(max-width: 600px) 100vw, 600px" />
+                                            <span class="images-count">
+                                                <i class="fa fa-map-signs"></i></strong><span class="">Kahadkpada</span>
+                                                <!--<i class="fa fa-picture-o"></i> 3-->
+                                            </span>
+                                            <span class="badges badge-sale">Sale</span>
+                                        </a>
+                                        <div class="property-info">
+                                            <h4><a href="details.html">Property 1</a></h4><br>
+                                            <div class="price"><strong><i class="fa fa-inr"></i></strong><span class="">10000</span></div>
+                                        </div>
+                                        <div class="property-amenities clearfix"><span class="area">5000<strong></strong>Area</span><span class="baths"><strong>3</strong>Baths</span><span class="beds"><strong>4</strong>Beds</span><span class="parking"><strong>2</strong>Parking</span></div>
+                                    </div>
+                                </li>
+                                <li class="col-md-4 col-sm-6 type-rent">
+                                    <div class="property-block">
+                                        <a href="details.html" class="property-featured-image">
+                                            <img src="#" class="attachment-600-400-size size-600-400-size wp-post-image" alt="slide2" srcset="@Url.Content("~/images/s2.jpg")" sizes="(max-width: 600px) 100vw, 600px" />
+                                            <span class="images-count">
+                                                <i class="fa fa-map-signs"></i></strong><span class="">Kahadkpada</span>
+                                                <!--<i class="fa fa-picture-o"></i> 3-->
+                                            </span>
+                                            <span class="badges badge-rent">Rent</span>
+                                        </a><div class="property-info">
+                                            <h4><a href="details.html">Property 2</a></h4><br>
+                                            <div class="price"><strong><i class="fa fa-inr"></i></strong><span class="">11000</span></div>
+                                        </div>
+                                        <div class="property-amenities clearfix"><span class="area">5000<strong></strong>Area</span><span class="baths"><strong>1</strong>Baths</span><span class="beds"><strong>4</strong>Beds</span><span class="parking"><strong>1</strong>Parking</span></div>
+                                    </div>
+                                </li>
+                                <li class="col-md-4 col-sm-6 type-rent">
+                                    <div class="property-block">
+                                        <a href="details.html" class="property-featured-image">
+                                            <img src="#" class="attachment-600-400-size size-600-400-size wp-post-image" alt="property4" srcset="@Url.Content("~/images/s3.jpg")" sizes="(max-width: 600px) 100vw, 600px" />
+                                            <span class="images-count">
+                                                <i class="fa fa-map-signs"></i></strong><span class="">Kahadkpada</span>
+                                                <!--<i class="fa fa-picture-o"></i> 3-->
+                                            </span>
+                                            <span class="badges badge-sale">Sale</span>
+                                        </a><div class="property-info">
+                                            <h4><a href="details.html">Property 3</a></h4><br>
+                                            <div class="price"><strong><i class="fa fa-inr"></i></strong><span class="">15000</span></div>
+                                        </div>
+                                        <div class="property-amenities clearfix"><span class="area">5000<strong></strong>Area</span><span class="baths"><strong>2</strong>Baths</span><span class="beds"><strong>4</strong>Beds</span><span class="parking"><strong>2</strong>Parking</span></div>
+                                    </div>
+                                </li>
+                                <li class="col-md-4 col-sm-6 type-rent">
+                                    <div class="property-block">
+                                        <a href="details.html" class="property-featured-image">
+                                            <img src="#" class="attachment-600-400-size size-600-400-size wp-post-image" alt="property5" srcset="@Url.Content("~/images/s4.jpg")" sizes="(max-width: 600px) 100vw, 600px" />
+                                            <span class="images-count">
+                                                <i class="fa fa-map-signs"></i></strong><span class="">Kahadkpada</span>
+                                                <!--<i class="fa fa-picture-o"></i> 3-->
+                                            </span>
+                                            <span class="badges badge-rent">Rent</span>
+                                        </a><div class="property-info">
+                                            <h4><a href="details.html">Property 4</a></h4><br>
+                                            </h4><div class="price"><strong><i class="fa fa-inr"></i></strong><span class="">20000</span></div>
+                                        </div>
+                                        <div class="property-amenities clearfix"><span class="area">5000<strong></strong>Area</span><span class="baths"><strong>4</strong>Baths</span><span class="beds"><strong>5</strong>Beds</span><span class="parking"><strong>3</strong>Parking</span></div>
+                                    </div>
+                                </li>
+                                <li class="col-md-4 col-sm-6 type-rent">
+                                    <div class="property-block">
+                                        <a href="details.html" class="property-featured-image">
+                                            <img src="#" class="attachment-600-400-size size-600-400-size wp-post-image" alt="property7" srcset="@Url.Content("~/images/s5.jpg")" sizes="(max-width: 600px) 100vw, 600px" />
+                                            <span class="images-count">
+                                                <i class="fa fa-map-signs"></i></strong><span class="">Kahadkpada</span>
+                                                <!--<i class="fa fa-picture-o"></i> 3-->
+                                            </span>
+                                            <span class="badges badge-sale">Sale</span>
+                                        </a><div class="property-info">
+                                            <h4><a href="details.html">Property 5</a></h4><br>
+                                            <div class="price"><strong><i class="fa fa-inr"></i></strong><span class="">25000</span></div>
+                                        </div>
+                                        <div class="property-amenities clearfix"><span class="area">5000<strong></strong>Area</span><span class="baths"><strong>3</strong>Baths</span><span class="beds"><strong>4</strong>Beds</span><span class="parking"><strong>3</strong>Parking</span></div>
+                                    </div>
+                                </li>
+                                <li class="col-md-4 col-sm-6 type-rent">
+                                    <div class="property-block">
+                                        <a href="details.html" class="property-featured-image">
+                                            <img src="#" class="attachment-600-400-size size-600-400-size wp-post-image" alt="slide3" srcset="@Url.Content("~/images/s6.jpg")" sizes="(max-width: 600px) 100vw, 600px" />
+                                            <span class="images-count">
+                                                <!--                                            <i class="fa fa-picture-o"></i> 3-->
+                                                <i class="fa fa-map-signs"></i></strong><span class="">Kahadkpada</span>
+                                            </span>
+
+                                            <span class="badges badge-rent">Rent</span>
+                                        </a><div class="property-info">
+                                            <h4><a href="details.html">Property 6</a></h4><br>
+                                            <div class="price"><strong><i class="fa fa-inr"></i></strong><span class="">2800000</span></div>
+                                        </div>
+                                        <div class="property-amenities clearfix"><span class="area">5000<strong></strong>Area</span><span class="baths"><strong>5</strong>Baths</span><span class="beds"><strong>5</strong>Beds</span><span class="parking"><strong>3</strong>Parking</span></div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="block-heading">
+                                    <h4><span class="heading-icon"><img src="@Url.Content("~/images/faa.png")"></span>Featured Properties</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <ul class="owl-carousel owl-alt-controls" data-columns="4" data-autoplay="no" data-pagination="no" data-arrows="yes" data-single-item="no">
+                                <li class="item property-block">
+                                    <a href="#" class="property-featured-image">
+                                        <img src="#" class="attachment-600-400-size size-600-400-size wp-post-image" alt="slide1" srcset="@Url.Content("~/images/s1.jpg")" sizes="(max-width: 600px) 100vw, 600px" /><span class="images-count"><i class="fa fa-picture-o"></i> 3</span><span class="badges badge-sale">Sale</span>
+                                    </a><div class="property-info">
+                                        <h4><a href="#">Kalyan property world</a></h4><br>
+                                        <div class="price"><strong><i class="fa fa-inr"></i></strong><span class="">10000</span></div>
+                                    </div>
+                                </li>
+                                <li class="item property-block">
+                                    <a href="#" class="property-featured-image">
+                                        <img src="#" class="attachment-600-400-size size-600-400-size wp-post-image" alt="slide2" srcset="@Url.Content("~/images/s2.jpg")" sizes="(max-width: 600px) 100vw, 600px" /><span class="images-count"><i class="fa fa-picture-o"></i> 3</span><span class="badges badge-rent">Rent</span>
+                                    </a><div class="property-info">
+                                        <h4><a href="#">Kalyan property world</a></h4><br>
+                                        <div class="price"><strong><i class="fa fa-inr"></i></strong><span class="">11000</span></div>
+                                    </div>
+                                </li>
+                                <li class="item property-block">
+                                    <a href="#" class="property-featured-image">
+                                        <img src="#" class="attachment-600-400-size size-600-400-size wp-post-image" alt="property4" srcset="@Url.Content("~/images/s3.jpg")" sizes="(max-width: 600px) 100vw, 600px" /><span class="images-count"><i class="fa fa-picture-o"></i> 3</span><span class="badges badge-sale">Sale</span>
+                                    </a><div class="property-info">
+                                        <h4><a href="#">Kalyan property world</a></h4><br>
+                                        <div class="price"><strong><i class="fa fa-inr"></i></strong><span class="">15000</span></div>
+                                    </div>
+                                </li>
+                                <li class="item property-block">
+                                    <a href="#" class="property-featured-image">
+                                        <img src="#" class="attachment-600-400-size size-600-400-size wp-post-image" alt="property5" srcset="@Url.Content("~/images/s4.jpg")" sizes="(max-width: 600px) 100vw, 600px" /><span class="images-count"><i class="fa fa-picture-o"></i> 3</span><span class="badges badge-rent">Rent</span>
+                                    </a><div class="property-info">
+                                        <h4><a href="#">Kalyan property world</a></h4><br>
+                                        </h4><div class="price"><strong><i class="fa fa-inr"></i></strong><span class="">20000</span></div>
+                                    </div>
+                                </li>
+                                <li class="item property-block">
+                                    <a href="#" class="property-featured-image">
+                                        <img src="#" class="attachment-600-400-size size-600-400-size wp-post-image" alt="property7" srcset="@Url.Content("~/images/s5.jpg")" sizes="(max-width: 600px) 100vw, 600px" /><span class="images-count"><i class="fa fa-picture-o"></i> 3</span><span class="badges badge-sale">Sale</span>
+                                    </a><div class="property-info">
+                                        <h4><a href="#">Kalyan property world</a></h4><br>
+                                        <div class="price"><strong><i class="fa fa-inr"></i></strong><span class="">25000</span></div>
+                                    </div>
+                                </li>
+                                <li class="item property-block">
+                                    <a href="#" class="property-featured-image">
+                                        <img src="#" class="attachment-600-400-size size-600-400-size wp-post-image" alt="slide3" srcset="@Url.Content("~/images/s6.jpg")" sizes="(max-width: 600px) 100vw, 600px" /><span class="images-count"><i class="fa fa-picture-o"></i> 3</span><span class="badges badge-rent">Rent</span>
+                                    </a><div class="property-info">
+                                        <h4><a href="#">Kalyan property world</a></h4><br>
+                                        <div class="price"><strong><i class="fa fa-inr"></i></strong><span class="">2800000</span></div>
+                                    </div>
+                                </li>
+                                <li class="item property-block">
+                                    <a href="#" class="property-featured-image">
+                                        <img src="#" class="attachment-600-400-size size-600-400-size wp-post-image" alt="slide1" srcset="@Url.Content("~/images/s1.jpg")" sizes="(max-width: 600px) 100vw, 600px" /><span class="images-count"><i class="fa fa-picture-o"></i> 3</span><span class="badges badge-rent">Rent</span>
+                                    </a><div class="property-info">
+                                        <h4><a href="#">Kalyan property world</a></h4><br>
+                                        <div class="price"><strong><i class="fa fa-inr"></i></strong><span class="">31000</span></div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="padding-tb45 bottom-blocks">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="block-heading">
+                                    <h4><span class="heading-icon"><img src="@Url.Content("~/images/faa.png")"></span>What kind of properties do we offer?</h4>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12">
+                                <p><strong>Kalyan Property</strong> is proud to establish itself as one of the leading sites bringing sellers, buyers, and renters of Kalyan property together. We encourage you to take your time browsing our listings, researching properties in Bahrain , and receiving the best possible customer service from us. Your choice to use our site to connect to Kalyan properties is one that we appreciate and look forward to assisting you with. </p>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 features-list column">
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
+                                    <div class="icon">
+                                        <i class="fa fa-home"></i>
+                                    </div>
+                                    <div class="text">
+                                        <h4>Flats</h4>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
+                                    <div class="icon">
+                                        <i class="fa fa-home"></i>
+                                    </div>
+                                    <div class="text">
+                                        <h4>Bungalows</h4>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
+                                    <div class="icon">
+                                        <i class="fa fa-home"></i>
+                                    </div>
+                                    <div class="text">
+                                        <h4>Row House</h4>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
+                                    <div class="icon">
+                                        <i class="fa fa-home"></i>
+                                    </div>
+                                    <div class="text">
+                                        <h4>Penthouses</h4>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
+                                    <div class="icon">
+                                        <i class="fa fa-home"></i>
+                                    </div>
+                                    <div class="text">
+                                        <h4>Apartment</h4>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
+                                    <div class="icon">
+                                        <i class="fa fa-home"></i>
+                                    </div>
+                                    <div class="text">
+                                        <h4>Daily Rental Rooms</h4>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
+                                    <div class="icon">
+                                        <i class="fa fa-home"></i>
+                                    </div>
+                                    <div class="text">
+                                        <h4>Compound Houses</h4>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
+                                    <div class="icon">
+                                        <i class="fa fa-home"></i>
+                                    </div>
+                                    <div class="text">
+                                        <h4>Land</h4>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
+                                    <div class="icon">
+                                        <i class="fa fa-home"></i>
+                                    </div>
+                                    <div class="text">
+                                        <h4>Commercial : Offices - Bar/Restaurants - Shops</h4>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
+                                    <div class="icon">
+                                        <i class="fa fa-home"></i>
+                                    </div>
+                                    <div class="text">
+                                        <h4>Godowns / Warehouse</h4>
+                                    </div>
+                                </div>
+                                <!-- <ul>
+                                     <li class="cust-icon-box">
+                                         <div class="icon">
+                                             <i class="fa fa-umbrella"></i>
+                                         </div>
+                                         <div class="text">
+                                             <h4>Flats</h4>
+                                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                         </div>
+                                     </li>
+                                     <li class="cust-icon-box">
+                                         <div class="icon">
+                                             <i class="fa fa-th-list"></i>
+                                         </div>
+                                         <div class="text">
+                                             <h4>Property list view</h4>
+                                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                         </div>
+                                     </li>
+                                     <li class="cust-icon-box">
+                                         <div class="icon">
+                                             <i class="fa fa-search"></i>
+                                         </div>
+                                         <div class="text">
+                                             <h4>Advance Search Options</h4>
+                                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                         </div>
+                                     </li>
+                                     <li class="cust-icon-box">
+                                         <div class="icon">
+                                             <i class="fa fa-group"></i>
+                                         </div>
+                                         <div class="text">
+                                             <h4>Agents Profile</h4>
+                                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                         </div>
+                                     </li>
+                                 </ul>-->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="spacer-20"></div>
+
+
+                    <div class="container">
+                        <div class="block-heading">
+                            <h4><span class="heading-icon"><img src="@Url.Content("~/images/faa.png")"></span>Our Clients</h4>
+                            <a href="#" class="btn btn-primary btn-sm pull-right">All Clients <i class="fa fa-long-arrow-right"></i></a>
+                        </div>
+                        <div class="row">
+                            <ul class="owl-carousel owl-alt-controls" data-columns="6" data-autoplay="no" data-pagination="no" data-arrows="no" data-single-item="no">
+                                <li class="item">
+                                    <a href="#" target="_self">
+                                        <img src="@Url.Content("~/images/clint.jpg")" alt="">
+                                    </a>
+                                </li>
+                                <li class="item">
+                                    <a href="#" target="_self">
+                                        <img src="@Url.Content("~/images/clint.jpg")" alt="">
+                                    </a>
+                                </li>
+                                <li class="item">
+                                    <a href="#" target="_self">
+                                        <img src="@Url.Content("~/images/clint.jpg")" alt="">
+                                    </a>
+                                </li>
+                                <li class="item">
+                                    <a href="#" target="_self">
+                                        <img src="@Url.Content("~/images/clint.jpg")" alt="">
+                                    </a>
+                                </li>
+                                <li class="item">
+                                    <a href="#" target="_self">
+                                        <img src="@Url.Content("~/images/clint.jpg")" alt="">
+                                    </a>
+                                </li>
+                                <li class="item">
+                                    <a href="#" target="_self">
+                                        <img src="@Url.Content("~/images/clint.jpg")" alt="">
+                                    </a>
+                                </li>
+                                <li class="item">
+                                    <a href="#" target="_self">
+                                        <img src="@Url.Content("~/images/clint.jpg")" alt="">
+                                    </a>
+                                </li>
+                                <li class="item">
+                                    <a href="#" target="_self">
+                                        <img src="@Url.Content("~/images/clint.jpg")" alt="">
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="site-footer-bottom">
+                <div class="container">
+                    <div class="row">
+                        <div class="copyrights-col-left col-md-6 col-sm-6">
+                            <p>2016 © <a href="http://mariainfotech.in/">MARIA Infotech Pvt. Ltd. </a>All Rights Reserved.</p>
+                        </div>
+                        <div class="copyrights-col-right col-md-6 col-sm-6">
+                            <div class="social-icons">
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!-- End Site Footer -->
+            <a id="back-to-top"><i class="fa fa-angle-double-up"></i></a>
+        </div>
+
+</body>
+</html>
+<!-- Dynamic page generated in 4.267 seconds. -->
+<!-- Cached page generated by WP-Super-Cache on 2016-03-08 08:21:52 -->
+<!-- super cache -->

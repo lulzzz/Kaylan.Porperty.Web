@@ -6,10 +6,10 @@ namespace Kalyan.Property.Infrastructure.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class Country
+    public partial class Countries
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Country()
+        public Countries()
         {
             States = new HashSet<State>();
         }

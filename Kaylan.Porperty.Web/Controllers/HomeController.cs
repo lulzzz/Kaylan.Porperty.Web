@@ -10,27 +10,69 @@ namespace Kaylan.Porperty.Web.Controllers
 
         public ActionResult Index()
         {
-            using (unitOfWork = new UnitOfWork())
-            {
-                unitOfWork.Repository<Country>().Add(new Country() { Name = "England" });
-                var result = unitOfWork.Commit();
-            }
+            //using (unitOfWork = new UnitOfWork())
+            //{
+            //    unitOfWork.Repository<Countries>().Add(new Countries() { Name = "England" });
+            //    var result = unitOfWork.Commit();
+            //}
 
             return View();
         }
+
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Your app description page.";
 
             return View();
         }
 
+        public ActionResult services()
+        {
+            ViewBag.Message = "Your app description page.";
+
+            return View();
+        }
+        [HttpGet]
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
 
             return View();
         }
+
+        public ActionResult Admin()
+        {
+            ViewBag.Message = "Your request page.";
+
+            return View();
+        }
+
+        public ActionResult Membership()
+        {
+            ViewBag.Message = "Your request page.";
+
+            return View();
+        }
+        public ActionResult Master()
+        {
+            ViewBag.Message = "Your request page.";
+
+            return View();
+        }
+
+        //public ActionResult About()
+        //{
+        //    ViewBag.Message = "Your application description page.";
+
+        //    return View();
+        //}
+
+        //public ActionResult Contact()
+        //{
+        //    ViewBag.Message = "Your contact page.";
+
+        //    return View();
+        //}
     }
 }
