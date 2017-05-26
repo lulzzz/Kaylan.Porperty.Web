@@ -9,7 +9,12 @@ namespace Kaylan.Porperty.Web.Controllers
     public class PropertyTypeController : Controller
     {
         // GET: PropertyType
-        public ActionResult Index()
+        public ActionResult CreatePropertyType()
+        {
+            return View();
+        }
+
+        public ActionResult CreatePropertyTypeDetails()
         {
             return View();
         }

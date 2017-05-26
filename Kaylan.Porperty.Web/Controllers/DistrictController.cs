@@ -9,7 +9,11 @@ namespace Kaylan.Porperty.Web.Controllers
     public class DistrictController : Controller
     {
         // GET: District
-        public ActionResult Index()
+        public ActionResult CreateDistrict()
+        {
+            return View();
+        }
+        public ActionResult CreateDistrictDetails()
         {
             return View();
         }

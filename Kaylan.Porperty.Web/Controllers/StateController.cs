@@ -9,7 +9,11 @@ namespace Kaylan.Porperty.Web.Controllers
     public class StateController : Controller
     {
         // GET: State
-        public ActionResult Index()
+        public ActionResult CreateState()
+        {
+            return View();
+        }
+        public ActionResult CreateStateDetails()
         {
             return View();
         }

@@ -9,7 +9,11 @@ namespace Kaylan.Porperty.Web.Controllers
     public class CityController : Controller
     {
         // GET: City
-        public ActionResult Index()
+        public ActionResult CreateCity()
+        {
+            return View();
+        }
+        public ActionResult CreateCityDetails()
         {
             return View();
         }

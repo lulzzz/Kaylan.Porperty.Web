@@ -9,7 +9,7 @@ namespace Kaylan.Porperty.Web.Controllers
     public class PropertyDetailController : Controller
     {
         // GET: PropertyDetail
-        public ActionResult Index()
+        public ActionResult CreatePropertyDetails()
         {
             return View();
         }

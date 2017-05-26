@@ -9,7 +9,11 @@ namespace Kaylan.Porperty.Web.Controllers
     public class CountryController : Controller
     {
         // GET: Country
-        public ActionResult Index()
+        public ActionResult CreateCountry()
+        {
+            return View();
+        }
+        public ActionResult CreateCountryDetails()
         {
             return View();
         }

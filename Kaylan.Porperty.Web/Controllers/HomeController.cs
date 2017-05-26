@@ -61,6 +61,14 @@ namespace Kaylan.Porperty.Web.Controllers
             return View();
         }
 
+
+        public ActionResult AllUser()
+        {
+            ViewBag.Message = "Your request page.";
+
+            return View();
+        }
+
         //public ActionResult About()
         //{
         //    ViewBag.Message = "Your application description page.";

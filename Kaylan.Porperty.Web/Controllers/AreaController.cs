@@ -9,7 +9,12 @@ namespace Kaylan.Porperty.Web.Controllers
     public class AreaController : Controller
     {
         // GET: Area
-        public ActionResult Index()
+        public ActionResult CreateArea()
+        {
+            return View();
+        }
+
+        public ActionResult CreateAreaDetails()
         {
             return View();
         }

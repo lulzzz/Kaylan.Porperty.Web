@@ -9,7 +9,11 @@ namespace Kaylan.Porperty.Web.Controllers
     public class LoginController : Controller
     {
         // GET: Login
-        public ActionResult Index()
+        public ActionResult CreateLogin()
+        {
+            return View();
+        }
+        public ActionResult CreateLoginDetails()
         {
             return View();
         }

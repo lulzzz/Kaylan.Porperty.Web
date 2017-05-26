@@ -1,0 +1,970 @@
+﻿@model Kalyan.Property.Infrastructure.Models.PropertyDetail
+
+@{
+    ViewBag.Title = "CreatePropertyDetails";
+}
+
+
+
+<!DOCTYPE HTML>
+<html lang="en-US" class="no-js">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Kalyan Property World</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+
+    <!-- CSS -->
+    <link rel="alternate" type="application/rss+xml" title="Real Spaces - Wordpress Real Estate Theme &raquo; Feed" href="http://preview.imithemes.com/real-spaces-wp/feed/" />
+    <link rel="alternate" type="application/rss+xml" title="Real Spaces - Wordpress Real Estate Theme &raquo; Comments Feed" href="http://preview.imithemes.com/real-spaces-wp/comments/feed/" />
+    <link rel="alternate" type="application/rss+xml" title="Real Spaces - Wordpress Real Estate Theme &raquo; Home Version 1 Comments Feed" href="http://preview.imithemes.com/real-spaces-wp/version-1/feed/" />
+    <link rel='stylesheet' href='@Url.Content("~/content/css/cf8bac.css")' type='text/css' media='all' />
+    <link rel='stylesheet' href='@Url.Content("~/content/css/dsidx-icons.css")' type='text/css' media='all' />
+    <link rel='stylesheet' href='@Url.Content("~/content/css/client.css")' type='text/css' media='all' />
+    <link rel='stylesheet' href='@Url.Content("~/content/css/client1.css")' type='text/css' media='all' />
+    <link rel='stylesheet' href='@Url.Content("~/content/css/settings.css")' type='text/css' media='all' />
+    <link rel='stylesheet' href='@Url.Content("~/content/css/bootstrap.css")' type='text/css' media='all' />
+    <link rel='stylesheet' href='@Url.Content("~/content/css/animations.css")' type='text/css' media='all' />
+    <link rel='stylesheet' href='@Url.Content("~/content/font-awesome-4.5.0/css/font-awesome.min.css")' type='text/css' media='all' />
+    <link rel='stylesheet' href='@Url.Content("~/content/css/style.css")' type='text/css' media='all' />
+    <link rel='stylesheet' href='@Url.Content("~/content/css/style2.css")' type='text/css' media='all' />
+    <link rel='stylesheet' href='@Url.Content("~/content/css/prettyPhoto.css")' type='text/css' media='all' />
+    <link rel='stylesheet' href='@Url.Content("~/content/css/owl.carousel.css")' type='text/css' media='all' />
+    <link rel='stylesheet' href='@Url.Content("~/content/css/owl.theme.css")' type='text/css' media='all' />
+    <link rel="stylesheet" href="@Url.Content("~/content/css/color1.css")" type="text/css">
+
+    <!-- Scripts -->
+    <script type='text/javascript' src="@Url.Content("~/scripts/jquery.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/jquery-migrate.min.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/23a23f.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/ajax-login-script.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/jquery.themepunch.tools.min.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/jquery.themepunch.revolution.min.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/modernizr.js")"></script>
+
+    <script type='text/javascript' src="@Url.Content("~/scripts/favorite.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/newslatter.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/prettyphoto.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/owl.carousel.min.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/jquery.flexslider.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/helper-plugins.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/bootstrap.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/waypoints.js")"></script>
+    <!--    <script type='text/javascript' src='js/js.js'></script>-->
+    <script type='text/javascript'>
+        /* <![CDATA[ */
+        var urlajax = { "url": "http:\/\/preview.imithemes.com\/real-spaces-wp\/wp-admin\/admin-ajax.php", "tmpurl": "http:\/\/preview.imithemes.com\/real-spaces-wp\/wp-content\/themes\/real-spaces", "is_property": "", "sticky": "1", "is_contact": "", "home_url": "http:\/\/preview.imithemes.com\/real-spaces-wp", "is_payment": "", "register_url": "http:\/\/preview.imithemes.com\/real-spaces-wp\/register-as-agent\/", "is_register": "", "is_login": "", "is_submit_property": "", "basic": "Basic", "advanced": "Advanced" };
+        /* ]]> */
+    </script>
+    <script type='text/javascript' src='@Url.Content("~/scripts/init.js")'></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/profile_validate.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/comment-reply.min.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/wp-embed.min.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/core.min.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/widget.min.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/position.min.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/menu.min.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/autocomplete.min.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/autocomplete.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/jquery_cookie.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/script.js")"></script>
+
+</head>
+<body class="archive author author-mia-kennedy author-2 ">
+    <!--[if lt IE 7]>
+        <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+    <![endif]-->
+    <div class="body">
+        <!-- Start Site Header -->
+        <header class="site-header">
+            <div class="top-header hidden-xs">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12">
+                            <ul class="horiz-nav pull-right">
+                                <li class="dropdown">
+                                    <a href="../Home/Admin">Admin</a>
+                                    <i class="fa fa-user"></i>
+                                <li class="dropdown">
+                                    <a href="/Login/CreateLogin">Logout</a>
+                                    <i class="fa fa-user"></i>
+
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#" title="Favorite Properties">Favorite Properties</a></li>
+                                        <li><a href="#" title="Saved Searches">Saved Searches</a></li>
+                                        <li class="register"><a href="#" title="My Profile">My Profile</a></li>
+                                        <li class="login"><a href="#" title="Logout">Logout</a></li>
+                                    </ul>
+                                </li>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="/User/CreateUser">Register</a>
+                                    <i class="fa fa-user"></i>
+
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="middle-header">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-2 col-sm-8 col-xs-8">
+                            <h1 class="logo">
+                                <a href="#" title="Real Spaces - Wordpress Real Estate Theme">
+                                    <img src="@Url.Content("~/images/sample-10.png")" alt="Logo">
+                                </a>
+                            </h1>
+                        </div>
+
+                        <div class="col-md-5 col-sm-4 col-xs-4">
+
+                            <div class="contact-info-blocks hidden-sm hidden-xs">
+                                <div>
+                                    <i class="fa fa-phone"></i>Free Line For You
+                                    <span>0123456789</span>
+                                </div>
+                                <div>
+                                    <i class="fa fa-envelope"></i>Email Us
+                                    <span>example@gmail.com</span>
+                                </div>
+                                <!-- <div>
+                                        <i class="fa fa-clock-o"></i>Working Hours
+                                <span>09:00 to 17:00</span>
+                                    </div>-->
+                            </div>
+                            <a href="#" class="visible-sm visible-xs menu-toggle"><i class="fa fa-bars"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-menu-wrapper">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <nav class="navigation">
+                                <ul id="menu-main-menu" class="sf-menu">
+                                    <li id="menu-item-208" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-208">
+                                        @Html.ActionLink("Account Summary", "CreateLoginDetails", "Login")
+                                    </li>
+                                    <li id="menu-item-209" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-209"> @Html.ActionLink("Profile", "Profile1", "User")</li>
+                                    @*                                   <li id="menu-item-225" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-225"> @Html.ActionLink("Properties","Properties","Home")</li>
+                                        <li id="menu-item-283" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-283"><a href="/PropertyRequest/CreatePropertyRequest">PropertyRequest</a></li>*@
+                                    <li id="menu-item-226" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-226"> <a href="/PropertyDetail/CreatePropertyDetail">List your property</a></li>
+                                    @*      <li id="menu-item-209" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-209"> @Html.ActionLink("Membership", "membership", "Home")</li>
+                                        <li id="menu-item-240" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-240">@Html.ActionLink("Contact", "Contact", "Home")</li>*@
+
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- End Site Header -->
+        <!-- Site Showcase -->
+        <div class="site-showcase">
+            <!-- Start Page Header -->
+            <div class="parallax page-header" style="background-image: url(/../images/slide31.jpg);">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1>List your property</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Page Header -->
+        </div>
+        <!-- Start Content -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+
+        <script type="text/javascript">
+               $(document).ready(function () {
+                   $('input[type="checkbox"]').change(function () {
+                       var name = $(this).val();
+                   });
+               });
+
+               function Disable(type)
+               {
+                   if (type == "SALE")
+                   {
+                       $("#rent").attr("disabled", true);
+                       $("#mgmt").attr("disabled", true);
+                   }
+                   else if (type == "rent") {
+                       $("#sale").attr("disabled", true);
+                       $("#mgmt").attr("disabled", true);
+                   }
+                   else {
+                       $("#rent").attr("disabled", true);
+                       $("#sale").attr("disabled", true);
+                   }
+               }
+
+
+               function declareAmenties(type) {
+                   if (type == 'InTown') {
+                       document.getElementById("PropertyDetails_Amenties").id = "Intown";
+                   }
+                   else (type == 'HouseKeeping')
+                   document.getElementById("PropertyDetails_Amenties").value = "HouseKeeping";
+
+
+                   if (type == 'SwimmingPool') {
+                       document.getElementById("PropertyDetails_Amenties").value = "SwimmingPool";
+                   }
+                   else (type == 'Balcony')
+                   document.getElementById("PropertyDetails_Amenties").value = "Balcony";
+
+                   if (type == 'Gymnasium') {
+                       document.getElementById("PropertyDetails_Amenties").value = "Gymnasium";
+                   }
+                   else (type = 'CoveredParking')
+                   document.getElementById("PropertyDetails_Amenties").value = "CoveredParking";
+
+                   if (type == 'Jacuzzi') {
+                       document.getElementById("PropertyDetails_Amenties").value = "Jacuzzi";
+                   }
+                   else (type == 'LaundryRoom')
+                   document.getElementById("PropertyDetails_Amenties").value = "LaundryRoom";
+
+                   if (type == 'FullyFurnished') {
+                       document.getElementById("PropertyDetails_Amenties").value = "FullyFurnished";
+                   }
+                   else (type == 'Telephone')
+                   document.getElementById("PropertyDetails_Amenties").value = "Telephone";
+
+                   if (type == 'SatteliteChannels') {
+                       document.getElementById("PropertyDetails_Amenties").value = "SatteliteChannels";
+                   }
+                   else (type == 'Iternet')
+                   document.getElementById("PropertyDetails_Amenties").value = "Iternet";
+
+                   if (type == 'HomeElectrics') {
+                       document.getElementById("PropertyDetails_Amenties").value = "HomeElectrics";
+                   }
+                   else (type == 'Elevator')
+                   document.getElementById("PropertyDetails_Amenties").value = "Elevator";
+
+                   if (type == 'Elevator') {
+                       document.getElementById("PropertyDetails_Amenties").value = "Elevator";
+                   }
+                   else (type == 'Security')
+                   document.getElementById("PropertyDetails_Amenties").value = "Security";
+               }
+        </script>
+
+        <script type="text/javascript">
+
+             function declareBedRoom(type) {
+                 if (type == '1') {
+                     document.getElementById("BedRoom").value = "1";
+                 }
+                 else (type == '2')
+                 document.getElementById("BedRoom").value = "2";
+
+
+                 if (type == '3') {
+                     document.getElementById("BedRoom").value = "3";
+                 }
+                 else (type == '4')
+                 document.getElementById("BedRoom").value = "4";
+
+                 if (type == '4') {
+                     document.getElementById("BedRoom").value = "4";
+                 }
+                 e/lse (type == '5')
+                 document.getElementById("BedRoom").value = "5";
+
+
+             }
+        </script>
+        <script type="text/javascript">
+
+                 function declareBathRoom(type) {
+                     if (type == '1') {
+                         document.getElementById("BathRoom").value = "1";
+                     }
+                     else (type == '2')
+                     document.getElementById("BathRoom").value = "2";
+
+
+                     if (type == '3') {
+                         document.getElementById("BathRoom").value = "3";
+                     }
+                     else (type == '4')
+                     document.getElementById("BathRoom").value = "4";
+
+                     if (type == '4') {
+                         document.getElementById("BathRoom").value = "4";
+                     }
+                     else (type == '5')
+                     document.getElementById("BathRoom").value = "5";
+
+
+                 }
+        </script>
+        <script type="text/javascript">
+                 function declareParking(type) {
+                     if (type == '1') {
+                         document.getElementById("Parking").value = "1";
+                     }
+                     else (type == '2')
+                     document.getElementById("Parking").value = "2";
+
+
+                     if (type == '3') {
+                         document.getElementById("Parking").value = "3";
+                     }
+                     else (type == '4')
+                     document.getElementById("Parking").value = "4";
+
+                 }
+
+
+        </script>
+        <script>
+            function ShowImage(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        $('#blah')
+                            .attr('src', e.target.result)
+                            .width(150)
+                            .height(100);
+                    };
+
+                    reader.readAsDataURL(input.files[0]);
+                }
+
+            }
+        </script>
+        <script>
+            function ShowImage1(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        $('#blah1')
+                            .attr('src', e.target.result)
+                            .width(150)
+                            .height(100);
+                    };
+
+                    reader.readAsDataURL(input.files[0]);
+                }
+
+            }
+        </script>
+        <script>
+              function ShowImage2(input) {
+                  if (input.files && input.files[0]) {
+                      var reader = new FileReader();
+
+                      reader.onload = function (e) {
+                          $('#blah2')
+                              .attr('src', e.target.result)
+                              .width(150)
+                              .height(100);
+                      };
+
+                      reader.readAsDataURL(input.files[0]);
+                  }
+              }
+        </script>
+
+        @*   <script type="text/javascript">
+                $(document).ready(function()
+                {
+                $("input#btnsubmit").click(function() {
+                    var id=[];
+                    $("input[name=a'InTown']:checked").each(function() {
+                    id.push($(this).val());
+                    });
+                    $("#HiddenFieldId").val(id);
+                });
+                });
+            </script>*@
+
+        <script type="text/javascript">
+         $(document).ready(function () {
+             $('input[type="checkbox"]').on('change', function () {
+                 if ($("#amenitiess").val() == "") {
+                     var vals = this.value;
+                 }
+                 else {
+                     var vals = $("#amenitiess").val() + "," + this.value;
+                 }
+                 $("#amenitiess").val(vals);
+                 $("#PropertyDetails_Amenties").val(vals);
+             })
+         });
+        </script>
+
+        @using (Html.BeginForm("CreatePropertyDetail", "PropertyDetail", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        //@using (Html.BeginForm("CreatePropertyDetail", "PropertyDetail", FormMethod.Post, new { enctype = "multipart/form-data"}))
+        {
+            <div class="main" role="main">
+                <div id="content" class="content full">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-9">
+                                <div class="single-agent">
+
+
+                                    @Html.HiddenFor(model => model.PropertyDetails.Amenties)
+
+                                    <!--	  <div class="col-md-6 col-sm-6">
+                                            <img src="http://preview.imithemes.com/real-spaces-wp/wp-content/uploads/2015/01/agent41.jpg" alt="Mia Kennedy" class="img-thumbnail">
+                                      </div>-->
+                                    <div class="col-md-12">
+                                        <form>
+                                            <div class="block-heading" id="details">
+                                                <a href="#additionalinfo" class="btn btn-sm btn-default pull-right">Additional Info <i class="fa fa-chevron-down"></i></a>
+                                                <h4>
+                                                    <span class="heading-icon"> <img src="@Url.Content("~/images/faa.png")" /></span>
+                                                    Property Details
+                                                </h4>
+                                            </div>
+
+                                            <div class="padding-as25 margin-20 lgray-bg">
+                                                <div class="row">
+                                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                                                        @Html.TextBoxFor(model => model.PropertyDetails.PropertyName, new { @placeholder = "PropertyName", @class = "form-control", id = "PropertyName", @autocomplete = "off" })
+                                                        @Html.ValidationMessageFor(model => model.PropertyDetails.PropertyName, null, new { style = "color:red" })
+                                                        @{
+                                                            if (ViewBag.error != null)
+                                                            {
+                                                                <font color="red">  @Html.Raw(ViewBag.error)</font>
+                                                            }
+                                                        }
+
+                                                    </div>
+
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                        @Html.TextBoxFor(model => model.PropertyDetails.Address, new { @placeholder = "Address", @class = "form-control", id = "Address", @autocomplete = "off" })
+                                                        @Html.ValidationMessageFor(model => model.PropertyDetails.Address, null, new { style = "color:red" })
+                                                        @{
+                                                            if (ViewBag.error != null)
+                                                            {
+                                                                <font color="red">  @Html.Raw(ViewBag.error)</font>
+                                                            }
+                                                        }
+
+
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 submit-description">
+                                                        @Html.TextBoxFor(model => model.PropertyDetails.PropertyDescription, new { @placeholder = "PropertyDescription", @class = "form-control", id = "PropertyDescription", @autocomplete = "off" })
+                                                        @Html.ValidationMessageFor(model => model.PropertyDetails.PropertyDescription, null, new { style = "color:red" })
+                                                        @{
+                                                            if (ViewBag.error != null)
+                                                            {
+                                                                <font color="red">  @Html.Raw(ViewBag.error)</font>
+                                                            }
+                                                        }
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="block-heading" id="additionalinfo">
+                                                <a href="#amenities" class="btn btn-sm btn-default pull-right">Enter Amenities <i class="fa fa-chevron-down"></i></a>
+                                                <h4><span class="heading-icon"><img src="@Url.Content("~/images/faa.png")" /></span>Additional Info</h4>
+                                            </div>
+                                            <div class="padding-as25 margin-20 lgray-bg">
+                                                <div class="row">
+
+                                                    <div class="col-md-4 col-sm-4 submit-property-type">
+                                                        @Html.DropDownListFor(model => model.PropertyDetails.PropertyTypees, new SelectList(Model.PropertyTypelist, "PropertyTypeId", "PropertyTypees"), "Select PropertyTypes", new { @id = "PropertyTypes", @class = "form-control" })
+                                                        @Html.ValidationMessageFor(model => model.PropertyDetails.PropertyTypees, null, new { style = "color:red" })
+
+                                                        @{
+                                                            if (ViewBag.error != null)
+                                                            {
+                                                                <font color="red">  @Html.Raw(ViewBag.error)</font>
+                                                            }
+                                                        }
+
+
+                                                    </div>
+                                                    <div class="col-md-4 col-sm-4 submit-contract-type">
+                                                        @Html.DropDownListFor(model => model.PropertyDetails.ContractType, new List<SelectListItem> { new SelectListItem { Text = "Sale" }, new SelectListItem { Text = "Rent" } }, "Select ContractType", new { @class = "form-control" })
+
+                                                        @Html.ValidationMessageFor(model => model.PropertyDetails.ContractType, null, new { Style = "color:red" })
+                                                        @{
+                                                            if (ViewBag.error != null)
+                                                            {
+                                                                <font color="red">
+                                                                    @Html.Raw(ViewBag.error)
+
+                                                            </font>
+                                                            }
+                                                        }
+                                                    </div>
+                                                    <div class="col-md-4 col-sm-4">
+
+                                                        @Html.TextBoxFor(model => model.PropertyDetails.Price, new { @placeholder = "Price", @class = "form-control", id = "Price", @autocomplete = "off" })
+                                                        @Html.ValidationMessageFor(model => model.PropertyDetails.Price, null, new { style = "color:red" })
+                                                        @{
+                                                            if (ViewBag.error != null)
+                                                            {
+                                                                <font color="red">  @Html.Raw(ViewBag.error)</font>
+                                                            }
+                                                        }
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-4 col-sm-4">
+                                                        @Html.DropDownListFor(model => model.PropertyDetails.Bedroom, new List<SelectListItem> { new SelectListItem { Text = "1" }, new SelectListItem { Text = "2" }, new SelectListItem { Text = "3" }, new SelectListItem { Text = "4" }, new SelectListItem { Text = "5" } }, "Select BedRoom", new { @class = "form-control" })
+                                                        @Html.ValidationMessageFor(model => model.PropertyDetails.Bedroom, null, new { Style = "color:red" })
+                                                        @{
+                                                            if (ViewBag.error != null)
+                                                            {
+                                                                <font color="red">  @Html.Raw(ViewBag.error)</font>
+                                                            }
+                                                        }
+
+
+                                                    </div>
+                                                    <div class="col-md-4 col-sm-4">
+                                                        @Html.DropDownListFor(model => model.PropertyDetails.Bathroom, new List<SelectListItem> { new SelectListItem { Text = "1" }, new SelectListItem { Text = "2" }, new SelectListItem { Text = "3" }, new SelectListItem { Text = "4" }, new SelectListItem { Text = "5" } }, "Select Bathroom", new { @class = "form-control" })
+                                                        @Html.ValidationMessageFor(model => model.PropertyDetails.Bathroom, null, new { Style = "color:red" })
+                                                        @{
+                                                            if (ViewBag.error != null)
+                                                            {
+                                                                <font color="red">  @Html.Raw(ViewBag.error)</font>
+                                                            }
+                                                        }
+
+                                                    </div>
+                                                    <div class="col-md-4 col-sm-4">
+                                                        @Html.DropDownListFor(model => model.PropertyDetails.Parking, new List<SelectListItem> { new SelectListItem { Text = "1" }, new SelectListItem { Text = "2" }, new SelectListItem { Text = "3" } }, "Select Parking", new { @class = "form-control" })
+                                                        @Html.ValidationMessageFor(model => model.PropertyDetails.Parking, null, new { Style = "color:red" })
+                                                        @{
+                                                            if (ViewBag.error != null)
+                                                            {
+                                                                <font color="red">  @Html.Raw(ViewBag.error)</font>
+                                                            }
+                                                        }
+
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-3 col-sm-3">
+                                                        <label>Property For</label>
+                                                    </div>
+                                                    <div class="col-md-3 col-sm-3 submit-image">
+                                                        <input name="_for" type="radio" id="sale" value="Sale" onclick="Disable('SALE')"> Sale
+                                                    </div>
+                                                    <div class="col-md-3 col-sm-3 submit-image">
+                                                        <input name="_for" type="radio" id="rent" value="Rent" onclick="Disable('rent')"> Rent
+                                                    </div>
+                                                    <div class="col-md-3 col-sm-3 submit-image">
+                                                        <input name="_for" type="radio" id="mgmt" value="Management" onclick="Disable('mgmt')"> Management
+                                                    </div>
+                                                </div>
+                                                <br>
+                                                <div class="row">
+                                                    <div class="col-md-3 col-sm-3">
+                                                        <label>Upload Images</label>
+                                                        <p>Upload images that are best clicked for better appearance of your property</p>
+                                                    </div>
+                                                    <div class="col-md-3 col-sm-3 submit-image">
+                                                        <div class="image-placeholder"><img id="blah" src="#" alt="600*400(.jpg)" /></div>
+                                                        @*<input type="file" name="image1">*@
+
+                                                        <input type="file" Onchange="ShowImage(this)" name="files" value="" multiple="multiple" />
+                                                        @*<input type="submit" value="Upload You Image"  title="Uplad"/>*@
+                                                        <div style="color:Red;font-size:14px">@ViewBag.Message</div>
+
+                                                    </div>
+
+                                                    <div class="col-md-3 col-sm-3 submit-image">
+                                                        <div class="image-placeholder"><img id="blah1" src="#" alt="600*400(.jpg)" /></div>
+                                                        @*<input type="file" name="image1">*@
+                                                        <input type="file" onchange="ShowImage1(this)" name="files1" value="" multiple="multiple" />
+                                                        @*<input type="submit" value="Upload You Image"  title="Uplad"/>*@
+                                                        <div style="color:Red;font-size:14px">@ViewBag.Message</div>
+                                                    </div>
+                                                    <div class="col-md-3 col-sm-3 submit-image">
+                                                        <div class="image-placeholder"><img id="blah2" src="#" alt="600*400(.jpg)" /></div>
+                                                        @*<input type="file" name="image1">*@
+                                                        <input type="file" onchange="ShowImage2(this)" name="files2" value="" multiple="multiple" />
+                                                        @*<input type="submit" value="Upload You Image"  title="Uplad"/>*@
+                                                        <div style="color:Red;font-size:14px">@ViewBag.Message</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="block-heading" id="amenities">
+                                                <a href="#seller" class="btn btn-sm btn-default pull-right">Seller Information <i class="fa fa-chevron-down"></i></a>
+                                                <h4><span class="heading-icon"><img src="@Url.Content("~/images/faa.png")" /></span>Amenities</h4>
+                                            </div>
+                                            <div class="padding-as25 margin-20 lgray-bg">
+                                                <div class="row">
+
+                                                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                                        <label class="checkbox">
+                                                            <input type="checkbox" value="intown">IN TOWN
+                                                        </label>
+                                                    </div>
+
+                                                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                                        <label class="checkbox">
+                                                            <input type="checkbox" value="housekeeping">Housekeeping
+                                                        </label>
+                                                    </div>
+                                                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                                        <label class="checkbox">
+                                                            <input type="checkbox" value="Security">Security
+                                                        </label>
+                                                    </div>
+                                                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                                        <label class="checkbox">
+                                                            <input type="checkbox" Value="Elevator">Elevator
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                                        <label class="checkbox">
+                                                            <input type="checkbox" value="Swimming Pool">Swimming Pool
+                                                        </label>
+                                                    </div>
+                                                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                                        <label class="checkbox">
+                                                            <input type="checkbox" value="Balcony">Balcony
+                                                        </label>
+                                                    </div>
+                                                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                                        <label class="checkbox">
+                                                            <input type="checkbox" value="Gymnasium">Gymnasium
+                                                        </label>
+                                                    </div>
+                                                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                                        <label class="checkbox">
+                                                            <input type="checkbox" value="Covered Parking">Covered Parking
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                                        <label class="checkbox">
+                                                            <input type="checkbox" value="Jacuzzi">Jacuzzi
+                                                        </label>
+                                                    </div>
+                                                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                                        <label class="checkbox">
+                                                            <input type="checkbox" value="Laundary Room">Laundary Room
+                                                        </label>
+                                                    </div>
+                                                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                                        <label class="checkbox">
+                                                            <input type="checkbox" value="Fully Furnished">Fully Furnished
+                                                        </label>
+                                                    </div>
+                                                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                                        <label class="checkbox">
+                                                            <input type="checkbox" value="Telephone">Telephone
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                                        <label class="checkbox">
+                                                            <input type="checkbox" value="Satellite Channels">Satellite Channels
+                                                        </label>
+                                                    </div>
+                                                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                                        <label class="checkbox">
+                                                            <input type="checkbox" value="Internet">Internet
+                                                        </label>
+                                                    </div>
+                                                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                                        <label class="checkbox">
+                                                            <input type="checkbox" value="Home Electrics">Home Electrics
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            @Html.HiddenFor(model => model.PropertyDetails.ContractType)
+                                            <div class="block-heading" id="seller">
+                                                <a href="#submit-property" class="btn btn-sm btn-default pull-right">Submit Property <i class="fa fa-chevron-down"></i></a>
+                                                <h4><span class="heading-icon"><img src="@Url.Content("~/images/faa.png")" /></span>Seller Information</h4>
+                                            </div>
+                                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                            <div class="padding-as25 margin-20 lgray-bg">
+
+                                                <div class="row">
+                                                    <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                                                        @Html.TextBoxFor(model => model.PropertyDetails.FullName, new { @placeholder = "FullName", @class = "form-control", id = "FullName", @autocomplete = "off" })
+                                                        @Html.ValidationMessageFor(model => model.PropertyDetails.FullName, null, new { style = "color:red" })
+                                                        @{
+                                                            if (ViewBag.error != null)
+                                                            {
+                                                                <font color="red">  @Html.Raw(ViewBag.error)</font>
+                                                            }
+                                                        }
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-4 col-sm-4">
+                                                        @Html.TextBoxFor(model => model.PropertyDetails.Email, new { @placeholder = "Email", @class = "form-control", id = "Email", @autocomplete = "off" })
+                                                        @Html.ValidationMessageFor(model => model.PropertyDetails.Email, null, new { style = "color:red" })
+                                                        @{
+                                                            if (ViewBag.error != null)
+                                                            {
+                                                                <font color="red">  @Html.Raw(ViewBag.error)</font>
+                                                            }
+                                                        }
+
+                                                    </div>
+                                                    <div class="col-md-4 col-sm-4">
+                                                        @Html.TextBoxFor(model => model.PropertyDetails.Phone, new { @placeholder = "Phone", @class = "form-control", id = "Phone", @autocomplete = "off" })
+                                                        @Html.ValidationMessageFor(model => model.PropertyDetails.Phone, null, new { style = "color:red" })
+                                                        @{
+                                                            if (ViewBag.error != null)
+                                                            {
+                                                                <font color="red">  @Html.Raw(ViewBag.error)</font>
+                                                            }
+                                                        }
+
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 submit-description">
+                                                        @Html.TextBoxFor(model => model.PropertyDetails.Comments, new { @placeholder = "Comments", @class = "form-control", id = "Comments", @autocomplete = "off" })
+                                                        @Html.ValidationMessageFor(model => model.PropertyDetails.Comments, null, new { style = "color:red" })
+                                                        @{
+                                                            if (ViewBag.error != null)
+                                                            {
+                                                                <font color="red">  @Html.Raw(ViewBag.error)</font>
+                                                            }
+                                                        }
+
+                                                    </div>
+                                                </div>
+                                                <br>
+                                                <div class="row">
+                                                    <div class="text-align-center" id="submit-property">
+                                                        <button type="submit" name="submit" class="btn btn-primary btn-lg"><i class="fa fa-check"></i> Submit Now</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                        </form>
+
+
+                                    </div>
+
+
+
+
+
+
+
+                                </div>
+                                <div class="spacer-20"></div>
+                                <!-- Start Related Properties -->
+                                <!--  <h3>Latest properties listed by <a href="#">Mia Kennedy</a>
+                                    <a class="btn btn-primary btn-sm pull-right" href="http://preview.imithemes.com/real-spaces-wp/full-width-grid/?agent=2">All properties<i class="fa fa-long-arrow-right"></i>
+                                    </a>
+                                </h3>
+                                <hr>-->
+                                <!--       <div class="property-grid">
+                                    <ul class="grid-holder col-3">
+                                        <li class="grid-item type-rent">
+                                            <div class="property-block">
+                                                <a href="http://preview.imithemes.com/real-spaces-wp/?property=85-west-street" class="property-featured-image">
+                                                    <img src="http://preview.imithemes.com/real-spaces-wp/wp-content/uploads/2014/06/slide12-600x400.jpg" class="attachment-600-400-size size-600-400-size wp-post-image" alt="slide1" srcset="http://preview.imithemes.com/real-spaces-wp/wp-content/uploads/2014/06/slide12-600x400.jpg 600w, http://preview.imithemes.com/real-spaces-wp/wp-content/uploads/2014/06/slide12-150x100.jpg 150w" sizes="(max-width: 600px) 100vw, 600px" />
+                                                    <span class="images-count"><i class="fa fa-picture-o"></i>3</span> <span class="badges badge-rent">Rent</span> </a>
+                                                <div class="property-info">
+                                                    <h4><a href="http://preview.imithemes.com/real-spaces-wp/?property=85-west-street">85 West Street</a></h4>
+                                                    <a class="accent-color" data-original-title="" data-toggle="tooltip" style="cursor: default; text-decoration: none;" href="javascript:void(0);"><span class="location sort_by_location">Wyoming</span></a><br>
+                                                    <div class="price"><strong>&#36;</strong><span>31000</span></div>
+                                                </div>
+                                                <div class="property-amenities clearfix"><span class="area"><strong>5000</strong>Area</span> <span class="baths"><strong>5</strong>Baths</span> <span class="beds"><strong>4</strong>Beds</span> <span class="parking"><strong>3</strong>Parking</span> </div>
+                                            </div>
+                                        </li>
+                                        <li class="grid-item type-rent">
+                                            <div class="property-block">
+                                                <a href="http://preview.imithemes.com/real-spaces-wp/?property=11-times-square" class="property-featured-image">
+                                                    <img src="http://preview.imithemes.com/real-spaces-wp/wp-content/uploads/2014/06/slide22-600x400.jpg" class="attachment-600-400-size size-600-400-size wp-post-image" alt="slide2" srcset="http://preview.imithemes.com/real-spaces-wp/wp-content/uploads/2014/06/slide22-600x400.jpg 600w, http://preview.imithemes.com/real-spaces-wp/wp-content/uploads/2014/06/slide22-150x100.jpg 150w" sizes="(max-width: 600px) 100vw, 600px" />
+                                                    <span class="images-count"><i class="fa fa-picture-o"></i>3</span> <span class="badges badge-rent">Rent</span> </a>
+                                                <div class="property-info">
+                                                    <h4><a href="http://preview.imithemes.com/real-spaces-wp/?property=11-times-square">11 Times Square</a></h4>
+                                                    <a class="accent-color" data-original-title="" data-toggle="tooltip" style="cursor: default; text-decoration: none;" href="javascript:void(0);"><span class="location sort_by_location">Arkansas</span></a><br>
+                                                    <div class="price"><strong>&#36;</strong><span>40000</span></div>
+                                                </div>
+                                                <div class="property-amenities clearfix"><span class="area"><strong>5000</strong>Area</span> <span class="baths"><strong>4</strong>Baths</span> <span class="beds"><strong>5</strong>Beds</span> <span class="parking"><strong>4</strong>Parking</span> </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>-->
+                            </div>
+                            <!-- Start Sidebar -->
+                            <div class="sidebar right-sidebar col-md-3">
+                                <div id="search_properties-3" class="widget sidebar-widget widget_search_properties">
+                                    <div class="sidebar-widget-title">
+                                        <div class="lined">
+                                            <h3 class="title">Search Properties</h3>
+                                            <span class="bolded-line"></span>
+                                        </div>
+
+                                    </div>
+                                    <div class="full-search-form">
+                                        <form method="get" action="http://preview.imithemes.com/real-spaces-wp/">
+                                            <input type="hidden" class="form-control" name="s" id="s" value="Search1" /><div class="search_by">
+                                            </div>
+                                            <select name="propery_type" class="form-control selectpicker">
+                                                <option selected>Property Type</option>
+                                                <option value='apartment'>Apartment</option>
+                                                <option value='family-house'>Family House</option>
+                                                <option value='cottage'>Cottage</option>
+                                                <option value='single-home'>Single Home</option>
+                                                <option value='villa'>Villa</option>
+                                            </select><select name="propery_contract_type" class="form-control selectpicker">
+                                                <option selected>Contract</option>
+                                                <option value='sale'>Sale</option>
+                                                <option value='rent'>Rent</option>
+                                            </select><select name="propery_location" class="form-control selectpicker">
+                                                <option selected>State</option>
+                                                <option value='0'>United States</option>
+                                                <option value='California'>California</option>
+                                                <option value='Texas'>Texas</option>
+                                                <option value='New York'>New York</option>
+                                                <option value='Florida'>Florida</option>
+                                                <option value='Illinois'>Illinois</option>
+                                                <option value='Ohio'>Ohio</option>
+                                                <option value='Pennsylvania'>Pennsylvania</option>
+                                                <option value='Massachusetts'>Massachusetts</option>
+                                                <option value='New Jersey'>New Jersey</option>
+                                                <option value='Arizona'>Arizona</option>
+                                                <option value='Michigan'>Michigan</option>
+                                                <option value='Washington'>Washington</option>
+                                                <option value='North Carolina'>North Carolina</option>
+                                                <option value='Virginia'>Virginia</option>
+                                                <option value='Maryland'>Maryland</option>
+                                                <option value='Georgia'>Georgia</option>
+                                                <option value='Minnesota'>Minnesota</option>
+                                                <option value='Indiana'>Indiana</option>
+                                                <option value='Colorado'>Colorado</option>
+                                                <option value='Missouri'>Missouri</option>
+                                                <option value='Wisconsin'>Wisconsin</option>
+                                                <option value='Tennessee'>Tennessee</option>
+                                                <option value='Alabama'>Alabama</option>
+                                                <option value='Oregon'>Oregon</option>
+                                                <option value='Connecticut'>Connecticut</option>
+                                                <option value='Oklahoma'>Oklahoma</option>
+                                                <option value='Louisiana'>Louisiana</option>
+                                                <option value='Utah'>Utah</option>
+                                                <option value='Nevada'>Nevada</option>
+                                                <option value='Kentucky'>Kentucky</option>
+                                                <option value='Iowa'>Iowa</option>
+                                                <option value='Kansas'>Kansas</option>
+                                                <option value='South Carolina'>South Carolina</option>
+                                                <option value='Arkansas'>Arkansas</option>
+                                                <option value='Mississippi'>Mississippi</option>
+                                                <option value='New Mexico'>New Mexico</option>
+                                                <option value='Nebraska'>Nebraska</option>
+                                                <option value='New Hampshire'>New Hampshire</option>
+                                                <option value='Maine'>Maine</option>
+                                                <option value='Rhode Island'>Rhode Island</option>
+                                                <option value='Hawaii'>Hawaii</option>
+                                                <option value='Idaho'>Idaho</option>
+                                                <option value='West Virginia'>West Virginia</option>
+                                                <option value='Montana'>Montana</option>
+                                                <option value='Alaska'>Alaska</option>
+                                                <option value='District of Columbia'>District of Columbia</option>
+                                                <option value='South Dakota'>South Dakota</option>
+                                                <option value='North Dakota'>North Dakota</option>
+                                                <option value='Wyoming'>Wyoming</option>
+                                                <option value='Delaware'>Delaware</option>
+                                                <option value='Vermont'>Vermont</option>
+                                                <option value='1'>United Arab Emirates</option>
+                                                <option value='Dubai'>Dubai</option>
+                                                <option value='Abu Dhabi'>Abu Dhabi</option>
+                                                <option value='Sharjah'>Sharjah</option>
+                                                <option value='Umm Al Quwain'>Umm Al Quwain</option>
+                                                <option value='Fujairah'>Fujairah</option>
+                                                <option value='Ajman'>Ajman</option>
+                                                <option value='Ras Al Khaimah'>Ras Al Khaimah</option>
+                                            </select><label>Min Beds</label>
+                                            <select name="beds" class="form-control selectpicker">
+                                                <option selected>Any</option>
+                                                <option value='1'>1</option>
+                                                <option value='2'>2</option>
+                                                <option value='3'>3</option>
+                                                <option value='4'>4</option>
+                                                <option value='5'>5</option>
+                                                <option value='6'>6</option>
+                                                <option value='7'>7</option>
+                                                <option value='8'>8</option>
+                                                <option value='9'>9</option>
+                                                <option value='10'>10</option>
+                                            </select><div>
+                                                <label>Min Baths</label>
+                                                <select name="baths" class="form-control selectpicker">
+                                                    <option selected>Any</option>
+                                                    <option value='1'>1</option>
+                                                    <option value='2'>2</option>
+                                                    <option value='3'>3</option>
+                                                    <option value='4'>4</option>
+                                                    <option value='5'>5</option>
+                                                    <option value='6'>6</option>
+                                                    <option value='7'>7</option>
+                                                    <option value='8'>8</option>
+                                                    <option value='9'>9</option>
+                                                    <option value='10'>10</option>
+                                                </select>
+                                            </div>
+                                            <button type="submit" class="btn btn-primary btn-block"><i class="fa fa-search"></i>Search</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                                                            }
+        <!-- Start Site Footer -->
+
+        <footer class="site-footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="copyrights-col-left col-md-6 col-sm-6">
+                        <p>2016 © <a href="http://mariainfotech.in/">MARIA Infotech Pvt. Ltd. </a>All Rights Reserved.</p>
+                    </div>
+                    <div class="copyrights-col-right col-md-6 col-sm-6">
+                        <div class="social-icons">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- End Site Footer -->
+        <a id="back-to-top"><i class="fa fa-angle-double-up"></i></a>
+    </div>
+</body>
+</html>
+<!-- Dynamic page generated in 3.499 seconds. -->
+<!-- Cached page generated by WP-Super-Cache on 2016-03-08 08:25:10 -->
+<!-- super cache -->

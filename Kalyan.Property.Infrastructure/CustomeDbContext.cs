@@ -139,5 +139,7 @@ namespace Kalyan.Property.Infrastructure
         {
             return new CustomeDbContext();
         }
+
+        public System.Data.Entity.DbSet<Kalyan.Property.Infrastructure.Models.UserLogin> UserLogins { get; set; }
     }
 }
