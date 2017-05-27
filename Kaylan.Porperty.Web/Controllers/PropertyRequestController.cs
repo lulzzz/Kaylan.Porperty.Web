@@ -10,16 +10,15 @@ namespace Kaylan.Porperty.Web.Controllers
         private IUnitOfWork unitOfWork;
 
         // GET: PropertyRequest
-        public ActionResult Index()
-        {
-            return View();
-        }
-        public ActionResult Index(int id)
-        {
-            return View();
-        }
+        
         public ActionResult CreatePropertyRequest()
         {
+
+          //  sir i try this but not wotking -rupesh
+            //ViewBag.ContactTypes = unitOfWork.Repository<ContractType>.ToList();
+            //ViewBag.PropertyTypes = unitOfWork.Repository<PropertyType>.ToList();
+            //ViewBag.Area = unitOfWork.Repository<Area>.ToList();
+
             return View(new PropertyRequest());
         }
 
