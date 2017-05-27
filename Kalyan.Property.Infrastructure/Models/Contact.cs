@@ -8,7 +8,7 @@ namespace Kalyan.Property.Infrastructure.Models
 
     public partial class Contact
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [Key]
         public int Id { get; set; }
 
         [Required]
@@ -19,7 +19,7 @@ namespace Kalyan.Property.Infrastructure.Models
         [StringLength(50)]
         public string Email { get; set; }
 
-        public int Phone { get; set; }
+        public long Phone { get; set; }
 
         public DateTime CreatedDate { get; set; }
 
@@ -29,8 +29,5 @@ namespace Kalyan.Property.Infrastructure.Models
         [Required]
         public string Message { get; set; }
 
-        public int ContactTypeId { get; set; }
-
-        public virtual ContractType ContractType { get; set; }
     }
 }

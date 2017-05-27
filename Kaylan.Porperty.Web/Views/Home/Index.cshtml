@@ -63,30 +63,7 @@
     <script type='text/javascript' src="@Url.Content("~/scripts/script.js")"></script>
     @Scripts.Render("~/Home/js")
     <script type="text/javascript">
-        $(document).ready(function () {
-            alert("Running");
-
-            debugger;
-            var stateId = $("#property_type").val();
-            $.ajax
-            ({
-                url: '@Url.Action("GetAllPropertyType", "Home")',
-                type: 'GET',
-                datatype: 'application/json',
-                contentType: 'application/json',
-                success: function (result) {
-                    $("#property_type").html("");
-                    $.each($.parseJSON(result), function (i, property) {
-                        $("#property_type").append
-                        ($('<option></option>').val(property.Id).html(property.Name))
-                    })
-                },
-                error: function () {
-                    alert("Whooaaa! Something went wrong..")
-                },
-            });
-
-        });
+        
     </script>
 
 </head>
@@ -214,45 +191,25 @@
                                         <div class="search-field">
                                             <label>Property Type</label>
                                             <select name="property_type" id="property_type" class="form-control selectpicker">
-                                                <option selected>Property Type</option>
-                                                @*<option value='apartment'>Apartment</option>
-                                                <option value='family-house'>Family House</option>
-                                                <option value='cottage'>Cottage</option>
-                                                <option value='single-home'>Single Home</option>
-                                                <option value='villa'>Villa</option>*@
                                             </select>
                                         </div>
                                         <div class="search-field">
                                             <label>Country</label>
-                                            <select name="search_by" class="form-control selectpicker">
+                                            <select name="search_by" id="country" class="form-control selectpicker">
                                                 <option selected>Country</option>
-                                                <option value='India'>India</option>
                                             </select>
                                         </div>
                                     </div>
                                     <div class="search-field">
                                         <label>State</label>
-                                        <select name="propery_location" class="form-control selectpicker">
+                                        <select name="states" id="states" class="form-control selectpicker">
                                             <option selected>State</option>
-                                            <option value='California'>Maharashtra</option>
-                                            <option value='Texas'>Gujrat</option>
-                                            <option value='New York'>Karnatak</option>
-                                            <option value='Florida'>Tamilnadu</option>
-                                            <option value='Illinois'>AndhraPradesh</option>
-                                            <option value='Ohio'>UttarPradhesh</option>
-                                            <option value='Pennsylvania'>Bengal</option>
-                                            <option value='Massachusetts'>Bihar</option>
-                                            <option value='New Jersey'>Himachal Pradesh</option>
-                                            <option value='Arizona'>Haryana</option>
-                                            <option value='Michigan'>Punjab</option>
                                         </select>
                                     </div>
                                     <div class="search-field">
                                         <label>City</label>
-                                        <select name="property_city" class="form-control selectpicker">
+                                        <select name="city" id="city" class="form-control selectpicker">
                                             <option selected>City</option>
-                                            <option value='Mumbai'>Mumbai</option>
-                                            <option value='Thane'>Pune</option>
                                         </select>
                                     </div>
                                     <div class="search-field">

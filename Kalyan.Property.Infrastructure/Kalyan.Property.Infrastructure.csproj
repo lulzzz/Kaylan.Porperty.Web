@@ -100,6 +100,18 @@
     <Compile Include="Migrations\201705270503324_Country state and city model changes.Designer.cs">
       <DependentUpon>201705270503324_Country state and city model changes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705271804209_Contact model changes.cs" />
+    <Compile Include="Migrations\201705271804209_Contact model changes.Designer.cs">
+      <DependentUpon>201705271804209_Contact model changes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705271841033_Phone number change from int to long.cs" />
+    <Compile Include="Migrations\201705271841033_Phone number change from int to long.Designer.cs">
+      <DependentUpon>201705271841033_Phone number change from int to long.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705271847045_Contact change Primary Added.cs" />
+    <Compile Include="Migrations\201705271847045_Contact change Primary Added.Designer.cs">
+      <DependentUpon>201705271847045_Contact change Primary Added.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AgentInfo.cs" />
     <Compile Include="Models\Amenity.cs" />
@@ -139,6 +151,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705270503324_Country state and city model changes.resx">
       <DependentUpon>201705270503324_Country state and city model changes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705271804209_Contact model changes.resx">
+      <DependentUpon>201705271804209_Contact model changes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705271841033_Phone number change from int to long.resx">
+      <DependentUpon>201705271841033_Phone number change from int to long.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705271847045_Contact change Primary Added.resx">
+      <DependentUpon>201705271847045_Contact change Primary Added.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

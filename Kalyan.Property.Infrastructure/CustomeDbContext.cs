@@ -73,12 +73,6 @@ namespace Kalyan.Property.Infrastructure
                 .Property(e => e.CreatedBy)
                 .IsFixedLength();
 
-            modelBuilder.Entity<ContractType>()
-                .HasMany(e => e.Contacts)
-                .WithRequired(e => e.ContractType)
-                .HasForeignKey(e => e.ContactTypeId)
-                .WillCascadeOnDelete(false);
-
             modelBuilder.Entity<Country>()
                 .HasMany(e => e.States)
                 .WithRequired(e => e.Country)

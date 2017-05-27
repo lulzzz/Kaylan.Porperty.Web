@@ -1,20 +1,20 @@
 ﻿@*@{
-    ViewBag.Title = "Contact";
-}
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
+        ViewBag.Title = "Contact";
+    }
+    <h2>@ViewBag.Title.</h2>
+    <h3>@ViewBag.Message</h3>
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
+    <address>
+        One Microsoft Way<br />
+        Redmond, WA 98052-6399<br />
+        <abbr title="Phone">P:</abbr>
+        425.555.0100
+    </address>
 
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>*@<!DOCTYPE HTML>
+    <address>
+        <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
+        <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
+    </address>*@<!DOCTYPE HTML>
 <html lang="en-US" class="no-js">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -79,7 +79,7 @@
     <script type='text/javascript' src="@Url.Content("~/scripts/autocomplete.js")"></script>
     <script type='text/javascript' src="@Url.Content("~/scripts/jquery_cookie.js")"></script>
     <script type='text/javascript' src="@Url.Content("~/scripts/script.js")"></script>
-
+    @Scripts.Render("~/Home/js")
 </head>
 <body class="page page-id-51 page-template page-template-template-contact page-template-template-contact-php ">
     <!--[if lt IE 7]>
@@ -212,23 +212,23 @@
                                         <form method="post" id="contactform" name="contactform" class="contact-form" action="http://preview.imithemes.com/real-spaces-wp/wp-content/themes/real-spaces/mail/contact.php">
                                             <div class="col-md-6 margin-15">
                                                 <div class="form-group">
-                                                    <input type="text" id="name" name="name" class="form-control input-lg" placeholder="Name*">
+                                                    <input type="text" id="name" required name="Name" class="form-control input-lg" placeholder="Name*">
 
                                                 </div>
                                                 <div class="form-group">
-                                                    <input type="email" id="email" name="email" class="form-control input-lg" placeholder="Email*">
+                                                    <input type="email" id="email" required name="Email" class="form-control input-lg" placeholder="Email*">
                                                 </div>
                                                 <div class="form-group">
-                                                    <input type="text" id="phone" name="phone" class="form-control input-lg" placeholder="Phone">
+                                                    <input type="text" id="phone" required name="Phone" class="form-control input-lg" placeholder="Phone">
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <textarea cols="6" rows="5" id="comments" name="comments" class="form-control input-lg" placeholder="Message"></textarea>
-                                                    <input type="hidden" name="image_path" id="image_path" value="http://preview.imithemes.com/real-spaces-wp/wp-content/themes/real-spaces/">
-                                                    <input id="admin_email" name="admin_email" type="hidden" value="nitinvipin123@gmail.com">
-                                                    <input id="subject" name="subject" type="hidden" value="Contact Form">
-                                                    <input id="submit" name="submit" type="submit" class="btn btn-primary btn-lg btn-block" value="Submit now!">
+                                                    <textarea cols="6" rows="5" required id="comments" name="Commnet" class="form-control input-lg" placeholder="Message"></textarea>
+                                                    <input type="hidden" id="image_path" value="http://preview.imithemes.com/real-spaces-wp/wp-content/themes/real-spaces/">
+                                                    <input id="admin_email" type="hidden" value="nitinvipin123@gmail.com">
+                                                    <input id="subject" type="hidden" value="Contact Form">
+                                                    <input id="submitContact" type="submit" class="btn btn-primary btn-lg btn-block" value="Submit now!">
                                                 </div>
                                             </div>
                                         </form>
