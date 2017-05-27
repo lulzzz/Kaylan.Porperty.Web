@@ -96,6 +96,10 @@
     <Compile Include="Migrations\201705241639439_Country Changes.Designer.cs">
       <DependentUpon>201705241639439_Country Changes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705270503324_Country state and city model changes.cs" />
+    <Compile Include="Migrations\201705270503324_Country state and city model changes.Designer.cs">
+      <DependentUpon>201705270503324_Country state and city model changes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AgentInfo.cs" />
     <Compile Include="Models\Amenity.cs" />
@@ -132,6 +136,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705241639439_Country Changes.resx">
       <DependentUpon>201705241639439_Country Changes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705270503324_Country state and city model changes.resx">
+      <DependentUpon>201705270503324_Country state and city model changes.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

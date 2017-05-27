@@ -18,7 +18,7 @@ namespace Kalyan.Property.Infrastructure
         public virtual DbSet<City> Cities { get; set; }
         public virtual DbSet<Contact> Contacts { get; set; }
         public virtual DbSet<ContractType> ContractTypes { get; set; }
-        public virtual DbSet<Countries> Countries { get; set; }
+        public virtual DbSet<Country> Countries { get; set; }
         public virtual DbSet<District> Districts { get; set; }
         public virtual DbSet<Feature> Features { get; set; }
         public virtual DbSet<LoginPl> LoginPls { get; set; }
@@ -79,7 +79,7 @@ namespace Kalyan.Property.Infrastructure
                 .HasForeignKey(e => e.ContactTypeId)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<Countries>()
+            modelBuilder.Entity<Country>()
                 .HasMany(e => e.States)
                 .WithRequired(e => e.Country)
                 .WillCascadeOnDelete(false);

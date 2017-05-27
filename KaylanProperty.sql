@@ -1,28 +1,6 @@
 ﻿USE [KalyanProperty]
 GO
-/****** Object:  Table [dbo].[__MigrationHistory]    Script Date: 5/23/2017 1:01:22 AM ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
-GO
-CREATE TABLE [dbo].[__MigrationHistory](
-	[MigrationId] [nvarchar](150) NOT NULL,
-	[ContextKey] [nvarchar](300) NOT NULL,
-	[Model] [varbinary](max) NOT NULL,
-	[ProductVersion] [nvarchar](32) NOT NULL,
- CONSTRAINT [PK_dbo.__MigrationHistory] PRIMARY KEY CLUSTERED 
-(
-	[MigrationId] ASC,
-	[ContextKey] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
-
-GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[AgentInfo]    Script Date: 5/23/2017 1:01:23 AM ******/
+/****** Object:  Table [dbo].[AgentInfo]    Script Date: 5/27/2017 11:53:49 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -45,7 +23,7 @@ CREATE TABLE [dbo].[AgentInfo](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Amenity]    Script Date: 5/23/2017 1:01:23 AM ******/
+/****** Object:  Table [dbo].[Amenity]    Script Date: 5/27/2017 11:53:49 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -61,7 +39,7 @@ CREATE TABLE [dbo].[Amenity](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Area]    Script Date: 5/23/2017 1:01:23 AM ******/
+/****** Object:  Table [dbo].[Area]    Script Date: 5/27/2017 11:53:49 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -78,7 +56,7 @@ CREATE TABLE [dbo].[Area](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[City]    Script Date: 5/23/2017 1:01:23 AM ******/
+/****** Object:  Table [dbo].[City]    Script Date: 5/27/2017 11:53:49 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -86,7 +64,7 @@ GO
 CREATE TABLE [dbo].[City](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[Name] [nvarchar](50) NULL,
-	[IsActive] [nvarchar](50) NULL,
+	[IsActive] [bit] NOT NULL,
 	[StateId] [int] NOT NULL,
  CONSTRAINT [PK_dbo.City] PRIMARY KEY CLUSTERED 
 (
@@ -95,7 +73,7 @@ CREATE TABLE [dbo].[City](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Contact]    Script Date: 5/23/2017 1:01:23 AM ******/
+/****** Object:  Table [dbo].[Contact]    Script Date: 5/27/2017 11:53:49 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -120,7 +98,7 @@ CREATE TABLE [dbo].[Contact](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[ContractType]    Script Date: 5/23/2017 1:01:23 AM ******/
+/****** Object:  Table [dbo].[ContractType]    Script Date: 5/27/2017 11:53:49 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -138,23 +116,23 @@ CREATE TABLE [dbo].[ContractType](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Country]    Script Date: 5/23/2017 1:01:23 AM ******/
+/****** Object:  Table [dbo].[Country]    Script Date: 5/27/2017 11:53:49 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [dbo].[Countries](
+CREATE TABLE [dbo].[Country](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
-	[Name] [nvarchar](50)  NULL,
-	[IsActive] [bit] NULL,
- CONSTRAINT [PK_dbo.Countries] PRIMARY KEY CLUSTERED 
+	[Name] [nvarchar](max) NULL,
+	[IsActive] [bit] NOT NULL,
+ CONSTRAINT [PK_dbo.Country] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[District]    Script Date: 5/23/2017 1:01:23 AM ******/
+/****** Object:  Table [dbo].[District]    Script Date: 5/27/2017 11:53:49 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -171,7 +149,7 @@ CREATE TABLE [dbo].[District](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Feature]    Script Date: 5/23/2017 1:01:23 AM ******/
+/****** Object:  Table [dbo].[Feature]    Script Date: 5/27/2017 11:53:49 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -186,7 +164,7 @@ CREATE TABLE [dbo].[Feature](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[LoginPl]    Script Date: 5/23/2017 1:01:23 AM ******/
+/****** Object:  Table [dbo].[LoginPl]    Script Date: 5/27/2017 11:53:49 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -204,7 +182,7 @@ CREATE TABLE [dbo].[LoginPl](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[PropertyDetail]    Script Date: 5/23/2017 1:01:23 AM ******/
+/****** Object:  Table [dbo].[PropertyDetail]    Script Date: 5/27/2017 11:53:49 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -246,7 +224,7 @@ CREATE TABLE [dbo].[PropertyDetail](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[PropertyImage]    Script Date: 5/23/2017 1:01:23 AM ******/
+/****** Object:  Table [dbo].[PropertyImage]    Script Date: 5/27/2017 11:53:49 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -270,7 +248,7 @@ CREATE TABLE [dbo].[PropertyImage](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[PropertyRequest]    Script Date: 5/23/2017 1:01:23 AM ******/
+/****** Object:  Table [dbo].[PropertyRequest]    Script Date: 5/27/2017 11:53:49 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -300,7 +278,7 @@ CREATE TABLE [dbo].[PropertyRequest](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[PropertyType]    Script Date: 5/23/2017 1:01:23 AM ******/
+/****** Object:  Table [dbo].[PropertyType]    Script Date: 5/27/2017 11:53:49 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -316,7 +294,7 @@ CREATE TABLE [dbo].[PropertyType](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Roles]    Script Date: 5/23/2017 1:01:23 AM ******/
+/****** Object:  Table [dbo].[Roles]    Script Date: 5/27/2017 11:53:49 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -331,7 +309,7 @@ CREATE TABLE [dbo].[Roles](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Service]    Script Date: 5/23/2017 1:01:23 AM ******/
+/****** Object:  Table [dbo].[Service]    Script Date: 5/27/2017 11:53:49 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -346,7 +324,7 @@ CREATE TABLE [dbo].[Service](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[State]    Script Date: 5/23/2017 1:01:23 AM ******/
+/****** Object:  Table [dbo].[State]    Script Date: 5/27/2017 11:53:49 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -354,7 +332,7 @@ GO
 CREATE TABLE [dbo].[State](
 	[Id] [int] NOT NULL,
 	[Name] [nvarchar](50) NULL,
-	[IsActive] [bit] NULL,
+	[IsActive] [bit] NOT NULL,
 	[CountryId] [int] NOT NULL,
  CONSTRAINT [PK_dbo.State] PRIMARY KEY CLUSTERED 
 (
@@ -363,7 +341,7 @@ CREATE TABLE [dbo].[State](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[UserClaims]    Script Date: 5/23/2017 1:01:23 AM ******/
+/****** Object:  Table [dbo].[UserClaims]    Script Date: 5/27/2017 11:53:49 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -380,7 +358,7 @@ CREATE TABLE [dbo].[UserClaims](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[UserLogins]    Script Date: 5/23/2017 1:01:23 AM ******/
+/****** Object:  Table [dbo].[UserLogins]    Script Date: 5/27/2017 11:53:49 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -398,7 +376,7 @@ CREATE TABLE [dbo].[UserLogins](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[UserRoles]    Script Date: 5/23/2017 1:01:23 AM ******/
+/****** Object:  Table [dbo].[UserRoles]    Script Date: 5/27/2017 11:53:49 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -414,7 +392,7 @@ CREATE TABLE [dbo].[UserRoles](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Users]    Script Date: 5/23/2017 1:01:23 AM ******/
+/****** Object:  Table [dbo].[Users]    Script Date: 5/27/2017 11:53:49 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -442,6 +420,78 @@ CREATE TABLE [dbo].[Users](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 
+GO
+SET IDENTITY_INSERT [dbo].[City] ON 
+
+GO
+INSERT [dbo].[City] ([Id], [Name], [IsActive], [StateId]) VALUES (1, N'Mumbai', 1, 1)
+GO
+INSERT [dbo].[City] ([Id], [Name], [IsActive], [StateId]) VALUES (2, N'Pune', 1, 1)
+GO
+INSERT [dbo].[City] ([Id], [Name], [IsActive], [StateId]) VALUES (3, N'Nagpur', 1, 1)
+GO
+INSERT [dbo].[City] ([Id], [Name], [IsActive], [StateId]) VALUES (4, N'Navi Mumbai', 1, 1)
+GO
+SET IDENTITY_INSERT [dbo].[City] OFF
+GO
+SET IDENTITY_INSERT [dbo].[Country] ON 
+
+GO
+INSERT [dbo].[Country] ([Id], [Name], [IsActive]) VALUES (1, N'India', 1)
+GO
+INSERT [dbo].[Country] ([Id], [Name], [IsActive]) VALUES (2, N'US', 1)
+GO
+INSERT [dbo].[Country] ([Id], [Name], [IsActive]) VALUES (3, N'England', 1)
+GO
+INSERT [dbo].[Country] ([Id], [Name], [IsActive]) VALUES (4, N'England', 1)
+GO
+INSERT [dbo].[Country] ([Id], [Name], [IsActive]) VALUES (5, N'India', 1)
+GO
+INSERT [dbo].[Country] ([Id], [Name], [IsActive]) VALUES (6, N'America', 1)
+GO
+INSERT [dbo].[Country] ([Id], [Name], [IsActive]) VALUES (7, N'London', 1)
+GO
+SET IDENTITY_INSERT [dbo].[Country] OFF
+GO
+SET IDENTITY_INSERT [dbo].[PropertyType] ON 
+
+GO
+INSERT [dbo].[PropertyType] ([Id], [Name], [IsActive]) VALUES (2, N'Apartment', 1)
+GO
+INSERT [dbo].[PropertyType] ([Id], [Name], [IsActive]) VALUES (3, N'Family House', 1)
+GO
+INSERT [dbo].[PropertyType] ([Id], [Name], [IsActive]) VALUES (4, N'Cottage', 1)
+GO
+INSERT [dbo].[PropertyType] ([Id], [Name], [IsActive]) VALUES (5, N'Single Home', 1)
+GO
+SET IDENTITY_INSERT [dbo].[PropertyType] OFF
+GO
+INSERT [dbo].[State] ([Id], [Name], [IsActive], [CountryId]) VALUES (1, N'Maharashtra', 1, 1)
+GO
+INSERT [dbo].[State] ([Id], [Name], [IsActive], [CountryId]) VALUES (2, N'Gujrat', 1, 1)
+GO
+INSERT [dbo].[State] ([Id], [Name], [IsActive], [CountryId]) VALUES (3, N'Karnatak', 1, 1)
+GO
+INSERT [dbo].[State] ([Id], [Name], [IsActive], [CountryId]) VALUES (4, N'Tamilnadu', 1, 1)
+GO
+INSERT [dbo].[State] ([Id], [Name], [IsActive], [CountryId]) VALUES (5, N'Andhra Pradesh', 1, 1)
+GO
+INSERT [dbo].[State] ([Id], [Name], [IsActive], [CountryId]) VALUES (6, N'Uttar Pradhesh', 1, 1)
+GO
+INSERT [dbo].[State] ([Id], [Name], [IsActive], [CountryId]) VALUES (7, N'Bengal', 1, 1)
+GO
+INSERT [dbo].[State] ([Id], [Name], [IsActive], [CountryId]) VALUES (8, N'Bihar', 1, 1)
+GO
+INSERT [dbo].[State] ([Id], [Name], [IsActive], [CountryId]) VALUES (9, N'Himachal Pradesh', 1, 1)
+GO
+INSERT [dbo].[State] ([Id], [Name], [IsActive], [CountryId]) VALUES (10, N'Haryana', 1, 1)
+GO
+SET IDENTITY_INSERT [dbo].[Users] ON 
+
+GO
+INSERT [dbo].[Users] ([Id], [FirstName], [LastName], [Phone], [DateOfBirth], [Email], [EmailConfirmed], [PasswordHash], [SecurityStamp], [PhoneNumber], [PhoneNumberConfirmed], [TwoFactorEnabled], [LockoutEndDateUtc], [LockoutEnabled], [AccessFailedCount], [UserName]) VALUES (2, NULL, NULL, NULL, CAST(N'2017-05-23 00:55:19.177' AS DateTime), N'harshalsbhagat@gmail.com', 0, N'AJHjEe4ZtvQr99PCdFy2lcf8Wad4qjmHvFEQcvrOQDQwSvMkAowsAmr51SPguvqSCg==', N'5f75c99e-d3c2-4b1f-acd2-a2e895e047fb', NULL, 0, 0, NULL, 1, 0, N'harshalsbhagat@gmail.com')
+GO
+SET IDENTITY_INSERT [dbo].[Users] OFF
 GO
 ALTER TABLE [dbo].[AgentInfo]  WITH CHECK ADD  CONSTRAINT [FK_dbo.AgentInfo_dbo.PropertyDetail_PropertyDetailId] FOREIGN KEY([PropertyDetailId])
 REFERENCES [dbo].[PropertyDetail] ([Id])

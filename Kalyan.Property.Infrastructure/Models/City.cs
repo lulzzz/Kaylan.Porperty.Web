@@ -19,8 +19,7 @@ namespace Kalyan.Property.Infrastructure.Models
         [StringLength(50)]
         public string Name { get; set; }
 
-        [StringLength(50)]
-        public string IsActive { get; set; }
+        public bool IsActive { get; set; }
 
         public int StateId { get; set; }
 
