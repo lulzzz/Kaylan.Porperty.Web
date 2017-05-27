@@ -28,6 +28,8 @@ namespace Kalyan.Property.Infrastructure
         public virtual DbSet<PropertyType> PropertyTypes { get; set; }
         public virtual DbSet<Service> Services { get; set; }
         public virtual DbSet<State> States { get; set; }
+        public virtual DbSet<PropertyRequestType> PropertyRequestType { get; set; }
+        public virtual DbSet<PropertyRequestPrice> PropertyRequestPrice { get; set; }
 
         public CustomeDbContext(string nameOrConnectionString) : base("DefaultConnection")
         {
@@ -126,6 +128,31 @@ namespace Kalyan.Property.Infrastructure
             modelBuilder.Entity<State>()
                 .HasMany(e => e.Cities)
                 .WithRequired(e => e.State)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<PropertyRequestPrice>()
+               .Property(e => e.Price)
+               .IsUnicode(false);
+
+            modelBuilder.Entity<PropertyRequestPrice>()
+                .HasMany(e => e.PropertyRequests)
+                .WithRequired(e => e.PropertyRequestPriceMax)
+                .HasForeignKey(e => e.FromPrice)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<PropertyRequestPrice>()
+                .HasMany(e => e.PropertyRequests1)
+                .WithRequired(e => e.PropertyRequestPriceMin)
+                .HasForeignKey(e => e.ToPrice)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<PropertyRequestType>()
+                .Property(e => e.Name)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<PropertyRequestType>()
+                .HasMany(e => e.PropertyRequests)
+                .WithRequired(e => e.PropertyRequestType)
                 .WillCascadeOnDelete(false);
         }
 

@@ -67,6 +67,8 @@
     <script type='text/javascript' src="@Url.Content("~/scripts/autocomplete.js")"></script>
     <script src="@Url.Content("~/scripts/jquery_cookie.js")"></script>
     <script src="@Url.Content("~/scripts/script.js")"></script>
+    @Scripts.Render("~/PropertyRequest/js")
+    @Scripts.Render("~/Home/js")
 </head>
 <body class="page page-id-281 page-template-default ">
     <!--[if lt IE 7]>
@@ -294,13 +296,12 @@
                                     <br>
                                     <div class="row">
                                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                            @Html.DropDownListFor(model => model.ContractType, new List<SelectListItem> { new SelectListItem { Text = "Sale" }, new SelectListItem { Text = "Rent" } }, "Select Type", new { @class = "form-control" })
+                                            @*@Html.DropDownListFor(model => model.ContractType, new List<SelectListItem> { new SelectListItem { Text = "Sale" }, new SelectListItem { Text = "Rent" } }, "Select Type", new { @class = "form-control" })*@
 
-                                            @*<select class="form-control" id="ContractType" name="ContractType">
-                                                 <option>Select ContractType</option>
-                                                 <option>Rent</option>
-                                                  <option>Sale</option>
-                                                </select>*@
+                                            <select class="form-control" id="ContractType" name="ContractType">
+                                                <option>Select ContractType</option>
+
+                                            </select>
                                             @* <select class="form-control" name="type">
                                                     <option selected="" value="0">- Rent / Sale</option>
                                                     <option value="Villa Compound">Rent</option>
@@ -348,12 +349,16 @@
                                                     <label>Price</label>
                                                 </div>
                                                 <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
-                                                    @*<select name="min-price" class="form-control">*@
-                                                    @Html.DropDownListFor(model => model.FromPrice, new List<SelectListItem> { new SelectListItem { Text = "20Lacs" }, new SelectListItem { Text = "30Lacs" }, new SelectListItem { Text = "40Lacs" }, new SelectListItem { Text = "50Lacs" }, new SelectListItem { Text = "70Lacs" }, new SelectListItem { Text = "80Lacs" } }, "Select Type", new { @class = "form-control" })
+                                                    <select name="minPrice" id="minPrice" class="form-control">
+                                                        <option selected>Select Price</option>
+                                                    </select>
+                                                    @*@Html.DropDownListFor(model => model.FromPrice, new List<SelectListItem> { new SelectListItem { Text = "20Lacs" }, new SelectListItem { Text = "30Lacs" }, new SelectListItem { Text = "40Lacs" }, new SelectListItem { Text = "50Lacs" }, new SelectListItem { Text = "70Lacs" }, new SelectListItem { Text = "80Lacs" } }, "Select Type", new { @class = "form-control" })*@
                                                 </div>
                                                 <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
-                                                    <!--<select name="max-price" class="form-control">-->
-                                                    @Html.DropDownListFor(model => model.ToPrice, new List<SelectListItem> { new SelectListItem { Text = "30Lacs" }, new SelectListItem { Text = "40Lacs" }, new SelectListItem { Text = "50Lacs" }, new SelectListItem { Text = "70Lacs" }, new SelectListItem { Text = "80Lacs" }, new SelectListItem { Text = "1Cr" } }, "Select Type", new { @class = "form-control" })
+                                                    <select name="maxPrice" id="maxPrice" class="form-control">
+                                                        <option selected>Select Price</option>
+                                                    </select>
+                                                    @*@Html.DropDownListFor(model => model.ToPrice, new List<SelectListItem> { new SelectListItem { Text = "30Lacs" }, new SelectListItem { Text = "40Lacs" }, new SelectListItem { Text = "50Lacs" }, new SelectListItem { Text = "70Lacs" }, new SelectListItem { Text = "80Lacs" }, new SelectListItem { Text = "1Cr" } }, "Select Type", new { @class = "form-control" })*@
                                                 </div>
                                             </div>
                                         </div>

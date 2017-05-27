@@ -152,7 +152,7 @@ namespace Kalyan.Property.Infrastructure.Migrations
                     {
                         Id = c.Int(nullable: false, identity: true),
                         Name = c.String(maxLength: 50),
-                        IsActive = c.String(maxLength: 50),
+                        IsActive = c.Boolean(nullable: false),
                         StateId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
@@ -163,9 +163,9 @@ namespace Kalyan.Property.Infrastructure.Migrations
                 "dbo.State",
                 c => new
                     {
-                        Id = c.Int(nullable: false),
+                        Id = c.Int(nullable: false, identity: true),
                         Name = c.String(maxLength: 50),
-                        IsActive = c.Boolean(),
+                        IsActive = c.Boolean(nullable: false),
                         CountryId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
@@ -177,8 +177,8 @@ namespace Kalyan.Property.Infrastructure.Migrations
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        Name = c.Int(nullable: false),
-                        IsActive = c.Boolean(),
+                        Name = c.String(),
+                        IsActive = c.Boolean(nullable: false),
                     })
                 .PrimaryKey(t => t.Id);
             
@@ -186,24 +186,21 @@ namespace Kalyan.Property.Infrastructure.Migrations
                 "dbo.Contact",
                 c => new
                     {
-                        Id = c.Int(nullable: false),
+                        Id = c.Int(nullable: false, identity: true),
                         Name = c.String(nullable: false, maxLength: 100, unicode: false),
                         Email = c.String(nullable: false, maxLength: 50, unicode: false),
-                        Phone = c.Int(nullable: false),
+                        Phone = c.Long(nullable: false),
                         CreatedDate = c.DateTime(nullable: false),
                         CreatedBy = c.String(maxLength: 10, fixedLength: true),
                         Message = c.String(nullable: false),
-                        ContactTypeId = c.Int(nullable: false),
                     })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.ContractType", t => t.ContactTypeId)
-                .Index(t => t.ContactTypeId);
+                .PrimaryKey(t => t.Id);
             
             CreateTable(
                 "dbo.ContractType",
                 c => new
                     {
-                        Id = c.Int(nullable: false),
+                        Id = c.Int(nullable: false, identity: true),
                         Conmmertial = c.String(maxLength: 50),
                         Date = c.DateTime(),
                         Rent = c.String(maxLength: 50),
@@ -224,28 +221,48 @@ namespace Kalyan.Property.Infrastructure.Migrations
                 .PrimaryKey(t => t.Id);
             
             CreateTable(
+                "dbo.PropertyRequestPrice",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Price = c.String(maxLength: 50, unicode: false),
+                        IsActive = c.Boolean(nullable: false),
+                    })
+                .PrimaryKey(t => t.Id);
+            
+            CreateTable(
                 "dbo.PropertyRequest",
                 c => new
                     {
-                        PropRequestId = c.Int(nullable: false, identity: true),
+                        PropertyRequestId = c.Int(nullable: false, identity: true),
                         FullName = c.String(maxLength: 50),
                         Email = c.String(maxLength: 50),
                         PhoneNumber = c.String(maxLength: 50),
                         ContractType = c.String(maxLength: 50),
-                        FromPrice = c.String(maxLength: 50),
-                        Date = c.DateTime(),
-                        AreaName = c.String(maxLength: 50),
-                        Contact = c.String(maxLength: 50),
-                        PropertyTypees = c.String(maxLength: 50),
+                        FromPrice = c.Int(nullable: false),
+                        ContactType = c.String(maxLength: 50),
+                        PropertyRequestTypeId = c.Int(nullable: false),
                         PropertyDescription = c.String(maxLength: 50),
-                        ToPrice = c.String(maxLength: 50),
-                        AreaId = c.String(maxLength: 50),
-                        CityId = c.String(maxLength: 50),
-                        CountryId = c.Int(),
-                        ContractId = c.String(maxLength: 50),
-                        ContactBy = c.String(maxLength: 50),
+                        ToPrice = c.Int(nullable: false),
+                        CreatedDate = c.DateTime(nullable: false),
                     })
-                .PrimaryKey(t => t.PropRequestId);
+                .PrimaryKey(t => t.PropertyRequestId)
+                .ForeignKey("dbo.PropertyRequestType", t => t.PropertyRequestTypeId)
+                .ForeignKey("dbo.PropertyRequestPrice", t => t.FromPrice)
+                .ForeignKey("dbo.PropertyRequestPrice", t => t.ToPrice)
+                .Index(t => t.FromPrice)
+                .Index(t => t.PropertyRequestTypeId)
+                .Index(t => t.ToPrice);
+            
+            CreateTable(
+                "dbo.PropertyRequestType",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Name = c.String(maxLength: 50, unicode: false),
+                        IsActive = c.Boolean(nullable: false),
+                    })
+                .PrimaryKey(t => t.Id);
             
             CreateTable(
                 "dbo.Roles",
@@ -269,6 +286,18 @@ namespace Kalyan.Property.Infrastructure.Migrations
                 .ForeignKey("dbo.Users", t => t.UserId, cascadeDelete: true)
                 .Index(t => t.UserId)
                 .Index(t => t.RoleId);
+            
+            CreateTable(
+                "dbo.UserLogins",
+                c => new
+                    {
+                        LoginProvider = c.String(nullable: false, maxLength: 128),
+                        ProviderKey = c.String(nullable: false, maxLength: 128),
+                        UserId = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => new { t.LoginProvider, t.ProviderKey, t.UserId })
+                .ForeignKey("dbo.Users", t => t.UserId, cascadeDelete: true)
+                .Index(t => t.UserId);
             
             CreateTable(
                 "dbo.Users",
@@ -307,18 +336,6 @@ namespace Kalyan.Property.Infrastructure.Migrations
                 .ForeignKey("dbo.Users", t => t.UserId, cascadeDelete: true)
                 .Index(t => t.UserId);
             
-            CreateTable(
-                "dbo.UserLogins",
-                c => new
-                    {
-                        LoginProvider = c.String(nullable: false, maxLength: 128),
-                        ProviderKey = c.String(nullable: false, maxLength: 128),
-                        UserId = c.Int(nullable: false),
-                    })
-                .PrimaryKey(t => new { t.LoginProvider, t.ProviderKey, t.UserId })
-                .ForeignKey("dbo.Users", t => t.UserId, cascadeDelete: true)
-                .Index(t => t.UserId);
-            
         }
         
         public override void Down()
@@ -327,7 +344,9 @@ namespace Kalyan.Property.Infrastructure.Migrations
             DropForeignKey("dbo.UserLogins", "UserId", "dbo.Users");
             DropForeignKey("dbo.UserClaims", "UserId", "dbo.Users");
             DropForeignKey("dbo.UserRoles", "RoleId", "dbo.Roles");
-            DropForeignKey("dbo.Contact", "ContactTypeId", "dbo.ContractType");
+            DropForeignKey("dbo.PropertyRequest", "ToPrice", "dbo.PropertyRequestPrice");
+            DropForeignKey("dbo.PropertyRequest", "FromPrice", "dbo.PropertyRequestPrice");
+            DropForeignKey("dbo.PropertyRequest", "PropertyRequestTypeId", "dbo.PropertyRequestType");
             DropForeignKey("dbo.State", "CountryId", "dbo.Country");
             DropForeignKey("dbo.City", "StateId", "dbo.State");
             DropForeignKey("dbo.District", "CityId", "dbo.City");
@@ -338,13 +357,15 @@ namespace Kalyan.Property.Infrastructure.Migrations
             DropForeignKey("dbo.PropertyDetail", "AmenitiesID", "dbo.Amenity");
             DropForeignKey("dbo.Amenity", "FeatureId", "dbo.Feature");
             DropForeignKey("dbo.AgentInfo", "PropertyDetailId", "dbo.PropertyDetail");
-            DropIndex("dbo.UserLogins", new[] { "UserId" });
             DropIndex("dbo.UserClaims", new[] { "UserId" });
             DropIndex("dbo.Users", "UserNameIndex");
+            DropIndex("dbo.UserLogins", new[] { "UserId" });
             DropIndex("dbo.UserRoles", new[] { "RoleId" });
             DropIndex("dbo.UserRoles", new[] { "UserId" });
             DropIndex("dbo.Roles", "RoleNameIndex");
-            DropIndex("dbo.Contact", new[] { "ContactTypeId" });
+            DropIndex("dbo.PropertyRequest", new[] { "ToPrice" });
+            DropIndex("dbo.PropertyRequest", new[] { "PropertyRequestTypeId" });
+            DropIndex("dbo.PropertyRequest", new[] { "FromPrice" });
             DropIndex("dbo.State", new[] { "CountryId" });
             DropIndex("dbo.City", new[] { "StateId" });
             DropIndex("dbo.District", new[] { "CityId" });
@@ -355,12 +376,14 @@ namespace Kalyan.Property.Infrastructure.Migrations
             DropIndex("dbo.Amenity", new[] { "ServiceId" });
             DropIndex("dbo.PropertyDetail", new[] { "AmenitiesID" });
             DropIndex("dbo.AgentInfo", new[] { "PropertyDetailId" });
-            DropTable("dbo.UserLogins");
             DropTable("dbo.UserClaims");
             DropTable("dbo.Users");
+            DropTable("dbo.UserLogins");
             DropTable("dbo.UserRoles");
             DropTable("dbo.Roles");
+            DropTable("dbo.PropertyRequestType");
             DropTable("dbo.PropertyRequest");
+            DropTable("dbo.PropertyRequestPrice");
             DropTable("dbo.LoginPl");
             DropTable("dbo.ContractType");
             DropTable("dbo.Contact");

@@ -1,5 +1,4 @@
-﻿using System.Web;
-using System.Web.Optimization;
+﻿using System.Web.Optimization;
 
 namespace Kaylan.Porperty.Web
 {
@@ -30,7 +29,8 @@ namespace Kaylan.Porperty.Web
             bundles.Add(new ScriptBundle("~/Home/js").Include(
                       "~/Scripts/HomeController.js"));
 
-
+            bundles.Add(new ScriptBundle("~/PropertyRequest/js").Include(
+                     "~/Scripts/PropertyRequestController.js"));
         }
     }
 }

@@ -88,29 +88,9 @@
     <Compile Include="BaseRepository\IRepository.cs" />
     <Compile Include="BaseRepository\Repository.cs" />
     <Compile Include="CustomeDbContext.cs" />
-    <Compile Include="Migrations\201705221920219_Initial Commit.cs" />
-    <Compile Include="Migrations\201705221920219_Initial Commit.Designer.cs">
-      <DependentUpon>201705221920219_Initial Commit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201705241639439_Country Changes.cs" />
-    <Compile Include="Migrations\201705241639439_Country Changes.Designer.cs">
-      <DependentUpon>201705241639439_Country Changes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201705270503324_Country state and city model changes.cs" />
-    <Compile Include="Migrations\201705270503324_Country state and city model changes.Designer.cs">
-      <DependentUpon>201705270503324_Country state and city model changes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201705271804209_Contact model changes.cs" />
-    <Compile Include="Migrations\201705271804209_Contact model changes.Designer.cs">
-      <DependentUpon>201705271804209_Contact model changes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201705271841033_Phone number change from int to long.cs" />
-    <Compile Include="Migrations\201705271841033_Phone number change from int to long.Designer.cs">
-      <DependentUpon>201705271841033_Phone number change from int to long.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201705271847045_Contact change Primary Added.cs" />
-    <Compile Include="Migrations\201705271847045_Contact change Primary Added.Designer.cs">
-      <DependentUpon>201705271847045_Contact change Primary Added.cs</DependentUpon>
+    <Compile Include="Migrations\201705272018581_Initial Commit.cs" />
+    <Compile Include="Migrations\201705272018581_Initial Commit.Designer.cs">
+      <DependentUpon>201705272018581_Initial Commit.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AgentInfo.cs" />
@@ -143,23 +123,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201705221920219_Initial Commit.resx">
-      <DependentUpon>201705221920219_Initial Commit.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201705241639439_Country Changes.resx">
-      <DependentUpon>201705241639439_Country Changes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201705270503324_Country state and city model changes.resx">
-      <DependentUpon>201705270503324_Country state and city model changes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201705271804209_Contact model changes.resx">
-      <DependentUpon>201705271804209_Contact model changes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201705271841033_Phone number change from int to long.resx">
-      <DependentUpon>201705271841033_Phone number change from int to long.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201705271847045_Contact change Primary Added.resx">
-      <DependentUpon>201705271847045_Contact change Primary Added.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201705272018581_Initial Commit.resx">
+      <DependentUpon>201705272018581_Initial Commit.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
