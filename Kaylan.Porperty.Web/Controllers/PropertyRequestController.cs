@@ -1,5 +1,6 @@
 ﻿using Kalyan.Property.Infrastructure;
 using Kalyan.Property.Infrastructure.Models;
+using Kaylan.Porperty.Web.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -22,31 +23,24 @@ namespace Kaylan.Porperty.Web.Controllers
 
         public ActionResult CreatePropertyRequest()
         {
-            //  sir i try this but not wotking -rupesh
-            //ViewBag.ContactTypes = unitOfWork.Repository<ContractType>.ToList();
-            //ViewBag.PropertyTypes = unitOfWork.Repository<PropertyType>.ToList();
-            //ViewBag.Area = unitOfWork.Repository<Area>.ToList();
-
-            return View(new PropertyRequest());
+            return View(new PropertyRequestViewModel());
         }
 
         [HttpPost]
-        public ActionResult CreatePropertyRequest(PropertyRequest propertyrequest)
+        public ActionResult CreatePropertyRequest(PropertyRequestViewModel propertyrequest)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    using (unitOfWork = new UnitOfWork())
-                    {
-                        unitOfWork.Repository<PropertyRequest>().Add(propertyrequest);
-                        bool result = unitOfWork.Commit();
-                    }
+                    propertyrequest.PropertyRequestTypeId = 1;
+                    unitOfWork.Repository<PropertyRequest>().Add(propertyrequest.GetPropertyRequest());
+                    bool result = unitOfWork.Commit();
 
-                    return RedirectToAction("Index");
+                    return RedirectToAction("Index", "Home");
                 }
             }
-            catch (DataException)
+            catch (Exception e)
             {
                 ModelState.AddModelError("", "Unable to save changes. " +
                   "Try again, and if the problem persists see your system administrator.");

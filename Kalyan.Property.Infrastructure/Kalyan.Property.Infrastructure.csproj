@@ -92,6 +92,10 @@
     <Compile Include="Migrations\201705272018581_Initial Commit.Designer.cs">
       <DependentUpon>201705272018581_Initial Commit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705280534261_IsAgree Added for requestProperty.cs" />
+    <Compile Include="Migrations\201705280534261_IsAgree Added for requestProperty.Designer.cs">
+      <DependentUpon>201705280534261_IsAgree Added for requestProperty.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AgentInfo.cs" />
     <Compile Include="Models\Amenity.cs" />
@@ -125,6 +129,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201705272018581_Initial Commit.resx">
       <DependentUpon>201705272018581_Initial Commit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705280534261_IsAgree Added for requestProperty.resx">
+      <DependentUpon>201705280534261_IsAgree Added for requestProperty.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

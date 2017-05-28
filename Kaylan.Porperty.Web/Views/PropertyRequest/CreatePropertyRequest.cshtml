@@ -1,4 +1,4 @@
-﻿@model Kalyan.Property.Infrastructure.Models.PropertyRequest
+﻿@model Kaylan.Porperty.Web.ViewModel.PropertyRequestViewModel
 
 @{
     ViewBag.Title = "CreatePropertyRequest";
@@ -283,15 +283,22 @@
                                         <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                                             <label>How to be contacted</label>
                                         </div>
-                                        <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 submit-image">
+                                        @*<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 submit-image">
 
-                                            @*Email <input checked="checkdio" value="Email" />*@
+                                            <!--Email <input checked="checkdio" value="Email" />-->
                                             Email <input id="declareEmail" name="declareContact" type="radio" value="Email" onclick="Select('E')" />
-                                        </div>
-                                        <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 submit-image">
+                                            </div>
+                                            <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 submit-image">
 
                                             Phone <input id="declarePhone" name="declareContact" type="radio" value="Phone" onclick="Select('P')" />
-                                        </div>
+                                            </div>*@
+
+                                        @foreach (var contact in Model.ContactTypeList)
+                                        {
+                                            <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 submit-image">
+                                                @contact   @Html.RadioButtonFor(m => m.ContactType, contact)
+                                            </div>
+                                        }
                                     </div>
                                     <br>
                                     <div class="row">
@@ -300,14 +307,13 @@
 
                                             <select class="form-control" id="ContractType" name="ContractType">
                                                 <option>Select ContractType</option>
-
                                             </select>
                                             @* <select class="form-control" name="type">
-                                                    <option selected="" value="0">- Rent / Sale</option>
-                                                    <option value="Villa Compound">Rent</option>
-                                                    <option value="Apartment FF">Sale</option>
-                                                    <option value="Freehold Apartment for Sale">Short Term Rent</option>
-                                                    <option value="Office Space">Serviced</option>
+                                                <option selected="" value="0">- Rent / Sale</option>
+                                                <option value="Villa Compound">Rent</option>
+                                                <option value="Apartment FF">Sale</option>
+                                                <option value="Freehold Apartment for Sale">Short Term Rent</option>
+                                                <option value="Office Space">Serviced</option>
                                                 </select>*@
                                         </div>
                                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
@@ -349,15 +355,17 @@
                                                     <label>Price</label>
                                                 </div>
                                                 <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
-                                                    <select name="minPrice" id="minPrice" class="form-control">
-                                                        <option selected>Select Price</option>
-                                                    </select>
+                                                    @Html.DropDownListFor(model => model.FromPrice, new List<SelectListItem>() { new SelectListItem { Text = "Select Price", Value = "-1" } }, new { @class = "form-control", @id = "minPrice" })
+                                                    @*<select name="minPrice" id="minPrice" class="form-control">
+                                                            <option selected>Select Price</option>
+                                                        </select>*@
                                                     @*@Html.DropDownListFor(model => model.FromPrice, new List<SelectListItem> { new SelectListItem { Text = "20Lacs" }, new SelectListItem { Text = "30Lacs" }, new SelectListItem { Text = "40Lacs" }, new SelectListItem { Text = "50Lacs" }, new SelectListItem { Text = "70Lacs" }, new SelectListItem { Text = "80Lacs" } }, "Select Type", new { @class = "form-control" })*@
                                                 </div>
                                                 <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
-                                                    <select name="maxPrice" id="maxPrice" class="form-control">
-                                                        <option selected>Select Price</option>
-                                                    </select>
+                                                    @*<select name="maxPrice" id="maxPrice" class="form-control">
+                                                            <option selected>Select Price</option>
+                                                        </select>*@
+                                                    @Html.DropDownListFor(model => model.ToPrice, new List<SelectListItem>() { new SelectListItem { Text = "Select Price", Value = "-1" } }, new { @class = "form-control", @id = "maxPrice" })
                                                     @*@Html.DropDownListFor(model => model.ToPrice, new List<SelectListItem> { new SelectListItem { Text = "30Lacs" }, new SelectListItem { Text = "40Lacs" }, new SelectListItem { Text = "50Lacs" }, new SelectListItem { Text = "70Lacs" }, new SelectListItem { Text = "80Lacs" }, new SelectListItem { Text = "1Cr" } }, "Select Type", new { @class = "form-control" })*@
                                                 </div>
                                             </div>
@@ -382,7 +390,8 @@
                                     <div class="row">
                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xm-12">
                                             <p>
-                                                <input type="checkbox" name="confirm" value="" class="check" id="confirm">
+                                                @*<input type="checkbox" name="confirm" value="" class="check" id="confirm">*@
+                                                @Html.CheckBoxFor(x => x.IsAgree, new { @class = "check", @id = "confirm" })
                                                 <label for="check1" class="check">I understand that submitting this form is for requests only, not for advertising your property!</label>
                                             </p>
                                         </div>

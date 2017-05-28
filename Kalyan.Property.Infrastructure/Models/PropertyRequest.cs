@@ -40,6 +40,7 @@ namespace Kalyan.Property.Infrastructure.Models
         public virtual PropertyRequestPrice PropertyRequestPriceMax { get; set; }
 
         public virtual PropertyRequestType PropertyRequestType { get; set; }
+        public bool IsAgree { get; set; }
     }
 
     public partial class PropertyRequestType
