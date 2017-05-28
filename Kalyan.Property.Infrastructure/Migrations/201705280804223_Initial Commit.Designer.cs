@@ -7,13 +7,13 @@ namespace Kalyan.Property.Infrastructure.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class IsAgreeAddedforrequestProperty : IMigrationMetadata
+    public sealed partial class InitialCommit : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(IsAgreeAddedforrequestProperty));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialCommit));
         
         string IMigrationMetadata.Id
         {
-            get { return "201705280534261_IsAgree Added for requestProperty"; }
+            get { return "201705280804223_Initial Commit"; }
         }
         
         string IMigrationMetadata.Source

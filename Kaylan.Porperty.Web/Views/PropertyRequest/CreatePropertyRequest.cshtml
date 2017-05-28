@@ -283,15 +283,6 @@
                                         <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                                             <label>How to be contacted</label>
                                         </div>
-                                        @*<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 submit-image">
-
-                                            <!--Email <input checked="checkdio" value="Email" />-->
-                                            Email <input id="declareEmail" name="declareContact" type="radio" value="Email" onclick="Select('E')" />
-                                            </div>
-                                            <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 submit-image">
-
-                                            Phone <input id="declarePhone" name="declareContact" type="radio" value="Phone" onclick="Select('P')" />
-                                            </div>*@
 
                                         @foreach (var contact in Model.ContactTypeList)
                                         {
@@ -303,77 +294,39 @@
                                     <br>
                                     <div class="row">
                                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                            @*@Html.DropDownListFor(model => model.ContractType, new List<SelectListItem> { new SelectListItem { Text = "Sale" }, new SelectListItem { Text = "Rent" } }, "Select Type", new { @class = "form-control" })*@
-
-                                            <select class="form-control" id="ContractType" name="ContractType">
-                                                <option>Select ContractType</option>
-                                            </select>
-                                            @* <select class="form-control" name="type">
-                                                <option selected="" value="0">- Rent / Sale</option>
-                                                <option value="Villa Compound">Rent</option>
-                                                <option value="Apartment FF">Sale</option>
-                                                <option value="Freehold Apartment for Sale">Short Term Rent</option>
-                                                <option value="Office Space">Serviced</option>
-                                                </select>*@
+                                            @Html.DropDownListFor(model => model.PropertyRequestContractTypeId, new List<SelectListItem>() { new SelectListItem { Text = "Select Contract Type", Value = "-1" } }, new { @class = "form-control", @id = "PropertyRequestContractTypeId" })
                                         </div>
                                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                            @*@Html.DropDownListFor(model => model.PropertyTypees, new SelectList(Model.PropertyTypelist, "PropertyTypeId", "PropertyTypees"), "Select PropertyTypes", new { @class = "form-control" })*@
-
-                                            <!-- <select name="property_type" class="form-control">
-                                                <option value="null">- All Property Types</option>
-                                                <option value="1">Apartment or Flat</option>
-                                                <option value="14">Building </option>
-                                                <option value="8">Commercial (Bar or Restaurant)</option>
-                                                <option value="11">Commercial (Hotel)</option>
-                                                <option value="4">Commercial (Office)</option>
-                                                <option value="3">Commercial (Shop or Warehouse)</option>
-                                                <option value="7">Compound</option>
-                                                <option value="10">House</option>
-                                                <option value="13">Labour Accommodation</option>
-                                                <option value="9">Land</option>
-                                                <option value="6">Penthouse</option>
-                                                <option value="5">Studio</option>
-                                                <option value="2">Villa</option>
-                                            </select>-->
+                                            @Html.DropDownListFor(model => model.PropertyRequestTypeId, new List<SelectListItem>() { new SelectListItem { Text = "All Propert Types", Value = "1" } }, new { @class = "form-control", @id = "PropertyRequestTypeId" })
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                             <div class="row">
                                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                                    @*@Html.DropDownListFor(model => model.AreaName, new SelectList(Model.Arealist, "AreaId", "AreaName"), "Select AreaName", new { @class = "form-control" })*@
+                                                    @Html.DropDownListFor(model => model.PropertyRequestAreaId, new List<SelectListItem>() { new SelectListItem { Text = "All Area", Value = "1" } }, new { @class = "form-control", @id = "PropertyRequestAreaId" })
 
-                                                    <!--  <select name="area" class="form-control">
+                                                      @*<select name="area" class="form-control">
                                                           <option value="null">- All Areas</option>
                                                           <option value="1">Khadakpada</option>
                                                           <option value="14">Durgadi</option>
                                                           <option value="8">Shivaji Chowk</option>
                                                           <option value="11">Godrej Hill</option>
-                                                      </select>-->
+                                                      </select>*@
                                                 </div>
                                                 <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
                                                     <label>Price</label>
                                                 </div>
                                                 <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
                                                     @Html.DropDownListFor(model => model.FromPrice, new List<SelectListItem>() { new SelectListItem { Text = "Select Price", Value = "-1" } }, new { @class = "form-control", @id = "minPrice" })
-                                                    @*<select name="minPrice" id="minPrice" class="form-control">
-                                                            <option selected>Select Price</option>
-                                                        </select>*@
-                                                    @*@Html.DropDownListFor(model => model.FromPrice, new List<SelectListItem> { new SelectListItem { Text = "20Lacs" }, new SelectListItem { Text = "30Lacs" }, new SelectListItem { Text = "40Lacs" }, new SelectListItem { Text = "50Lacs" }, new SelectListItem { Text = "70Lacs" }, new SelectListItem { Text = "80Lacs" } }, "Select Type", new { @class = "form-control" })*@
                                                 </div>
                                                 <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
-                                                    @*<select name="maxPrice" id="maxPrice" class="form-control">
-                                                            <option selected>Select Price</option>
-                                                        </select>*@
                                                     @Html.DropDownListFor(model => model.ToPrice, new List<SelectListItem>() { new SelectListItem { Text = "Select Price", Value = "-1" } }, new { @class = "form-control", @id = "maxPrice" })
-                                                    @*@Html.DropDownListFor(model => model.ToPrice, new List<SelectListItem> { new SelectListItem { Text = "30Lacs" }, new SelectListItem { Text = "40Lacs" }, new SelectListItem { Text = "50Lacs" }, new SelectListItem { Text = "70Lacs" }, new SelectListItem { Text = "80Lacs" }, new SelectListItem { Text = "1Cr" } }, "Select Type", new { @class = "form-control" })*@
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 submit-description">
-                                            @*<textarea name="description" class="form-control margin-0" rows="4" cols="10" placeholder="Propery Description"></textarea>*@
                                             @Html.TextAreaFor(model => model.PropertyDescription, new { @placeholder = "PropertyDescription", @class = "form-control", id = "PhoneNumber", @autocomplete = "off" })
-                                            @*@Html.TextArea(Model=>Model.p, new { @placeholder = "PropertyDescription", @class = "form-control", id = "PropertyDescription", @autocomplete = "off" })*@
                                         </div>
                                     </div>
                                     <div class="row">

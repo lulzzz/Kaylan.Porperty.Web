@@ -18,15 +18,15 @@ namespace Kalyan.Property.Infrastructure.Models
         [StringLength(50)]
         public string PhoneNumber { get; set; }
 
-        [StringLength(50)]
-        public string ContractType { get; set; }
+        //[StringLength(50)]
+        //public string ContractType { get; set; }
 
         public int FromPrice { get; set; }
 
         [StringLength(50)]
         public string ContactType { get; set; }
 
-        public int PropertyRequestTypeId { get; set; }
+        public int PropertyRequestContractTypeId { get; set; }
 
         [StringLength(50)]
         public string PropertyDescription { get; set; }
@@ -35,12 +35,55 @@ namespace Kalyan.Property.Infrastructure.Models
 
         public DateTime CreatedDate { get; set; }
 
+        public bool IsAgree { get; set; }
+
+        public int PropertyRequestTypeId { get; set; }
+
+        public int PropertyRequestAreaId { get; set; }
+
         public virtual PropertyRequestPrice PropertyRequestPriceMin { get; set; }
 
         public virtual PropertyRequestPrice PropertyRequestPriceMax { get; set; }
 
+        public virtual PropertyRequestContractType PropertyRequestContractType { get; set; }
+
         public virtual PropertyRequestType PropertyRequestType { get; set; }
-        public bool IsAgree { get; set; }
+
+        public virtual PropertyRequestArea PropertyRequestArea { get; set; }
+    }
+
+    public partial class PropertyRequestContractType
+    {
+        public PropertyRequestContractType()
+        {
+            PropertyRequests = new HashSet<PropertyRequest>();
+        }
+
+        public int Id { get; set; }
+
+        [StringLength(50)]
+        public string Name { get; set; }
+
+        public bool IsActive { get; set; }
+
+        public virtual ICollection<PropertyRequest> PropertyRequests { get; set; }
+    }
+
+    public partial class PropertyRequestArea
+    {
+        public PropertyRequestArea()
+        {
+            PropertyRequests = new HashSet<PropertyRequest>();
+        }
+
+        public int Id { get; set; }
+
+        [StringLength(50)]
+        public string Name { get; set; }
+
+        public bool IsActive { get; set; }
+
+        public virtual ICollection<PropertyRequest> PropertyRequests { get; set; }
     }
 
     public partial class PropertyRequestType

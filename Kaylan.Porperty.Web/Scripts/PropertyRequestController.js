@@ -19,18 +19,32 @@
     //    },
     //});
 
-    $.get("/PropertyRequest/GetAllPropertyRequestType", function (result) {
+    $.get("/PropertyRequest/GetAllPropertyRequestContractType", function (result) {
+        $("#PropertyRequestContractTypeId").html("");
 
-        $("#ContractType").html("");
-
-        $("#ContractType").append($('<option selected></option>').val(-1).html('Select ContractType'));
+        $("#PropertyRequestContractTypeId").append($('<option selected></option>').val(-1).html('Select Contract Type'));
         $.each(result, function (i, property) {
-            $("#ContractType").append($('<option></option>').val(property.Id).html(property.Name))
+            $("#PropertyRequestContractTypeId").append($('<option></option>').val(property.Id).html(property.Name))
+        })
+    });
+
+    $.get("/PropertyRequest/GetAllPropertyRequestType", function (result) {
+        $("#PropertyRequestTypeId").html("");
+
+        $.each(result, function (i, property) {
+            $("#PropertyRequestTypeId").append($('<option></option>').val(property.Id).html(property.Name))
+        })
+    });
+
+    $.get("/PropertyRequest/GetAllPropertyRequestArea", function (result) {
+        $("#PropertyRequestAreaId").html("");
+       
+        $.each(result, function (i, area) {
+            $("#PropertyRequestAreaId").append($('<option></option>').val(area.Id).html(area.Name))
         })
     });
 
     $.get("/PropertyRequest/GetAllPropertyRequestPrice", function (result) {
-
         $("#maxPrice").html("");
         $("#minPrice").html("");
 

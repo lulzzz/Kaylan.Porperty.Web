@@ -28,8 +28,10 @@ namespace Kalyan.Property.Infrastructure
         public virtual DbSet<PropertyType> PropertyTypes { get; set; }
         public virtual DbSet<Service> Services { get; set; }
         public virtual DbSet<State> States { get; set; }
-        public virtual DbSet<PropertyRequestType> PropertyRequestType { get; set; }
+        public virtual DbSet<PropertyRequestContractType> PropertyRequestContractType { get; set; }
         public virtual DbSet<PropertyRequestPrice> PropertyRequestPrice { get; set; }
+        public virtual DbSet<PropertyRequestType> PropertyRequestType { get; set; }
+        public virtual DbSet<PropertyRequestArea> PropertyRequestArea { get; set; }
 
         public CustomeDbContext(string nameOrConnectionString) : base("DefaultConnection")
         {
@@ -146,21 +148,32 @@ namespace Kalyan.Property.Infrastructure
                 .HasForeignKey(e => e.ToPrice)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<PropertyRequestType>()
+            modelBuilder.Entity<PropertyRequestContractType>()
                 .Property(e => e.Name)
                 .IsUnicode(false);
+
+            modelBuilder.Entity<PropertyRequestContractType>()
+                .HasMany(e => e.PropertyRequests)
+                .WithRequired(e => e.PropertyRequestContractType)
+                .HasForeignKey(x => x.PropertyRequestContractTypeId)
+                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<PropertyRequestType>()
                 .HasMany(e => e.PropertyRequests)
                 .WithRequired(e => e.PropertyRequestType)
+                .HasForeignKey(x => x.PropertyRequestTypeId)
                 .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<PropertyRequestArea>()
+               .HasMany(e => e.PropertyRequests)
+               .WithRequired(e => e.PropertyRequestArea)
+               .HasForeignKey(x => x.PropertyRequestAreaId)
+               .WillCascadeOnDelete(false);
         }
 
         public static CustomeDbContext Create()
         {
             return new CustomeDbContext();
         }
-
-        public System.Data.Entity.DbSet<Kalyan.Property.Infrastructure.Models.UserLogin> UserLogins { get; set; }
     }
 }

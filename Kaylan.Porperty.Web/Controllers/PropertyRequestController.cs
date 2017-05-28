@@ -33,7 +33,7 @@ namespace Kaylan.Porperty.Web.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    propertyrequest.PropertyRequestTypeId = 1;
+                    //propertyrequest.PropertyRequestContractTypeId = 1;
                     unitOfWork.Repository<PropertyRequest>().Add(propertyrequest.GetPropertyRequest());
                     bool result = unitOfWork.Commit();
 
@@ -46,6 +46,40 @@ namespace Kaylan.Porperty.Web.Controllers
                   "Try again, and if the problem persists see your system administrator.");
             }
             return View(propertyrequest);
+        }
+
+        [HttpGet]
+        [OutputCache(Duration = 6000, Location = OutputCacheLocation.ServerAndClient)]
+        public ActionResult GetAllPropertyRequestContractType()
+        {
+            List<PropertyRequestContractType> result = new List<PropertyRequestContractType>();
+            try
+            {
+                result = unitOfWork.Repository<PropertyRequestContractType>().GetAll().Select(x => new PropertyRequestContractType() { Id = x.Id, Name = x.Name }).ToList();
+
+                return Json(result, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
+        }
+
+        [HttpGet]
+        [OutputCache(Duration = 6000, Location = OutputCacheLocation.ServerAndClient)]
+        public ActionResult GetAllPropertyRequestPrice()
+        {
+            List<PropertyRequestPrice> result = new List<PropertyRequestPrice>();
+            try
+            {
+                result = unitOfWork.Repository<PropertyRequestPrice>().GetAll().Select(x => new PropertyRequestPrice() { Id = x.Id, Price = x.Price }).ToList();
+
+                return Json(result, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
         }
 
         [HttpGet]
@@ -67,12 +101,12 @@ namespace Kaylan.Porperty.Web.Controllers
 
         [HttpGet]
         [OutputCache(Duration = 6000, Location = OutputCacheLocation.ServerAndClient)]
-        public ActionResult GetAllPropertyRequestPrice()
+        public ActionResult GetAllPropertyRequestArea()
         {
-            List<PropertyRequestPrice> result = new List<PropertyRequestPrice>();
+            List<PropertyRequestArea> result = new List<PropertyRequestArea>();
             try
             {
-                result = unitOfWork.Repository<PropertyRequestPrice>().GetAll().Select(x => new PropertyRequestPrice() { Id = x.Id, Price = x.Price }).ToList();
+                result = unitOfWork.Repository<PropertyRequestArea>().GetAll().Select(x => new PropertyRequestArea() { Id = x.Id, Name = x.Name }).ToList();
 
                 return Json(result, JsonRequestBehavior.AllowGet);
             }

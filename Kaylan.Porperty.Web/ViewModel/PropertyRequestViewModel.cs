@@ -19,15 +19,13 @@ namespace Kaylan.Porperty.Web.ViewModel
 
         public string PhoneNumber { get; set; }
 
-        public string ContractType { get; set; }
-
         public List<string> ContactTypeList { get; set; }
 
         public int FromPrice { get; set; }
 
         public string ContactType { get; set; }
 
-        public int PropertyRequestTypeId { get; set; }
+        public int PropertyRequestContractTypeId { get; set; }
 
         public string PropertyDescription { get; set; }
 
@@ -37,6 +35,10 @@ namespace Kaylan.Porperty.Web.ViewModel
 
         public bool IsAgree { get; set; }
 
+        public int PropertyRequestTypeId { get; set; }
+
+        public int PropertyRequestAreaId { get; set; }
+
         public PropertyRequest GetPropertyRequest()
         {
             return new PropertyRequest()
@@ -44,15 +46,16 @@ namespace Kaylan.Porperty.Web.ViewModel
                 PropertyRequestId = this.PropertyRequestId,
                 FullName = this.FullName,
                 Email = this.Email,
-                ContractType = this.ContractType,
                 PhoneNumber = this.PhoneNumber,
                 FromPrice = this.FromPrice,
                 ContactType = this.ContactType,
-                PropertyRequestTypeId = this.PropertyRequestTypeId,
+                PropertyRequestContractTypeId = this.PropertyRequestContractTypeId,
                 PropertyDescription = this.PropertyDescription,
                 ToPrice = this.ToPrice,
                 CreatedDate = DateTime.Now,
-                IsAgree = this.IsAgree
+                IsAgree = this.IsAgree,
+                PropertyRequestTypeId = this.PropertyRequestTypeId,
+                PropertyRequestAreaId = this.PropertyRequestAreaId
             };
         }
     }

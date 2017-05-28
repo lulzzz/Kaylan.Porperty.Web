@@ -88,13 +88,9 @@
     <Compile Include="BaseRepository\IRepository.cs" />
     <Compile Include="BaseRepository\Repository.cs" />
     <Compile Include="CustomeDbContext.cs" />
-    <Compile Include="Migrations\201705272018581_Initial Commit.cs" />
-    <Compile Include="Migrations\201705272018581_Initial Commit.Designer.cs">
-      <DependentUpon>201705272018581_Initial Commit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201705280534261_IsAgree Added for requestProperty.cs" />
-    <Compile Include="Migrations\201705280534261_IsAgree Added for requestProperty.Designer.cs">
-      <DependentUpon>201705280534261_IsAgree Added for requestProperty.cs</DependentUpon>
+    <Compile Include="Migrations\201705280804223_Initial Commit.cs" />
+    <Compile Include="Migrations\201705280804223_Initial Commit.Designer.cs">
+      <DependentUpon>201705280804223_Initial Commit.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AgentInfo.cs" />
@@ -127,11 +123,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201705272018581_Initial Commit.resx">
-      <DependentUpon>201705272018581_Initial Commit.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201705280534261_IsAgree Added for requestProperty.resx">
-      <DependentUpon>201705280534261_IsAgree Added for requestProperty.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201705280804223_Initial Commit.resx">
+      <DependentUpon>201705280804223_Initial Commit.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
