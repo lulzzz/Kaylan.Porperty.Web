@@ -270,24 +270,25 @@
                                     <div class="row">
                                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
 
-                                            @Html.TextBoxFor(model => model.Email, new { @placeholder = "Email", @class = "form-control", id = "Email", @autocomplete = "off" })
+                                            @Html.TextBoxFor(model => model.Email,new { @placeholder = "Email", @class = "form-control", id = "Email", @autocomplete = "off" })
                                             @Html.ValidationMessageFor(model => model.Email, "", new { style = "color:red" })
                                         </div>
                                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
 
-                                            @Html.TextBoxFor(model => model.PhoneNumber, new { @placeholder = "PhoneNumber", @class = "form-control", id = "PhoneNumber", @autocomplete = "off" })
+                                            @Html.TextBoxFor(model => model.PhoneNumber,new {@placeholder = "PhoneNumber", @class = "form-control", id = "PhoneNumber", @autocomplete = "off" })
                                             @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { style = "color:red" })
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                        @*<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">*@
+                                        <div class="col-sm-6">
                                             <label>How to be contacted</label>
                                         </div>
-
                                         @foreach (var contact in Model.ContactTypeList)
                                         {
-                                            <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 submit-image">
-                                                @contact   @Html.RadioButtonFor(m => m.ContactType, contact)
+                                            @*<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 submit-image">*@
+                                            <div class="col-sm-3">
+                                                @contact@Html.RadioButtonFor(m => m.ContactType, contact)
                                             </div>
                                         }
                                     </div>
