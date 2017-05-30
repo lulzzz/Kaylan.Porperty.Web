@@ -409,7 +409,7 @@
                 @using (Html.BeginForm())
                 {
 
-                    @Html.HiddenFor(model => model.Citydetails.CityId)
+                    @Html.HiddenFor(model => model.Id);
 
                     @Html.ValidationSummary(true)
                     <div class="mainpanel">
@@ -425,17 +425,31 @@
                         <div class="col-md-3 col-lg-3">
                             <div class="form-group row">
                                 <div class="form-group">
-                                    <label>Country</label>
+                                    @*<label>Country</label>
                                     @Html.DropDownListFor(model => model.Citydetails.CountryName, new SelectList(Model.Countrylist, "CountryId", "CountryName"), "Select Country", new { @id = "country", @class = "form-control" })
-                                    @Html.ValidationMessageFor(model => model.Citydetails.CountryName, null, new { style = "color:red" })
+                                    @Html.ValidationMessageFor(model => model.Citydetails.CountryName, null, new { style = "color:red" })*@
+                                    <label>Country</label>
+                                    <select name="search_by" id="country" class="form-control selectpicker">
+                                        <option selected>Country</option>
+                                    </select>
                                     <br>
-                                    <label>State</label>
+                                    @*<label>State</label>
                                     @Html.DropDownListFor(model => model.Citydetails.StateName, Enumerable.Empty<SelectListItem>(), "Select State", new { @id = "State", @class = "form-control" })
-                                    @Html.ValidationMessageFor(model => model.Citydetails.StateName, null, new { style = "color:red" })
+                                    @Html.ValidationMessageFor(model => model.Citydetails.StateName, null, new { style = "color:red" })*@
+                                    <label>State</label>
+                                    <select name="states" id="states" class="form-control selectpicker">
+                                        <option selected>State</option>
+                                    </select>
                                 </div>
                                 <label>District</label>
-                                @Html.DropDownListFor(model => model.Citydetails.DistrictName, Enumerable.Empty<SelectListItem>(), "Select District", new { @id = "District", @class = "form-control" })
-                                @Html.ValidationMessageFor(model => model.Citydetails.DistrictName, null, new { style = "color:red" })
+                                @*@Html.DropDownListFor(model => model.Citydetails.DistrictName, Enumerable.Empty<SelectListItem>(), "Select District", new { @id = "District", @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.Citydetails.DistrictName, null, new { style = "color:red" })*@
+
+
+                                <label>Districts</label>
+                                <select name="districs" id="districts" class="form-control selectpicker">
+                                    <option selected>Districts</option>
+                                </select>
                             </div>
                         </div>
                         <div class="tile-body">
@@ -449,8 +463,8 @@
                                     <div class="form-group col-md-3 col-lg-3">
                                         <div class="row">
 
-                                            @Html.TextBoxFor(model => model.Citydetails.CityName, new { @placeholder = "CityName", @class = "form-control", id = "cityName", @autocomplete = "off" })
-                                            @Html.ValidationMessageFor(model => model.Citydetails.CityName, null, new { style = "color:red" })
+                                            @Html.TextBoxFor(model => model.Name, new { @placeholder = "CityName", @class = "form-control", id = "cityName", @autocomplete = "off" })
+                                            @Html.ValidationMessageFor(model => model.Name, null, new { style = "color:red" })
                                             @{
                                                 if (ViewBag.error != null)
                                                 {

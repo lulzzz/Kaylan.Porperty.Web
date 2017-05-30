@@ -359,7 +359,7 @@
                 @using (Html.BeginForm())
                 {
 
-                    @Html.HiddenFor(model => model.PropertyDetails.PropertyId)
+                    @Html.HiddenFor(model => model.Id)
 
                     @Html.ValidationSummary(true)
                     <input type="hidden" id="hdnRowCount" name="hdnRowCount" />
@@ -382,8 +382,8 @@
 
                                         <div class="form-group col-md-3 col-lg-3">
 
-                                            @Html.TextBoxFor(model => model.PropertyTypedetails.PropertyTypees, new { @placeholder = "PropertyTypee", @class = "form-control", id = "PropertyTypee", @autocomplete = "off" })
-                                            @Html.ValidationMessageFor(model => model.PropertyTypedetails.PropertyTypees, null, new { style = "color:red" })
+                                            @Html.TextBoxFor(model => model.Name, new { @placeholder = "PropertyType", @class = "form-control", id = "PropertyTypee", @autocomplete = "off" })
+                                            @Html.ValidationMessageFor(model => model.Name, null, new { style = "color:red" })
                                             @{
                                                 if (ViewBag.error != null)
                                                 {
