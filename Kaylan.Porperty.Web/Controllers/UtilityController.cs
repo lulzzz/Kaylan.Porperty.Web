@@ -217,22 +217,22 @@ namespace Kaylan.Porperty.Web.Controllers
 
         // POST: Utility
         [HttpPost]
-        public string CreateArea(StateViewModel stateViewModel)
+        public string CreateArea(AreaViewModel areaViewModel)
         {
             if (ModelState.IsValid)
             {
-                var result = iUnitOfWork.Repository<State>().GetMany(x => x.Name == stateViewModel.StateName).Any();
+                var result = iUnitOfWork.Repository<Area>().GetMany(x => x.Name == areaViewModel.AreaName).Any();
 
                 if (!result)
                 {
                     try
                     {
-                        State state = new State();
-                        state.Name = stateViewModel.StateName;
-                        state.IsActive = true;
-                        state.CountryId = stateViewModel.CountryId;
+                        Area area = new Area();
+                        area.Name = areaViewModel.AreaName;
+                        area.IsActive = true;
+                        area.CityId = areaViewModel.CityId;
 
-                        iUnitOfWork.Repository<State>().Add(state);
+                        iUnitOfWork.Repository<Area>().Add(area);
                         bool save = iUnitOfWork.Commit();
                         return "Added Successfully";
                     }
@@ -244,7 +244,7 @@ namespace Kaylan.Porperty.Web.Controllers
                 }
                 else
                 {
-                    return "State Already Exists";
+                    return "Area Already Exists";
                 }
             }
 
