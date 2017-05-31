@@ -12,7 +12,6 @@
     </body>
     </html>*@
 
-
 @*@{
         ViewBag.Title = "Admin";
     }
@@ -304,7 +303,6 @@
                         </li>
                         <!-- Control Sidebar Toggle Button -->
                 </div>
-
             </nav>
         </header>
         <!-- Left side column. contains the logo and sidebar -->
@@ -353,7 +351,6 @@
                         </a>
                     </li>
 
-
                     <li class="active treeview">
                         <a href="../Home/Master">
                             <i class="fa fa-bars" aria-hidden="true"></i>
@@ -363,10 +360,8 @@
                         <ul class="treeview-menu">
                             <li> @Html.ActionLink("Country", "CreateCountry", "Utility")</li>
                             <li> @Html.ActionLink("State", "CreateState", "Utility")</li>
-
-                            <li><a href="../District/CreateDistrict"><i class="fa fa-circle-o"></i> District</a></li>
-                            <li><a href="../City/CreateCity"><i class="fa fa-circle-o"></i> City</a></li>
-                            <li><a href="../Area/CreateArea"><i class="fa fa-circle-o"></i> Area</a></li>
+                            <li> @Html.ActionLink("City", "CreateCity", "Utility")</li>
+                            <li> @Html.ActionLink("Area", "CreateArea", "Utility")</li>
                             <li><a href="../PropertyType/CreatePropertyType"><i class="fa fa-circle-o"></i> PropertyType</a></li>
                         </ul>
                     </li>
@@ -384,23 +379,19 @@
         <footer class="main-footer" style="padding:0px;">
             <div class="copyrights-col-left col-md-6 col-sm-6" style="float:left;">
 
-
                 <p>2016 © <a href="http://mariainfotech.in/">MARIA Infotech Pvt. Ltd. </a>All Rights Reserved.</p>
             </div>
-
 
             <div class="copyrights-col-right col-md-6 col-sm-6" style="float:right;">
                 <div class="social-icons" style="float:right;margin-right:50px">
                     <a href="#"><i class="fa fa-facebook"></i></a>&nbsp;&nbsp;&nbsp;
                     <a href="#"><i class="fa fa-twitter"></i></a>
-
                 </div>
                 <div>
                 </div>
             </div>
         </footer>
     </div>
-
 
     <!-- Control Sidebar -->
     <aside class="control-sidebar control-sidebar-dark">
@@ -514,7 +505,6 @@
                     </li>
                 </ul>
                 <!-- /.control-sidebar-menu -->
-
             </div>
             <!-- /.tab-pane -->
             <!-- Settings tab content -->
@@ -592,7 +582,6 @@
     <!-- Add the sidebar's background. This div must be placed
          immediately after the control sidebar -->
     <div class="control-sidebar-bg"></div>
-
     </div>
     <!-- ./wrapper -->
     <!-- jQuery 2.2.0 -->
@@ -620,4 +609,3 @@
     <script src="@Url.Content("~/scripts//demo.js")"></script>
 </body>
 </html>
-

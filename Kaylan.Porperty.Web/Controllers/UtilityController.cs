@@ -110,21 +110,175 @@ namespace Kaylan.Porperty.Web.Controllers
             return "Please try after some time";
         }
 
-        public ActionResult StateList(int page = 1)
+        // GET: Utility
+        public ActionResult CreateCity(int? page)
         {
-            var result = iUnitOfWork.Repository<Country>().GetAll().Select(x => new State() { Name = x.Name, Id = x.Id, IsActive = x.IsActive }).ToList();
+            CityViewModel vm = new CityViewModel();
 
-            PagedList.IPagedList<State> stateResult = new PagedList.PagedList<State>(result, page, pageSize);
+            var result = from country in iUnitOfWork.Repository<Country>().GetAll()
+                         join state in iUnitOfWork.Repository<State>().GetAll()
+                         on country.Id equals state.CountryId
+
+                         join city in iUnitOfWork.Repository<City>().GetAll()
+                         on state.Id equals city.StateId
+
+                         select new City
+                         {
+                             Id = city.Id,
+                             Name = city.Name,
+                             IsActive = city.IsActive,
+                             State = new State()
+                             {
+                                 Name = state.Name,
+                                 Country = state.Country
+                             }
+                         };
+
+            vm.CityList = result.ToPagedList(page ?? 1, pageSize);
 
             return Request.IsAjaxRequest()
-               ? (ActionResult)PartialView("_StateList", stateResult)
-               : View();
+                ? (ActionResult)PartialView("_CityList", vm.CityList)
+                : View(vm);
+        }
+
+        // POST: Utility
+        [HttpPost]
+        public string CreateCity(CityViewModel cityViewModel)
+        {
+            if (ModelState.IsValid)
+            {
+                var result = iUnitOfWork.Repository<City>().GetMany(x => x.Name == cityViewModel.CityName).Any();
+
+                if (!result)
+                {
+                    try
+                    {
+                        City city = new City();
+                        city.Name = cityViewModel.CityName;
+                        city.IsActive = true;
+                        city.StateId = cityViewModel.StateId;
+
+                        iUnitOfWork.Repository<City>().Add(city);
+                        bool save = iUnitOfWork.Commit();
+                        return "Added Successfully";
+                    }
+                    catch (Exception exception)
+                    {
+                        System.Diagnostics.Debug.WriteLine(exception);
+                        return "Some internal Error Occure";
+                    }
+                }
+                else
+                {
+                    return "City Already Exists";
+                }
+            }
+            return "Please try after some time !";
+        }
+
+        // GET: Utility
+        public ActionResult CreateArea(int? page)
+        {
+            AreaViewModel vm = new AreaViewModel();
+
+            var result = from country in iUnitOfWork.Repository<Country>().GetAll()
+                         join state in iUnitOfWork.Repository<State>().GetAll()
+                         on country.Id equals state.CountryId
+
+                         join city in iUnitOfWork.Repository<City>().GetAll()
+                         on state.Id equals city.StateId
+                         join area in iUnitOfWork.Repository<Area>().GetAll()
+                         on city.Id equals area.CityId
+                         select new Area
+                         {
+                             Id = city.Id,
+                             Name = city.Name,
+                             IsActive = city.IsActive,
+                             City = new City()
+                             {
+                                 Name = city.Name,
+                                 State = new State()
+                                 {
+                                     Name = state.Name,
+                                     Country = new Country()
+                                     {
+                                         Name = country.Name
+                                     }
+                                 }
+                             }
+                         };
+
+            vm.AreaList = result.ToPagedList(page ?? 1, pageSize);
+
+            return Request.IsAjaxRequest()
+                ? (ActionResult)PartialView("_AreaList", vm.AreaList)
+                : View(vm);
+        }
+
+        // POST: Utility
+        [HttpPost]
+        public string CreateArea(StateViewModel stateViewModel)
+        {
+            if (ModelState.IsValid)
+            {
+                var result = iUnitOfWork.Repository<State>().GetMany(x => x.Name == stateViewModel.StateName).Any();
+
+                if (!result)
+                {
+                    try
+                    {
+                        State state = new State();
+                        state.Name = stateViewModel.StateName;
+                        state.IsActive = true;
+                        state.CountryId = stateViewModel.CountryId;
+
+                        iUnitOfWork.Repository<State>().Add(state);
+                        bool save = iUnitOfWork.Commit();
+                        return "Added Successfully";
+                    }
+                    catch (Exception exception)
+                    {
+                        System.Diagnostics.Debug.WriteLine(exception);
+                        return "Some internal Error Occure";
+                    }
+                }
+                else
+                {
+                    return "State Already Exists";
+                }
+            }
+
+            return "Please try after some time";
         }
 
         [HttpGet]
         public ActionResult GetCountryList()
         {
-            var result = iUnitOfWork.Repository<Country>().GetAll().Select(x => new Country { Name = x.Name, Id = x.Id })
+            var result = iUnitOfWork.Repository<Country>()
+                .GetAll()
+                .Select(x => new Country { Name = x.Name, Id = x.Id })
+                  .ToList();
+
+            return Json(result, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpGet]
+        public ActionResult GetStateList()
+        {
+            var result = iUnitOfWork.Repository<State>()
+                .GetAll()
+                .Select(x => new State { Name = x.Name, Id = x.Id })
+                  .ToList();
+
+            return Json(result, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpGet]
+        public ActionResult GetCityList()
+        {
+            var result = iUnitOfWork.Repository<City>()
+                .GetAll()
+                .Select(x => new City { Name = x.Name, Id = x.Id })
                   .ToList();
 
             return Json(result, JsonRequestBehavior.AllowGet);

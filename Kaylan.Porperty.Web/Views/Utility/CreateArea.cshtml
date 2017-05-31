@@ -1,0 +1,120 @@
+﻿@model Kaylan.Porperty.Web.ViewModel.AreaViewModel
+@{
+    ViewBag.Title = "Create City";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/unobtrusive/js")
+
+<script type="text/javascript">
+    function Clear() {
+        $('#countryName').val('');
+    }
+
+    $.ajax
+({
+    url: '/Utility/GetCountryList',
+    type: 'GET',
+    datatype: 'application/json',
+    contentType: 'application/json',
+    success: function (result) {
+        $("#CountryId").html("");
+        $.each(result, function (i, country) {
+            $("#CountryId").append
+            ($('<option></option>').val(country.Id).html(country.Name))
+        })
+    },
+    error: function () {
+        alert("Whooaaa! Something went wrong..")
+    },
+});
+
+    $.ajax
+  ({
+      url: '/Utility/GetStateList',
+      type: 'GET',
+      datatype: 'application/json',
+      contentType: 'application/json',
+      success: function (result) {
+          $("#StateId").html("");
+          $.each(result, function (i, country) {
+              $("#StateId").append
+              ($('<option></option>').val(country.Id).html(country.Name))
+          })
+      },
+      error: function () {
+          alert("Whooaaa! Something went wrong..")
+      },
+  });
+
+    $.ajax
+ ({
+     url: '/Utility/GetCityList',
+     type: 'GET',
+     datatype: 'application/json',
+     contentType: 'application/json',
+     success: function (result) {
+         $("#CityId").html("");
+         $.each(result, function (i, city) {
+             $("#CityId").append
+             ($('<option></option>').val(city.Id).html(city.Name))
+         })
+     },
+     error: function () {
+         alert("Whooaaa! Something went wrong..")
+     },
+ });
+</script>
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>
+        Dashboard
+        <small>Version 2.0</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Dashboard</li>
+    </ol>
+</section>
+
+<!-- Main content -->
+<section class="content">
+
+    <div id="content">
+        @using (Ajax.BeginForm("CreateCity", new AjaxOptions
+            {
+                UpdateTargetId = "targetId",
+                HttpMethod = "Post",
+                OnSuccess = "Clear"
+            }))
+            {
+            <div class="search-field">
+                <label>Country</label>
+
+                @Html.DropDownListFor(model => model.CountryId, new List<SelectListItem>() { new SelectListItem { Text = "Select Country", Value = "-1" } }, new { @class = "form - control selectpicker", @id = "CountryId" })
+            </div>
+
+            <div class="search-field">
+                <label>State</label>
+
+                @Html.DropDownListFor(model => model.StateId, new List<SelectListItem>() { new SelectListItem { Text = "Select State", Value = "-1" } }, new { @class = "form - control selectpicker", @id = "StateId" })
+            </div>
+
+            <div class="search-field">
+                <label>State</label>
+
+                @Html.DropDownListFor(model => model.CityId, new List<SelectListItem>() { new SelectListItem { Text = "Select City", Value = "-1" } }, new { @class = "form - control selectpicker", @id = "CityId" })
+            </div>
+            <div>
+                @Html.TextBoxFor(x => x.AreaName, new { @class = "" })
+                <input type="submit" value="Add City" />
+            </div>
+        }
+        <div id="targetId">
+        </div>
+        <div id="unobtrusive">
+            @Html.Partial("_AreaList", Model.AreaList)
+        </div>
+    </div>
+</section>
+<!-- /.content -->

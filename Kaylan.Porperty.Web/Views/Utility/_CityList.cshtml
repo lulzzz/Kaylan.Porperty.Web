@@ -1,0 +1,32 @@
+﻿@model PagedList.IPagedList<Kalyan.Property.Infrastructure.Models.City>
+@using PagedList.Mvc;
+<table class="table">
+    <thead>
+        <tr>
+            <td>Id</td>
+            <td>City Name</td>
+            <td>State Name</td>
+            <td>Country Name</td>
+            <td>IsActive</td>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        @foreach (var city in Model)
+        {
+            <tr>
+                <td>@city.Id</td>
+                <td>@city.Name</td>
+                <td>@city.State.Name </td>
+                <td>@city.State.Country.Name </td>
+                <td>@city.IsActive</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div id="contentPager">
+
+    @Html.PagedListPager(Model, page => Url.Action("CreateCity", new { page }), PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(new AjaxOptions() { HttpMethod = "GET", UpdateTargetId = "unobtrusive" }))
+</div>

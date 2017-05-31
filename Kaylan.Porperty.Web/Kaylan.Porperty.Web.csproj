@@ -215,9 +215,9 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModel\CityViewModel.cs" />
     <Compile Include="ViewModel\ContactViewModel.cs" />
     <Compile Include="ViewModel\CountryViewModel.cs" />
-    <Compile Include="ViewModel\DistrictViewModel.cs" />
     <Compile Include="ViewModel\PropertyRequestViewModel.cs" />
     <Compile Include="ViewModel\StateViewModel.cs" />
   </ItemGroup>
@@ -583,6 +583,10 @@
     <Content Include="Views\Utility\CreateState.cshtml" />
     <Content Include="Views\Utility\_StateList.cshtml" />
     <Content Include="Views\Shared\_AdminLayout.cshtml" />
+    <Content Include="Views\Utility\CreateCity.cshtml" />
+    <Content Include="Views\Utility\CreateArea.cshtml" />
+    <Content Include="Views\Utility\_CityList.cshtml" />
+    <Content Include="Views\Utility\_AreaList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
