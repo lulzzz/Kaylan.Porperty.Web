@@ -15,8 +15,6 @@ namespace Kalyan.Property.Infrastructure.Models
         }
 
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-
-        
         public int Id { get; set; }
 
         [StringLength(50)]

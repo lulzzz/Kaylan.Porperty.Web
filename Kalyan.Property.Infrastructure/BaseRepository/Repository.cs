@@ -72,10 +72,5 @@ namespace Kalyan.Property.Infrastructure.BaseRepository
             var query = this.DbContext.Set<T>().SqlQuery(procName).ToList();
             return query;
         }
-
-        public object GetById(int? selectedcountryId)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
