@@ -103,7 +103,7 @@ namespace Kaylan.Porperty.Web.Controllers
                 }
                 else
                 {
-                    return "Country Already Exists";
+                    return "State Already Exists";
                 }
             }
 
