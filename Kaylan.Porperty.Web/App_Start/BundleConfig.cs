@@ -31,6 +31,16 @@ namespace Kaylan.Porperty.Web
 
             bundles.Add(new ScriptBundle("~/PropertyRequest/js").Include(
                      "~/Scripts/PropertyRequestController.js"));
+
+            bundles.Add(new ScriptBundle("~/Utility/js").Include(
+                    "~/Scripts/UtilityController.js"));
+
+
+            bundles.Add(new ScriptBundle("~/unobtrusive/js").Include(
+                   "~/Scripts/jquery.unobtrusive-ajax.js"));
+
+
+            
         }
     }
 }

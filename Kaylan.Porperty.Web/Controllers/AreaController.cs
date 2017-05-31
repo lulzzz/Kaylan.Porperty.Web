@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Kalyan.Property.Infrastructure.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,12 +12,15 @@ namespace Kaylan.Porperty.Web.Controllers
         // GET: Area
         public ActionResult CreateArea()
         {
-            return View();
+
+            Area a = new Area();
+            return View(a);
         }
 
         public ActionResult CreateAreaDetails()
         {
-            return View();
+            Area a = new Area();
+            return View(a);
         }
     }
 }
