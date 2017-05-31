@@ -26,5 +26,6 @@ namespace Kalyan.Property.Infrastructure.BaseRepository
         List<T> ExecuteCustomStoredProcByParam(string procName, object[] parameter);
 
         List<T> ExecuteCustomStoredProc(string procName);
+        object GetById(int? selectedcountryId);
     }
 }
