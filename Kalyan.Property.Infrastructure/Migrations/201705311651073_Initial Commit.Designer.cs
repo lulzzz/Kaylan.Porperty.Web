@@ -13,7 +13,7 @@ namespace Kalyan.Property.Infrastructure.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201705280804223_Initial Commit"; }
+            get { return "201705311651073_Initial Commit"; }
         }
         
         string IMigrationMetadata.Source

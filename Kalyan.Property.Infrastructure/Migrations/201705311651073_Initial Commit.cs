@@ -124,23 +124,10 @@ namespace Kalyan.Property.Infrastructure.Migrations
                 "dbo.Area",
                 c => new
                     {
-                        Id = c.Int(nullable: false),
-                        Name = c.String(maxLength: 50),
-                        IsActive = c.Boolean(),
-                        DistrictId = c.Int(),
-                    })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.District", t => t.DistrictId)
-                .Index(t => t.DistrictId);
-            
-            CreateTable(
-                "dbo.District",
-                c => new
-                    {
-                        Id = c.Int(nullable: false),
-                        Name = c.String(maxLength: 50),
-                        IsActive = c.Boolean(),
-                        CityId = c.Int(),
+                        Id = c.Int(nullable: false, identity: true),
+                        Name = c.String(nullable: false, maxLength: 50),
+                        IsActive = c.Boolean(nullable: false),
+                        CityId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.City", t => t.CityId)
@@ -151,7 +138,7 @@ namespace Kalyan.Property.Infrastructure.Migrations
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        Name = c.String(maxLength: 50),
+                        Name = c.String(nullable: false, maxLength: 50, unicode: false),
                         IsActive = c.Boolean(nullable: false),
                         StateId = c.Int(nullable: false),
                     })
@@ -205,6 +192,17 @@ namespace Kalyan.Property.Infrastructure.Migrations
                         Date = c.DateTime(),
                         Rent = c.String(maxLength: 50),
                         Sale = c.String(maxLength: 50),
+                    })
+                .PrimaryKey(t => t.Id);
+            
+            CreateTable(
+                "dbo.District",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Name = c.String(maxLength: 50),
+                        IsActive = c.Boolean(nullable: false),
+                        CityId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id);
             
@@ -377,8 +375,7 @@ namespace Kalyan.Property.Infrastructure.Migrations
             DropForeignKey("dbo.PropertyRequest", "PropertyRequestContractTypeId", "dbo.PropertyRequestContractType");
             DropForeignKey("dbo.State", "CountryId", "dbo.Country");
             DropForeignKey("dbo.City", "StateId", "dbo.State");
-            DropForeignKey("dbo.District", "CityId", "dbo.City");
-            DropForeignKey("dbo.Area", "DistrictId", "dbo.District");
+            DropForeignKey("dbo.Area", "CityId", "dbo.City");
             DropForeignKey("dbo.PropertyImage", "PropertyDetailId", "dbo.PropertyDetail");
             DropForeignKey("dbo.PropertyImage", "PropertyTypeId", "dbo.PropertyType");
             DropForeignKey("dbo.Amenity", "ServiceId", "dbo.Service");
@@ -398,8 +395,7 @@ namespace Kalyan.Property.Infrastructure.Migrations
             DropIndex("dbo.PropertyRequest", new[] { "FromPrice" });
             DropIndex("dbo.State", new[] { "CountryId" });
             DropIndex("dbo.City", new[] { "StateId" });
-            DropIndex("dbo.District", new[] { "CityId" });
-            DropIndex("dbo.Area", new[] { "DistrictId" });
+            DropIndex("dbo.Area", new[] { "CityId" });
             DropIndex("dbo.PropertyImage", new[] { "PropertyDetailId" });
             DropIndex("dbo.PropertyImage", new[] { "PropertyTypeId" });
             DropIndex("dbo.Amenity", new[] { "FeatureId" });
@@ -417,12 +413,12 @@ namespace Kalyan.Property.Infrastructure.Migrations
             DropTable("dbo.PropertyRequest");
             DropTable("dbo.PropertyRequestArea");
             DropTable("dbo.LoginPl");
+            DropTable("dbo.District");
             DropTable("dbo.ContractType");
             DropTable("dbo.Contact");
             DropTable("dbo.Country");
             DropTable("dbo.State");
             DropTable("dbo.City");
-            DropTable("dbo.District");
             DropTable("dbo.Area");
             DropTable("dbo.PropertyType");
             DropTable("dbo.PropertyImage");

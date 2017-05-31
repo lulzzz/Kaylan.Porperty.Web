@@ -15,7 +15,7 @@ namespace Kalyan.Property.Infrastructure
         public virtual DbSet<AgentInfo> AgentInfoes { get; set; }
         public virtual DbSet<Amenity> Amenities { get; set; }
         public virtual DbSet<Area> Areas { get; set; }
-        public virtual DbSet<City> Cities { get; set; }
+        public virtual DbSet<City> City { get; set; }
         public virtual DbSet<Contact> Contacts { get; set; }
         public virtual DbSet<ContractType> ContractTypes { get; set; }
         public virtual DbSet<Country> Countries { get; set; }
@@ -77,10 +77,10 @@ namespace Kalyan.Property.Infrastructure
                 .Property(e => e.CreatedBy)
                 .IsFixedLength();
 
-            modelBuilder.Entity<Country>()
-                .HasMany(e => e.States)
-                .WithRequired(e => e.Country)
-                .WillCascadeOnDelete(false);
+            //modelBuilder.Entity<Country>()
+            //    .HasMany(e => e.States)
+            //    .WithRequired(e => e.Country)
+            //    .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Feature>()
                 .HasMany(e => e.Amenities)
@@ -127,10 +127,10 @@ namespace Kalyan.Property.Infrastructure
                 .WithRequired(e => e.Service)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<State>()
-                .HasMany(e => e.Cities)
-                .WithRequired(e => e.State)
-                .WillCascadeOnDelete(false);
+            //modelBuilder.Entity<State>()
+            //    .HasMany(e => e.Cities)
+            //    .WithRequired(e => e.State)
+            //    .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<PropertyRequestPrice>()
                .Property(e => e.Price)
@@ -169,6 +169,27 @@ namespace Kalyan.Property.Infrastructure
                .WithRequired(e => e.PropertyRequestArea)
                .HasForeignKey(x => x.PropertyRequestAreaId)
                .WillCascadeOnDelete(false);
+
+            //Country State City
+
+            modelBuilder.Entity<City>()
+                .Property(e => e.Name)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<City>()
+                .HasMany(e => e.Area)
+                .WithRequired(e => e.City)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Country>()
+                .HasMany(e => e.State)
+                .WithRequired(e => e.Country)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<State>()
+                .HasMany(e => e.City)
+                .WithRequired(e => e.State)
+                .WillCascadeOnDelete(false);
         }
 
         public static CustomeDbContext Create()
