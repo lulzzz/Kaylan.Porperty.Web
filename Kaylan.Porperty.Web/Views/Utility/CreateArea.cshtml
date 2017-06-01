@@ -1,6 +1,6 @@
 ﻿@model Kaylan.Porperty.Web.ViewModel.AreaViewModel
 @{
-    ViewBag.Title = "Create City";
+    ViewBag.Title = "Create Area";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 @Scripts.Render("~/bundles/jquery")
@@ -29,41 +29,81 @@
     },
 });
 
-    $.ajax
-  ({
-      url: '/Utility/GetStateList',
-      type: 'GET',
-      datatype: 'application/json',
-      contentType: 'application/json',
-      success: function (result) {
-          $("#StateId").html("");
-          $.each(result, function (i, country) {
-              $("#StateId").append
-              ($('<option></option>').val(country.Id).html(country.Name))
-          })
-      },
-      error: function () {
-          alert("Whooaaa! Something went wrong..")
-      },
-  });
+ //   $.ajax
+ // ({
+ //     url: '/Utility/GetStateList',
+ //     type: 'GET',
+ //     datatype: 'application/json',
+ //     contentType: 'application/json',
+ //     success: function (result) {
+ //         $("#StateId").html("");
+ //         $.each(result, function (i, country) {
+ //             $("#StateId").append
+ //             ($('<option></option>').val(country.Id).html(country.Name))
+ //         })
+ //     },
+ //     error: function () {
+ //         alert("Whooaaa! Something went wrong..")
+ //     },
+ // });
 
-    $.ajax
- ({
-     url: '/Utility/GetCityList',
-     type: 'GET',
-     datatype: 'application/json',
-     contentType: 'application/json',
-     success: function (result) {
-         $("#CityId").html("");
-         $.each(result, function (i, city) {
-             $("#CityId").append
-             ($('<option></option>').val(city.Id).html(city.Name))
-         })
-     },
-     error: function () {
-         alert("Whooaaa! Something went wrong..")
-     },
- });
+ //   $.ajax
+ //({
+ //    url: '/Utility/GetCityList',
+ //    type: 'GET',
+ //    datatype: 'application/json',
+ //    contentType: 'application/json',
+ //    success: function (result) {
+ //        $("#CityId").html("");
+ //        $.each(result, function (i, city) {
+ //            $("#CityId").append
+ //            ($('<option></option>').val(city.Id).html(city.Name))
+ //        })
+ //    },
+ //    error: function () {
+ //        alert("Whooaaa! Something went wrong..")
+ //    },
+    //});
+    $(function () {
+        $("#CountryId").change(function () {
+
+            $.get("/Utility/GetStateList", { ID: $("#CountryId").val() }, function (data) {
+
+
+                $.each(data, function (index, row) {
+
+
+                    $("#stateId").append("<option value='" + row.Id + "'>" + row.Name + "</option>")
+
+
+                });
+
+            })
+
+        });
+
+
+    });
+    $(function () {
+        $("#stateId").change(function () {
+
+            $.get("/Utility/GetCityList", { ID: $("#stateId").val() }, function (data) {
+
+
+                $.each(data, function (index, row) {
+
+
+                    $("#cityid").append("<option value='" + row.Id + "'>" + row.Name + "</option>")
+
+
+                });
+
+            })
+
+        });
+
+
+    });
 </script>
 <!-- Content Header (Page header) -->
 <section class="content-header">
@@ -80,24 +120,76 @@
 <!-- Main content -->
 <section class="content">
 
-    <div id="content">
-        @using (Ajax.BeginForm("CreateCity", new AjaxOptions
-            {
+       <div id="content">
+    @using (Ajax.BeginForm("CreateArea", new AjaxOptions
+    {
+                    UpdateTargetId = "targetId",
+                    HttpMethod = "Post",
+                    OnSuccess = "Clear"
+                }))
+             {
+                <div class="search-field">
+                    <label>Country</label>
+
+                    @Html.DropDownListFor(model => model.CountryId, new List<SelectListItem>() { new SelectListItem { Text = "Select Country", Value = "-1" } }, new { @class = "form - control selectpicker", @id = "CountryId" })
+
+                </div>
+
+                @*<div class="search-field">
+                        <label>State</label>
+
+
+                        @Html.DropDownListFor(model => model.StateId, new List<SelectListItem>() { new SelectListItem { Text = "Select State", Value = "-1" } }, new { @class = "form - control selectpicker", @id = "StateId" })
+
+                    </div>*@
+            @*<select id="st" class="form-control"></select>*@
+        <div class="search-field">
+            <label>State</label>
+
+            @Html.DropDownListFor(model => model.StateId, new List<SelectListItem>() { new SelectListItem { Text = "Select State", Value = "-1" } }, new { @class = "form - control selectpicker", @id = "stateId" })
+
+        </div>
+        <div>
+        <label>City</label>
+
+            @Html.DropDownListFor(model => model.CityId, new List<SelectListItem>() { new SelectListItem { Text = "Select City", Value = "-1" } }, new { @class = "form - control selectpicker", @id = "cityid" })
+
+        </div>
+            
+            <div>
+                @Html.TextBoxFor(x => x.AreaName, new { @class = "" })
+                <input type="submit" value="Add area" />
+            </div>
+        }
+        <div id="targetId">
+        </div>
+        <div id="unobtrusive">
+          
+            @Html.Partial("_AreaList", Model.AreaList)
+        </div>
+    </div>
+</section>
+
+@*<section class="content">
+
+   <div id="content">
+@using (Ajax.BeginForm("CreateCity", new AjaxOptions
+{
                 UpdateTargetId = "targetId",
                 HttpMethod = "Post",
                 OnSuccess = "Clear"
             }))
-            {
-            <div class="search-field">
-                <label>Country</label>
+         {
+          <div class="search-field">
+          <label>Country</label>
 
                 @Html.DropDownListFor(model => model.CountryId, new List<SelectListItem>() { new SelectListItem { Text = "Select Country", Value = "-1" } }, new { @class = "form - control selectpicker", @id = "CountryId" })
-            </div>
+            </div>*@
 
-            <div class="search-field">
-                <label>State</label>
-
-                @Html.DropDownListFor(model => model.StateId, new List<SelectListItem>() { new SelectListItem { Text = "Select State", Value = "-1" } }, new { @class = "form - control selectpicker", @id = "StateId" })
+           @*<div class="search-field">
+           <label>State</label>
+                
+             @Html.DropDownListFor(model => model.StateId, new List<SelectListItem>() { new SelectListItem { Text = "Select State", Value = "-1" } }, new { @class = "form - control selectpicker", @id = "StateId" })
             </div>
 
             <div class="search-field">
@@ -107,14 +199,22 @@
             </div>
             <div>
                 @Html.TextBoxFor(x => x.AreaName, new { @class = "" })
-                <input type="submit" value="Add City" />
+               <input type="submit" value="Add City" />
+           </div>*@ 
+
+            @*<select id="st" class="form-control"></select>
+                <select id="cs" class="form-control"></select>
+                       <select id = "citys" class="form-control"></select>
+                    <div>
+                        @Html.TextBoxFor(x => x.AreaName, new { @class = "" })
+                       <input type="submit" value="Add Area" />
+                    </div>
+           }
+            <div id="targetId">
+           <div>
+            <div id="unobtrusive">
+                @Html.Partial("_AreaList", Model.Arealist)
             </div>
-        }
-        <div id="targetId">
         </div>
-        <div id="unobtrusive">
-            @Html.Partial("_AreaList", Model.AreaList)
-        </div>
-    </div>
-</section>
+    </section>*@
 <!-- /.content -->

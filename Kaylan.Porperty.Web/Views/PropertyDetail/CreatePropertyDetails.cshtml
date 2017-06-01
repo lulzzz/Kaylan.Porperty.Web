@@ -1,12 +1,4 @@
-﻿@model Kalyan.Property.Infrastructure.Models.PropertyDetail
-
-@{
-    ViewBag.Title = "CreatePropertyDetails";
-}
-
-
-
-<!DOCTYPE HTML>
+﻿<!DOCTYPE HTML>
 <html lang="en-US" class="no-js">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -26,13 +18,13 @@
     <link rel='stylesheet' href='@Url.Content("~/content/css/settings.css")' type='text/css' media='all' />
     <link rel='stylesheet' href='@Url.Content("~/content/css/bootstrap.css")' type='text/css' media='all' />
     <link rel='stylesheet' href='@Url.Content("~/content/css/animations.css")' type='text/css' media='all' />
-    <link rel='stylesheet' href='@Url.Content("~/content/font-awesome-4.5.0/css/font-awesome.min.css")' type='text/css' media='all' />
+    <link rel='stylesheet' href='@Url.Content("~/content/font-awesome-4.6.3/css/font-awesome.min.css")' type='text/css' media='all' />
     <link rel='stylesheet' href='@Url.Content("~/content/css/style.css")' type='text/css' media='all' />
     <link rel='stylesheet' href='@Url.Content("~/content/css/style2.css")' type='text/css' media='all' />
     <link rel='stylesheet' href='@Url.Content("~/content/css/prettyPhoto.css")' type='text/css' media='all' />
     <link rel='stylesheet' href='@Url.Content("~/content/css/owl.carousel.css")' type='text/css' media='all' />
     <link rel='stylesheet' href='@Url.Content("~/content/css/owl.theme.css")' type='text/css' media='all' />
-    <link rel="stylesheet" href="@Url.Content("~/content/css/color1.css")" type="text/css">
+    <link class="alt" href='@Url.Content("~/content/css/color1.css")' rel="stylesheet" type="text/css">
 
     <!-- Scripts -->
     <script type='text/javascript' src="@Url.Content("~/scripts/jquery.js")"></script>
@@ -57,7 +49,7 @@
         var urlajax = { "url": "http:\/\/preview.imithemes.com\/real-spaces-wp\/wp-admin\/admin-ajax.php", "tmpurl": "http:\/\/preview.imithemes.com\/real-spaces-wp\/wp-content\/themes\/real-spaces", "is_property": "", "sticky": "1", "is_contact": "", "home_url": "http:\/\/preview.imithemes.com\/real-spaces-wp", "is_payment": "", "register_url": "http:\/\/preview.imithemes.com\/real-spaces-wp\/register-as-agent\/", "is_register": "", "is_login": "", "is_submit_property": "", "basic": "Basic", "advanced": "Advanced" };
         /* ]]> */
     </script>
-    <script type='text/javascript' src='@Url.Content("~/scripts/init.js")'></script>
+    <!--    <script type='text/javascript' src='js/init.js'></script>-->
     <script type='text/javascript' src="@Url.Content("~/scripts/profile_validate.js")"></script>
     <script type='text/javascript' src="@Url.Content("~/scripts/comment-reply.min.js")"></script>
     <script type='text/javascript' src="@Url.Content("~/scripts/wp-embed.min.js")"></script>
@@ -67,9 +59,8 @@
     <script type='text/javascript' src="@Url.Content("~/scripts/menu.min.js")"></script>
     <script type='text/javascript' src="@Url.Content("~/scripts/autocomplete.min.js")"></script>
     <script type='text/javascript' src="@Url.Content("~/scripts/autocomplete.js")"></script>
-    <script type='text/javascript' src="@Url.Content("~/scripts/jquery_cookie.js")"></script>
-    <script type='text/javascript' src="@Url.Content("~/scripts/script.js")"></script>
-
+    <script src="@Url.Content("~/scripts/jquery_cookie.js")"></script>
+    <script src="@Url.Content("~/scripts/script.js")"></script>
 </head>
 <body class="archive author author-mia-kennedy author-2 ">
     <!--[if lt IE 7]>
@@ -79,16 +70,17 @@
         <!-- Start Site Header -->
         <header class="site-header">
             <div class="top-header hidden-xs">
-                <div class="container">
+                <div class="container-fluide">
                     <div class="row">
                         <div class="col-md-12 col-sm-12">
                             <ul class="horiz-nav pull-right">
                                 <li class="dropdown">
                                     <a href="../Home/Admin">Admin</a>
-                                    <i class="fa fa-user"></i>
+
                                 <li class="dropdown">
-                                    <a href="/Login/CreateLogin">Logout</a>
                                     <i class="fa fa-user"></i>
+
+                                    <a href="/Login/CreateLogin">Login</a>
 
                                     <ul class="dropdown-menu">
                                         <li><a href="#" title="Favorite Properties">Favorite Properties</a></li>
@@ -99,8 +91,9 @@
                                 </li>
                                 </li>
                                 <li class="dropdown">
+                                    <i class="fa fa-check-circle"></i>
                                     <a href="/User/CreateUser">Register</a>
-                                    <i class="fa fa-user"></i>
+
 
                                 </li>
                             </ul>
@@ -119,6 +112,14 @@
                                     <img src="@Url.Content("~/images/sample-10.png")" alt="Logo">
                                 </a>
                             </h1>
+                        </div>
+                        <div class="col-md-5 col-sm-8 col-xs-8">
+                            <marquee style="width: 500px; font-size: 18px; margin-top: 30px; font-weight: bold">
+                                <b>
+                                    Kalyan Real Estate Property/Properties/Real Estate for Sale and Rent
+                                    Place your Kalyan property on the best Property Portal
+                                </b>
+                            </marquee>
                         </div>
 
                         <div class="col-md-5 col-sm-4 col-xs-4">
@@ -149,14 +150,14 @@
                             <nav class="navigation">
                                 <ul id="menu-main-menu" class="sf-menu">
                                     <li id="menu-item-208" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-208">
-                                        @Html.ActionLink("Account Summary", "CreateLoginDetails", "Login")
+                                        @Html.ActionLink("Home", "Index", "Home")
                                     </li>
-                                    <li id="menu-item-209" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-209"> @Html.ActionLink("Profile", "Profile1", "User")</li>
-                                    @*                                   <li id="menu-item-225" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-225"> @Html.ActionLink("Properties","Properties","Home")</li>
-                                        <li id="menu-item-283" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-283"><a href="/PropertyRequest/CreatePropertyRequest">PropertyRequest</a></li>*@
-                                    <li id="menu-item-226" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-226"> <a href="/PropertyDetail/CreatePropertyDetail">List your property</a></li>
-                                    @*      <li id="menu-item-209" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-209"> @Html.ActionLink("Membership", "membership", "Home")</li>
-                                        <li id="menu-item-240" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-240">@Html.ActionLink("Contact", "Contact", "Home")</li>*@
+                                    <li id="menu-item-209" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-209"> @Html.ActionLink("About", "About", "Home")</li>
+                                    <li id="menu-item-225" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-225"> @Html.ActionLink("Services", "Services", "Home")</li>
+                                    <li id="menu-item-283" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-283"><a href="/PropertyRequest/CreatePropertyRequest">PropertyRequest</a></li>
+                                    <li id="menu-item-226" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-226"> <a href="/PropertyDetail/CreatePropertyDetails">List your property</a></li>
+                                    <li id="menu-item-209" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-209"> @Html.ActionLink("Membership", "membership", "Home")</li>
+                                    <li id="menu-item-240" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-240">@Html.ActionLink("Contact", "Contact", "Home")</li>
 
                                 </ul>
                             </nav>
@@ -165,7 +166,6 @@
                 </div>
             </div>
         </header>
-
         <!-- End Site Header -->
         <!-- Site Showcase -->
         <div class="site-showcase">
@@ -174,245 +174,27 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
-                            <h1>List your property</h1>
+                            <h1>Services</h1>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- End Page Header -->
-        </div>
-        <!-- Start Content -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-
-
-        <script type="text/javascript">
-               $(document).ready(function () {
-                   $('input[type="checkbox"]').change(function () {
-                       var name = $(this).val();
-                   });
-               });
-
-               function Disable(type)
-               {
-                   if (type == "SALE")
-                   {
-                       $("#rent").attr("disabled", true);
-                       $("#mgmt").attr("disabled", true);
-                   }
-                   else if (type == "rent") {
-                       $("#sale").attr("disabled", true);
-                       $("#mgmt").attr("disabled", true);
-                   }
-                   else {
-                       $("#rent").attr("disabled", true);
-                       $("#sale").attr("disabled", true);
-                   }
-               }
-
-
-               function declareAmenties(type) {
-                   if (type == 'InTown') {
-                       document.getElementById("PropertyDetails_Amenties").id = "Intown";
-                   }
-                   else (type == 'HouseKeeping')
-                   document.getElementById("PropertyDetails_Amenties").value = "HouseKeeping";
-
-
-                   if (type == 'SwimmingPool') {
-                       document.getElementById("PropertyDetails_Amenties").value = "SwimmingPool";
-                   }
-                   else (type == 'Balcony')
-                   document.getElementById("PropertyDetails_Amenties").value = "Balcony";
-
-                   if (type == 'Gymnasium') {
-                       document.getElementById("PropertyDetails_Amenties").value = "Gymnasium";
-                   }
-                   else (type = 'CoveredParking')
-                   document.getElementById("PropertyDetails_Amenties").value = "CoveredParking";
-
-                   if (type == 'Jacuzzi') {
-                       document.getElementById("PropertyDetails_Amenties").value = "Jacuzzi";
-                   }
-                   else (type == 'LaundryRoom')
-                   document.getElementById("PropertyDetails_Amenties").value = "LaundryRoom";
-
-                   if (type == 'FullyFurnished') {
-                       document.getElementById("PropertyDetails_Amenties").value = "FullyFurnished";
-                   }
-                   else (type == 'Telephone')
-                   document.getElementById("PropertyDetails_Amenties").value = "Telephone";
-
-                   if (type == 'SatteliteChannels') {
-                       document.getElementById("PropertyDetails_Amenties").value = "SatteliteChannels";
-                   }
-                   else (type == 'Iternet')
-                   document.getElementById("PropertyDetails_Amenties").value = "Iternet";
-
-                   if (type == 'HomeElectrics') {
-                       document.getElementById("PropertyDetails_Amenties").value = "HomeElectrics";
-                   }
-                   else (type == 'Elevator')
-                   document.getElementById("PropertyDetails_Amenties").value = "Elevator";
-
-                   if (type == 'Elevator') {
-                       document.getElementById("PropertyDetails_Amenties").value = "Elevator";
-                   }
-                   else (type == 'Security')
-                   document.getElementById("PropertyDetails_Amenties").value = "Security";
-               }
-        </script>
-
-        <script type="text/javascript">
-
-             function declareBedRoom(type) {
-                 if (type == '1') {
-                     document.getElementById("BedRoom").value = "1";
-                 }
-                 else (type == '2')
-                 document.getElementById("BedRoom").value = "2";
-
-
-                 if (type == '3') {
-                     document.getElementById("BedRoom").value = "3";
-                 }
-                 else (type == '4')
-                 document.getElementById("BedRoom").value = "4";
-
-                 if (type == '4') {
-                     document.getElementById("BedRoom").value = "4";
-                 }
-                 e/lse (type == '5')
-                 document.getElementById("BedRoom").value = "5";
-
-
-             }
-        </script>
-        <script type="text/javascript">
-
-                 function declareBathRoom(type) {
-                     if (type == '1') {
-                         document.getElementById("BathRoom").value = "1";
-                     }
-                     else (type == '2')
-                     document.getElementById("BathRoom").value = "2";
-
-
-                     if (type == '3') {
-                         document.getElementById("BathRoom").value = "3";
-                     }
-                     else (type == '4')
-                     document.getElementById("BathRoom").value = "4";
-
-                     if (type == '4') {
-                         document.getElementById("BathRoom").value = "4";
-                     }
-                     else (type == '5')
-                     document.getElementById("BathRoom").value = "5";
-
-
-                 }
-        </script>
-        <script type="text/javascript">
-                 function declareParking(type) {
-                     if (type == '1') {
-                         document.getElementById("Parking").value = "1";
-                     }
-                     else (type == '2')
-                     document.getElementById("Parking").value = "2";
-
-
-                     if (type == '3') {
-                         document.getElementById("Parking").value = "3";
-                     }
-                     else (type == '4')
-                     document.getElementById("Parking").value = "4";
-
-                 }
-
-
-        </script>
-        <script>
-            function ShowImage(input) {
-                if (input.files && input.files[0]) {
-                    var reader = new FileReader();
-
-                    reader.onload = function (e) {
-                        $('#blah')
-                            .attr('src', e.target.result)
-                            .width(150)
-                            .height(100);
-                    };
-
-                    reader.readAsDataURL(input.files[0]);
-                }
-
-            }
-        </script>
-        <script>
-            function ShowImage1(input) {
-                if (input.files && input.files[0]) {
-                    var reader = new FileReader();
-
-                    reader.onload = function (e) {
-                        $('#blah1')
-                            .attr('src', e.target.result)
-                            .width(150)
-                            .height(100);
-                    };
-
-                    reader.readAsDataURL(input.files[0]);
-                }
-
-            }
-        </script>
-        <script>
-              function ShowImage2(input) {
-                  if (input.files && input.files[0]) {
-                      var reader = new FileReader();
-
-                      reader.onload = function (e) {
-                          $('#blah2')
-                              .attr('src', e.target.result)
-                              .width(150)
-                              .height(100);
-                      };
-
-                      reader.readAsDataURL(input.files[0]);
-                  }
-              }
-        </script>
-
-        @*   <script type="text/javascript">
-                $(document).ready(function()
-                {
-                $("input#btnsubmit").click(function() {
-                    var id=[];
-                    $("input[name=a'InTown']:checked").each(function() {
-                    id.push($(this).val());
-                    });
-                    $("#HiddenFieldId").val(id);
-                });
-                });
-            </script>*@
-
-        <script type="text/javascript">
-         $(document).ready(function () {
-             $('input[type="checkbox"]').on('change', function () {
-                 if ($("#amenitiess").val() == "") {
-                     var vals = this.value;
-                 }
-                 else {
-                     var vals = $("#amenitiess").val() + "," + this.value;
-                 }
-                 $("#amenitiess").val(vals);
-                 $("#PropertyDetails_Amenties").val(vals);
-             })
-         });
-        </script>
-
-        @using (Html.BeginForm("CreatePropertyDetail", "PropertyDetail", FormMethod.Post, new { enctype = "multipart/form-data" }))
-        //@using (Html.BeginForm("CreatePropertyDetail", "PropertyDetail", FormMethod.Post, new { enctype = "multipart/form-data"}))
-        {
+            <!-- End Site Header -->
+            <!-- Site Showcase -->
+            <div class="site-showcase">
+                <!-- Start Page Header -->
+                <div class="parallax page-header" style="background-image: url(images/slide31.jpg);">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h1>List your property</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Page Header -->
+            </div>
+            <!-- Start Content -->
             <div class="main" role="main">
                 <div id="content" class="content full">
                     <div class="container">
@@ -421,7 +203,6 @@
                                 <div class="single-agent">
 
 
-                                    @Html.HiddenFor(model => model.PropertyDetails.Amenties)
 
                                     <!--	  <div class="col-md-6 col-sm-6">
                                             <img src="http://preview.imithemes.com/real-spaces-wp/wp-content/uploads/2015/01/agent41.jpg" alt="Mia Kennedy" class="img-thumbnail">
@@ -431,133 +212,82 @@
                                             <div class="block-heading" id="details">
                                                 <a href="#additionalinfo" class="btn btn-sm btn-default pull-right">Additional Info <i class="fa fa-chevron-down"></i></a>
                                                 <h4>
-                                                    <span class="heading-icon"> <img src="@Url.Content("~/images/faa.png")" /></span>
+                                                    <span class="heading-icon"> <img src="images/faa.png" /></span>
                                                     Property Details
                                                 </h4>
                                             </div>
-
                                             <div class="padding-as25 margin-20 lgray-bg">
                                                 <div class="row">
                                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-
-                                                        @Html.TextBoxFor(model => model.PropertyDetails.PropertyName, new { @placeholder = "PropertyName", @class = "form-control", id = "PropertyName", @autocomplete = "off" })
-                                                        @Html.ValidationMessageFor(model => model.PropertyDetails.PropertyName, null, new { style = "color:red" })
-                                                        @{
-                                                            if (ViewBag.error != null)
-                                                            {
-                                                                <font color="red">  @Html.Raw(ViewBag.error)</font>
-                                                            }
-                                                        }
-
+                                                        <input type="text" class="form-control" placeholder="Property name">
                                                     </div>
 
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                                        @Html.TextBoxFor(model => model.PropertyDetails.Address, new { @placeholder = "Address", @class = "form-control", id = "Address", @autocomplete = "off" })
-                                                        @Html.ValidationMessageFor(model => model.PropertyDetails.Address, null, new { style = "color:red" })
-                                                        @{
-                                                            if (ViewBag.error != null)
-                                                            {
-                                                                <font color="red">  @Html.Raw(ViewBag.error)</font>
-                                                            }
-                                                        }
-
-
+                                                        <textarea name="address" class="form-control" rows="4" cols="10" placeholder="Address"></textarea>
                                                     </div>
                                                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 submit-description">
-                                                        @Html.TextBoxFor(model => model.PropertyDetails.PropertyDescription, new { @placeholder = "PropertyDescription", @class = "form-control", id = "PropertyDescription", @autocomplete = "off" })
-                                                        @Html.ValidationMessageFor(model => model.PropertyDetails.PropertyDescription, null, new { style = "color:red" })
-                                                        @{
-                                                            if (ViewBag.error != null)
-                                                            {
-                                                                <font color="red">  @Html.Raw(ViewBag.error)</font>
-                                                            }
-                                                        }
-
+                                                        <textarea name="description" class="form-control margin-0" rows="4" cols="10" placeholder="Propery Description"></textarea>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="block-heading" id="additionalinfo">
                                                 <a href="#amenities" class="btn btn-sm btn-default pull-right">Enter Amenities <i class="fa fa-chevron-down"></i></a>
-                                                <h4><span class="heading-icon"><img src="@Url.Content("~/images/faa.png")" /></span>Additional Info</h4>
+                                                <h4><span class="heading-icon"><img src="images/faa.png" /></span>Additional Info</h4>
                                             </div>
                                             <div class="padding-as25 margin-20 lgray-bg">
                                                 <div class="row">
 
                                                     <div class="col-md-4 col-sm-4 submit-property-type">
-                                                        @Html.DropDownListFor(model => model.PropertyDetails.PropertyTypees, new SelectList(Model.PropertyTypelist, "PropertyTypeId", "PropertyTypees"), "Select PropertyTypes", new { @id = "PropertyTypes", @class = "form-control" })
-                                                        @Html.ValidationMessageFor(model => model.PropertyDetails.PropertyTypees, null, new { style = "color:red" })
-
-                                                        @{
-                                                            if (ViewBag.error != null)
-                                                            {
-                                                                <font color="red">  @Html.Raw(ViewBag.error)</font>
-                                                            }
-                                                        }
-
-
+                                                        <select name="type" class="form-control margin-0 selectpicker" style="display: none;">
+                                                            <option>Property Type</option>
+                                                            <option>Villa</option>
+                                                            <option>Single Home</option>
+                                                            <option>Cottage</option>
+                                                            <option>Family House</option>
+                                                            <option>Apartment</option>
+                                                        </select>
                                                     </div>
                                                     <div class="col-md-4 col-sm-4 submit-contract-type">
-                                                        @Html.DropDownListFor(model => model.PropertyDetails.ContractType, new List<SelectListItem> { new SelectListItem { Text = "Sale" }, new SelectListItem { Text = "Rent" } }, "Select ContractType", new { @class = "form-control" })
-
-                                                        @Html.ValidationMessageFor(model => model.PropertyDetails.ContractType, null, new { Style = "color:red" })
-                                                        @{
-                                                            if (ViewBag.error != null)
-                                                            {
-                                                                <font color="red">
-                                                                    @Html.Raw(ViewBag.error)
-
-                                                            </font>
-                                                            }
-                                                        }
+                                                        <select name="type" class="form-control margin-0 selectpicker" style="display: none;">
+                                                            <option>Contract Type</option>
+                                                            <option>For Sale</option>
+                                                            <option>Font Rent</option>
+                                                        </select>
                                                     </div>
                                                     <div class="col-md-4 col-sm-4">
-
-                                                        @Html.TextBoxFor(model => model.PropertyDetails.Price, new { @placeholder = "Price", @class = "form-control", id = "Price", @autocomplete = "off" })
-                                                        @Html.ValidationMessageFor(model => model.PropertyDetails.Price, null, new { style = "color:red" })
-                                                        @{
-                                                            if (ViewBag.error != null)
-                                                            {
-                                                                <font color="red">  @Html.Raw(ViewBag.error)</font>
-                                                            }
-                                                        }
+                                                        <input type="text" class="form-control" placeholder="Price($)">
                                                     </div>
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-md-4 col-sm-4">
-                                                        @Html.DropDownListFor(model => model.PropertyDetails.Bedroom, new List<SelectListItem> { new SelectListItem { Text = "1" }, new SelectListItem { Text = "2" }, new SelectListItem { Text = "3" }, new SelectListItem { Text = "4" }, new SelectListItem { Text = "5" } }, "Select BedRoom", new { @class = "form-control" })
-                                                        @Html.ValidationMessageFor(model => model.PropertyDetails.Bedroom, null, new { Style = "color:red" })
-                                                        @{
-                                                            if (ViewBag.error != null)
-                                                            {
-                                                                <font color="red">  @Html.Raw(ViewBag.error)</font>
-                                                            }
-                                                        }
-
-
+                                                        <select name="type" class="form-control selectpicker" style="display: none;">
+                                                            <option>Beds</option>
+                                                            <option>1</option>
+                                                            <option>2</option>
+                                                            <option>3</option>
+                                                            <option>4</option>
+                                                            <option>5+</option>
+                                                        </select>
                                                     </div>
                                                     <div class="col-md-4 col-sm-4">
-                                                        @Html.DropDownListFor(model => model.PropertyDetails.Bathroom, new List<SelectListItem> { new SelectListItem { Text = "1" }, new SelectListItem { Text = "2" }, new SelectListItem { Text = "3" }, new SelectListItem { Text = "4" }, new SelectListItem { Text = "5" } }, "Select Bathroom", new { @class = "form-control" })
-                                                        @Html.ValidationMessageFor(model => model.PropertyDetails.Bathroom, null, new { Style = "color:red" })
-                                                        @{
-                                                            if (ViewBag.error != null)
-                                                            {
-                                                                <font color="red">  @Html.Raw(ViewBag.error)</font>
-                                                            }
-                                                        }
-
+                                                        <select name="type" class="form-control selectpicker" style="display: none;">
+                                                            <option>Baths</option>
+                                                            <option>1</option>
+                                                            <option>2</option>
+                                                            <option>3</option>
+                                                            <option>4</option>
+                                                            <option>5+</option>
+                                                        </select>
                                                     </div>
                                                     <div class="col-md-4 col-sm-4">
-                                                        @Html.DropDownListFor(model => model.PropertyDetails.Parking, new List<SelectListItem> { new SelectListItem { Text = "1" }, new SelectListItem { Text = "2" }, new SelectListItem { Text = "3" } }, "Select Parking", new { @class = "form-control" })
-                                                        @Html.ValidationMessageFor(model => model.PropertyDetails.Parking, null, new { Style = "color:red" })
-                                                        @{
-                                                            if (ViewBag.error != null)
-                                                            {
-                                                                <font color="red">  @Html.Raw(ViewBag.error)</font>
-                                                            }
-                                                        }
-
+                                                        <select name="type" class="form-control selectpicker" style="display: none;">
+                                                            <option>Parking</option>
+                                                            <option>1</option>
+                                                            <option>2</option>
+                                                            <option>3+</option>
+                                                        </select>
                                                     </div>
                                                 </div>
                                                 <div class="row">
@@ -565,13 +295,13 @@
                                                         <label>Property For</label>
                                                     </div>
                                                     <div class="col-md-3 col-sm-3 submit-image">
-                                                        <input name="_for" type="radio" id="sale" value="Sale" onclick="Disable('SALE')"> Sale
+                                                        <input name="_for" type="radio" value="Sale"> Sale
                                                     </div>
                                                     <div class="col-md-3 col-sm-3 submit-image">
-                                                        <input name="_for" type="radio" id="rent" value="Rent" onclick="Disable('rent')"> Rent
+                                                        <input name="_for" type="radio" value="Rent"> Rent
                                                     </div>
                                                     <div class="col-md-3 col-sm-3 submit-image">
-                                                        <input name="_for" type="radio" id="mgmt" value="Management" onclick="Disable('mgmt')"> Management
+                                                        <input name="_for" type="radio" value="Management"> Management
                                                     </div>
                                                 </div>
                                                 <br>
@@ -581,178 +311,130 @@
                                                         <p>Upload images that are best clicked for better appearance of your property</p>
                                                     </div>
                                                     <div class="col-md-3 col-sm-3 submit-image">
-                                                        <div class="image-placeholder"><img id="blah" src="#" alt="600*400(.jpg)" /></div>
-                                                        @*<input type="file" name="image1">*@
-
-                                                        <input type="file" Onchange="ShowImage(this)" name="files" value="" multiple="multiple" />
-                                                        @*<input type="submit" value="Upload You Image"  title="Uplad"/>*@
-                                                        <div style="color:Red;font-size:14px">@ViewBag.Message</div>
-
-                                                    </div>
-
-                                                    <div class="col-md-3 col-sm-3 submit-image">
-                                                        <div class="image-placeholder"><img id="blah1" src="#" alt="600*400(.jpg)" /></div>
-                                                        @*<input type="file" name="image1">*@
-                                                        <input type="file" onchange="ShowImage1(this)" name="files1" value="" multiple="multiple" />
-                                                        @*<input type="submit" value="Upload You Image"  title="Uplad"/>*@
-                                                        <div style="color:Red;font-size:14px">@ViewBag.Message</div>
+                                                        <div class="image-placeholder">600x400 (JPG)</div>
+                                                        <input type="file" name="image1">
                                                     </div>
                                                     <div class="col-md-3 col-sm-3 submit-image">
-                                                        <div class="image-placeholder"><img id="blah2" src="#" alt="600*400(.jpg)" /></div>
-                                                        @*<input type="file" name="image1">*@
-                                                        <input type="file" onchange="ShowImage2(this)" name="files2" value="" multiple="multiple" />
-                                                        @*<input type="submit" value="Upload You Image"  title="Uplad"/>*@
-                                                        <div style="color:Red;font-size:14px">@ViewBag.Message</div>
+                                                        <div class="image-placeholder">600x400 (JPG)</div>
+                                                        <input type="file" name="image1">
+                                                    </div>
+                                                    <div class="col-md-3 col-sm-3 submit-image">
+                                                        <div class="image-placeholder">600x400 (JPG)</div>
+                                                        <input type="file" name="image1">
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="block-heading" id="amenities">
                                                 <a href="#seller" class="btn btn-sm btn-default pull-right">Seller Information <i class="fa fa-chevron-down"></i></a>
-                                                <h4><span class="heading-icon"><img src="@Url.Content("~/images/faa.png")" /></span>Amenities</h4>
+                                                <h4><span class="heading-icon"><img src="images/faa.png" /></span>Amenities</h4>
                                             </div>
                                             <div class="padding-as25 margin-20 lgray-bg">
                                                 <div class="row">
-
                                                     <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                                                         <label class="checkbox">
-                                                            <input type="checkbox" value="intown">IN TOWN
-                                                        </label>
-                                                    </div>
-
-                                                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                                                        <label class="checkbox">
-                                                            <input type="checkbox" value="housekeeping">Housekeeping
+                                                            <input type="checkbox">In Town
                                                         </label>
                                                     </div>
                                                     <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                                                         <label class="checkbox">
-                                                            <input type="checkbox" value="Security">Security
+                                                            <input type="checkbox">House Keeping
                                                         </label>
                                                     </div>
                                                     <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                                                         <label class="checkbox">
-                                                            <input type="checkbox" Value="Elevator">Elevator
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                                                        <label class="checkbox">
-                                                            <input type="checkbox" value="Swimming Pool">Swimming Pool
+                                                            <input type="checkbox">Security
                                                         </label>
                                                     </div>
                                                     <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                                                         <label class="checkbox">
-                                                            <input type="checkbox" value="Balcony">Balcony
-                                                        </label>
-                                                    </div>
-                                                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                                                        <label class="checkbox">
-                                                            <input type="checkbox" value="Gymnasium">Gymnasium
-                                                        </label>
-                                                    </div>
-                                                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                                                        <label class="checkbox">
-                                                            <input type="checkbox" value="Covered Parking">Covered Parking
+                                                            <input type="checkbox">Elevator
                                                         </label>
                                                     </div>
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                                                         <label class="checkbox">
-                                                            <input type="checkbox" value="Jacuzzi">Jacuzzi
+                                                            <input type="checkbox">Swimming Pool
                                                         </label>
                                                     </div>
                                                     <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                                                         <label class="checkbox">
-                                                            <input type="checkbox" value="Laundary Room">Laundary Room
+                                                            <input type="checkbox">Balcony
                                                         </label>
                                                     </div>
                                                     <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                                                         <label class="checkbox">
-                                                            <input type="checkbox" value="Fully Furnished">Fully Furnished
+                                                            <input type="checkbox">Gymnasium
                                                         </label>
                                                     </div>
                                                     <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                                                         <label class="checkbox">
-                                                            <input type="checkbox" value="Telephone">Telephone
+                                                            <input type="checkbox">Covered Parking
                                                         </label>
                                                     </div>
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                                                         <label class="checkbox">
-                                                            <input type="checkbox" value="Satellite Channels">Satellite Channels
+                                                            <input type="checkbox">Jacuzzi
                                                         </label>
                                                     </div>
                                                     <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                                                         <label class="checkbox">
-                                                            <input type="checkbox" value="Internet">Internet
+                                                            <input type="checkbox">Laundary Room
                                                         </label>
                                                     </div>
                                                     <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                                                         <label class="checkbox">
-                                                            <input type="checkbox" value="Home Electrics">Home Electrics
+                                                            <input type="checkbox">Fully Furnished
+                                                        </label>
+                                                    </div>
+                                                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                                        <label class="checkbox">
+                                                            <input type="checkbox">Telephone
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                                        <label class="checkbox">
+                                                            <input type="checkbox">Satellite Channels
+                                                        </label>
+                                                    </div>
+                                                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                                        <label class="checkbox">
+                                                            <input type="checkbox">Internet
+                                                        </label>
+                                                    </div>
+                                                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                                        <label class="checkbox">
+                                                            <input type="checkbox">Home Electrics
                                                         </label>
                                                     </div>
                                                 </div>
                                             </div>
 
-                                            @Html.HiddenFor(model => model.PropertyDetails.ContractType)
                                             <div class="block-heading" id="seller">
                                                 <a href="#submit-property" class="btn btn-sm btn-default pull-right">Submit Property <i class="fa fa-chevron-down"></i></a>
-                                                <h4><span class="heading-icon"><img src="@Url.Content("~/images/faa.png")" /></span>Seller Information</h4>
+                                                <h4><span class="heading-icon"><img src="images/faa.png" /></span>Seller Information</h4>
                                             </div>
-                                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                                             <div class="padding-as25 margin-20 lgray-bg">
-
                                                 <div class="row">
                                                     <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-                                                        @Html.TextBoxFor(model => model.PropertyDetails.FullName, new { @placeholder = "FullName", @class = "form-control", id = "FullName", @autocomplete = "off" })
-                                                        @Html.ValidationMessageFor(model => model.PropertyDetails.FullName, null, new { style = "color:red" })
-                                                        @{
-                                                            if (ViewBag.error != null)
-                                                            {
-                                                                <font color="red">  @Html.Raw(ViewBag.error)</font>
-                                                            }
-                                                        }
+                                                        <input type="text" class="form-control" placeholder="Full name">
                                                     </div>
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-md-4 col-sm-4">
-                                                        @Html.TextBoxFor(model => model.PropertyDetails.Email, new { @placeholder = "Email", @class = "form-control", id = "Email", @autocomplete = "off" })
-                                                        @Html.ValidationMessageFor(model => model.PropertyDetails.Email, null, new { style = "color:red" })
-                                                        @{
-                                                            if (ViewBag.error != null)
-                                                            {
-                                                                <font color="red">  @Html.Raw(ViewBag.error)</font>
-                                                            }
-                                                        }
-
+                                                        <input type="text" class="form-control" placeholder="Email">
                                                     </div>
                                                     <div class="col-md-4 col-sm-4">
-                                                        @Html.TextBoxFor(model => model.PropertyDetails.Phone, new { @placeholder = "Phone", @class = "form-control", id = "Phone", @autocomplete = "off" })
-                                                        @Html.ValidationMessageFor(model => model.PropertyDetails.Phone, null, new { style = "color:red" })
-                                                        @{
-                                                            if (ViewBag.error != null)
-                                                            {
-                                                                <font color="red">  @Html.Raw(ViewBag.error)</font>
-                                                            }
-                                                        }
-
+                                                        <input type="text" class="form-control" placeholder="Phone">
                                                     </div>
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 submit-description">
-                                                        @Html.TextBoxFor(model => model.PropertyDetails.Comments, new { @placeholder = "Comments", @class = "form-control", id = "Comments", @autocomplete = "off" })
-                                                        @Html.ValidationMessageFor(model => model.PropertyDetails.Comments, null, new { style = "color:red" })
-                                                        @{
-                                                            if (ViewBag.error != null)
-                                                            {
-                                                                <font color="red">  @Html.Raw(ViewBag.error)</font>
-                                                            }
-                                                        }
-
+                                                        <textarea name="description" class="form-control margin-0" rows="4" cols="10" placeholder="Comments"></textarea>
                                                     </div>
                                                 </div>
                                                 <br>
@@ -765,13 +447,7 @@
 
 
                                         </form>
-
-
                                     </div>
-
-
-
-
 
 
 
@@ -941,28 +617,27 @@
                 </div>
             </div>
 
-                                                            }
-        <!-- Start Site Footer -->
+            <!-- Start Site Footer -->
 
-        <footer class="site-footer-bottom">
-            <div class="container">
-                <div class="row">
-                    <div class="copyrights-col-left col-md-6 col-sm-6">
-                        <p>2016 © <a href="http://mariainfotech.in/">MARIA Infotech Pvt. Ltd. </a>All Rights Reserved.</p>
-                    </div>
-                    <div class="copyrights-col-right col-md-6 col-sm-6">
-                        <div class="social-icons">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
+            <footer class="site-footer-bottom">
+                <div class="container">
+                    <div class="row">
+                        <div class="copyrights-col-left col-md-6 col-sm-6">
+                            <p>2016 © <a href="http://mariainfotech.in/">MARIA Infotech Pvt. Ltd. </a>All Rights Reserved.</p>
+                        </div>
+                        <div class="copyrights-col-right col-md-6 col-sm-6">
+                            <div class="social-icons">
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
 
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </footer>
-        <!-- End Site Footer -->
-        <a id="back-to-top"><i class="fa fa-angle-double-up"></i></a>
-    </div>
+            </footer>
+            <!-- End Site Footer -->
+            <a id="back-to-top"><i class="fa fa-angle-double-up"></i></a>
+        </div>
 </body>
 </html>
 <!-- Dynamic page generated in 3.499 seconds. -->

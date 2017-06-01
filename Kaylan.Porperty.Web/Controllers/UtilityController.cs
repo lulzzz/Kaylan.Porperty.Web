@@ -12,7 +12,7 @@ namespace Kaylan.Porperty.Web.Controllers
     {
         public int pageSize = 5;
         private IUnitOfWork iUnitOfWork;
-
+       
         public UtilityController()
         {
             iUnitOfWork = new UnitOfWork();
@@ -191,9 +191,13 @@ namespace Kaylan.Porperty.Web.Controllers
                          on city.Id equals area.CityId
                          select new Area
                          {
-                             Id = city.Id,
-                             Name = city.Name,
-                             IsActive = city.IsActive,
+                             //Id = city.Id,
+                             //Name = city.Name,
+                             //IsActive = city.IsActive,
+                             //City = new City()
+                             Id  =area.Id,
+                             Name = area.Name,
+                             IsActive =area.IsActive,
                              City = new City()
                              {
                                  Name = city.Name,
@@ -262,26 +266,62 @@ namespace Kaylan.Porperty.Web.Controllers
             return Json(result, JsonRequestBehavior.AllowGet);
         }
 
-        [HttpGet]
-        public ActionResult GetStateList()
-        {
-            var result = iUnitOfWork.Repository<State>()
-                .GetAll()
-                .Select(x => new State { Name = x.Name, Id = x.Id })
-                  .ToList();
+        //[HttpGet]
+        //public ActionResult GetStateList()
+        //{
+        //    var result = iUnitOfWork.Repository<State>()
+        //       .GetAll()
+        //       .Select(x => new State { Name = x.Name, Id = x.Id })
+        //          .ToList();
 
-            return Json(result, JsonRequestBehavior.AllowGet);
+        //    return Json(result, JsonRequestBehavior.AllowGet);
+        //}
+
+        [HttpGet]
+        public JsonResult GetStateList(int ID)
+        {
+            CustomeDbContext db = new CustomeDbContext();
+            db.Configuration.ProxyCreationEnabled = false;
+            return Json(db.States.Where(k=>k.CountryId==ID), JsonRequestBehavior.AllowGet);
         }
 
-        [HttpGet]
-        public ActionResult GetCityList()
-        {
-            var result = iUnitOfWork.Repository<City>()
-                .GetAll()
-                .Select(x => new City { Name = x.Name, Id = x.Id })
-                  .ToList();
+        //T Get(Func<T, Boolean> where);
 
-            return Json(result, JsonRequestBehavior.AllowGet);
+        //public JsonResult GetStatebyId(long ID)
+        //{
+        //    var result = iUnitOfWork.Repository<State>().GetById(ID);
+        //    return Json(result, JsonRequestBehavior.AllowGet);
+        //}
+
+
+        [HttpGet]
+        public ActionResult GetCityList(int ID)
+        {
+            CustomeDbContext db = new CustomeDbContext();
+            db.Configuration.ProxyCreationEnabled = false;
+            return Json(db.City.Where(m => m.StateId == ID), JsonRequestBehavior.AllowGet);
+
+//return Json(result, JsonRequestBehavior.AllowGet);
+        }
+
+        //rupesh
+        //[HttpGet]
+        //public ActionResult GetCityList()
+        //{
+        //  var result = iUnitOfWork.Repository<City>()
+        //       .GetAll()
+        //       .Select(x => new City { Name = x.Name, Id = x.Id })
+        //        .ToList();
+
+        //   return Json(result, JsonRequestBehavior.AllowGet);
+        //}
+
+        [HttpGet]
+        public ActionResult getArealist(int ID)
+        {
+            CustomeDbContext db = new CustomeDbContext();
+            db.Configuration.ProxyCreationEnabled = false;
+            return Json(db.Areas.Where(a => a.CityId == ID), JsonRequestBehavior.AllowGet);
         }
     }
 }

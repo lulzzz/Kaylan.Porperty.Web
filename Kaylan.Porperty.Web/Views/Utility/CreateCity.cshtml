@@ -29,23 +29,49 @@
     },
 });
 
-    $.ajax
-  ({
-      url: '/Utility/GetStateList',
-      type: 'GET',
-      datatype: 'application/json',
-      contentType: 'application/json',
-      success: function (result) {
-          $("#StateId").html("");
-          $.each(result, function (i, country) {
-              $("#StateId").append
-              ($('<option></option>').val(country.Id).html(country.Name))
-          })
-      },
-      error: function () {
-          alert("Whooaaa! Something went wrong..")
-      },
-  });
+  //  $.ajax
+  //({
+  //    url: '/Utility/GetStateList',
+  //    type: 'GET',
+  //    datatype: 'application/json',
+  //    contentType: 'application/json',
+  //    success: function (result) {
+  //        $("#StateId").html("");
+  //        $.each(result, function (i, country) {
+  //            $("#StateId").append
+  //            ($('<option></option>').val(country.Id).html(country.Name))
+  //        })
+  //    },
+  //    error: function () {
+  //        alert("Whooaaa! Something went wrong..")
+  //    },
+    //});
+
+
+    $(function () {
+        $("#CountryId").change(function () {
+
+            $.get("/Utility/GetStateList", { ID: $("#CountryId").val() }, function (data) {
+
+
+                $.each(data, function (index, row) {
+
+
+                    $("#st").append("<option value='" + row.Id + "'>" + row.Name + "</option>")
+
+
+                });
+
+            })
+
+        });
+
+
+    });
+
+
+
+
 </script>
 <!-- Content Header (Page header) -->
 <section class="content-header">
@@ -63,26 +89,34 @@
 <section class="content">
 
     <div id="content">
-        @using (Ajax.BeginForm("CreateCity", new AjaxOptions
+    @using (Ajax.BeginForm("CreateCity", new AjaxOptions
             {
                 UpdateTargetId = "targetId",
                 HttpMethod = "Post",
                 OnSuccess = "Clear"
             }))
             {
-            <div class="search-field">
-                <label>Country</label>
+        <div class="search-field">
+            <label>Country</label>
 
-                @Html.DropDownListFor(model => model.CountryId, new List<SelectListItem>() { new SelectListItem { Text = "Select Country", Value = "-1" } }, new { @class = "form - control selectpicker", @id = "CountryId" })
+            @Html.DropDownListFor(model => model.CountryId, new List<SelectListItem>() { new SelectListItem { Text = "Select Country", Value = "-1" } }, new { @class = "form - control selectpicker", @id = "CountryId" })
 
-            </div>
+        </div>
 
-            <div class="search-field">
-                <label>State</label>
+            @*<div class="search-field">
+                    <label>State</label>
 
-                @Html.DropDownListFor(model => model.StateId, new List<SelectListItem>() { new SelectListItem { Text = "Select State", Value = "-1" } }, new { @class = "form - control selectpicker", @id = "StateId" })
 
-            </div>
+                    @Html.DropDownListFor(model => model.StateId, new List<SelectListItem>() { new SelectListItem { Text = "Select State", Value = "-1" } }, new { @class = "form - control selectpicker", @id = "StateId" })
+
+                </div>*@
+        <div>
+            <label>City</label>
+
+            @Html.DropDownListFor(model=>model.StateId, new List<SelectListItem>() { new SelectListItem { Text = "Select State", Value = "-1" } }, new { @class = "form - control selectpicker", @id = "st" })
+
+        </div>
+            @*<select id="st" class="form-control"></select>*@
             <div>
                 @Html.TextBoxFor(x => x.CityName, new { @class = "" })
                 <input type="submit" value="Add City" />
