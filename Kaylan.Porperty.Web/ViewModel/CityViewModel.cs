@@ -16,13 +16,15 @@ namespace Kaylan.Porperty.Web.ViewModel
     }
 
 
+    //public class AreaViewModelasds
     //public class AreaViewModelzzzz
     //{
+    //    public IPagedList<Area> AreaList { get; internal set; }asd
     //    public IPagedList<Area> AreaList { get; internal set; }zzzz
 
-    //    public string AreaName { get; internal set; }zzzz
+    //    public string AreaName { get; internal set; }asd
 
-    //    public int CountryId { get; internal set; }zz
+    //    public int CountryId { get; internal set; }asd
 
     //    public int CityId { get; internal set; }
 
