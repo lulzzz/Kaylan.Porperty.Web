@@ -1,64 +1,65 @@
-﻿@model Kalyan.Property.Infrastructure.Models.LoginPl
+﻿@model Kaylan.Porperty.Web.ViewModel.LoginViewModel
 
 @{
     ViewBag.Title = "CreateLogin";
 }
-                                                                                                                                       <!-- CSS -->
-<link rel="alternate" type="application/rss+xml" title="Real Spaces - Wordpress Real Estate Theme &raquo; Feed" href="http://preview.imithemes.com/real-spaces-wp/feed/" />
-<link rel="alternate" type="application/rss+xml" title="Real Spaces - Wordpress Real Estate Theme &raquo; Comments Feed" href="http://preview.imithemes.com/real-spaces-wp/comments/feed/" />
-<link rel="alternate" type="application/rss+xml" title="Real Spaces - Wordpress Real Estate Theme &raquo; Home Version 1 Comments Feed" href="http://preview.imithemes.com/real-spaces-wp/version-1/feed/" />
-<link rel='stylesheet' href='@Url.Content("~/content/css/cf8bac.css")' type='text/css' media='all' />
-<link rel='stylesheet' href='@Url.Content("~/content/css/dsidx-icons.css")' type='text/css' media='all' />
-<link rel='stylesheet' href='@Url.Content("~/content/css/client.css")' type='text/css' media='all' />
-<link rel='stylesheet' href='@Url.Content("~/content/css/client1.css")' type='text/css' media='all' />
-<link rel='stylesheet' href='@Url.Content("~/content/css/settings.css")' type='text/css' media='all' />
-<link rel='stylesheet' href='@Url.Content("~/content/css/bootstrap.css")' type='text/css' media='all' />
-<link rel='stylesheet' href='@Url.Content("~/content/css/animations.css")' type='text/css' media='all' />
-<link rel='stylesheet' href='@Url.Content("~/content/font-awesome-4.5.0/css/font-awesome.min.css")' type='text/css' media='all' />
-<link rel='stylesheet' href='@Url.Content("~/content/css/style.css")' type='text/css' media='all' />
-<link rel='stylesheet' href='@Url.Content("~/content/css/style2.css")' type='text/css' media='all' />
-<link rel='stylesheet' href='@Url.Content("~/content/css/prettyPhoto.css")' type='text/css' media='all' />
-<link rel='stylesheet' href='@Url.Content("~/content/css/owl.carousel.css")' type='text/css' media='all' />
-<link rel='stylesheet' href='@Url.Content("~/content/css/owl.theme.css")' type='text/css' media='all' />
-<link rel="stylesheet" href="@Url.Content("~/content/css/color1.css")" type="text/css">
-<!-- Scripts -->
-<script type='text/javascript' src="@Url.Content("~/scripts/jquery.js")"></script>
-<script type='text/javascript' src="@Url.Content("~/scripts/jquery-migrate.min.js")"></script>
-<script type='text/javascript' src="@Url.Content("~/scripts/23a23f.js")"></script>
-<script type='text/javascript' src="@Url.Content("~/scripts/ajax-login-script.js")"></script>
-<script type='text/javascript' src="@Url.Content("~/scripts/jquery.themepunch.tools.min.js")"></script>
-<script type='text/javascript' src="@Url.Content("~/scripts/jquery.themepunch.revolution.min.js")"></script>
-<script type='text/javascript' src="@Url.Content("~/scripts/modernizr.js")"></script>
+<html>
+<head>
+    <!-- CSS -->
+    <link rel="alternate" type="application/rss+xml" title="Real Spaces - Wordpress Real Estate Theme &raquo; Feed" href="http://preview.imithemes.com/real-spaces-wp/feed/" />
+    <link rel="alternate" type="application/rss+xml" title="Real Spaces - Wordpress Real Estate Theme &raquo; Comments Feed" href="http://preview.imithemes.com/real-spaces-wp/comments/feed/" />
+    <link rel="alternate" type="application/rss+xml" title="Real Spaces - Wordpress Real Estate Theme &raquo; Home Version 1 Comments Feed" href="http://preview.imithemes.com/real-spaces-wp/version-1/feed/" />
+    <link rel='stylesheet' href='@Url.Content("~/content/css/cf8bac.css")' type='text/css' media='all' />
+    <link rel='stylesheet' href='@Url.Content("~/content/css/dsidx-icons.css")' type='text/css' media='all' />
+    <link rel='stylesheet' href='@Url.Content("~/content/css/client.css")' type='text/css' media='all' />
+    <link rel='stylesheet' href='@Url.Content("~/content/css/client1.css")' type='text/css' media='all' />
+    <link rel='stylesheet' href='@Url.Content("~/content/css/settings.css")' type='text/css' media='all' />
+    <link rel='stylesheet' href='@Url.Content("~/content/css/bootstrap.css")' type='text/css' media='all' />
+    <link rel='stylesheet' href='@Url.Content("~/content/css/animations.css")' type='text/css' media='all' />
+    <link rel='stylesheet' href='@Url.Content("~/content/font-awesome-4.5.0/css/font-awesome.min.css")' type='text/css' media='all' />
+    <link rel='stylesheet' href='@Url.Content("~/content/css/style.css")' type='text/css' media='all' />
+    <link rel='stylesheet' href='@Url.Content("~/content/css/style2.css")' type='text/css' media='all' />
+    <link rel='stylesheet' href='@Url.Content("~/content/css/prettyPhoto.css")' type='text/css' media='all' />
+    <link rel='stylesheet' href='@Url.Content("~/content/css/owl.carousel.css")' type='text/css' media='all' />
+    <link rel='stylesheet' href='@Url.Content("~/content/css/owl.theme.css")' type='text/css' media='all' />
+    <link rel="stylesheet" href="@Url.Content("~/content/css/color1.css")" type="text/css">
+    <!-- Scripts -->
+    <script type='text/javascript' src="@Url.Content("~/scripts/jquery.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/jquery-migrate.min.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/23a23f.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/ajax-login-script.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/jquery.themepunch.tools.min.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/jquery.themepunch.revolution.min.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/modernizr.js")"></script>
 
-
-<script type='text/javascript' src="@Url.Content("~/scripts/favorite.js")"></script>
-<script type='text/javascript' src="@Url.Content("~/scripts/newslatter.js")"></script>
-<script type='text/javascript' src="@Url.Content("~/scripts/prettyphoto.js")"></script>
-<script type='text/javascript' src="@Url.Content("~/scripts/owl.carousel.min.js")"></script>
-<script type='text/javascript' src="@Url.Content("~/scripts/jquery.flexslider.js")"></script>
-<script type='text/javascript' src="@Url.Content("~/scripts/helper-plugins.js")"></script>
-<script type='text/javascript' src="@Url.Content("~/scripts/bootstrap.js")"></script>
-<script type='text/javascript' src="@Url.Content("~/scripts/waypoints.js")"></script>
-@*<script type='text/javascript' src='@Url.Content("~/scripts/js.js")'></script>*@
-<script type='text/javascript'>
+    <script type='text/javascript' src="@Url.Content("~/scripts/favorite.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/newslatter.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/prettyphoto.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/owl.carousel.min.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/jquery.flexslider.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/helper-plugins.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/bootstrap.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/waypoints.js")"></script>
+    @*<script type='text/javascript' src='@Url.Content("~/scripts/js.js")'></script>*@
+    <script type='text/javascript'>
         /* <![CDATA[ */
         var urlajax = { "url": "http:\/\/preview.imithemes.com\/real-spaces-wp\/wp-admin\/admin-ajax.php", "tmpurl": "http:\/\/preview.imithemes.com\/real-spaces-wp\/wp-content\/themes\/real-spaces", "is_property": "", "sticky": "1", "is_contact": "", "home_url": "http:\/\/preview.imithemes.com\/real-spaces-wp", "is_payment": "", "register_url": "http:\/\/preview.imithemes.com\/real-spaces-wp\/register-as-agent\/", "is_register": "", "is_login": "", "is_submit_property": "", "basic": "Basic", "advanced": "Advanced" };
         /* ]]> */
-</script>
-<script type='text/javascript' src='@Url.Content("~/scripts/init.js")'></script>
-<script type='text/javascript' src="@Url.Content("~/scripts/profile_validate.js")"></script>
-<script type='text/javascript' src="@Url.Content("~/scripts/comment-reply.min.js")"></script>
-<script type='text/javascript' src="@Url.Content("~/scripts/wp-embed.min.js")"></script>
-<script type='text/javascript' src="@Url.Content("~/scripts/core.min.js")"></script>
-<script type='text/javascript' src="@Url.Content("~/scripts/widget.min.js")"></script>
-<script type='text/javascript' src="@Url.Content("~/scripts/position.min.js")"></script>
-<script type='text/javascript' src="@Url.Content("~/scripts/menu.min.js")"></script>
-<script type='text/javascript' src="@Url.Content("~/scripts/autocomplete.min.js")"></script>
-<script type='text/javascript' src="@Url.Content("~/scripts/autocomplete.js")"></script>
-<script type='text/javascript' src="@Url.Content("~/scripts/jquery_cookie.js")"></script>
-<script type='text/javascript' src="@Url.Content("~/scripts/script.js")"></script>
+    </script>
+    <script type='text/javascript' src='@Url.Content("~/scripts/init.js")'></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/profile_validate.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/comment-reply.min.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/wp-embed.min.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/core.min.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/widget.min.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/position.min.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/menu.min.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/autocomplete.min.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/autocomplete.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/jquery_cookie.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/script.js")"></script>
 
-<script type="text/javascript">
+    <script type="text/javascript">
         $(document).ready(function () {
 
             $("#Submit").click(function () {
@@ -78,7 +79,10 @@
                 }
             });
         });
-</script>
+    </script>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/unobtrusive/js")
 </head>
 <body class="archive author author-mia-kennedy author-2 ">
     <!--[if lt IE 7]>
@@ -110,10 +114,8 @@
                                 <li class="dropdown">
                                     <a href="/User/CreateUser">Register</a>
                                     <i class="fa fa-user"></i>
-
                                 </li>
                             </ul>
-
                         </div>
                     </div>
                 </div>
@@ -173,7 +175,6 @@
                                     <li id="menu-item-283" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-283"> @Html.ActionLink("PropertyRequest", "CreatePropertyRequest", "PropertyRequest")</li>
                                     <li id="menu-item-209" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-209"> @Html.ActionLink("Membership", "membership", "Home")</li>
                                     <li id="menu-item-240" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-240">@Html.ActionLink("Contact", "Contact", "Home")</li>
-
                                 </ul>
                             </nav>
                         </div>
@@ -202,12 +203,12 @@
             if (ViewData["NotEnoughRights"] != null)
             {
                 <script type="text/javascript">
-        alertbox("Not Enough Rights To Access This Eamil");
+                    alertbox("Not Enough Rights To Access This Eamil");
                 </script>
             }
         }
         @using (Html.BeginForm("CreateLogin", "Login", FormMethod.Post))
-        {
+            {
 
             @Html.AntiForgeryToken()
             @Html.ValidationSummary(true)
@@ -233,44 +234,18 @@
                                     <form>
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                                            @*<input type="text" class="form-control" placeholder="Username">*@
-                                            @*@Html.TextBoxFor(model => model.LoginDetails.Email, new { @placeholder = "Email", @class = "form-control", @autocomplete = "off" })
-                                            @Html.ValidationMessageFor(model => model.LoginDetails.Email, null, new { style = "color:red" })
-                                            @{
-                                                if (ViewBag.error != null)
-                                                {
-                                                    <font color="red">  @Html.Raw(ViewBag.error)</font>
-                                                }
-                                            }*@
-                                            @*<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">*@
-                                            
                                             <span class="input-group-addon">UserName<i class="fa fa-lock"></i></span>
-                                            <input type= "text" name="pass" rows="2" cols="2"> 
-                                            @*</div>*@
+                                            @Html.TextBoxFor(x => x.Email, new { @rows = "2", @cols = "2" })
                                             <label id="ErrorEmail" style="color: red; display: none">User Email Already Registered!!</label>
-
                                         </div>
                                         <br>
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                                            @*<input type="password" class="form-control" placeholder="Password">*@
-                                            @*@Html.PasswordFor(model => model.LoginDetails.Password, new { @placeholder = "Password", @class = "form-control", id = "Password", @autocomplete = "off" })
-                                            @Html.ValidationMessageFor(model => model.LoginDetails.Password, null, new { style = "color:red" })
-                                            @{
-                                                if (ViewBag.error != null)
-                                                {
-                                                    <font color="red">  @Html.Raw(ViewBag.error)</font>
-                                                }
-                                            }*@
-                                            @*<label>Password</label>*@
                                             <span class="input-group-addon">Password<i class="fa fa-lock"></i></span>
-                                            @*@Html.Password*@
-                                            
-                                            <input type="password" name="pass" rows="2" cols="2"> 
-
+                                            @Html.PasswordFor(x => x.Password, new { @rows = "2", @cols = "2" })
                                         </div>
                                         <div class="checkbox">
-                                            <input type="checkbox">
+                                            @Html.CheckBoxFor(x => x.RememberMe)
                                             Remember Me!
                                         </div>
                                         <br />
@@ -285,15 +260,13 @@
                                             @if (ViewBag.msg != null)
                                             {
                                                 <script type="text/javascript">
-                                    alertbox("Check Email")
+                                                    alertbox("Check Email")
                                                 </script>
                                             }
                                         </div>
                                         <input type="submit" class="btn btn-success" id="Submit" />
                                         @*<button type="submit" class="btn btn-primary">Login Now</button>*@
-
                                     </form>
-
                                 </div>
 
                                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>
@@ -302,7 +275,7 @@
                     </div>
                 </div>
             </div>
-                                                }
+        }
 
         <!-- Start Site Footer -->
 
@@ -316,7 +289,6 @@
                         <div class="social-icons">
                             <a href="#"><i class="fa fa-facebook"></i></a>
                             <a href="#"><i class="fa fa-twitter"></i></a>
-
                         </div>
                     </div>
                 </div>
@@ -330,4 +302,3 @@
 <!-- Dynamic page generated in 3.499 seconds. -->
 <!-- Cached page generated by WP-Super-Cache on 2016-03-08 08:25:10 -->
 <!-- super cache -->
-
