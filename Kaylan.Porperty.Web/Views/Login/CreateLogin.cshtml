@@ -234,14 +234,19 @@
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="fa fa-user"></i></span>
                                             @*<input type="text" class="form-control" placeholder="Username">*@
-                                            @Html.TextBoxFor(model => model.LoginDetails.Email, new { @placeholder = "Email", @class = "form-control", @autocomplete = "off" })
+                                            @*@Html.TextBoxFor(model => model.LoginDetails.Email, new { @placeholder = "Email", @class = "form-control", @autocomplete = "off" })
                                             @Html.ValidationMessageFor(model => model.LoginDetails.Email, null, new { style = "color:red" })
                                             @{
                                                 if (ViewBag.error != null)
                                                 {
                                                     <font color="red">  @Html.Raw(ViewBag.error)</font>
                                                 }
-                                            }
+                                            }*@
+                                            @*<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">*@
+                                            
+                                            <span class="input-group-addon">UserName<i class="fa fa-lock"></i></span>
+                                            <input type= "text" name="pass" rows="2" cols="2"> 
+                                            @*</div>*@
                                             <label id="ErrorEmail" style="color: red; display: none">User Email Already Registered!!</label>
 
                                         </div>
@@ -249,20 +254,26 @@
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="fa fa-lock"></i></span>
                                             @*<input type="password" class="form-control" placeholder="Password">*@
-                                            @Html.PasswordFor(model => model.LoginDetails.Password, new { @placeholder = "Password", @class = "form-control", id = "Password", @autocomplete = "off" })
+                                            @*@Html.PasswordFor(model => model.LoginDetails.Password, new { @placeholder = "Password", @class = "form-control", id = "Password", @autocomplete = "off" })
                                             @Html.ValidationMessageFor(model => model.LoginDetails.Password, null, new { style = "color:red" })
                                             @{
                                                 if (ViewBag.error != null)
                                                 {
                                                     <font color="red">  @Html.Raw(ViewBag.error)</font>
                                                 }
-                                            }
+                                            }*@
+                                            @*<label>Password</label>*@
+                                            <span class="input-group-addon">Password<i class="fa fa-lock"></i></span>
+                                            @*@Html.Password*@
+                                            
+                                            <input type="password" name="pass" rows="2" cols="2"> 
 
                                         </div>
                                         <div class="checkbox">
                                             <input type="checkbox">
                                             Remember Me!
                                         </div>
+                                        <br />
                                         <a href="@Url.Content("~/User/ForgotPassword")">Forgot Password</a>
                                         <div>
                                             @if (ViewBag.errormsg != null)

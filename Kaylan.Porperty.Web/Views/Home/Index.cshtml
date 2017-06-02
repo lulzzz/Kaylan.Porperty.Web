@@ -18,7 +18,7 @@
     <link rel='stylesheet' href='@Url.Content("~/content/css/settings.css")' type='text/css' media='all' />
     <link rel='stylesheet' href='@Url.Content("~/content/css/bootstrap.css")' type='text/css' media='all' />
     <link rel='stylesheet' href='@Url.Content("~/content/css/animations.css")' type='text/css' media='all' />
-    <link rel='stylesheet' href='@Url.Content("~/content/font-awesome-4.6.3/css/font-awesome.min.css")' type='text/css' media='all' />
+    <link rel='stylesheet' href='@Url.Content("~/content/font-awesome-4.5.0/css/font-awesome.min.css")' type='text/css' media='all' />
     <link rel='stylesheet' href='@Url.Content("~/content/css/style.css")' type='text/css' media='all' />
     <link rel='stylesheet' href='@Url.Content("~/content/css/style2.css")' type='text/css' media='all' />
     <link rel='stylesheet' href='@Url.Content("~/content/css/prettyPhoto.css")' type='text/css' media='all' />
@@ -34,6 +34,7 @@
     <script type='text/javascript' src="@Url.Content("~/scripts/jquery.themepunch.tools.min.js")"></script>
     <script type='text/javascript' src="@Url.Content("~/scripts/jquery.themepunch.revolution.min.js")"></script>
     <script type='text/javascript' src="@Url.Content("~/scripts/modernizr.js")"></script>
+
 
     <script type='text/javascript' src="@Url.Content("~/scripts/favorite.js")"></script>
     <script type='text/javascript' src="@Url.Content("~/scripts/newslatter.js")"></script>
@@ -61,10 +62,6 @@
     <script type='text/javascript' src="@Url.Content("~/scripts/autocomplete.js")"></script>
     <script type='text/javascript' src="@Url.Content("~/scripts/jquery_cookie.js")"></script>
     <script type='text/javascript' src="@Url.Content("~/scripts/script.js")"></script>
-    @Scripts.Render("~/Home/js")
-    <script type="text/javascript">
-        
-    </script>
 
 </head>
 <body class="home page page-id-223 page-template page-template-template-home page-template-template-home-php ">
@@ -75,16 +72,26 @@
         <!-- Start Site Header -->
         <header class="site-header">
             <div class="top-header hidden-xs">
-                <div class="container-fluide">
+                <div class="container">
                     <div class="row">
-                        <div class="col-md-12 col-sm-12">
+                        <div class="col-lg-9">
+                            <marquee style="padding-top: 5px;font-size:18px; font-weight:bold;color:#FFF;">
+                                <b>
+                                    Kalyan Real Estate Property/Properties/Real Estate for Sale and Rent
+                                    Place your Kalyan property on the best Property Portal
+                                </b>
+                            </marquee>
+
+                        </div>
+
+                        <div class="col-lg-3 col-md-3 col-sm-12">
                             <ul class="horiz-nav pull-right">
                                 <li class="dropdown">
                                     <a href="../Home/Admin">Admin</a>
-
-                                <li class="dropdown">
                                     <i class="fa fa-user"></i>
+                                <li class="dropdown">
                                     <a href="/Login/CreateLogin">Login</a>
+                                    <i class="fa fa-user"></i>
 
                                     <ul class="dropdown-menu">
                                         <li><a href="#" title="Favorite Properties">Favorite Properties</a></li>
@@ -95,10 +102,12 @@
                                 </li>
                                 </li>
                                 <li class="dropdown">
-                                    <i class="fa fa-check-circle"></i>
                                     <a href="/User/CreateUser">Register</a>
+                                    <i class="fa fa-user"></i>
+
                                 </li>
                             </ul>
+
                         </div>
                     </div>
                 </div>
@@ -115,23 +124,16 @@
                             </h1>
                         </div>
                         <div class="col-md-5 col-sm-8 col-xs-8">
-                            <marquee style="width: 500px; font-size: 18px; margin-top: 30px; font-weight: bold">
-                                <b>
-                                    Kalyan Real Estate Property/Properties/Real Estate for Sale and Rent
-                                    Place your Kalyan property on the best Property Portal
-                                </b>
-                            </marquee>
                         </div>
-
                         <div class="col-md-5 col-sm-4 col-xs-4">
 
                             <div class="contact-info-blocks hidden-sm hidden-xs">
                                 <div>
-                                    <i class="fa fa-phone"></i>Free Line For You
+                                    <i class="fa fa-phone"></i> Free Line For You
                                     <span>0123456789</span>
                                 </div>
                                 <div>
-                                    <i class="fa fa-envelope"></i>Email Us
+                                    <i class="fa fa-envelope"></i> Email Us
                                     <span>example@gmail.com</span>
                                 </div>
                                 <!-- <div>
@@ -150,15 +152,18 @@
                         <div class="col-md-12">
                             <nav class="navigation">
                                 <ul id="menu-main-menu" class="sf-menu">
+
                                     <li id="menu-item-208" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-208">
                                         @Html.ActionLink("Home", "Index", "Home")
                                     </li>
                                     <li id="menu-item-209" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-209"> @Html.ActionLink("About", "About", "Home")</li>
                                     <li id="menu-item-225" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-225"> @Html.ActionLink("Services", "Services", "Home")</li>
                                     <li id="menu-item-283" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-283"><a href="/PropertyRequest/CreatePropertyRequest">PropertyRequest</a></li>
-                                                                       <li id="menu-item-226" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-226"> <a href="/PropertyDetail/CreatePropertyDetail">List your property</a></li>
+                                    <li id="menu-item-226" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-226"> <a href="/PropertyDetail/CreatePropertyDetail">List your property</a></li>
                                     <li id="menu-item-209" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-209"> @Html.ActionLink("Membership", "membership", "Home")</li>
                                     <li id="menu-item-240" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-240">@Html.ActionLink("Contact", "Contact", "Home")</li>
+
+
                                 </ul>
                             </nav>
                         </div>
@@ -166,7 +171,6 @@
                 </div>
             </div>
         </header>
-
         <!-- End Site Header -->
         <!-- Site Showcase -->
         <div class="site-showcase">
@@ -185,31 +189,50 @@
                         <form method="get" action="search results.html">
                             <input type="hidden" class="form-control" name="s" id="s" value="Search1" />
                             <div class="row">
-
                                 <div class="col-md-8 search-fields">
                                     <div class="search_by">
                                         <div class="search-field">
-                                            <label>Property Type</label>
-                                            <select name="property_type" id="property_type" class="form-control selectpicker">
+                                            <label>Property Type</label><select name="propery_type" class="form-control selectpicker">
+                                                <option selected>Property Type</option>
+                                                <option value='apartment'>Apartment</option>
+                                                <option value='family-house'>Family House</option>
+                                                <option value='cottage'>Cottage</option>
+                                                <option value='single-home'>Single Home</option>
+                                                <option value='villa'>Villa</option>
                                             </select>
                                         </div>
                                         <div class="search-field">
                                             <label>Country</label>
-                                            <select name="search_by" id="country" class="form-control selectpicker">
+                                            <select name="search_by" class="form-control selectpicker">
                                                 <option selected>Country</option>
+                                                <option value='India'>India</option>
                                             </select>
                                         </div>
                                     </div>
                                     <div class="search-field">
-                                        <label>State</label>
-                                        <select name="states" id="states" class="form-control selectpicker">
+                                        <label>State</label><select name="propery_location" class="form-control selectpicker">
                                             <option selected>State</option>
+                                            <option value='California'>Maharashtra</option>
+                                            <option value='Texas'>Gujrat</option>
+                                            <option value='New York'>Karnatak</option>
+                                            <option value='Florida'>Tamilnadu</option>
+                                            <option value='Illinois'>AndhraPradesh</option>
+                                            <option value='Ohio'>UttarPradhesh</option>
+                                            <option value='Pennsylvania'>Bengal</option>
+                                            <option value='Massachusetts'>Bihar</option>
+                                            <option value='New Jersey'>Himachal Pradesh</option>
+                                            <option value='Arizona'>Haryana</option>
+                                            <option value='Michigan'>Punjab</option>
                                         </select>
                                     </div>
                                     <div class="search-field">
-                                        <label>City</label>
-                                        <select name="city" id="city" class="form-control selectpicker">
+                                        <label>City</label><select name="property_city" class="form-control selectpicker">
                                             <option selected>City</option>
+                                            <option value='Mumbai'>Mumbai</option>
+                                            <option value='Thane'>Pune</option>
+
+
+
                                         </select>
                                     </div>
                                     <div class="search-field">
@@ -252,6 +275,7 @@
                                             <option value='Unfuenished'>Unfurnished</option>
                                             <option value='Semi Furnished'>Semi Furnished</option>
                                             <option value='Fully Furnished'>Fully Furnished</option>
+
                                         </select>
                                     </div>
                                     <div class="search-field">
@@ -263,6 +287,7 @@
                                             <option value='Ahad Holdings WLL'>Ahad Holdings WLL</option>
                                             <option value='Al Rayes Real Estate'>Al Rayes Real Estate</option>
                                             <option value='Alafif Real Estate'>Alafif Real Estate</option>
+
                                         </select>
                                     </div>
                                     <div class="search-field">
@@ -315,6 +340,7 @@
                                             <option value='Lowest Price First'>Lowest Price First</option>
                                         </select>
                                     </div>
+
                                 </div>
                                 <div class="col-md-4 search-buttons">
                                     <div class="row">
@@ -326,6 +352,7 @@
                                         </div>
                                     </div>
                                     <div class="row">
+                                        
                                         <br>
                                         <div class="add-property">
                                             <div class="block-heading">
@@ -351,6 +378,8 @@
                     </div>
                 </div>
             </div>
+
+
         </div>
         <!-- End Showcase -->
         <!-- Start Content -->
@@ -558,6 +587,8 @@
                     </div>
                 </div>
 
+
+
                 <div class="padding-tb45 bottom-blocks">
                     <div class="container">
                         <div class="row">
@@ -680,7 +711,7 @@
                                              <i class="fa fa-search"></i>
                                          </div>
                                          <div class="text">
-                                             <h4>Advance Search Options</h4>
+                                             <h4> Advance Search Options</h4>
                                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                                          </div>
                                      </li>
@@ -699,6 +730,7 @@
                     </div>
 
                     <div class="spacer-20"></div>
+
 
                     <div class="container">
                         <div class="block-heading">
@@ -762,7 +794,8 @@
                         <div class="copyrights-col-right col-md-6 col-sm-6">
                             <div class="social-icons">
                                 <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+
                             </div>
                         </div>
                     </div>
@@ -771,6 +804,7 @@
             <!-- End Site Footer -->
             <a id="back-to-top"><i class="fa fa-angle-double-up"></i></a>
         </div>
+
 </body>
 </html>
 <!-- Dynamic page generated in 4.267 seconds. -->
