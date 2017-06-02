@@ -20,7 +20,7 @@ namespace Kaylan.Porperty.Web.ViewModel
     //public class AreaViewModelzzzz
     //{
     //    public IPagedList<Area> AreaList { get; internal set; }asd
-    //    public IPagedList<Area> AreaList { get; internal set; }zzzz
+    //    public IPagedList<Area> AreaList { get; internal set; }testtttttt
 
     //    public string AreaName { get; internal set; }asd
 
