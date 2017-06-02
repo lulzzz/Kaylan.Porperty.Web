@@ -10,7 +10,7 @@ namespace Kaylan.Porperty.Web.ViewModel
 
         public string CityName { get;  set; }
 
-        public int CountryId { get;  set; }
+        public int CountryId { get;  set; }//rupesh test
 
         public int StateId { get;  set; }//test
     }
