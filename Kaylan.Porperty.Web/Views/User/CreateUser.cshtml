@@ -1,198 +1,193 @@
-﻿@model Kalyan.Property.Infrastructure.Models.UserLogin
+﻿    <!DOCTYPE HTML>
+    <html lang="en-US" class="no-js">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>Kalyan Property World</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+        <meta name="format-detection" content="telephone=no">
 
-@{
-    ViewBag.Title = "CreateUser";
-}
+        <!-- CSS -->
+        <link rel="alternate" type="application/rss+xml" title="Real Spaces - Wordpress Real Estate Theme &raquo; Feed" href="http://preview.imithemes.com/real-spaces-wp/feed/" />
+        <link rel="alternate" type="application/rss+xml" title="Real Spaces - Wordpress Real Estate Theme &raquo; Comments Feed" href="http://preview.imithemes.com/real-spaces-wp/comments/feed/" />
+        <link rel="alternate" type="application/rss+xml" title="Real Spaces - Wordpress Real Estate Theme &raquo; Home Version 1 Comments Feed" href="http://preview.imithemes.com/real-spaces-wp/version-1/feed/" />
+        <link rel='stylesheet' href='@Url.Content("~/content/css/cf8bac.css")' type='text/css' media='all' />
+        <link rel='stylesheet' href='@Url.Content("~/content/css/dsidx-icons.css")' type='text/css' media='all' />
+        <link rel='stylesheet' href='@Url.Content("~/content/css/client.css")' type='text/css' media='all' />
+        <link rel='stylesheet' href='@Url.Content("~/content/css/client1.css")' type='text/css' media='all' />
+        <link rel='stylesheet' href='@Url.Content("~/content/css/settings.css")' type='text/css' media='all' />
+        <link rel='stylesheet' href='@Url.Content("~/content/css/bootstrap.css")' type='text/css' media='all' />
+        <link rel='stylesheet' href='@Url.Content("~/content/css/animations.css")' type='text/css' media='all' />
+        <link rel='stylesheet' href='@Url.Content("~/content/font-awesome-4.6.3/css/font-awesome.min.css")' type='text/css' media='all' />
+        <link rel='stylesheet' href='@Url.Content("~/content/css/style.css")' type='text/css' media='all' />
+        <link rel='stylesheet' href='@Url.Content("~/content/css/style2.css")' type='text/css' media='all' />
+        <link rel='stylesheet' href='@Url.Content("~/content/css/prettyPhoto.css")' type='text/css' media='all' />
+        <link rel='stylesheet' href='@Url.Content("~/content/css/owl.carousel.css")' type='text/css' media='all' />
+        <link rel='stylesheet' href='@Url.Content("~/content/css/owl.theme.css")' type='text/css' media='all' />
+        <link class="alt" href='@Url.Content("~/content/css/color1.css")' rel="stylesheet" type="text/css">
 
+        <!-- Scripts -->
+        <script type='text/javascript' src="@Url.Content("~/scripts/jquery.js")"></script>
+        <script type='text/javascript' src="@Url.Content("~/scripts/jquery-migrate.min.js")"></script>
+        <script type='text/javascript' src="@Url.Content("~/scripts/23a23f.js")"></script>
+        <script type='text/javascript' src="@Url.Content("~/scripts/ajax-login-script.js")"></script>
+        <script type='text/javascript' src="@Url.Content("~/scripts/jquery.themepunch.tools.min.js")"></script>
+        <script type='text/javascript' src="@Url.Content("~/scripts/jquery.themepunch.revolution.min.js")"></script>
+        <script type='text/javascript' src="@Url.Content("~/scripts/modernizr.js")"></script>
 
-<!DOCTYPE HTML>
-<html lang="en-US" class="no-js">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Kalyan Property World</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
-    <meta name="format-detection" content="telephone=no">
+        <script type='text/javascript' src="@Url.Content("~/scripts/favorite.js")"></script>
+        <script type='text/javascript' src="@Url.Content("~/scripts/newslatter.js")"></script>
+        <script type='text/javascript' src="@Url.Content("~/scripts/prettyphoto.js")"></script>
+        <script type='text/javascript' src="@Url.Content("~/scripts/owl.carousel.min.js")"></script>
+        <script type='text/javascript' src="@Url.Content("~/scripts/jquery.flexslider.js")"></script>
+        <script type='text/javascript' src="@Url.Content("~/scripts/helper-plugins.js")"></script>
+        <script type='text/javascript' src="@Url.Content("~/scripts/bootstrap.js")"></script>
+        <script type='text/javascript' src="@Url.Content("~/scripts/waypoints.js")"></script>
+        <!--    <script type='text/javascript' src='js/js.js'></script>-->
+        <script type='text/javascript'>
+            /* <![CDATA[ */
+            var urlajax = { "url": "http:\/\/preview.imithemes.com\/real-spaces-wp\/wp-admin\/admin-ajax.php", "tmpurl": "http:\/\/preview.imithemes.com\/real-spaces-wp\/wp-content\/themes\/real-spaces", "is_property": "", "sticky": "1", "is_contact": "", "home_url": "http:\/\/preview.imithemes.com\/real-spaces-wp", "is_payment": "", "register_url": "http:\/\/preview.imithemes.com\/real-spaces-wp\/register-as-agent\/", "is_register": "", "is_login": "", "is_submit_property": "", "basic": "Basic", "advanced": "Advanced" };
+            /* ]]> */
+        </script>
+        <!--    <script type='text/javascript' src='js/init.js'></script>-->
+        <script type='text/javascript' src="@Url.Content("~/scripts/profile_validate.js")"></script>
+        <script type='text/javascript' src="@Url.Content("~/scripts/comment-reply.min.js")"></script>
+        <script type='text/javascript' src="@Url.Content("~/scripts/wp-embed.min.js")"></script>
+        <script type='text/javascript' src="@Url.Content("~/scripts/core.min.js")"></script>
+        <script type='text/javascript' src="@Url.Content("~/scripts/widget.min.js")"></script>
+        <script type='text/javascript' src="@Url.Content("~/scripts/position.min.js")"></script>
+        <script type='text/javascript' src="@Url.Content("~/scripts/menu.min.js")"></script>
+        <script type='text/javascript' src="@Url.Content("~/scripts/autocomplete.min.js")"></script>
+        <script type='text/javascript' src="@Url.Content("~/scripts/autocomplete.js")"></script>
+        <script src="@Url.Content("~/scripts/jquery_cookie.js")"></script>
+        <script src="@Url.Content("~/scripts/script.js")"></script>
+    </head>
+    <body class="archive author author-mia-kennedy author-2 ">
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+        <![endif]-->
+        <div class="body">
+            <!-- Start Site Header -->
+            <header class="site-header">
+                <div class="top-header hidden-xs">
+                    <div class="container-fluide">
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12">
+                                <ul class="horiz-nav pull-right">
+                                    <li class="dropdown">
+                                        <a href="../Home/Admin">Admin</a>
 
-    <!-- CSS -->
-    <link rel="alternate" type="application/rss+xml" title="Real Spaces - Wordpress Real Estate Theme &raquo; Feed" href="http://preview.imithemes.com/real-spaces-wp/feed/" />
-    <link rel="alternate" type="application/rss+xml" title="Real Spaces - Wordpress Real Estate Theme &raquo; Comments Feed" href="http://preview.imithemes.com/real-spaces-wp/comments/feed/" />
-    <link rel="alternate" type="application/rss+xml" title="Real Spaces - Wordpress Real Estate Theme &raquo; Home Version 1 Comments Feed" href="http://preview.imithemes.com/real-spaces-wp/version-1/feed/" />
-    <link rel='stylesheet' href='@Url.Content("~/content/css/cf8bac.css")' type='text/css' media='all' />
-    <link rel='stylesheet' href='@Url.Content("~/content/css/dsidx-icons.css")' type='text/css' media='all' />
-    <link rel='stylesheet' href='@Url.Content("~/content/css/client.css")' type='text/css' media='all' />
-    <link rel='stylesheet' href='@Url.Content("~/content/css/client1.css")' type='text/css' media='all' />
-    <link rel='stylesheet' href='@Url.Content("~/content/css/settings.css")' type='text/css' media='all' />
-    <link rel='stylesheet' href='@Url.Content("~/content/css/bootstrap.css")' type='text/css' media='all' />
-    <link rel='stylesheet' href='@Url.Content("~/content/css/animations.css")' type='text/css' media='all' />
-    <link rel='stylesheet' href='@Url.Content("~/content/font-awesome-4.5.0/css/font-awesome.min.css")' type='text/css' media='all' />
-    <link rel='stylesheet' href='@Url.Content("~/content/css/style.css")' type='text/css' media='all' />
-    <link rel='stylesheet' href='@Url.Content("~/content/css/style2.css")' type='text/css' media='all' />
-    <link rel='stylesheet' href='@Url.Content("~/content/css/prettyPhoto.css")' type='text/css' media='all' />
-    <link rel='stylesheet' href='@Url.Content("~/content/css/owl.carousel.css")' type='text/css' media='all' />
-    <link rel='stylesheet' href='@Url.Content("~/content/css/owl.theme.css")' type='text/css' media='all' />
-    <link rel="stylesheet" href="@Url.Content("~/content/css/color1.css")" type="text/css">
+                                    <li class="dropdown">
+                                        <i class="fa fa-user"></i>
 
-    <!-- Scripts -->
-    <script type='text/javascript' src="@Url.Content("~/scripts/jquery.js")"></script>
-    <script type='text/javascript' src="@Url.Content("~/scripts/jquery-migrate.min.js")"></script>
-    <script type='text/javascript' src="@Url.Content("~/scripts/23a23f.js")"></script>
-    <script type='text/javascript' src="@Url.Content("~/scripts/ajax-login-script.js")"></script>
-    <script type='text/javascript' src="@Url.Content("~/scripts/jquery.themepunch.tools.min.js")"></script>
-    <script type='text/javascript' src="@Url.Content("~/scripts/jquery.themepunch.revolution.min.js")"></script>
-    <script type='text/javascript' src="@Url.Content("~/scripts/modernizr.js")"></script>
+                                        <a href="/Login/CreateLogin">Login</a>
 
-
-    <script type='text/javascript' src="@Url.Content("~/scripts/favorite.js")"></script>
-    <script type='text/javascript' src="@Url.Content("~/scripts/newslatter.js")"></script>
-    <script type='text/javascript' src="@Url.Content("~/scripts/prettyphoto.js")"></script>
-    <script type='text/javascript' src="@Url.Content("~/scripts/owl.carousel.min.js")"></script>
-    <script type='text/javascript' src="@Url.Content("~/scripts/jquery.flexslider.js")"></script>
-    <script type='text/javascript' src="@Url.Content("~/scripts/helper-plugins.js")"></script>
-    <script type='text/javascript' src="@Url.Content("~/scripts/bootstrap.js")"></script>
-    <script type='text/javascript' src="@Url.Content("~/scripts/waypoints.js")"></script>
-    @*<script type='text/javascript' src='@Url.Content("~/scripts/js.js")'></script>*@
-    <script type='text/javascript'>
-        /* <![CDATA[ */
-        var urlajax = { "url": "http:\/\/preview.imithemes.com\/real-spaces-wp\/wp-admin\/admin-ajax.php", "tmpurl": "http:\/\/preview.imithemes.com\/real-spaces-wp\/wp-content\/themes\/real-spaces", "is_property": "", "sticky": "1", "is_contact": "", "home_url": "http:\/\/preview.imithemes.com\/real-spaces-wp", "is_payment": "", "register_url": "http:\/\/preview.imithemes.com\/real-spaces-wp\/register-as-agent\/", "is_register": "", "is_login": "", "is_submit_property": "", "basic": "Basic", "advanced": "Advanced" };
-        /* ]]> */
-    </script>
-    <script type='text/javascript' src='@Url.Content("~/scripts/init.js")'></script>
-    <script type='text/javascript' src="@Url.Content("~/scripts/profile_validate.js")"></script>
-    <script type='text/javascript' src="@Url.Content("~/scripts/comment-reply.min.js")"></script>
-    <script type='text/javascript' src="@Url.Content("~/scripts/wp-embed.min.js")"></script>
-    <script type='text/javascript' src="@Url.Content("~/scripts/core.min.js")"></script>
-    <script type='text/javascript' src="@Url.Content("~/scripts/widget.min.js")"></script>
-    <script type='text/javascript' src="@Url.Content("~/scripts/position.min.js")"></script>
-    <script type='text/javascript' src="@Url.Content("~/scripts/menu.min.js")"></script>
-    <script type='text/javascript' src="@Url.Content("~/scripts/autocomplete.min.js")"></script>
-    <script type='text/javascript' src="@Url.Content("~/scripts/autocomplete.js")"></script>
-    <script type='text/javascript' src="@Url.Content("~/scripts/jquery_cookie.js")"></script>
-    <script type='text/javascript' src="@Url.Content("~/scripts/script.js")"></script>
-
-</head>
-<body class="archive author author-mia-kennedy author-2 ">
-    <!--[if lt IE 7]>
-        <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
-    <![endif]-->
-    <div class="body">
-        <!-- Start Site Header -->
-        <header class="site-header">
-            <div class="top-header hidden-xs">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12 col-sm-12">
-                            <ul class="horiz-nav pull-right">
-                                <li class="dropdown">
-                                    <a href="../Home/Admin">Admin</a>
-                                    <i class="fa fa-user"></i>
-                                <li class="dropdown">
-                                    <a href="/Login/CreateLogin">Login</a>
-                                    <i class="fa fa-user"></i>
-
-                                    <ul class="dropdown-menu">
-                                        <li><a href="#" title="Favorite Properties">Favorite Properties</a></li>
-                                        <li><a href="#" title="Saved Searches">Saved Searches</a></li>
-                                        <li class="register"><a href="#" title="My Profile">My Profile</a></li>
-                                        <li class="login"><a href="#" title="Logout">Logout</a></li>
-                                    </ul>
-                                </li>
-                                </li>
-                                <li class="dropdown">
-                                    <a href="/User/CreateUser">Register</a>
-                                    <i class="fa fa-user"></i>
-
-                                </li>
-                            </ul>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="middle-header">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-2 col-sm-8 col-xs-8">
-                            <h1 class="logo">
-                                <a href="#" title="Real Spaces - Wordpress Real Estate Theme">
-                                    <img src="@Url.Content("~/images/sample-10.png")" alt="Logo">
-                                </a>
-                            </h1>
-                        </div>
-                        <div class="col-md-5 col-sm-8 col-xs-8">
-                            <marquee style="width: 500px; font-size: 18px; margin-top: 30px; font-weight: bold">
-                                <b>
-                                    Kalyan Real Estate Property/Properties/Real Estate for Sale and Rent
-                                    Place your Kalyan property on the best Property Portal
-                                </b>
-                            </marquee>
-                        </div>
-                        <div class="col-md-5 col-sm-4 col-xs-4">
-
-                            <div class="contact-info-blocks hidden-sm hidden-xs">
-                                <div>
-                                    <i class="fa fa-phone"></i>Free Line For You
-                                    <span>0123456789</span>
-                                </div>
-                                <div>
-                                    <i class="fa fa-envelope"></i>Email Us
-                                    <span>example@gmail.com</span>
-                                </div>
-                                <!-- <div>
-                                        <i class="fa fa-clock-o"></i>Working Hours
-                                <span>09:00 to 17:00</span>
-                                    </div>-->
-                            </div>
-                            <a href="#" class="visible-sm visible-xs menu-toggle"><i class="fa fa-bars"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="main-menu-wrapper">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <nav class="navigation">
-                                <ul id="menu-main-menu" class="sf-menu">
-                                    <li id="menu-item-208" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-208">
-                                        @Html.ActionLink("Home", "Index", "Home")
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#" title="Favorite Properties">Favorite Properties</a></li>
+                                            <li><a href="#" title="Saved Searches">Saved Searches</a></li>
+                                            <li class="register"><a href="#" title="My Profile">My Profile</a></li>
+                                            <li class="login"><a href="#" title="Logout">Logout</a></li>
+                                        </ul>
                                     </li>
-                                    <li id="menu-item-209" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-209"> @Html.ActionLink("About", "About", "Home")</li>
-                                    <li id="menu-item-225" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-225"> @Html.ActionLink("Services", "Services", "Home")</li>
-                                    <li id="menu-item-283" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-283"><a href="/PropertyRequest/CreatePropertyRequest">PropertyRequest</a></li>
-                                    <li id="menu-item-226" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-226"> <a href="/PropertyDetail/CreatePropertyDetail">List your property</a></li>
-                                    <li id="menu-item-209" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-209"> @Html.ActionLink("Membership", "membership", "Home")</li>
-                                    <li id="menu-item-240" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-240">@Html.ActionLink("Contact", "Contact", "Home")</li>
+                                    </li>
+                                    <li class="dropdown">
+                                        <i class="fa fa-check-circle"></i>
+                                        <a href="/User/CreateUser">Register</a>
 
+
+                                    </li>
                                 </ul>
-                            </nav>
+
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </header>
-        <!-- End Site Header -->
-        <!-- Site Showcase -->
-        <div class="site-showcase">
-            <!-- Start Page Header -->
-            <div class="parallax page-header" style="background-image: url(/../images/slide31.jpg);">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h1>Register</h1>
+
+                <div class="middle-header">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-2 col-sm-8 col-xs-8">
+                                <h1 class="logo">
+                                    <a href="#" title="Real Spaces - Wordpress Real Estate Theme">
+                                        <img src="@Url.Content("~/images/sample-10.png")" alt="Logo">
+                                    </a>
+                                </h1>
+                            </div>
+                            <div class="col-md-5 col-sm-8 col-xs-8">
+                                <marquee style="width: 500px; font-size: 18px; margin-top: 30px; font-weight: bold">
+                                    <b>
+                                        Kalyan Real Estate Property/Properties/Real Estate for Sale and Rent
+                                        Place your Kalyan property on the best Property Portal
+                                    </b>
+                                </marquee>
+                            </div>
+
+                            <div class="col-md-5 col-sm-4 col-xs-4">
+
+                                <div class="contact-info-blocks hidden-sm hidden-xs">
+                                    <div>
+                                        <i class="fa fa-phone"></i>Free Line For You
+                                        <span>0123456789</span>
+                                    </div>
+                                    <div>
+                                        <i class="fa fa-envelope"></i>Email Us
+                                        <span>example@gmail.com</span>
+                                    </div>
+                                    <!-- <div>
+                                            <i class="fa fa-clock-o"></i>Working Hours
+                                    <span>09:00 to 17:00</span>
+                                        </div>-->
+                                </div>
+                                <a href="#" class="visible-sm visible-xs menu-toggle"><i class="fa fa-bars"></i></a>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <div class="main-menu-wrapper">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <nav class="navigation">
+                                    <ul id="menu-main-menu" class="sf-menu">
+                                        <li id="menu-item-208" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-208">
+                                            @Html.ActionLink("Home", "Index", "Home")
+                                        </li>
+                                        <li id="menu-item-209" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-209"> @Html.ActionLink("About", "About", "Home")</li>
+                                        <li id="menu-item-225" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-225"> @Html.ActionLink("Services", "Services", "Home")</li>
+                                        <li id="menu-item-283" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-283"><a href="/PropertyRequest/CreatePropertyRequest">PropertyRequest</a></li>
+                                        <li id="menu-item-226" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-226"> <a href="/PropertyDetail/CreatePropertyDetails">List your property</a></li>
+                                        <li id="menu-item-209" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-209"> @Html.ActionLink("Membership", "membership", "Home")</li>
+                                        <li id="menu-item-240" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-240">@Html.ActionLink("Contact", "Contact", "Home")</li>
+
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- End Site Header -->
+            <!-- Site Showcase -->
+            <div class="site-showcase">
+                <!-- Start Page Header -->
+                <div class="parallax page-header" style="background-image: url(/../images/slide31.jpg);">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h1>Register</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Page Header -->
             </div>
-            <!-- End Page Header -->
-        </div>
-        <!-- Start Content -->
-        @using (Html.BeginForm())
-        {
+            <!-- Start Content -->
 
-            @Html.HiddenFor(model => model.Userdetails.UserId)
 
+            @using (Html.BeginForm())
+            {
+
+                
             @Html.ValidationSummary(true)
             <input type="hidden" id="hdnRowCount" name="hdnRowCount" />
             <div class="main" role="main">
@@ -236,85 +231,79 @@
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="fa fa-user"></i></span>
                                             @*<input type="text" class="form-control" placeholder="Name">*@
-                                            @Html.TextBoxFor(model => model.Userdetails.Name, new { @placeholder = "Name", @class = "form-control", id = "Name", @autocomplete = "off" })
-                                            @Html.ValidationMessageFor(model => model.Userdetails.Name, null, new { style = "color:red" })
-                                            @{
-                                                if (ViewBag.error != null)
-                                                {
-                                                    <font color="red">  @Html.Raw(ViewBag.error)</font>
-                                                }
-                                            }
+                                            @*@Html.TextBoxFor(model => model.Userdetails.Name, new { @placeholder = "Name", @class = "form-control", id = "Name", @autocomplete = "off" })
+                                                @Html.ValidationMessageFor(model => model.Userdetails.Name, null, new { style = "color:red" })
+                                                @{
+                                                    if (ViewBag.error != null)
+                                                    {
+                                                        <font color="red">  @Html.Raw(ViewBag.error)</font>
+                                                    }
+                                                }*@
+                                             <input type="text" class="form-control" placeholder="Name">
                                         </div>
                                         <br>
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-                                            @*<input type="email" class="form-control" placeholder="Address">*@
-                                            @Html.TextBoxFor(model => model.Userdetails.Address, new { @placeholder = "Address", @class = "form-control", id = "Address", @autocomplete = "off" })
-                                            @Html.ValidationMessageFor(model => model.Userdetails.Address, null, new { style = "color:red" })
-                                            @{
-                                                if (ViewBag.error != null)
-                                                {
-                                                    <font color="red">  @Html.Raw(ViewBag.error)</font>
-                                                }
-                                            }
+                                            <input type="email" class="form-control" placeholder="Address">
+                                            @*@Html.TextBoxFor(model => model.Userdetails.Address, new { @placeholder = "Address", @class = "form-control", id = "Address", @autocomplete = "off" })
+                                                @Html.ValidationMessageFor(model => model.Userdetails.Address, null, new { style = "color:red" })
+                                                @{
+                                                    if (ViewBag.error != null)
+                                                    {
+                                                        <font color="red">  @Html.Raw(ViewBag.error)</font>
+                                                    }
+                                                }*@
                                         </div>
                                         <br>
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-                                            @*<input type="email" class="form-control" placeholder="Email">*@
-                                            @Html.TextBoxFor(model => model.Userdetails.Email, new { @placeholder = "Email", @class = "form-control", id = "Email", @autocomplete = "off" })
-                                            @Html.ValidationMessageFor(model => model.Userdetails.Email, null, new { style = "color:red" })
-                                            @{
-                                                if (ViewBag.error != null)
-                                                {
-                                                    <font color="red">  @Html.Raw(ViewBag.error)</font>
-                                                }
-                                            }
+                                            <input type="email" class="form-control" placeholder="Email">
+                                            @*@Html.TextBoxFor(model =>model., new { @placeholder = "Email", @class = "form-control", id = "Email", @autocomplete = "off" })
+                                                @Html.ValidationMessageFor(model => model.Userdetails.Email, null, new { style = "color:red" })
+                                                @{
+                                                    if (ViewBag.error != null)
+                                                    {
+                                                        <font color="red">  @Html.Raw(ViewBag.error)</font>
+                                                    }
+                                                }*@
                                         </div>
                                         <br>
 
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="fa fa-refresh"></i></span>
-                                            @*<input type="password" class="form-control" placeholder="Repeat Password">*@
-                                            @Html.PasswordFor(model => model.Userdetails.Password, new { @placeholder = "Password", @class = "form-control", id = "Password", @autocomplete = "off" })
-                                            @Html.ValidationMessageFor(model => model.Userdetails.Password, null, new { style = "color:red" })
-                                            @{
-                                                if (ViewBag.error != null)
-                                                {
-                                                    <font color="red">  @Html.Raw(ViewBag.error)</font>
-                                                }
-                                            }
+                                            <input type="password" class="form-control" placeholder="Repeat Password">
+                                            @*@Html.PasswordFor(model => model.Userdetails.Password, new { @placeholder = "Password", @class = "form-control", id = "Password", @autocomplete = "off" })
+                                                @Html.ValidationMessageFor(model => model.Userdetails.Password, null, new { style = "color:red" })
+                                                @{
+                                                    if (ViewBag.error != null)
+                                                    {
+                                                        <font color="red">  @Html.Raw(ViewBag.error)</font>
+                                                    }
+                                                }*@
                                         </div>
 
                                         <br>
                                         <div class="input-group">
-                                            <span class="input-group-addon"><i class="fa fa-refresh"></i></span>
-
-                                            @Html.TextBoxFor(model => model.Userdetails.PhoneNumber, new { @placeholder = "PhoneNumber", @class = "form-control", id = "PhoneNumber", @autocomplete = "off" })
-                                            @Html.ValidationMessageFor(model => model.Userdetails.PhoneNumber, "", new { style = "color:red" })
+                                            <span class="input-group-addon"><i class="fa fa-phone"></i></span>
+                                            <input type="text" class="form-control" placeholder="phone number">
+                                            @*@Html.TextBoxFor(model => model.Userdetails.PhoneNumber, new { @placeholder = "PhoneNumber", @class = "form-control", id = "PhoneNumber", @autocomplete = "off" })
+                                                @Html.ValidationMessageFor(model => model.Userdetails.PhoneNumber, "", new { style = "color:red" })*@
 
                                         </div>
                                         <br>
                                         <div class="input-group">
-                                            <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-                                            @*<input type="Gender" class="form-control" placeholder="Gender">*@
+                                            <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                           
 
-                                            @Html.DropDownListFor(model => model.Userdetails.Gender, new SelectList(
-                  new List<Object>{
-                       new { value = "Male" , text = "Male"  },
-                       new { value = "FeMale" , text = "FeMale" },
-
-                    },
-                  "value",
-                  "text",
-                   2))
-                                            @Html.ValidationMessageFor(model => model.Userdetails.Gender, null, new { style = "color:red" })
-                                            @{
-                                                if (ViewBag.error != null)
-                                                {
-                                                    <font color="red">  @Html.Raw(ViewBag.error)</font>
-                                                }
-                                            }
+                                            <div class="col-md-12 col-sm-12 submit-gender">
+                                                <select name="type" class="form-control ">
+                                                    <option>Gender</option>
+                                                    <option>Male</option>
+                                                    <option>Female</option>
+                                                    
+                                                </select>
+                                            </div>
+                                           
                                         </div> <br />
 
                                         <button type="submit" class="btn btn-success" id="Sumbit" value="Click me to go to /CreateUser/CreateUserDetails">Register</button>
@@ -328,7 +317,7 @@
                     </div>
                 </div>
             </div>
-                                                }
+                                            }
         <!-- Start Site Footer -->
 
         <footer class="site-footer-bottom">
@@ -355,5 +344,3 @@
 <!-- Dynamic page generated in 3.499 seconds. -->
 <!-- Cached page generated by WP-Super-Cache on 2016-03-08 08:25:10 -->
 <!-- super cache -->
-
-
