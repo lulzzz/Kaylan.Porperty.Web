@@ -14,6 +14,8 @@ namespace Kalyan.Property.Infrastructure.Models
 
         public string Phone { get; set; }
 
+        public string Gender { get; set; }
+
         public DateTime DateOfBirth { get; set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<Users, int> manager)
