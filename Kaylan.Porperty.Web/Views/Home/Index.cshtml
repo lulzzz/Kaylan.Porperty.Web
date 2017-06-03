@@ -24,8 +24,8 @@
     <link rel='stylesheet' href='@Url.Content("~/content/css/prettyPhoto.css")' type='text/css' media='all' />
     <link rel='stylesheet' href='@Url.Content("~/content/css/owl.carousel.css")' type='text/css' media='all' />
     <link rel='stylesheet' href='@Url.Content("~/content/css/owl.theme.css")' type='text/css' media='all' />
-    <link rel="stylesheet" href="@Url.Content("~/content/css/color1.css")" type="text/css">
-
+    <link rel="stylesheet" href="@Url.Content("~/content/css/color1.css")" type="text/css"/>
+<link rel="stylesheet" href="@Url.Content("~/content/css/dropdown")" type="text/css" />
     <!-- Scripts -->
     <script type='text/javascript' src="@Url.Content("~/scripts/jquery.js")"></script>
     <script type='text/javascript' src="@Url.Content("~/scripts/jquery-migrate.min.js")"></script>
@@ -187,7 +187,8 @@
                 <div class="container">
                     <div class="site-search-module-inside">
                         <form method="get" action="search results.html">
-                            <input type="hidden" class="form-control" name="s" id="s" value="Search1" />
+                            <input type="hidden" class="form-control" name="s" id="s" value="Search" />
+                           @*<text class="form-control" name="s" id="s" value="Search1" />*@
                             <div class="row">
                                 <div class="col-md-8 search-fields">
                                     <div class="search_by">
@@ -345,7 +346,7 @@
                                 <div class="col-md-4 search-buttons">
                                     <div class="row">
                                         <div class="search-button">
-                                            <button type="submit" class="btn btn-primary btn-block btn-lg"><i class="fa fa-search"></i>Search </button>
+                                            <button type="submit" class="btn btn-primary btn-block btn-lg"><i class="fa fa-search" ></i>Search </button>
                                         </div>
                                         <div class="search-button">
                                             <a href="#" id="ads-trigger" class="btn btn-default btn-block"><i class="fa fa-plus"></i><span>Advanced</span></a>

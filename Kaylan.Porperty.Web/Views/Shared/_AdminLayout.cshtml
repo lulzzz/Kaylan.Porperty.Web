@@ -29,6 +29,8 @@
     <link rel="stylesheet" href='@Url.Content("~/content/css/bootstrap.min.css")'>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="@Url.Content("~/content/css/dropdown")" type="text/css" />
+
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
     <!-- jvectormap -->
@@ -45,7 +47,65 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <style>
+        .dropbtn {
+            background-color: orange;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .container {
+            position: relative;
+            width: 100%;
+        }
+
+        .right {
+            position: absolute;
+            right: 0px;
+            width: 140px;
+            background-color: white;
+        }
+
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+            .dropdown-content a {
+                color: black;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+            }
+
+                .dropdown-content a:hover {
+                    background-color: orange;
+                }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: #3e8e41;
+        }
+    </style>
 </head>
+</head>
+
 <body class="hold-transition skin-blue sidebar-mini">
     <div class="wrapper">
 
@@ -78,17 +138,18 @@
                                     <ul class="menu">
                                         <li>
                                             <!-- start message -->
-                                            <a href="#">
-                                                <div class="pull-left">
-                                                    <img src="@Url.Content("~/images/user2-160x160.jpg")" class="img-circle" alt="User Image">
-                                                </div>
-                                                <h4>
-                                                    Support Team
-                                                    <small><i class="fa fa-clock-o"></i> 5 mins</small>
-                                                </h4>
-                                                <p>Why not buy a new awesome theme?</p>
-                                            </a>
-                                        </li>
+                                            
+                                                <a href="#">
+                                                    <div class="pull-left">
+                                                        <img src="@Url.Content("~/images/user2-160x160.jpg")" class="img-circle" alt="User Image">
+                                                    </div>
+                                                    <h4>
+                                                        Support Team
+                                                        <small><i class="fa fa-clock-o"></i> 5 mins</small>
+                                                    </h4>
+                                                    <p>Why not buy a new awesome theme?</p>
+                                                </a>
+</li>
                                         <!-- end message -->
                                         <li>
                                             <a href="#">

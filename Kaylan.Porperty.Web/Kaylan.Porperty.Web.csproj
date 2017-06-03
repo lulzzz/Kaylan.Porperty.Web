@@ -309,6 +309,7 @@
     <Content Include="Content\css\client1.css" />
     <Content Include="Content\css\color1.css" />
     <Content Include="Content\css\dataTables.bootstrap.css" />
+    <Content Include="Content\css\dropdown.css" />
     <Content Include="Content\css\dsidx-icons.css" />
     <Content Include="Content\css\gridviw.css" />
     <Content Include="Content\css\ionicons.min.css" />
@@ -630,7 +631,6 @@
     <Content Include="Views\User\CreateUserDetails.cshtml" />
     <Content Include="Views\User\ForgotPassword.cshtml" />
     <Content Include="Views\User\Profile1.cshtml" />
-    <Content Include="Views\User\CreatNewPassword.cshtml" />
     <Content Include="Views\Home\Details.cshtml" />
     <Content Include="Views\Utility\CreateCountry.cshtml" />
     <Content Include="Views\Utility\CreateState.cshtml" />
@@ -641,6 +641,7 @@
     <Content Include="Views\Utility\_CityList.cshtml" />
     <Content Include="Views\Utility\_AreaList.cshtml" />
     <Content Include="Scripts\jquery.validate.unobtrusive.bootstrap.min.js.map" />
+    <Content Include="Views\User\CreatNewPassword.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

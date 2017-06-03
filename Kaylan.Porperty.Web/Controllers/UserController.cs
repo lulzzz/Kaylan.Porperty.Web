@@ -90,5 +90,9 @@ namespace Kaylan.Porperty.Web.Controllers
         {
             return View();
         }
+        public ActionResult CreatNewPassword()
+        {
+            return View();
+        }
     }
 }
