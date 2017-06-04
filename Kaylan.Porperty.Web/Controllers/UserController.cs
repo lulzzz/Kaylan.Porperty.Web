@@ -94,5 +94,11 @@ namespace Kaylan.Porperty.Web.Controllers
         {
             return View();
         }
+
+        public ActionResult LogOut()
+        {
+            HttpContext.GetOwinContext().Authentication.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
+            return RedirectToAction("Index", "Home");
+        }
     }
 }

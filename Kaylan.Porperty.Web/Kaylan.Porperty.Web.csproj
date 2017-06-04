@@ -221,6 +221,7 @@
     <Compile Include="ViewModel\CountryViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\PropertyRequestViewModel.cs" />
+    <Compile Include="ViewModel\ResetPasswordViewModel.cs" />
     <Compile Include="ViewModel\StateViewModel.cs" />
     <Compile Include="ViewModel\UserViewModel.cs" />
   </ItemGroup>
