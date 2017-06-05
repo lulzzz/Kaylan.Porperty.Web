@@ -75,7 +75,10 @@ namespace Kaylan.Porperty.Web.Controllers
                 ModelState.AddModelError("", error);
             }
         }
-
+        public ActionResult userdashboard()
+        {
+            return View();
+        }
         public ActionResult CreateUserDetails()
         {
             return View();

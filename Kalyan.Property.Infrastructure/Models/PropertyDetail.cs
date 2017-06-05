@@ -72,7 +72,7 @@ namespace Kalyan.Property.Infrastructure.Models
         [StringLength(50)]
         public string State { get; set; }
 
-        public bool? agent { get; set; }
+        public bool agent { get; set; }
 
         [StringLength(10)]
         public string city { get; set; }

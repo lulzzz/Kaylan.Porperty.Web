@@ -213,6 +213,9 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModel\AreaViewModel.cs" />
@@ -394,6 +397,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Images\8b0211.png" />
     <Content Include="Images\buy-or-rent.jpg" />
+    <Content Include="Images\byid.jpg" />
     <Content Include="Images\captcha_img.png" />
     <Content Include="Images\Chrysanthemum.jpg" />
     <Content Include="Images\clint.jpg" />
@@ -413,7 +417,9 @@
     <Content Include="Images\loader.gif" />
     <Content Include="Images\logo.png" />
     <Content Include="Images\map-marker.png" />
+    <Content Include="Images\master.png" />
     <Content Include="Images\Penguins.jpg" />
+    <Content Include="Images\property.jpg" />
     <Content Include="Images\property11-600x400.jpg" />
     <Content Include="Images\property12-600x400.jpg" />
     <Content Include="Images\property4.jpg" />
@@ -462,6 +468,11 @@
     <Content Include="Images\user6-128x128.jpg" />
     <Content Include="Images\user7-128x128.jpg" />
     <Content Include="Images\user8-128x128.jpg" />
+    <Content Include="Images\visa.png" />
+    <Content Include="Images\western.png" />
+    <Content Include="obj\Debug\Kaylan.Porperty.Web.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\Kaylan.Porperty.Web.dll" />
+    <Content Include="obj\Debug\Kaylan.Porperty.Web.pdb" />
     <Content Include="Scripts\23a23f.js" />
     <Content Include="Scripts\ajax-login-script.js" />
     <Content Include="Scripts\analytics.js" />
@@ -512,6 +523,8 @@
     <Content Include="bin\roslyn\Microsoft.CSharp.Core.targets" />
     <Content Include="bin\roslyn\Microsoft.VisualBasic.Core.targets" />
     <Content Include="bin\roslyn\VBCSCompiler.exe.config" />
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <Content Include="obj\Debug\Kaylan.Porperty.Web.csprojResolveAssemblyReference.cache" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\Chart.min.js" />
     <Content Include="Scripts\comment-reply.min.js" />
@@ -642,9 +655,15 @@
     <Content Include="Views\Utility\_AreaList.cshtml" />
     <Content Include="Scripts\jquery.validate.unobtrusive.bootstrap.min.js.map" />
     <Content Include="Views\User\CreatNewPassword.cshtml" />
+    <Content Include="Views\PropertyRequest\PropertyRequestDetails.cshtml" />
+    <Content Include="Views\Home\AdminProfile.cshtml" />
+    <Content Include="Views\Home\USerProfile.cshtml" />
+    <Content Include="Views\PropertyDetail\CreatePropertyDetails.cshtml" />
+    <Content Include="Views\User\userdashboard.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

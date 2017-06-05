@@ -1,10 +1,11 @@
-﻿
+﻿@model Kalyan.Property.Infrastructure.Models.PropertyDetail
+
 @{
-    ViewBag.Title = "UserDashboard";
+    ViewBag.Title = "PropertyRequestDetails";
 }
 
 
-
+<h2>PropertyRequestDetails</h2>
 <!DOCTYPE HTML>
 <html lang="en-US" class="no-js">
 <head>
@@ -31,6 +32,9 @@
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href='@Url.Content("~/content/css/_all-skins.min.css")'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -96,14 +100,7 @@
     @Scripts.Render("~/Home/js")
 
 
-    <script type="text/javascript">
-  $(document).ready(function () {
-  $('#btn').click(function () {
-$('#result').load('/User/Approved');
-});
-});
 
-    </script>
 
 
 
@@ -126,7 +123,7 @@ $('#result').load('/User/Approved');
                                     <i class="fa fa-home"></i>
                                     <a href="../Home/Admin">List All Property</a>
                                     <i class="fa fa-male"></i>
-                                    <a href="../Home/USerProfile">User Profile</a>
+                                    <a href="../Home/Admin">User Profile</a>
                                     <i class="fa fa-user"></i>
                                     <a href="../Home/Admin">Admin</a>
 
@@ -155,114 +152,233 @@ $('#result').load('/User/Approved');
 
 
 
-            
-            <section class="content-header">
-                <h1>
-                    Dashboard
-                </h1>
-
-            </section>
-
-            <!-- Main content -->
-            <section class="content">
-                <!-- Info boxes -->
-                <div class="row">
-                    <div class="col-md-3 col-sm-6 col-xs-12">
-                        <div class="info-box">
-                            <span class="info-box-icon bg-aqua"><i class="ion ion-checkmark-circled"></i></span>
-
-                            <div class="info-box-content">
-                                <span class="info-box-text" id="app">Approved</span>
-                                <span class="info-box-number">90<small>%</small></span>
-                            </div>
-                            <!-- /.info-box-content -->
-                        </div>
-                        <!-- /.info-box -->
-                    </div>
-                    <!-- /.col -->
-                    <div class="col-md-3 col-sm-6 col-xs-12">
-                        <div class="info-box">
-                            <span class="info-box-icon bg-red"><i class="fa fa-minus-circle"></i></span>
-
-                            <div class="info-box-content">
-                                <span class="info-box-text">Pending Approved</span>
-                                <span class="info-box-number">41,410</span>
-                            </div>
-                            <!-- /.info-box-content -->
-                        </div>
-                        <!-- /.info-box -->
-                    </div>
-                    <!-- /.col -->
-                    <!-- fix for small devices only -->
-                    <div class="clearfix visible-sm-block"></div>
-
-                    <div class="col-md-3 col-sm-6 col-xs-12">
-                        <div class="info-box">
-                            <span class="info-box-icon bg-green"><i class="fa fa-info-circle"></i></span>
-
-                            <div class="info-box-content">
-                                <span class="info-box-text">New Enquiry</span>
-                                <span class="info-box-number">760</span>
-                            </div>
-                            <!-- /.info-box-content -->
-                        </div>
-                        <!-- /.info-box -->
-                    </div>
-                    <!-- /.col -->
-                    <div class="col-md-3 col-sm-6 col-xs-12">
-                        <div class="info-box">
-                            <span class="info-box-icon bg-yellow"><i class="ion ion-ios-people-outline"></i></span>
-
-                            <div class="info-box-content">
-                                <span class="info-box-text">Membership</span>
-                                <span class="info-box-number">2,000</span>
-                            </div>
-                            <!-- /.info-box-content -->
-                        </div>
-                        <!-- /.info-box -->
-                    </div>
-                    <!-- /.col -->
-                </div>
-                <!-- /.row -->
-
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="box">
-                            <div class="box-header with-border" id="result">
 
 
-                                what's up
+            @*@{
+                    ViewBag.Title = "Admin";
+                Layout = "~/Views/Shared/_AdminLayout.cshtml";
+                    }*@
+
+                <div class="container-fluide">
+                    <h4>PropertyDetail</h4>
+                    <div class="row">
+                        <div class="col-sm-4" style="background-color:lavenderblush">
+                            <dl class="dl-horizontal">
+                                <dt style="text-align:left" >
+                                    @Html.DisplayNameFor(model => model.Amenity.Id)
+                                </dt>
+
+                                <dd>
+                                    <strong>   @Html.DisplayFor(model => model.Amenity.Id)</strong>
+                                </dd>
+
+                                <br/>
+                           
+                                <dt style="text-align:left" >
+                                    @Html.DisplayNameFor(model => model.ContractType)
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.ContractType)
+                                </dd>
+
+                                <br />
+                                <dt style="text-align:left">
+                                    @Html.DisplayNameFor(model => model.FromPrice)
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.FromPrice)
+                                </dd>
+
+                                <br />
+                                <dt style="text-align:left" >
+                                    @Html.DisplayNameFor(model => model.Bedroom)
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.Bedroom)
+                                </dd>
+                                <br />
+                                <dt  style="text-align:left">
+                                    @Html.DisplayNameFor(model => model.Bathroom)
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.Bathroom)
+                                </dd>
+                                <br />
+                                <dt  style="text-align:left">
+                                    @Html.DisplayNameFor(model => model.Parking)
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.Parking)
+                                </dd>
+                                <br />
+                                <dt  style="text-align:left">
+                                    @Html.DisplayNameFor(model => model.Date)
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.Date)
+                                </dd>
+                                <br />
+                                <dt  style="text-align:left">
+                                    @Html.DisplayNameFor(model => model.PropertyName)
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.PropertyName)
+                                </dd>
 
 
-                            </div>
-                        </div>
-
-                       
-
-
-                        <!-- Start Site Footer -->
-                        @*<footer class="site-footer-bottom">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="copyrights-col-left col-md-6 col-sm-6">
-                                            <p>2016 © <a href="http://mariainfotech.in/">MARIA Infotech Pvt. Ltd. </a>All Rights Reserved.</p>
-                                        </div>
-                                        <div class="copyrights-col-right col-md-6 col-sm-6">
-                                            <div class="social-icons">
-                                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
+                                </dl>
                                 </div>
-                            </footer>*@
-                        <a id="back-to-top"><i class="fa fa-angle-double-up" style="display:inline"></i></a>
-                    </div>
+
+
+
+                        <div class="col-sm-4" style="background-color:lavenderblush;">
+                            <dl class="dl-horizontal">
+                                <dt  style="text-align:left">
+                                    @Html.DisplayNameFor(model => model.Address)
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.Address)
+                                </dd>
+
+                                <br />
+                                <dt style="text-align:left">
+                                    @Html.DisplayNameFor(model => model.PropertyDescription)
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.PropertyDescription)
+                                </dd>
+                                <br />
+                                <dt style="text-align:left">
+                                    @Html.DisplayNameFor(model => model.FullName)
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.FullName)
+                                </dd>
+                                <br />
+                                <dt style="text-align:left" >
+                                    @Html.DisplayNameFor(model => model.Email)
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.Email)
+                                </dd>
+                                <br />
+                                <dt style="text-align:left" >
+                                    @Html.DisplayNameFor(model => model.Phone)
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.Phone)
+                                </dd>
+                                <br />
+                                <dt style="text-align:left" >
+                                    @Html.DisplayNameFor(model => model.Comments)
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.Comments)
+                                </dd>
+                                <br />
+                                <dt style="text-align:left">
+                                    @Html.DisplayNameFor(model => model.Images)
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.Images)
+                                </dd>
+                                <br />
+                                <dt style="text-align:left">
+                                    @Html.DisplayNameFor(model => model.Approved)
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.Approved)
+                                </dd>
+                                </dl>
+                           </div>
+
+
+                        <div class="col-sm-4" style="background-color:lavenderblush;">
+                            <dl class="dl-horizontal">
+    <dt style="text-align:left">
+        @Html.DisplayNameFor(model => model.Featured)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.Featured)
+    </dd>
+                                <br />
+    <dt style="text-align:left">
+        @Html.DisplayNameFor(model => model.Area)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.Area)
+    </dd>
+                                <br />
+    <dt style="text-align:left">
+        @Html.DisplayNameFor(model => model.country)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.country)
+    </dd>
+                                <br />
+    <dt style="text-align:left">
+        @Html.DisplayNameFor(model => model.State)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.State)
+    </dd>
+                                <br />
+    <dt style="text-align:left">
+        @Html.DisplayNameFor(model => model.agent)
+    </dt>
+
+    <dd>
+        @Html.CheckBoxFor(model => model.agent)
+    </dd>
+                                <br />
+    <dt style="text-align:left">
+        @Html.DisplayNameFor(model => model.city)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.city)
+    </dd>
+                                <br />
+    <dt style="text-align:left">
+        @Html.DisplayNameFor(model => model.DistrictId)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.DistrictId)
+    </dd>
+                                <br />
+    <dt style="text-align:left">
+        @Html.DisplayNameFor(model => model.ToPrice)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.ToPrice)
+    </dd>
+
+</dl>
+</div>
+</div>
+</div>
+                
+
 </body>
 </html>
-<!-- End Site Footer -->
-@* <a id="back-to-top"><i class="fa fa-angle-double-up"></i></a>*@
-
-<!-- Dynamic page generated in 1.473 seconds. -->
-<!-- Cached page generated by WP-Super-Cache on 2016-03-16 07:39:24 -->
-<!-- super cache -->

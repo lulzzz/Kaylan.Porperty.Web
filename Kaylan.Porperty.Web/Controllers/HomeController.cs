@@ -176,5 +176,16 @@ namespace Kaylan.Porperty.Web.Controllers
             }
         }
 
+
+
+        public ActionResult AdminProfile( )
+        {
+            return View();
+        }
+        public ActionResult USerProfile()
+        {
+            return View();
+        }
+
     }
 }

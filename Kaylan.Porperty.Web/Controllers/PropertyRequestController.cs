@@ -115,5 +115,24 @@ namespace Kaylan.Porperty.Web.Controllers
                 return null;
             }
         }
+
+
+
+        public ActionResult PropertyRequestDetails(long Id)
+        {
+            PropertyDetail details = unitOfWork.Repository<PropertyDetail>().GetById(Id);
+            if (details == null)
+               Response.Write("<script>alert(' Property Request details not found')</script>");
+            
+            return View(details);
+
+            
+        }
+
+
+
+
+
+
     }
 }
