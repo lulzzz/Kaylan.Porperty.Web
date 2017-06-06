@@ -132,7 +132,7 @@ $('#result').load('/User/Approved');
 
                                 <li class="dropdown">
                                     <i class="fa fa-user"></i>
-                                    <a href="/Login/CreateLogin">Login</a>
+                                <li>@Html.ActionLink("Sign Out ", "Index", "home", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
 
                                     <ul class="dropdown-menu">
                                         <li><a href="#" title="Favorite Properties">Favorite Properties</a></li>
