@@ -104,12 +104,38 @@ $('#result').load('/User/Approved');
 });
 
     </script>
-
-
-
-
-
 </head>
+<style>
+    #maincontent {
+        margin: 10px;
+        border: solid 4px;
+        color: white;
+        border-color: #FF9800;
+    }
+
+    #content {
+        width: 300px;
+        float: left;
+        height: 400px;
+        padding: 5px 15px;
+    }
+
+    #middle {
+        width: 300px; /* Account for margins + border values */
+        float: left;
+        padding: 5px 15px;
+        height: 400px;
+        margin: 0px 5px 5px 5px;
+    }
+
+    #sidebar {
+        width: 300px;
+        padding: 5px 15px;
+        height: 400px;
+        float: left;
+    }
+</style>
+
 <body class="page page-id-281 page-template-default ">
     <!--[if lt IE 7]>
         <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
@@ -123,29 +149,29 @@ $('#result').load('/User/Approved');
                         <div class="col-md-12 col-sm-12">
                             <ul class="horiz-nav pull-right">
                                 <li class="dropdown">
-                                    <i class="fa fa-home"></i>
+                                    @*<i class="fa fa-home"></i>
                                     <a href="../Home/Admin">List All Property</a>
                                     <i class="fa fa-male"></i>
                                     <a href="../Home/USerProfile">User Profile</a>
                                     <i class="fa fa-user"></i>
-                                    <a href="../Home/Admin">Admin</a>
+                                    <a href="../Home/Admin">Admin</a>*@
 
                                 <li class="dropdown">
                                     <i class="fa fa-user"></i>
-                                    <a href="/Login/CreateLogin">Login</a>
+                                    <a href="/Login/CreateLogin">Log out</a>
 
-                                    <ul class="dropdown-menu">
+                                    @*<ul class="dropdown-menu">
                                         <li><a href="#" title="Favorite Properties">Favorite Properties</a></li>
                                         <li><a href="#" title="Saved Searches">Saved Searches</a></li>
                                         <li class="register"><a href="#" title="My Profile">My Profile</a></li>
                                         <li class="login"><a href="#" title="Logout">Logout</a></li>
-                                    </ul>
+                                    </ul>*@
                                 </li>
 
-                                <li class="dropdown">
+                                @*<li class="dropdown">
                                     <i class="fa fa-check-circle"></i>
                                     <a href="/User/CreateUser">Register</a>
-                                </li>
+                                </li>*@
                             </ul>
                         </div>
                     </div>
@@ -158,7 +184,7 @@ $('#result').load('/User/Approved');
             
             <section class="content-header">
                 <h1>
-                    Dashboard
+                    User Dashboard
                 </h1>
 
             </section>
@@ -214,7 +240,7 @@ $('#result').load('/User/Approved');
                             <span class="info-box-icon bg-yellow"><i class="ion ion-ios-people-outline"></i></span>
 
                             <div class="info-box-content">
-                                <span class="info-box-text">Membership</span>
+                                <span class="info-box-text">List All Property</span>
                                 <span class="info-box-number">2,000</span>
                             </div>
                             <!-- /.info-box-content -->
@@ -229,40 +255,54 @@ $('#result').load('/User/Approved');
                     <div class="col-md-12">
                         <div class="box">
                             <div class="box-header with-border" id="result">
+                                <div class="panel panel-default" id="maincontent">
+                                    <div class="panel-heading" style="background-color:#FF9800;color:white;font-size:20px;">User Profile</div>
+                                    <div class="panel-body" style="">
+
+                                        <div id="main1" style="width:150%;float:left;margin-left:30px;">
+                                            <section>
+                                                <div class="col-md-3 col-sm-3 submit-image">
+                                                    <div class="image-placeholder">600x400 (JPG)</div>
+                                                    <input type="file" name="image1">
+                                                </div>
+                                            </section>
+                                            <section id="content" style="color:black;height:200px;width:300px;">
+
+                                                <h4>Name :Shreya singh </h4>
+                                                <h6>Phone</h6>
+                                                <h6>DateOfBirth</h6>
+                                                <h6>Email</h6>
+                                                <h5>@Html.ActionLink("ChangePassword", "CreatNewPassword", " User ")</h5>
+                                                <br>
+                                            </section>
 
 
-                                what's up
+                                            <section id="content" style="color:black;height:200px;width:300px;">
+                                                <strong style="font-size:15px;">Membership Details :</strong><br>
+                                                Membership Status : PAID <br>
+                                                Membership Ends : 01-NOV-2016<br>
+                                                Membership Level : Business Premium<br>
+                                            </section>
+                                        </div>
 
+                                        
 
-                            </div>
+                                       
+                                        @*<a id="back-to-top"><i class="fa fa-angle-double-up" style="display:inline"></i></a>*@
+
+                                    </div>
+
+                                </div>
                         </div>
+                            <div>
 
+                                here the parial page
+                            </div>
                        
 
 
-                        <!-- Start Site Footer -->
-                        @*<footer class="site-footer-bottom">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="copyrights-col-left col-md-6 col-sm-6">
-                                            <p>2016 © <a href="http://mariainfotech.in/">MARIA Infotech Pvt. Ltd. </a>All Rights Reserved.</p>
-                                        </div>
-                                        <div class="copyrights-col-right col-md-6 col-sm-6">
-                                            <div class="social-icons">
-                                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </footer>*@
+                       
                         <a id="back-to-top"><i class="fa fa-angle-double-up" style="display:inline"></i></a>
                     </div>
 </body>
 </html>
-<!-- End Site Footer -->
-@* <a id="back-to-top"><i class="fa fa-angle-double-up"></i></a>*@
-
-<!-- Dynamic page generated in 1.473 seconds. -->
-<!-- Cached page generated by WP-Super-Cache on 2016-03-16 07:39:24 -->
-<!-- super cache -->
