@@ -5,128 +5,113 @@
 }
 @Scripts.Render("~/bundles/jquery")
 @Scripts.Render("~/unobtrusive/js")
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-<script type="text/javascript">
-    function Clear() {
-        $('#countryName').val('');
-    }
+    <script type="text/javascript">
+        function Clear() {
+            $('#countryName').val('');
+        }
 
-    $.ajax
-({
-    url: '/Utility/GetCountryList',
-    type: 'GET',
-    datatype: 'application/json',
-    contentType: 'application/json',
-    success: function (result) {
-        $("#CountryId").html("");
-        $.each(result, function (i, country) {
-            $("#CountryId").append
-            ($('<option></option>').val(country.Id).html(country.Name))
-        })
-    },
-    error: function () {
-        alert("Whooaaa! Something went wrong..")
-    },
-});
-
-  //  $.ajax
-  //({
-  //    url: '/Utility/GetStateList',
-  //    type: 'GET',
-  //    datatype: 'application/json',
-  //    contentType: 'application/json',
-  //    success: function (result) {
-  //        $("#StateId").html("");
-  //        $.each(result, function (i, country) {
-  //            $("#StateId").append
-  //            ($('<option></option>').val(country.Id).html(country.Name))
-  //        })
-  //    },
-  //    error: function () {
-  //        alert("Whooaaa! Something went wrong..")
-  //    },
-    //});
-
-
-    $(function () {
-        $("#CountryId").change(function () {
-
-            $.get("/Utility/GetStateList", { ID: $("#CountryId").val() }, function (data) {
-
-
-                $.each(data, function (index, row) {
-
-
-                    $("#st").append("<option value='" + row.Id + "'>" + row.Name + "</option>")
-
-
-                });
-
+        $.ajax
+    ({
+        url: '/Utility/GetCountryList',
+        type: 'GET',
+        datatype: 'application/json',
+        contentType: 'application/json',
+        success: function (result) {
+            $("#CountryId").html("");
+            $.each(result, function (i, country) {
+                $("#CountryId").append
+                ($('<option></option>').val(country.Id).html(country.Name))
             })
-
-        });
-
-
+        },
+        error: function () {
+            alert("Whooaaa! Something went wrong..")
+        },
     });
 
 
 
 
-</script>
-<!-- Content Header (Page header) -->
-<section class="content-header">
-    <h1>
-        Dashboard
-        <small>Version 2.0</small>
-    </h1>
-    <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Dashboard</li>
-    </ol>
-</section>
+        $(function () {
+            $("#CountryId").change(function () {
 
-<!-- Main content -->
-<section class="content">
+                $.get("/Utility/GetStateList", { ID: $("#CountryId").val() }, function (data) {
 
-    <div id="content">
-    @using (Ajax.BeginForm("CreateCity", new AjaxOptions
+
+                    $.each(data, function (index, row) {
+
+
+                        $("#st").append("<option value='" + row.Id + "'>" + row.Name + "</option>")
+
+
+                    });
+
+                })
+
+            });
+
+
+        });
+
+
+
+
+    </script>
+</head>
+<body>
+
+    <section class="content">
+
+        <div id="content">
+            @using (Ajax.BeginForm("CreateCity", new AjaxOptions
             {
                 UpdateTargetId = "targetId",
                 HttpMethod = "Post",
                 OnSuccess = "Clear"
             }))
             {
-        <div class="search-field">
-            <label>Country</label>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <label>Country</label>
 
-            @Html.DropDownListFor(model => model.CountryId, new List<SelectListItem>() { new SelectListItem { Text = "Select Country", Value = "-1" } }, new { @class = "form - control selectpicker", @id = "CountryId" })
+                            @Html.DropDownListFor(model => model.CountryId, new List<SelectListItem>() { new SelectListItem { Text = "Select Country", Value = "-1" } }, new { @class = "form - control selectpicker", @id = "CountryId" })
 
-        </div>
-
-            @*<div class="search-field">
-                    <label>State</label>
+                        </div>
 
 
-                    @Html.DropDownListFor(model => model.StateId, new List<SelectListItem>() { new SelectListItem { Text = "Select State", Value = "-1" } }, new { @class = "form - control selectpicker", @id = "StateId" })
+                        <div class="col-sm-4">
+                            <label>City</label>
 
-                </div>*@
-        <div>
-            <label>City</label>
+                            @Html.DropDownListFor(model => model.StateId, new List<SelectListItem>() { new SelectListItem { Text = "Select State", Value = "-1" } }, new { @class = "form - control selectpicker", @id = "st" })
 
-            @Html.DropDownListFor(model=>model.StateId, new List<SelectListItem>() { new SelectListItem { Text = "Select State", Value = "-1" } }, new { @class = "form - control selectpicker", @id = "st" })
+                        </div>
 
-        </div>
-            @*<select id="st" class="form-control"></select>*@
-            <div>
-                @Html.TextBoxFor(x => x.CityName, new { @class = "" })
-                <input type="submit" value="Add City" />
+                        <div class="col-sm-4">
+                            @Html.TextBoxFor(x => x.CityName, new { @class = "" })
+                            <input type="submit" value="Add City" />
+                        </div>
+                    </div>
+                </div>
+            }
+            <div id="targetId">
             </div>
-        }
-        <div id="targetId">
+            <div id="unobtrusive">
+                @Html.Partial("_CityList", Model.CityList)
+            </div>
         </div>
-        <div id="unobtrusive">
-            @Html.Partial("_CityList", Model.CityList)
-        </div>
-    </div>
-</section>
-<!-- /.content -->
+    </section>
+    <!-- /.content -->
+
+
+</body>
+</html>
+
+
+
+<!-- Main content -->

@@ -3,7 +3,7 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<div class="container">
+@*<div class="container">
     <div class="right">
         <div class="dropdown">
             <button class="dropbtn">Profile</button>
@@ -15,9 +15,10 @@
         </div>
 
     </div>
-</div>
-
-<br /><br /><br />
+</div>*@
+<section class="content-header">
+    <h1>Admin Dashboard</h1>
+</section>
 
 <!-- Main content -->
 <section class="content">
@@ -26,7 +27,7 @@
         <div class="col-md-3 col-sm-6 col-xs-12">
             <div class="info-box">
                 <span class="info-box-icon bg-aqua"><i class="ion ion-ios-gear-outline"></i></span>
-
+               
                 <div class="info-box-content">
                     <span class="info-box-text" >Total User</span>
                     <span class="info-box-number">@ViewBag.UserList<small></small></span>
@@ -36,21 +37,20 @@
             <!-- /.info-box -->
         </div>
         <!-- /.col -->
+       
         <div class="col-md-3 col-sm-6 col-xs-12">
             <div class="info-box">
                 <span class="info-box-icon bg-red"><i class="fa fa-google-plus"></i></span>
 
                 <div class="info-box-content">
-                    <span class="info-box">
-                        Pending for
-                        Approval
-                        <h3>@ViewBag.approved</h3>
-                    </span>
-
+                    <span class="info-box-text"> Pending for<br/>
+                        Approval</span>
+                    <span class="info-box-number"> @ViewBag.approved</span>
                 </div>
+                <!-- /.info-box-content -->
             </div>
-            </div>
-            
+            <!-- /.info-box -->
+        </div>
             
        
           
@@ -86,20 +86,59 @@
             <!-- /.info-box -->
         </div>
         <!-- /.col -->
-    </div>
-    <!-- /.row -->
+   
+    
     <div class="col-md-3 col-sm-6 col-xs-12">
         <div class="info-box">
-            <span class="info-box-icon bg-yellow"><i class="ion ion-ios-people-outline"></i></span>
+            <span class="info-box-icon bg-yellow"><i class="ion ion-ios-cart-outline"></i></span>
 
             <div class="info-box-content">
                 <span class="info-box-text">Rent</span>
+                <span class="info-box-number">@ViewBag.rentcount<small></small></span>
+            </div>
+            <!-- /.info-box-content -->
+        </div>
+        <!-- /.info-box -->
+    </div>
+
+
+
+
+
+
+    <div class="col-md-3 col-sm-6 col-xs-12">
+        <div class="info-box">
+            <span class="info-box-icon bg-aqua"><i class="ion ion-ios-cart-outline"></i></span>
+
+            <div class="info-box-content">
+                <span class="info-box-text">property Request</span>
                 <span class="info-box-number"> @ViewBag.rentcount</span>
             </div>
             <!-- /.info-box-content -->
         </div>
         <!-- /.info-box -->
     </div>
+
+
+    <div class="col-md-3 col-sm-6 col-xs-12">
+        <div class="info-box">
+            <span class="info-box-icon bg-yellow"><i class="ion ion-ios-people-outline"></i></span>
+
+            <div class="info-box-content">
+                <span class="info-box-text">Enquiry of listed<br/>
+                 property</span>
+                <span class="info-box-number"> @ViewBag.rentcount</span>
+            </div>
+            <!-- /.info-box-content -->
+        </div>
+        <!-- /.info-box -->
+    </div>
+
+
+
+
+
+
     @*////////////////////////////////////*@
     <div class="row">
         <div class="col-md-12">
