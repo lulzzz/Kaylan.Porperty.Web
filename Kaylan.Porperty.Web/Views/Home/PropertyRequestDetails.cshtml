@@ -1,0 +1,115 @@
+﻿@model Kalyan.Property.Infrastructure.Models.PropertyRequest
+
+@{
+    ViewBag.Title = "PropertyRequestDetails";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/unobtrusive/js")
+
+
+<h2>PropertyRequestDetails</h2>
+
+<div>
+    <h4>PropertyRequest</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PropertyRequestArea.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PropertyRequestArea.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PropertyRequestContractType.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PropertyRequestContractType.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PropertyRequestPriceMax.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PropertyRequestPriceMax.Price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PropertyRequestPriceMin.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PropertyRequestPriceMin.Price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PropertyRequestType.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PropertyRequestType.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FullName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FullName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhoneNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ContactType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContactType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PropertyDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PropertyDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsAgree)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsAgree)
+        </dd>
+
+    </dl>
+</div>
