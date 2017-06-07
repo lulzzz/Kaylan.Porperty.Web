@@ -1,10 +1,14 @@
 ﻿using Kalyan.Property.Infrastructure;
 using Kalyan.Property.Infrastructure.Models;
 using Kaylan.Porperty.Web.ViewModel;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.Threading.Tasks;
+using System.Web;
 using System.Web.Mvc;
 using System.Web.UI;
 
@@ -17,6 +21,28 @@ namespace Kaylan.Porperty.Web.Controllers
         public HomeController()
         {
             unitOfWork = new UnitOfWork();
+        }
+
+        private ApplicationUserManager _userManager;
+
+        
+
+        public HomeController(ApplicationUserManager userManager)
+        {
+            UserManager = userManager;
+            unitOfWork = new UnitOfWork();
+        }
+
+        public ApplicationUserManager UserManager
+        {
+            get
+            {
+                return _userManager ?? HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
+            }
+            private set
+            {
+                _userManager = value;
+            }
         }
 
         public ActionResult Index()
@@ -108,6 +134,51 @@ namespace Kaylan.Porperty.Web.Controllers
             ViewBag.Message = "Your request Page";
             return View();
         }
+
+
+
+        // GET: User
+        [HttpGet]
+        public ActionResult Register()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> Register(UserViewModel userViewModel)
+        {
+            if (ModelState.IsValid)
+            {
+                var user = new Users
+                {
+                    UserName = userViewModel.Email,
+                    Email = userViewModel.Email,
+                    DateOfBirth = DateTime.Now,
+                    LastName = userViewModel.LastName,
+                    FirstName = userViewModel.FirstName,
+                    Phone = userViewModel.Phone,
+                    Gender = userViewModel.Gender
+                };
+                var result = await UserManager.CreateAsync(user, userViewModel.Password);
+                if (result.Succeeded)
+                {
+                    ViewBag.Message = "User Created Successfully.";
+
+                    return View(new UserViewModel());
+                }
+                AddErrors(result);
+            }
+            return View(new UserViewModel());
+        }
+
+        private void AddErrors(IdentityResult result)
+        {
+            foreach (var error in result.Errors)
+            {
+                ModelState.AddModelError("", error);
+            }
+        }
+
 
         //public ActionResult AllUser()
         //{

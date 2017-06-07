@@ -623,9 +623,8 @@
     <Content Include="Views\Home\Membership.cshtml" />
     <Content Include="Views\Home\Master.cshtml" />
     <Content Include="Views\Home\AllUser.cshtml" />
-    <Content Include="Views\Login\CreateLogin.cshtml" />
+    <Content Include="Views\Login\SignIn.cshtml" />
     <Content Include="Views\Login\CreateLoginDetails.cshtml" />
-    <Content Include="Views\User\CreateUser.cshtml" />
     <Content Include="Views\User\CreateUserDetails.cshtml" />
     <Content Include="Views\User\ForgotPassword.cshtml" />
     <Content Include="Views\Utility\CreateCountry.cshtml" />
@@ -639,7 +638,6 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.bootstrap.min.js.map" />
     <Content Include="Views\User\CreatNewPassword.cshtml" />
     <Content Include="Views\Home\AdminProfile.cshtml" />
-    <Content Include="Views\Home\USerProfile.cshtml" />
     <Content Include="Views\PropertyDetail\CreatePropertyDetails.cshtml" />
     <Content Include="Views\User\CustomerDashboard.cshtml" />
     <Content Include="Views\Home\propertydetails.cshtml" />
@@ -648,6 +646,7 @@
     <Content Include="Views\User\PropertyDetail.cshtml" />
     <Content Include="Views\Home\PropertyRequest.cshtml" />
     <Content Include="Views\User\AdminDashboard.cshtml" />
+    <Content Include="Views\Home\Register.cshtml" />
     <Content Include="Views\PropertyRequest\PropertyRequestDetails.cshtml" />
     <Content Include="Views\User\PropertyDetailsList.cshtml" />
     <Content Include="Views\Home\PropertyRequestDetails.cshtml" />
