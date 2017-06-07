@@ -19,7 +19,7 @@
     //    },
     //});
 
-    $.get("/PropertyRequest/GetAllPropertyRequestContractType", function (result) {
+    $.get("/Home/GetAllPropertyRequestContractType", function (result) {
         $("#PropertyRequestContractTypeId").html("");
 
         $("#PropertyRequestContractTypeId").append($('<option selected></option>').val(-1).html('Select Contract Type'));
@@ -28,7 +28,7 @@
         })
     });
 
-    $.get("/PropertyRequest/GetAllPropertyRequestType", function (result) {
+    $.get("/Home/GetAllPropertyRequestType", function (result) {
         $("#PropertyRequestTypeId").html("");
 
         $.each(result, function (i, property) {
@@ -36,7 +36,7 @@
         })
     });
 
-    $.get("/PropertyRequest/GetAllPropertyRequestArea", function (result) {
+    $.get("/Home/GetAllPropertyRequestArea", function (result) {
         $("#PropertyRequestAreaId").html("");
        
         $.each(result, function (i, area) {
@@ -44,7 +44,7 @@
         })
     });
 
-    $.get("/PropertyRequest/GetAllPropertyRequestPrice", function (result) {
+    $.get("/Home/GetAllPropertyRequestPrice", function (result) {
         $("#maxPrice").html("");
         $("#minPrice").html("");
 

@@ -75,10 +75,9 @@ namespace Kaylan.Porperty.Web.Controllers
                 ModelState.AddModelError("", error);
             }
         }
-        public ActionResult userdashboard()
-        {
-            return View();
-        }
+
+        
+
         public ActionResult CreateUserDetails()
         {
             return View();
@@ -89,24 +88,17 @@ namespace Kaylan.Porperty.Web.Controllers
             return View();
         }
 
-        public ActionResult Profile1()
+        public ActionResult UserProfile()
         {
             return View();
         }
+
         public ActionResult CreatNewPassword()
         {
             return View();
         }
 
-
         public ActionResult AllUser()
-        {
-            ViewBag.Message = "Your request page.";
-
-            return View();
-        }
-
-        public ActionResult USerProfile()
         {
             ViewBag.Message = "Your request page.";
 
@@ -118,5 +110,21 @@ namespace Kaylan.Porperty.Web.Controllers
             HttpContext.GetOwinContext().Authentication.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
             return RedirectToAction("Index", "Home");
         }
+
+        public ActionResult PropertyDetail()
+        {
+            return View();
+        }
+
+        public ActionResult AdminDashboard()
+        {
+            return View();
+        }
+
+        public ActionResult CustomerDashboard()
+        {
+            return View();
+        }
+
     }
 }

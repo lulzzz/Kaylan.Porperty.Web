@@ -1,0 +1,309 @@
+﻿@{
+    ViewBag.Title = "Create Area";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/unobtrusive/js")
+<h2>AllUser</h2>
+      <!-- Start Content -->
+<div class="main" role="main">
+    <div id="content" class="content full">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="single-agent">
+
+
+
+                        <!--	  <div class="col-md-6 col-sm-6">
+                                <img src="http://preview.imithemes.com/real-spaces-wp/wp-content/uploads/2015/01/agent41.jpg" alt="Mia Kennedy" class="img-thumbnail">
+                          </div>-->
+                        <div class="col-md-12">
+                            <form>
+                                <div class="block-heading" id="details">
+                                    <a href="#additionalinfo" class="btn btn-sm btn-default pull-right">Additional Info <i class="fa fa-chevron-down"></i></a>
+                                    <h4>
+                                        <span class="heading-icon"> <img src="images/faa.png" /></span>
+                                        Property Details
+                                    </h4>
+                                </div>
+                                <div class="padding-as25 margin-20 lgray-bg">
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <input type="text" class="form-control" placeholder="Property name">
+                                        </div>
+
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                            <textarea name="address" class="form-control" rows="4" cols="10" placeholder="Address"></textarea>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 submit-description">
+                                            <textarea name="description" class="form-control margin-0" rows="4" cols="10" placeholder="Propery Description"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="block-heading" id="additionalinfo">
+                                    <a href="#amenities" class="btn btn-sm btn-default pull-right">Enter Amenities <i class="fa fa-chevron-down"></i></a>
+                                    <h4><span class="heading-icon"><img src="images/faa.png" /></span>Additional Info</h4>
+                                </div>
+                                <div class="padding-as25 margin-20 lgray-bg">
+                                    <div class="row">
+
+                                        <div class="col-md-4 col-sm-4 submit-property-type">
+                                            <select name="type" class="form-control margin-0 selectpicker" style="display: none;">
+                                                <option>Property Type</option>
+                                                <option>Villa</option>
+                                                <option>Single Home</option>
+                                                <option>Cottage</option>
+                                                <option>Family House</option>
+                                                <option>Apartment</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-4 col-sm-4 submit-contract-type">
+                                            <select name="type" class="form-control margin-0 selectpicker" style="display: none;">
+                                                <option>Contract Type</option>
+                                                <option>For Sale</option>
+                                                <option>Font Rent</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-4 col-sm-4">
+                                            <input type="text" class="form-control" placeholder="Price($)">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4 col-sm-4">
+                                            <select name="type" class="form-control selectpicker" style="display: none;">
+                                                <option>Beds</option>
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5+</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-4 col-sm-4">
+                                            <select name="type" class="form-control selectpicker" style="display: none;">
+                                                <option>Baths</option>
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5+</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-4 col-sm-4">
+                                            <select name="type" class="form-control selectpicker" style="display: none;">
+                                                <option>Parking</option>
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3+</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-3 col-sm-3">
+                                            <label>Property For</label>
+                                        </div>
+                                        <div class="col-md-3 col-sm-3 submit-image">
+                                            <input name="_for" type="radio" value="Sale"> Sale
+                                        </div>
+                                        <div class="col-md-3 col-sm-3 submit-image">
+                                            <input name="_for" type="radio" value="Rent"> Rent
+                                        </div>
+                                        <div class="col-md-3 col-sm-3 submit-image">
+                                            <input name="_for" type="radio" value="Management"> Management
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="row">
+                                        <div class="col-md-3 col-sm-3">
+                                            <label>Upload Images</label>
+                                            <p>Upload images that are best clicked for better appearance of your property</p>
+                                        </div>
+                                        <div class="col-md-3 col-sm-3 submit-image">
+                                            <div class="image-placeholder">600x400 (JPG)</div>
+                                            <input type="file" name="image1">
+                                        </div>
+                                        <div class="col-md-3 col-sm-3 submit-image">
+                                            <div class="image-placeholder">600x400 (JPG)</div>
+                                            <input type="file" name="image1">
+                                        </div>
+                                        <div class="col-md-3 col-sm-3 submit-image">
+                                            <div class="image-placeholder">600x400 (JPG)</div>
+                                            <input type="file" name="image1">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="block-heading" id="amenities">
+                                    <a href="#seller" class="btn btn-sm btn-default pull-right">Seller Information <i class="fa fa-chevron-down"></i></a>
+                                    <h4><span class="heading-icon"><img src="images/faa.png" /></span>Amenities</h4>
+                                </div>
+                                <div class="padding-as25 margin-20 lgray-bg">
+                                    <div class="row">
+                                        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                            <label class="checkbox">
+                                                <input type="checkbox">In Town
+                                            </label>
+                                        </div>
+                                        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                            <label class="checkbox">
+                                                <input type="checkbox">House Keeping
+                                            </label>
+                                        </div>
+                                        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                            <label class="checkbox">
+                                                <input type="checkbox">Security
+                                            </label>
+                                        </div>
+                                        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                            <label class="checkbox">
+                                                <input type="checkbox">Elevator
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                            <label class="checkbox">
+                                                <input type="checkbox">Swimming Pool
+                                            </label>
+                                        </div>
+                                        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                            <label class="checkbox">
+                                                <input type="checkbox">Balcony
+                                            </label>
+                                        </div>
+                                        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                            <label class="checkbox">
+                                                <input type="checkbox">Gymnasium
+                                            </label>
+                                        </div>
+                                        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                            <label class="checkbox">
+                                                <input type="checkbox">Covered Parking
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                            <label class="checkbox">
+                                                <input type="checkbox">Jacuzzi
+                                            </label>
+                                        </div>
+                                        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                            <label class="checkbox">
+                                                <input type="checkbox">Laundary Room
+                                            </label>
+                                        </div>
+                                        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                            <label class="checkbox">
+                                                <input type="checkbox">Fully Furnished
+                                            </label>
+                                        </div>
+                                        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                            <label class="checkbox">
+                                                <input type="checkbox">Telephone
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                            <label class="checkbox">
+                                                <input type="checkbox">Satellite Channels
+                                            </label>
+                                        </div>
+                                        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                            <label class="checkbox">
+                                                <input type="checkbox">Internet
+                                            </label>
+                                        </div>
+                                        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                            <label class="checkbox">
+                                                <input type="checkbox">Home Electrics
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="block-heading" id="seller">
+                                    <a href="#submit-property" class="btn btn-sm btn-default pull-right">Submit Property <i class="fa fa-chevron-down"></i></a>
+                                    <h4><span class="heading-icon"><img src="images/faa.png" /></span>Seller Information</h4>
+                                </div>
+                                <div class="padding-as25 margin-20 lgray-bg">
+                                    <div class="row">
+                                        <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                                            <input type="text" class="form-control" placeholder="Full name">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4 col-sm-4">
+                                            <input type="text" class="form-control" placeholder="Email">
+                                        </div>
+                                        <div class="col-md-4 col-sm-4">
+                                            <input type="text" class="form-control" placeholder="Phone">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 submit-description">
+                                            <textarea name="description" class="form-control margin-0" rows="4" cols="10" placeholder="Comments"></textarea>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="row">
+                                        <div class="text-align-center" id="submit-property">
+                                            <button type="submit" name="submit" class="btn btn-primary btn-lg"><i class="fa fa-check"></i> Submit Now</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </form>
+                        </div>
+
+
+
+                    </div>
+                    <div class="spacer-20"></div>
+                    <!-- Start Related Properties -->
+                    <!--  <h3>Latest properties listed by <a href="#">Mia Kennedy</a>
+                        <a class="btn btn-primary btn-sm pull-right" href="http://preview.imithemes.com/real-spaces-wp/full-width-grid/?agent=2">All properties<i class="fa fa-long-arrow-right"></i>
+                        </a>
+                    </h3>
+                    <hr>-->
+                    <!--       <div class="property-grid">
+                        <ul class="grid-holder col-3">
+                            <li class="grid-item type-rent">
+                                <div class="property-block">
+                                    <a href="http://preview.imithemes.com/real-spaces-wp/?property=85-west-street" class="property-featured-image">
+                                        <img src="http://preview.imithemes.com/real-spaces-wp/wp-content/uploads/2014/06/slide12-600x400.jpg" class="attachment-600-400-size size-600-400-size wp-post-image" alt="slide1" srcset="http://preview.imithemes.com/real-spaces-wp/wp-content/uploads/2014/06/slide12-600x400.jpg 600w, http://preview.imithemes.com/real-spaces-wp/wp-content/uploads/2014/06/slide12-150x100.jpg 150w" sizes="(max-width: 600px) 100vw, 600px" />
+                                        <span class="images-count"><i class="fa fa-picture-o"></i>3</span> <span class="badges badge-rent">Rent</span> </a>
+                                    <div class="property-info">
+                                        <h4><a href="http://preview.imithemes.com/real-spaces-wp/?property=85-west-street">85 West Street</a></h4>
+                                        <a class="accent-color" data-original-title="" data-toggle="tooltip" style="cursor: default; text-decoration: none;" href="javascript:void(0);"><span class="location sort_by_location">Wyoming</span></a><br>
+                                        <div class="price"><strong>&#36;</strong><span>31000</span></div>
+                                    </div>
+                                    <div class="property-amenities clearfix"><span class="area"><strong>5000</strong>Area</span> <span class="baths"><strong>5</strong>Baths</span> <span class="beds"><strong>4</strong>Beds</span> <span class="parking"><strong>3</strong>Parking</span> </div>
+                                </div>
+                            </li>
+                            <li class="grid-item type-rent">
+                                <div class="property-block">
+                                    <a href="http://preview.imithemes.com/real-spaces-wp/?property=11-times-square" class="property-featured-image">
+                                        <img src="http://preview.imithemes.com/real-spaces-wp/wp-content/uploads/2014/06/slide22-600x400.jpg" class="attachment-600-400-size size-600-400-size wp-post-image" alt="slide2" srcset="http://preview.imithemes.com/real-spaces-wp/wp-content/uploads/2014/06/slide22-600x400.jpg 600w, http://preview.imithemes.com/real-spaces-wp/wp-content/uploads/2014/06/slide22-150x100.jpg 150w" sizes="(max-width: 600px) 100vw, 600px" />
+                                        <span class="images-count"><i class="fa fa-picture-o"></i>3</span> <span class="badges badge-rent">Rent</span> </a>
+                                    <div class="property-info">
+                                        <h4><a href="http://preview.imithemes.com/real-spaces-wp/?property=11-times-square">11 Times Square</a></h4>
+                                        <a class="accent-color" data-original-title="" data-toggle="tooltip" style="cursor: default; text-decoration: none;" href="javascript:void(0);"><span class="location sort_by_location">Arkansas</span></a><br>
+                                        <div class="price"><strong>&#36;</strong><span>40000</span></div>
+                                    </div>
+                                    <div class="property-amenities clearfix"><span class="area"><strong>5000</strong>Area</span> <span class="baths"><strong>4</strong>Baths</span> <span class="beds"><strong>5</strong>Beds</span> <span class="parking"><strong>4</strong>Parking</span> </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>-->
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>

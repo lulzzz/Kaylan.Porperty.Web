@@ -1,0 +1,732 @@
+﻿@model Kaylan.Porperty.Web.ViewModel.PropertyRequestViewModel
+
+@{
+    ViewBag.Title = "CreatePropertyRequest";
+}
+
+<!DOCTYPE HTML>
+<html lang="en-US" class="no-js">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Kalyan Property World</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+
+    <!-- CSS -->
+    <link rel="alternate" type="application/rss+xml" title="Real Spaces - Wordpress Real Estate Theme &raquo; Feed" href="http://preview.imithemes.com/real-spaces-wp/feed/" />
+    <link rel="alternate" type="application/rss+xml" title="Real Spaces - Wordpress Real Estate Theme &raquo; Comments Feed" href="http://preview.imithemes.com/real-spaces-wp/comments/feed/" />
+    <link rel="alternate" type="application/rss+xml" title="Real Spaces - Wordpress Real Estate Theme &raquo; Home Version 1 Comments Feed" href="http://preview.imithemes.com/real-spaces-wp/version-1/feed/" />
+    <link rel='stylesheet' href='@Url.Content("~/content/css/cf8bac.css")' type='text/css' media='all' />
+    <link rel='stylesheet' href='@Url.Content("~/content/css/dsidx-icons.css")' type='text/css' media='all' />
+    <link rel='stylesheet' href='@Url.Content("~/content/css/client.css")' type='text/css' media='all' />
+    <link rel='stylesheet' href='@Url.Content("~/content/css/client1.css")' type='text/css' media='all' />
+    <link rel='stylesheet' href='@Url.Content("~/content/css/settings.css")' type='text/css' media='all' />
+    <link rel='stylesheet' href='@Url.Content("~/content/css/bootstrap.css")' type='text/css' media='all' />
+    <link rel='stylesheet' href='@Url.Content("~/content/css/animations.css")' type='text/css' media='all' />
+    <link rel='stylesheet' href='@Url.Content("~/content/font-awesome-4.6.3/css/font-awesome.min.css")' type='text/css' media='all' />
+    <link rel='stylesheet' href='@Url.Content("~/content/css/style.css")' type='text/css' media='all' />
+    <link rel='stylesheet' href='@Url.Content("~/content/css/style2.css")' type='text/css' media='all' />
+    <link rel='stylesheet' href='@Url.Content("~/content/css/prettyPhoto.css")' type='text/css' media='all' />
+    <link rel='stylesheet' href='@Url.Content("~/content/css/owl.carousel.css")' type='text/css' media='all' />
+    <link rel='stylesheet' href='@Url.Content("~/content/css/owl.theme.css")' type='text/css' media='all' />
+    <link class="alt" href="@Url.Content("~/content/css/color1.css")" rel="stylesheet" type="text/css">
+
+    <!-- Scripts -->
+    <script type='text/javascript' src="@Url.Content("~/scripts/jquery.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/jquery-migrate.min.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/23a23f.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/ajax-login-script.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/jquery.themepunch.tools.min.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/jquery.themepunch.revolution.min.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/modernizr.js")"></script>
+
+    <script type='text/javascript' src="@Url.Content("~/scripts/favorite.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/newslatter.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/prettyphoto.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/owl.carousel.min.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/jquery.flexslider.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/helper-plugins.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/bootstrap.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/waypoints.js")"></script>
+    <!--    <script type='text/javascript' src='js/js.js'></script>-->
+    <script type='text/javascript'>
+        /* <![CDATA[ */
+        var urlajax = { "url": "http:\/\/preview.imithemes.com\/real-spaces-wp\/wp-admin\/admin-ajax.php", "tmpurl": "http:\/\/preview.imithemes.com\/real-spaces-wp\/wp-content\/themes\/real-spaces", "is_property": "", "sticky": "1", "is_contact": "", "home_url": "http:\/\/preview.imithemes.com\/real-spaces-wp", "is_payment": "", "register_url": "http:\/\/preview.imithemes.com\/real-spaces-wp\/register-as-agent\/", "is_register": "", "is_login": "", "is_submit_property": "", "basic": "Basic", "advanced": "Advanced" };
+        /* ]]> */
+    </script>
+    <!--    <script type='text/javascript' src='js/init.js'></script>-->
+    <script type='text/javascript' src="@Url.Content("~/scripts/profile_validate.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/comment-reply.min.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/wp-embed.min.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/core.min.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/widget.min.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/position.min.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/menu.min.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/autocomplete.min.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/autocomplete.js")"></script>
+    <script src="@Url.Content("~/scripts/jquery_cookie.js")"></script>
+    <script src="@Url.Content("~/scripts/script.js")"></script>
+    @Scripts.Render("~/PropertyRequest/js")
+    @Scripts.Render("~/Home/js")
+</head>
+<body class="page page-id-281 page-template-default ">
+    <!--[if lt IE 7]>
+        <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+    <![endif]-->
+    <div class="body">
+        <!-- Start Site Header -->
+        <header class="site-header">
+            <div class="top-header hidden-xs">
+                <div class="container-fluide">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12">
+                            <ul class="horiz-nav pull-right">
+                                <li class="dropdown">
+                                    <a href="../Home/Admin">Admin</a>
+
+                                <li class="dropdown">
+                                    <i class="fa fa-user"></i>
+                                    <a href="/Login/CreateLogin">Login</a>
+
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#" title="Favorite Properties">Favorite Properties</a></li>
+                                        <li><a href="#" title="Saved Searches">Saved Searches</a></li>
+                                        <li class="register"><a href="#" title="My Profile">My Profile</a></li>
+                                        <li class="login"><a href="#" title="Logout">Logout</a></li>
+                                    </ul>
+                                </li>
+
+                                <li class="dropdown">
+                                    <i class="fa fa-check-circle"></i>
+                                    <a href="/User/CreateUser">Register</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="middle-header">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-2 col-sm-8 col-xs-8">
+                            <h1 class="logo">
+                                <a href="#" title="Real Spaces - Wordpress Real Estate Theme">
+                                    <img src="@Url.Content("~/images/sample-10.png")" alt="Logo">
+                                </a>
+                            </h1>
+                        </div>
+                        <div class="col-md-5 col-sm-8 col-xs-8">
+                            <marquee style="width: 430px; font-size: 18px; margin-top: 30px; font-weight: bold">
+                                <b>
+                                    Kalyan Real Estate Property/Properties/Real Estate for Sale and Rent
+                                    Place your Kalyan property on the best Property Portal
+                                </b>
+                            </marquee>
+                        </div>
+
+                        <div class="col-md-5 col-sm-4 col-xs-4">
+
+                            <div class="contact-info-blocks hidden-sm hidden-xs">
+                                <div>
+                                    <i class="fa fa-phone"></i>Free Line For You
+                                    <span>0123456789</span>
+                                </div>
+                                <div>
+                                    <i class="fa fa-envelope"></i>Email Us
+                                    <span>example@gmail.com</span>
+                                </div>
+                                <!-- <div>
+                                        <i class="fa fa-clock-o"></i>Working Hours
+                                <span>09:00 to 17:00</span>
+                                    </div>-->
+                            </div>
+                            <a href="#" class="visible-sm visible-xs menu-toggle"><i class="fa fa-bars"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-menu-wrapper">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <nav class="navigation">
+                                <ul id="menu-main-menu" class="sf-menu">
+                                    <li id="menu-item-208" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-208">
+                                        @Html.ActionLink("Home", "Index", "Home")
+                                    </li>
+                                    <li id="menu-item-209" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-209"> @Html.ActionLink("About", "About", "Home")</li>
+                                    <li id="menu-item-225" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-225"> @Html.ActionLink("Services", "Services", "Home")</li>
+                                    <li id="menu-item-283" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-283"><a href="/PropertyRequest/CreatePropertyRequest">PropertyRequest</a></li>
+                                    @*                                   <li id="menu-item-226" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-226"> <a href="/PropertyDetail/CreatePropertyDetail">List your property</a></li>*@
+                                    <li id="menu-item-209" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-209"> @Html.ActionLink("Membership", "membership", "Home")</li>
+                                    <li id="menu-item-240" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-240">@Html.ActionLink("Contact", "Contact", "Home")</li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        @*<form action="/" enctype="multipart/form-data" method="post"><input name="__RequestVerificationToken" type="hidden" value="c1g4RaZK8m1RqgdEupMKzcztBq6590HQTjePKR3JY90IMrCKlrBiWq4U0V-SwtrLyVJbs_QyJ8QmRdER0Rc27v9Yz2ln9YnmL5Uty4WHvds1" />*@
+        <script type="text/javascript">
+
+            function Select(type) {
+                if (type == 'E') {
+                    document.getElementById("Contact").value = "Email";
+                }
+                else (type == 'P')
+                document.getElementById("Contact").value = "Phone";
+            }
+        </script>
+        <script type="text/javascript">
+
+            $(document).ready(function () {
+                $("#submit").click(function () {
+
+                    var code = $("#code").val();
+                    if (code != "236") {
+                        alert("Wrong Captcha!!!!");
+                        return false;
+                    }
+                });
+            });
+
+            function declareContractType(type) {
+                if (type == 'R') {
+                    document.getElementById("ContractType").value = "Rent";
+                }
+                else (type == 'S')
+                document.getElementById("ContractType").value = "Sale";
+            }
+        </script>
+        <script type="text/javascript">
+
+            function declarePrice(type) {
+                if (type == '20Lakhs') {
+                    document.getElementById("Price").value = "20Lakhs";
+                }
+                else (type == '80Lakhs')
+                document.getElementById("Price").value = "80Lakhs";
+            }
+        </script>
+        <script type="text/javascript">
+
+            function declarePrice(type) {
+                if (type == '30Lakhs') {
+                    document.getElementById("Price").value = "30Lakhs";
+                }
+                else (type == '1Cr')
+                document.getElementById("Price").value = "1Cr";
+            }
+        </script>
+        <!-- End Site Header -->
+        <!-- Site Showcase -->
+        @using (Html.BeginForm("CreatePropertyRequest", "PropertyRequest", FormMethod.Post))
+        {
+            <div class="site-showcase">
+                <!-- Start Page Header -->
+                <div class="parallax page-header" style="background-image: url(/../images/slide31.jpg);">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h1>Property request</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Page Header -->
+            </div>
+            <form>
+                <!-- Start Content -->
+
+                <div class="main" role="main"></div>
+                <div id="content" class="content full">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-9">
+                                <div class="single-agent">
+                                    <div class="block-heading">
+                                        <h4><span class="heading-icon"><img src="@Url.Content("~/images/faa.png")"></span>Property Request</h4>
+                                    </div>
+                                </div>
+
+                                @*@Html.HiddenFor(model => model.PropertyRequestdetails.Contact)
+                                    @Html.HiddenFor(model => model.PropertyRequestdetails.ContractType)*@
+                                @*@Html.HiddenFor(model => model.PropertyRequestdetails.PropRequestId)*@
+
+                                @Html.ValidationSummary(true, "", new { @class = "text-red" })
+                                <div class="padding-as25 margin-20 lgray-bg">
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                                            @Html.TextBoxFor(model => model.FullName, new { @placeholder = "FullName", @class = "form-control", id = "FullName", @autocomplete = "off" })
+                                            @Html.ValidationMessageFor(model => model.FullName, "", new { style = "color:red" })
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+
+                                            @Html.TextBoxFor(model => model.Email, new { @placeholder = "Email", @class = "form-control", id = "Email", @autocomplete = "off" })
+                                            @Html.ValidationMessageFor(model => model.Email, "", new { style = "color:red" })
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+
+                                            @Html.TextBoxFor(model => model.PhoneNumber, new { @placeholder = "PhoneNumber", @class = "form-control", id = "PhoneNumber", @autocomplete = "off" })
+                                            @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { style = "color:red" })
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        @*<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">*@
+                                        <div class="col-sm-6">
+                                            <label>How to be contacted</label>
+                                        </div>
+                                        @foreach (var contact in Model.ContactTypeList)
+                                        {
+                                            @*<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 submit-image">*@
+                                            <div class="col-sm-3">
+                                                @contact@Html.RadioButtonFor(m => m.ContactType, contact)
+                                            </div>
+                                        }
+                                    </div>
+                                    <br>
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                            @Html.DropDownListFor(model => model.PropertyRequestContractTypeId, new List<SelectListItem>() { new SelectListItem { Text = "Select Contract Type", Value = "-1" } }, new { @class = "form-control", @id = "PropertyRequestContractTypeId" })
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                            @Html.DropDownListFor(model => model.PropertyRequestTypeId, new List<SelectListItem>() { new SelectListItem { Text = "All Propert Types", Value = "1" } }, new { @class = "form-control", @id = "PropertyRequestTypeId" })
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                            <div class="row">
+                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                    @Html.DropDownListFor(model => model.PropertyRequestAreaId, new List<SelectListItem>() { new SelectListItem { Text = "All Area", Value = "1" } }, new { @class = "form-control", @id = "PropertyRequestAreaId" })
+
+                                                    @*<select name="area" class="form-control">
+                                                            <option value="null">- All Areas</option>
+                                                            <option value="1">Khadakpada</option>
+                                                            <option value="14">Durgadi</option>
+                                                            <option value="8">Shivaji Chowk</option>
+                                                            <option value="11">Godrej Hill</option>
+                                                        </select>*@
+                                                </div>
+                                                <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                                    <label>Price</label>
+                                                </div>
+                                                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                                                    @Html.DropDownListFor(model => model.FromPrice, new List<SelectListItem>() { new SelectListItem { Text = "Select Price", Value = "-1" } }, new { @class = "form-control", @id = "minPrice" })
+                                                </div>
+                                                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                                                    @Html.DropDownListFor(model => model.ToPrice, new List<SelectListItem>() { new SelectListItem { Text = "Select Price", Value = "-1" } }, new { @class = "form-control", @id = "maxPrice" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 submit-description">
+                                            @Html.TextAreaFor(model => model.PropertyDescription, new { @placeholder = "PropertyDescription", @class = "form-control", id = "PhoneNumber", @autocomplete = "off" })
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-3 col-md-3 col-sm-12 col-xm-12">
+                                            <label>Enter Code:</label>
+                                        </div>
+                                        <div class="col-lg-3 col-md-3 col-sm-12 col-xm-12">
+                                            <input name="code" class="form-control" type="text" id="code" />
+                                        </div>
+                                        <div class="col-lg-3 col-md-3 col-sm-12 col-xm-12">
+                                            <img src="@Url.Content("~/images/captcha_img.png")" alt="" height="35" width="158">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xm-12">
+                                            <p>
+                                                @*<input type="checkbox" name="confirm" value="" class="check" id="confirm">*@
+                                                @Html.CheckBoxFor(x => x.IsAgree, new { @class = "check", @id = "confirm" })
+                                                <label for="check1" class="check">I understand that submitting this form is for requests only, not for advertising your property!</label>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="text-align-center" id="submit-property">
+                                            @*<input type="submit" name="submit" value="Submit Now" class="btn btn-success" id="submit" />*@
+                                            <button type="submit" name="submit" class="btn btn-primary btn-lg"><i class="fa fa-check"></i> Submit Now</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        }
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xm-12">
+            <ol class="dsidx-results" style="padding-left: 0; margin-left: 0;">
+                <li class="dsidx-prop-summary" style="list-style-type: none; margin-bottom: 15px; position: relative;">
+                    <div class="dsidx-prop-title" style="margin-bottom: 3px;">
+                        <b> <a href="details.html">Kalya Property World</a></b>
+                    </div>
+                    <div style="float: left; text-align: center; margin-right: 10px; overflow: hidden; ">
+                        <a href="details.html">
+                            <img src="@Url.Content("~/images/s1.jpg")" alt="Photo of 82 Sunny St., Mission Viejo, CA 92692 (MLS # 20649490)" title="Photo of 82 Sunny St., Mission Viejo, CA 92692 (MLS # 20649490)"
+                                 style="border: 1px solid #666; width: 250px;" />
+                        </a>
+                    </div>
+                    <div class="dsidx-prop-features" style="white-space: nowrap;">
+                        <div>3 beds, 1 full, 1 three-quarter baths</div>
+                        <div style="overflow: hidden; text-overflow: ellipsis;">Home size: 2,314 sq ft</div>
+                        <div style="overflow: hidden; text-overflow: ellipsis;">Lot size: 9,150 sqft</div>
+
+                        <div style="overflow: hidden; text-overflow: ellipsis;">Year built: 1964</div>
+                        <div style="overflow: hidden; text-overflow: ellipsis;">Parking spots: 2</div>
+                        <div style="overflow: hidden; text-overflow: ellipsis;">Days on market: 3,073</div>
+                        <div style="overflow: hidden; text-overflow: ellipsis;">Walk Score&#0174;: 26</div>
+                    </div>
+
+                    <div style="clear: both;"></div>
+                </li>
+                <li class="dsidx-prop-summary" style="list-style-type: none; margin-bottom: 15px; position: relative;">
+                    <div class="dsidx-prop-title" style="margin-bottom: 3px;">
+                        <b> <a href="details.html">Kalya Property World</a></b>
+                    </div>
+                    <div style="float: left; text-align: center; margin-right: 10px; overflow: hidden; ">
+                        <a href="details.html">
+                            <img src="@Url.Content("~/images/s2.jpg")" alt="Photo of 92 Sunny St., Mission Viejo, CA 92692 (MLS # 20649471)" title="Photo of 92 Sunny St., Mission Viejo, CA 92692 (MLS # 20649471)"
+                                 style="border: 1px solid #666; width: 250px;" />
+                        </a>
+                    </div>
+                    <div class="dsidx-prop-features" style="white-space: nowrap;">
+                        <div>4 beds, 2 full baths</div>
+                        <div style="overflow: hidden; text-overflow: ellipsis;">Home size: 1,764 sq ft</div>
+                        <div style="overflow: hidden; text-overflow: ellipsis;">Lot size: 7,360 sqft</div>
+
+                        <div style="overflow: hidden; text-overflow: ellipsis;">Year built: 1954</div>
+                        <div style="overflow: hidden; text-overflow: ellipsis;">Parking spots: 2</div>
+                        <div style="overflow: hidden; text-overflow: ellipsis;">Days on market: 3,074</div>
+                        <div style="overflow: hidden; text-overflow: ellipsis;">Walk Score&#0174;: 63</div>
+                    </div>
+
+                    <div style="clear: both;"></div>
+                </li>
+                <li class="dsidx-prop-summary" style="list-style-type: none; margin-bottom: 15px; position: relative;">
+                    <div class="dsidx-prop-title" style="margin-bottom: 3px;">
+                        <b> <a href="details.html">Kalya Property World</a></b>
+                    </div>
+                    <div style="float: left; text-align: center; margin-right: 10px; overflow: hidden; ">
+                        <a href="details.html">
+                            <img src="@Url.Content("~/images/s3.jpg")" alt="Photo of 81 Sunny St., Mission Viejo, CA 92692 (MLS # 20649473)" title="Photo of 81 Sunny St., Mission Viejo, CA 92692 (MLS # 20649473)"
+                                 style="border: 1px solid #666; width: 250px;" />
+                        </a>
+                    </div>
+                    <div class="dsidx-prop-features" style="white-space: nowrap;">
+                        <div>4 beds, 3 full, 1 half baths</div>
+                        <div style="overflow: hidden; text-overflow: ellipsis;">Home size: 3,100 sq ft</div>
+
+                        <div style="overflow: hidden; text-overflow: ellipsis;">Year built: 2000</div>
+                        <div style="overflow: hidden; text-overflow: ellipsis;">Parking spots: 3</div>
+                        <div style="overflow: hidden; text-overflow: ellipsis;">Days on market: 3,080</div>
+                        <div style="overflow: hidden; text-overflow: ellipsis;">Walk Score&#0174;: 51</div>
+                    </div>
+
+                    <div style="clear: both;"></div>
+                </li>
+                <li class="dsidx-prop-summary" style="list-style-type: none; margin-bottom: 15px; position: relative;">
+                    <div class="dsidx-prop-title" style="margin-bottom: 3px;">
+                        <b> <a href="details.html">Kalya Property World</a></b>
+                    </div>
+                    <div style="float: left; text-align: center; margin-right: 10px; overflow: hidden; ">
+                        <a href="details.html">
+                            <img src="@Url.Content("~/images/s4.jpg")" alt="Photo of 80 Sunny St., Mission Viejo, CA 92692 (MLS # 20649487)" title="Photo of 80 Sunny St., Mission Viejo, CA 92692 (MLS # 20649487)"
+                                 style="border: 1px solid #666; width: 250px;" />
+                        </a>
+                    </div>
+                    <div class="dsidx-prop-features" style="white-space: nowrap;">
+                        <div>4 beds, 3 full, 1 half baths</div>
+                        <div style="overflow: hidden; text-overflow: ellipsis;">Home size: 3,600 sq ft</div>
+                        <div style="overflow: hidden; text-overflow: ellipsis;">Lot size: 8,000 sqft</div>
+
+                        <div style="overflow: hidden; text-overflow: ellipsis;">Year built: 2005</div>
+                        <div style="overflow: hidden; text-overflow: ellipsis;">Parking spots: 3</div>
+                        <div style="overflow: hidden; text-overflow: ellipsis;">Days on market: 3,085</div>
+                        <div style="overflow: hidden; text-overflow: ellipsis;">Walk Score&#0174;: 20</div>
+                    </div>
+
+                    <div style="clear: both;"></div>
+                </li>
+                <li class="dsidx-prop-summary" style="list-style-type: none; margin-bottom: 15px; position: relative;">
+                    <div class="dsidx-prop-title" style="margin-bottom: 3px;">
+                        <b> <a href="details.html">Kalya Property World</a></b>
+                    </div>
+                    <div style="float: left; text-align: center; margin-right: 10px; overflow: hidden; ">
+                        <a href="details.html">
+                            <img src="@Url.Content("~/images/s5.jpg")" alt="Photo of 78 Sunny St., Mission Viejo, CA 92692 (MLS # 20649475)" title="Photo of 78 Sunny St., Mission Viejo, CA 92692 (MLS # 20649475)"
+                                 style="border: 1px solid #666; width: 250px;" />
+                        </a>
+                    </div>
+                    <div class="dsidx-prop-features" style="white-space: nowrap;">
+                        <div>2 beds, 1 full, 1 half baths</div>
+                        <div style="overflow: hidden; text-overflow: ellipsis;">Home size: 950 sq ft</div>
+                        <div style="overflow: hidden; text-overflow: ellipsis;">Lot size: 10,776 sqft</div>
+
+                        <div style="overflow: hidden; text-overflow: ellipsis;">Year built: 1980</div>
+                        <div style="overflow: hidden; text-overflow: ellipsis;">Parking spots: 2</div>
+                        <div style="overflow: hidden; text-overflow: ellipsis;">Days on market: 3,086</div>
+                        <div style="overflow: hidden; text-overflow: ellipsis;">Walk Score&#0174;: 43</div>
+                    </div>
+
+                    <div style="clear: both;"></div>
+                </li>
+                <li class="dsidx-prop-summary" style="list-style-type: none; margin-bottom: 15px; position: relative;">
+                    <div class="dsidx-prop-title" style="margin-bottom: 3px;">
+                        <b> <a href="details.html">Kalya Property World</a></b>
+                    </div>
+                    <div style="float: left; text-align: center; margin-right: 10px; overflow: hidden; ">
+                        <a href="details.html">
+                            <img src="@Url.Content("~/images/s1.jpg")" alt="Photo of 79 Sunny St., Mission Viejo, CA 92692 (MLS # 20649486)" title="Photo of 79 Sunny St., Mission Viejo, CA 92692 (MLS # 20649486)"
+                                 style="border: 1px solid #666; width: 250px;" />
+                        </a>
+                    </div>
+                    <div class="dsidx-prop-features" style="white-space: nowrap;">
+                        <div>5 beds, 2 full, 1 half baths</div>
+                        <div style="overflow: hidden; text-overflow: ellipsis;">Home size: 3,400 sq ft</div>
+                        <div style="overflow: hidden; text-overflow: ellipsis;">Lot size: 5,000 sqft</div>
+
+                        <div style="overflow: hidden; text-overflow: ellipsis;">Year built: 2005</div>
+                        <div style="overflow: hidden; text-overflow: ellipsis;">Parking spots: 2</div>
+                        <div style="overflow: hidden; text-overflow: ellipsis;">Days on market: 3,088</div>
+                        <div style="overflow: hidden; text-overflow: ellipsis;">Walk Score&#0174;: 43</div>
+                    </div>
+
+                    <div style="clear: both;"></div>
+                </li>
+                <li class="dsidx-prop-summary" style="list-style-type: none; margin-bottom: 15px; position: relative;">
+                    <div class="dsidx-prop-title" style="margin-bottom: 3px;">
+                        <b> <a href="details.html">Kalya Property World</a></b>
+                    </div>
+                    <div style="float: left; text-align: center; margin-right: 10px; overflow: hidden; ">
+                        <a href="details.html">
+                            <img src="@Url.Content("~/images/s2.jpg")" alt="Photo of 77 Sunny St., Mission Viejo, CA 92692 (MLS # 20649474)" title="Photo of 77 Sunny St., Mission Viejo, CA 92692 (MLS # 20649474)"
+                                 style="border: 1px solid #666; width: 250px;" />
+                        </a>
+                    </div>
+                    <div class="dsidx-prop-features" style="white-space: nowrap;">
+                        <div>5 beds, 5 full, 1 half baths</div>
+                        <div style="overflow: hidden; text-overflow: ellipsis;">Home size: 5,000 sq ft</div>
+                        <div style="overflow: hidden; text-overflow: ellipsis;">Lot size: 10,200 sqft</div>
+
+                        <div style="overflow: hidden; text-overflow: ellipsis;">Year built: 2005</div>
+                        <div style="overflow: hidden; text-overflow: ellipsis;">Parking spots: 3</div>
+                        <div style="overflow: hidden; text-overflow: ellipsis;">Days on market: 3,091</div>
+                        <div style="overflow: hidden; text-overflow: ellipsis;">Walk Score&#0174;: 26</div>
+                    </div>
+
+                    <div style="clear: both;"></div>
+                </li>
+                <li class="dsidx-prop-summary" style="list-style-type: none; margin-bottom: 15px; position: relative;">
+                    <div class="dsidx-prop-title" style="margin-bottom: 3px;">
+                        <b> <a href="details.html">Kalya Property World</a></b>
+                    </div>
+                    <div style="float: left; text-align: center; margin-right: 10px; overflow: hidden; ">
+                        <a href="details.html">
+                            <img src="@Url.Content("~/images/s1.jpg")" alt="Photo of 82 Sunny St., Mission Viejo, CA 92692 (MLS # 20649490)" title="Photo of 82 Sunny St., Mission Viejo, CA 92692 (MLS # 20649490)"
+                                 style="border: 1px solid #666; width: 250px;" />
+                        </a>
+                    </div>
+                    <div class="dsidx-prop-features" style="white-space: nowrap;">
+                        <div>3 beds, 1 full, 1 three-quarter baths</div>
+                        <div style="overflow: hidden; text-overflow: ellipsis;">Home size: 2,314 sq ft</div>
+                        <div style="overflow: hidden; text-overflow: ellipsis;">Lot size: 9,150 sqft</div>
+
+                        <div style="overflow: hidden; text-overflow: ellipsis;">Year built: 1964</div>
+                        <div style="overflow: hidden; text-overflow: ellipsis;">Parking spots: 2</div>
+                        <div style="overflow: hidden; text-overflow: ellipsis;">Days on market: 3,073</div>
+                        <div style="overflow: hidden; text-overflow: ellipsis;">Walk Score&#0174;: 26</div>
+                    </div>
+
+                    <div style="clear: both;"></div>
+                </li>
+            </ol>
+        </div>
+
+        <div class="share-bar">
+            <ul class="share-buttons">
+                <li class="share-title"><i class="fa fa-share-alt fa-2x"></i></li>
+                <li class="facebook-share"><a href="https://www.facebook.com/sharer/sharer.php?u=http://preview.imithemes.com/real-spaces-wp/dsidxpress-listing/&t=dsIDXPress Listing" target="_blank" title="Share on Facebook"><i class="fa fa-facebook"></i></a></li>
+                <li class="twitter-share"><a href="https://twitter.com/intent/tweet?source=http://preview.imithemes.com/real-spaces-wp/dsidxpress-listing/&text=dsIDXPress Listing:http://preview.imithemes.com/real-spaces-wp/dsidxpress-listing/" target="_blank" title="Tweet"><i class="fa fa-twitter"></i></a></li>
+                <li class="google-share"><a href="https://plus.google.com/share?url=http://preview.imithemes.com/real-spaces-wp/dsidxpress-listing/" target="_blank" title="Share on Google+"><i class="fa fa-google-plus"></i></a></li>
+                <li class="tumblr-share"><a href="http://www.tumblr.com/share?v=3&u=http://preview.imithemes.com/real-spaces-wp/dsidxpress-listing/&t=dsIDXPress Listing&s=" target="_blank" title="Post to Tumblr"><i class="fa fa-tumblr"></i></a></li>
+                <li class="pinterest-share"><a href="http://pinterest.com/pin/create/button/?url=http://preview.imithemes.com/real-spaces-wp/dsidxpress-listing/&description=" target="_blank" title="Pin it"><i class="fa fa-pinterest"></i></a></li>
+                <li class="reddit-share"><a href="http://www.reddit.com/submit?url=http://preview.imithemes.com/real-spaces-wp/dsidxpress-listing/&title=" target="_blank" title="Submit to Reddit"><i class="fa fa-reddit"></i></a></li>
+                <li class="linkedin-share"><a href="http://www.linkedin.com/shareArticle?mini=true&url=http://preview.imithemes.com/real-spaces-wp/dsidxpress-listing/&title=dsIDXPress Listing&summary=&source=http://preview.imithemes.com/real-spaces-wp/dsidxpress-listing/" target="_blank" title="Share on LinkedIn"><i class="fa fa-linkedin"></i></a></li>
+                <li class="email-share"><a href="mailto:?subject=dsIDXPress Listing&body=:http://preview.imithemes.com/real-spaces-wp/dsidxpress-listing/" target="_blank" title="Email"><i class="fa fa-envelope"></i></a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- Start Sidebar -->
+    <div class="sidebar right-sidebar col-md-3">
+        <div id="search_properties-3" class="widget sidebar-widget widget_search_properties">
+            <div class="sidebar-widget-title">
+                <div class="lined">
+                    <h3 class="title">Search Properties</h3>
+                    <span class="bolded-line"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="full-search-form">
+        <form method="get" action="http://google.com/">
+            <input type="hidden" class="form-control" name="s" id="s" value="Search1" /><div class="search_by">
+            </div>
+            @Html.ValidationSummary(true)
+            <input type="hidden" id="hdnRowCount" name="hdnRowCount" />
+            <div class="mainpanel"></div>
+            <div class="col-md-12 col-lg-12">
+
+                <br />
+                <div class="col-md-3 col-lg-3">
+
+                    <div class="form-group row">
+                        <div class="form-group">
+                            <label>Category</label>
+                            @*@Html.DropDownListFor(model => model.PropertyTypedetails.PropType, new SelectList(Model.PropertyTypelist, "propery_type", "Property Type"), "Select Category", new { id = "PropType", @class = "form-control" })*@
+                            @*@Html.ValidationMessageFor(model => model.PropertyTypedetails.PropType, null, new { style = "color:red" })*@
+                        </div>
+
+                        @*<select name="propery_type" class="form-control selectpicker">*@
+                        @*<option selected>Property Type</option>*@
+                        @*<option value='apartment'>Apartment</option>*@
+                        @*<option value='family-house'>Family House</option>*@
+                        @*<option value='cottage'>Cottage</option>*@
+                        @*<option value='single-home'>Single Home</option>*@
+                        @*<option value='villa'>Villa</option>*@
+                        @*</select><select name="propery_contract_type" class="form-control selectpicker"><option selected>Contract</option>*@
+                        @*<option value='sale'>Sale</option>*@
+                        @*<option value='rent'>Rent</option>*@
+                        @*</select><select name="propery_location" class="form-control selectpicker">*@
+                        @*<option selected>State</option>*@
+                        @*<option value='0'>United States</option>*@
+                        @*<option value='California'>California</option>*@
+                        @*<option value='Texas'>Texas</option>*@
+                        @*<option value='New York'>New York</option>*@
+                        @*<option value='Florida'>Florida</option>*@
+                        @*<option value='Illinois'>Illinois</option>*@
+                        @*<option value='Ohio'>Ohio</option>*@
+                        @*<option value='Pennsylvania'>Pennsylvania</option>*@
+                        @*<option value='Massachusetts'>Massachusetts</option>*@
+                        @*<option value='New Jersey'>New Jersey</option>*@
+                        @*<option value='Arizona'>Arizona</option>*@
+                        @*<option value='Michigan'>Michigan</option>*@
+                        @*<option value='Washington'>Washington</option>*@
+                        @*<option value='North Carolina'>North Carolina</option>*@
+                        @*<option value='Virginia'>Virginia</option>*@
+                        @*<option value='Maryland'>Maryland</option>*@
+                        @*<option value='Georgia'>Georgia</option>*@
+                        @*<option value='Minnesota'>Minnesota</option>*@
+                        @*<option value='Indiana'>Indiana</option>*@
+                        @*<option value='Colorado'>Colorado</option>*@
+                        @*<option value='Missouri'>Missouri</option>*@
+                        @*<option value='Wisconsin'>Wisconsin</option>*@
+                        @*<option value='Tennessee'>Tennessee</option>*@
+                        @*<option value='Alabama'>Alabama</option>*@
+                        @*<option value='Oregon'>Oregon</option>*@
+                        @*<option value='Connecticut'>Connecticut</option>*@
+                        @*<option value='Oklahoma'>Oklahoma</option>*@
+                        @*<option value='Louisiana'>Louisiana</option>*@
+                        @*<option value='Utah'>Utah</option>*@
+                        @*<option value='Nevada'>Nevada</option>*@
+                        @*<option value='Kentucky'>Kentucky</option>*@
+                        @*<option value='Iowa'>Iowa</option>*@
+                        @*<option value='Kansas'>Kansas</option>*@
+                        @*<option value='South Carolina'>South Carolina</option>*@
+                        @*<option value='Arkansas'>Arkansas</option>*@
+                        @*<option value='Mississippi'>Mississippi</option>*@
+                        @*<option value='New Mexico'>New Mexico</option>*@
+                        @*<option value='Nebraska'>Nebraska</option>*@
+                        @*<option value='New Hampshire'>New Hampshire</option>*@
+                        @*<option value='Maine'>Maine</option>*@
+                        @*<option value='Rhode Island'>Rhode Island</option>*@
+                        @*<option value='Hawaii'>Hawaii</option>*@
+                        @*<option value='Idaho'>Idaho</option>*@
+                        @*<option value='West Virginia'>West Virginia</option>*@
+                        @*<option value='Montana'>Montana</option>*@
+                        @*<option value='Alaska'>Alaska</option>*@
+                        @*<option value='District of Columbia'>District of Columbia</option>*@
+                        @*<option value='South Dakota'>South Dakota</option>*@
+                        @*<option value='North Dakota'>North Dakota</option>*@
+                        @*<option value='Wyoming'>Wyoming</option>*@
+                        @*<option value='Delaware'>Delaware</option>*@
+                        @*<option value='Vermont'>Vermont</option>*@
+                        @*<option value='1'>United Arab Emirates</option>*@
+                        @*<option value='Dubai'>Dubai</option>*@
+                        @*<option value='Abu Dhabi'>Abu Dhabi</option>*@
+                        @*<option value='Sharjah'>Sharjah</option>*@
+                        @*<option value='Umm Al Quwain'>Umm Al Quwain</option>*@
+                        @*<option value='Fujairah'>Fujairah</option>*@
+                        @*<option value='Ajman'>Ajman</option>*@
+                        @*<option value='Ras Al Khaimah'>Ras Al Khaimah</option>*@
+                        @*</select><label>Min Beds</label>*@
+                        @*<select name="beds" class="form-control selectpicker">*@
+                        @*<option selected>Any</option>*@
+                        @*<option value='1'>1</option>*@
+                        @*<option value='2'>2</option>*@
+                        @*<option value='3'>3</option>*@
+                        @*<option value='4'>4</option>*@
+                        @*<option value='5'>5</option>*@
+                        @*<option value='6'>6</option>*@
+                        @*<option value='7'>7</option>*@
+                        @*<option value='8'>8</option>*@
+                        @*<option value='9'>9</option>*@
+                        @*<option value='10'>10</option>*@
+                        @*</select><div>*@
+                        @*<label>Min Baths</label>*@
+                        @*<select name="baths" class="form-control selectpicker">*@
+                        @*<option selected>Any</option>*@
+                        @*<option value='1'>1</option>*@
+                        @*<option value='2'>2</option>*@
+                        @*<option value='3'>3</option>*@
+                        @*<option value='4'>4</option>*@
+                        @*<option value='5'>5</option>*@
+                        @*<option value='6'>6</option>*@
+                        @*<option value='7'>7</option>*@
+                        @*<option value='8'>8</option>*@
+                        @*<option value='9'>9</option>*@
+                        @*<option value='10'>10</option>*@
+                        @*</select>*@
+                        @*</div>*@
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block"><i class="fa fa-search"></i>Search</button>
+        </form>
+
+        <!-- Start Site Footer -->
+
+        <footer class="site-footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="copyrights-col-left col-md-6 col-sm-6">
+                        <p>2016 © <a href="http://mariainfotech.in/">MARIA Infotech Pvt. Ltd. </a>All Rights Reserved.</p>
+                    </div>
+                    <div class="copyrights-col-right col-md-6 col-sm-6">
+                        <div class="social-icons">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <a id="back-to-top"><i class="fa fa-angle-double-up" style="display:inline"></i></a>
+    </div>
+</body>
+</html>
+<!-- End Site Footer -->
+@* <a id="back-to-top"><i class="fa fa-angle-double-up"></i></a>*@
+
+<!-- Dynamic page generated in 1.473 seconds. -->
+<!-- Cached page generated by WP-Super-Cache on 2016-03-16 07:39:24 -->
+<!-- super cache -->
