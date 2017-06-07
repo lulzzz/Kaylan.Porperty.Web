@@ -663,6 +663,8 @@
     <Content Include="Views\PropertyDetail\CreatePropertyDetails.cshtml" />
     <Content Include="Views\User\userdashboard.cshtml" />
     <Content Include="Views\Home\propertydetails.cshtml" />
+    <Content Include="Views\User\AllUser.cshtml" />
+    <Content Include="Views\User\USerProfile.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

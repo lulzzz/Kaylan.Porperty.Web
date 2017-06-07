@@ -1,23 +1,4 @@
-﻿@*<!DOCTYPE html>
-
-    <html>
-    <head>
-        <meta name="viewport" content="width=device-width" />
-        <title>@ViewBag.Title</title>
-    </head>
-    <body>
-        <div>
-            @RenderBody()
-        </div>
-    </body>
-    </html>*@
-
-@*@{
-        ViewBag.Title = "Admin";
-    }
-
-    <h2>Admin</h2>*@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
@@ -132,7 +113,7 @@
                 <div class="dropdown">
                     <button class="dropbtn">Profile</button>
                     <div class="dropdown-content">
-                        <a href="../Home/AdminProfile">User Profile</a>
+                        <a href="@Url.Action("USerProfile", "User")">User Profile</a>
                         @Html.ActionLink("Change Password", "CreatNewPassword", "User")
                         @Html.ActionLink("Sign Out", "LogOut", "User")
                     </div>
@@ -428,8 +409,8 @@
                     </li>
 
                     <li class="active treeview">
-                        <a href="../Home/AllUser">
-                            <i class="fa fa-dashboard"></i><span>AllUser</span><i class="fa fa-angle-left pull-right"></i>
+                        <a href="@Url.Action("AllUser","User")">
+                            <i class="fa fa-dashboard"></i> <span>All User</span><i class="fa fa-angle-left pull-right"></i>
                         </a>
                     </li>
 

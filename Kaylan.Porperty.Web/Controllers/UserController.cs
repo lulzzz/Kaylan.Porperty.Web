@@ -98,6 +98,21 @@ namespace Kaylan.Porperty.Web.Controllers
             return View();
         }
 
+
+        public ActionResult AllUser()
+        {
+            ViewBag.Message = "Your request page.";
+
+            return View();
+        }
+
+        public ActionResult USerProfile()
+        {
+            ViewBag.Message = "Your request page.";
+
+            return View();
+        }
+
         public ActionResult LogOut()
         {
             HttpContext.GetOwinContext().Authentication.SignOut(DefaultAuthenticationTypes.ApplicationCookie);

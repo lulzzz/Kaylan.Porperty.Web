@@ -113,12 +113,12 @@ namespace Kaylan.Porperty.Web.Controllers
         }
        
 
-        public ActionResult AllUser()
-        {
-            ViewBag.Message = "Your request page.";
+        //public ActionResult AllUser()
+        //{
+        //    ViewBag.Message = "Your request page.";
 
-            return View();
-        }
+        //    return View();
+        //}
 
         [OutputCache(Duration = 6000, Location = OutputCacheLocation.ServerAndClient)]
         public ActionResult GetAllPropertyType()

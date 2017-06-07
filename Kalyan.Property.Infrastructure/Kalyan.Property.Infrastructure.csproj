@@ -88,6 +88,10 @@
     <Compile Include="Migrations\201706021635078_Gender added.Designer.cs">
       <DependentUpon>201706021635078_Gender added.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706070524483_Context changes.cs" />
+    <Compile Include="Migrations\201706070524483_Context changes.Designer.cs">
+      <DependentUpon>201706070524483_Context changes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AgentInfo.cs" />
     <Compile Include="Models\Amenity.cs" />
@@ -124,6 +128,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706021635078_Gender added.resx">
       <DependentUpon>201706021635078_Gender added.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706070524483_Context changes.resx">
+      <DependentUpon>201706070524483_Context changes.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
