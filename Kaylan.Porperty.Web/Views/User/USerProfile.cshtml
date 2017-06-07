@@ -1,108 +1,12 @@
-﻿@{
+﻿@using Kaylan.Porperty.Web.Utility;
+@{
     ViewBag.Title = "User Profile";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
 @Scripts.Render("~/bundles/jquery")
 @Scripts.Render("~/unobtrusive/js")
-<h2>AllUser</h2>
 
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
-    <meta name="format-detection" content="telephone=no">
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-    <!-- Tell the browser to be responsive to screen width -->
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <!-- Bootstrap 3.3.6 -->
-    <link rel="stylesheet" href='@Url.Content("~/content/css/bootstrap.min.css")'>
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-    <!-- Ionicons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-    <!-- jvectormap -->
-    <link rel="stylesheet" href='@Url.Content("~/content/css/jquery-jvectormap-1.2.2.css")'>
-    <!-- Theme style -->
-    <link rel="stylesheet" href='@Url.Content("~/content/css/AdminLTE.min.css")'>
-    <!-- AdminLTE Skins. Choose a skin from the css/skins
-         folder instead of downloading all of them to reduce the load. -->
-    <link rel="stylesheet" href='@Url.Content("~/content/css/_all-skins.min.css")'>
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    <!-- CSS -->
-    <link rel="alternate" type="application/rss+xml" title="Real Spaces - Wordpress Real Estate Theme &raquo; Feed" href="http://preview.imithemes.com/real-spaces-wp/feed/" />
-    <link rel="alternate" type="application/rss+xml" title="Real Spaces - Wordpress Real Estate Theme &raquo; Comments Feed" href="http://preview.imithemes.com/real-spaces-wp/comments/feed/" />
-    <link rel="alternate" type="application/rss+xml" title="Real Spaces - Wordpress Real Estate Theme &raquo; Home Version 1 Comments Feed" href="http://preview.imithemes.com/real-spaces-wp/version-1/feed/" />
-    <link rel='stylesheet' href='@Url.Content("~/content/css/cf8bac.css")' type='text/css' media='all' />
-    <link rel='stylesheet' href='@Url.Content("~/content/css/dsidx-icons.css")' type='text/css' media='all' />
-    <link rel='stylesheet' href='@Url.Content("~/content/css/client.css")' type='text/css' media='all' />
-    <link rel='stylesheet' href='@Url.Content("~/content/css/client1.css")' type='text/css' media='all' />
-    <link rel='stylesheet' href='@Url.Content("~/content/css/settings.css")' type='text/css' media='all' />
-    <link rel='stylesheet' href='@Url.Content("~/content/css/bootstrap.css")' type='text/css' media='all' />
-    <link rel='stylesheet' href='@Url.Content("~/content/css/animations.css")' type='text/css' media='all' />
-    <link rel='stylesheet' href='@Url.Content("~/content/font-awesome-4.6.3/css/font-awesome.min.css")' type='text/css' media='all' />
-    <link rel='stylesheet' href='@Url.Content("~/content/css/style.css")' type='text/css' media='all' />
-    <link rel='stylesheet' href='@Url.Content("~/content/css/style2.css")' type='text/css' media='all' />
-    <link rel='stylesheet' href='@Url.Content("~/content/css/prettyPhoto.css")' type='text/css' media='all' />
-    <link rel='stylesheet' href='@Url.Content("~/content/css/owl.carousel.css")' type='text/css' media='all' />
-    <link rel='stylesheet' href='@Url.Content("~/content/css/owl.theme.css")' type='text/css' media='all' />
-    <link class="alt" href="@Url.Content("~/content/css/color1.css")" rel="stylesheet" type="text/css">
-
-    <!-- Scripts -->
-    <script type='text/javascript' src="@Url.Content("~/scripts/jquery.js")"></script>
-    <script type='text/javascript' src="@Url.Content("~/scripts/jquery-migrate.min.js")"></script>
-    <script type='text/javascript' src="@Url.Content("~/scripts/23a23f.js")"></script>
-    <script type='text/javascript' src="@Url.Content("~/scripts/ajax-login-script.js")"></script>
-    <script type='text/javascript' src="@Url.Content("~/scripts/jquery.themepunch.tools.min.js")"></script>
-    <script type='text/javascript' src="@Url.Content("~/scripts/jquery.themepunch.revolution.min.js")"></script>
-    <script type='text/javascript' src="@Url.Content("~/scripts/modernizr.js")"></script>
-
-    <script type='text/javascript' src="@Url.Content("~/scripts/favorite.js")"></script>
-    <script type='text/javascript' src="@Url.Content("~/scripts/newslatter.js")"></script>
-    <script type='text/javascript' src="@Url.Content("~/scripts/prettyphoto.js")"></script>
-    <script type='text/javascript' src="@Url.Content("~/scripts/owl.carousel.min.js")"></script>
-    <script type='text/javascript' src="@Url.Content("~/scripts/jquery.flexslider.js")"></script>
-    <script type='text/javascript' src="@Url.Content("~/scripts/helper-plugins.js")"></script>
-    <script type='text/javascript' src="@Url.Content("~/scripts/bootstrap.js")"></script>
-    <script type='text/javascript' src="@Url.Content("~/scripts/waypoints.js")"></script>
-    <!--    <script type='text/javascript' src='js/js.js'></script>-->
-    @*<script type='text/javascript'>
-            /* <![CDATA[ */
-            var urlajax = { "url": "http:\/\/preview.imithemes.com\/real-spaces-wp\/wp-admin\/admin-ajax.php", "tmpurl": "http:\/\/preview.imithemes.com\/real-spaces-wp\/wp-content\/themes\/real-spaces", "is_property": "", "sticky": "1", "is_contact": "", "home_url": "http:\/\/preview.imithemes.com\/real-spaces-wp", "is_payment": "", "register_url": "http:\/\/preview.imithemes.com\/real-spaces-wp\/register-as-agent\/", "is_register": "", "is_login": "", "is_submit_property": "", "basic": "Basic", "advanced": "Advanced" };
-            /* ]]> */
-        </script>*@
-    <!--    <script type='text/javascript' src='js/init.js'></script>-->
-    <script type='text/javascript' src="@Url.Content("~/scripts/profile_validate.js")"></script>
-    <script type='text/javascript' src="@Url.Content("~/scripts/comment-reply.min.js")"></script>
-    <script type='text/javascript' src="@Url.Content("~/scripts/wp-embed.min.js")"></script>
-    <script type='text/javascript' src="@Url.Content("~/scripts/core.min.js")"></script>
-    <script type='text/javascript' src="@Url.Content("~/scripts/widget.min.js")"></script>
-    <script type='text/javascript' src="@Url.Content("~/scripts/position.min.js")"></script>
-    <script type='text/javascript' src="@Url.Content("~/scripts/menu.min.js")"></script>
-    <script type='text/javascript' src="@Url.Content("~/scripts/autocomplete.min.js")"></script>
-    <script type='text/javascript' src="@Url.Content("~/scripts/autocomplete.js")"></script>
-    <script src="@Url.Content("~/scripts/jquery_cookie.js")"></script>
-    <script src="@Url.Content("~/scripts/script.js")"></script>
-    @Scripts.Render("~/PropertyRequest/js")
-    @Scripts.Render("~/Home/js")
-
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $('#btn').click(function () {
-                $('#result').load('/User/Approved');
-            });
-        });
-    </script>
-</head>
 <style>
     #maincontent {
         margin: 10px;
@@ -134,18 +38,9 @@
     }
 </style>
 
-s
-
-<section class="content-header">
-    <h1>
-        User Dashboard
-    </h1>
-</section>
-
 <!-- Main content -->
 <section class="content">
     <!-- Info boxes -->
-
 
     <div class="row">
         <div class="col-md-12">
@@ -164,11 +59,12 @@ s
                                 </section>
                                 <section id="content" style="color:black;height:200px;width:300px;">
 
-                                    <h4>Name :Shreya singh </h4>
-                                    <h6>Phone</h6>
-                                    <h6>DateOfBirth</h6>
-                                    <h6>Email</h6>
-                                    <h5>@Html.ActionLink("ChangePassword", "CreatNewPassword", " User ")</h5>
+                                    <h4>Name :@User.Identity.GetFirstName() @User.Identity.GetFirstName()  </h4>
+                                    <h6>Phone : @User.Identity.GetPhone()</h6>
+                                    <h6>DateOfBirth: @User.Identity.GetDateOfBirth()</h6>
+                                    <h6>Email : @User.Identity.GetEmail()</h6>
+                                   
+                                    <h5>@Html.ActionLink("ChangePassword", "CreatNewPassword", "User")</h5>
                                     <br>
                                 </section>
 
@@ -184,13 +80,12 @@ s
                         </div>
                     </div>
                 </div>
-                <div>
+                <a id="back-to-top">
+                    <i class="fa fa-angle-double-up" style="display:inline">
 
-                    here the parial page
-                </div>
-
-                <a id="back-to-top"><i class="fa fa-angle-double-up" style="display:inline"></i></a>
+                    </i>
+                </a>
             </div>
         </div>
     </div>
-    </section>
+</section>

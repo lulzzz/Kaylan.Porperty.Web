@@ -1,10 +1,8 @@
-﻿
-using Kaylan.Porperty.Web.ViewModel;
+﻿using Kaylan.Porperty.Web.ViewModel;
 using Microsoft.AspNet.Identity.Owin;
-using System.Threading.Tasks;
+using System;
 using System.Web;
 using System.Web.Mvc;
-using System;
 
 namespace Kaylan.Porperty.Web.Controllers
 {
@@ -41,7 +39,7 @@ namespace Kaylan.Porperty.Web.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> SignIn(LoginViewModel loginViewModel, string returnUrl)
+        public ActionResult SignIn(LoginViewModel loginViewModel, string returnUrl)
         {
             if (!ModelState.IsValid)
             {
@@ -49,12 +47,23 @@ namespace Kaylan.Porperty.Web.Controllers
             }
 
             // This doesn't count login failures towards account lockout
+
             // To enable password failures to trigger account lockout, change to shouldLockout: true
-            var result = await SignInManager.PasswordSignInAsync(loginViewModel.Email, loginViewModel.Password, loginViewModel.RememberMe, shouldLockout: false);
+            var result = SignInManager.PasswordSignIn(loginViewModel.Email, loginViewModel.Password, loginViewModel.RememberMe, shouldLockout: false);
             switch (result)
             {
                 case SignInStatus.Success:
-                    return RedirectToAction("Index", "Home");
+                    if (User.IsInRole("Admin"))
+                    {
+                        return RedirectToAction("AdminDashboard", "User");
+                    }
+                    else
+                    {
+                        return RedirectToAction("CustomerDashboard", "User");
+                    }
+
+                case SignInStatus.Failure:
+
                 default:
                     ModelState.AddModelError("", "Invalid login attempt.");
                     return View(loginViewModel);

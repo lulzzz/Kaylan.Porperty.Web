@@ -92,6 +92,10 @@
     <Compile Include="Migrations\201706070524483_Context changes.Designer.cs">
       <DependentUpon>201706070524483_Context changes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706071139254_IsActive Added.cs" />
+    <Compile Include="Migrations\201706071139254_IsActive Added.Designer.cs">
+      <DependentUpon>201706071139254_IsActive Added.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AgentInfo.cs" />
     <Compile Include="Models\Amenity.cs" />
@@ -131,6 +135,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706070524483_Context changes.resx">
       <DependentUpon>201706070524483_Context changes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706071139254_IsActive Added.resx">
+      <DependentUpon>201706071139254_IsActive Added.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

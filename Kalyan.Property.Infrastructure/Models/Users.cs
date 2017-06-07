@@ -18,6 +18,10 @@ namespace Kalyan.Property.Infrastructure.Models
 
         public DateTime DateOfBirth { get; set; }
 
+        public bool IsActive { get; set; }
+
+        public bool IsApproved { get; set; }
+
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<Users, int> manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
@@ -25,8 +29,22 @@ namespace Kalyan.Property.Infrastructure.Models
             // Add custom user claims here
             if (this.FirstName != null)
                 userIdentity.AddClaim(new Claim("FirstName", FirstName));
+
             if (this.LastName != null)
                 userIdentity.AddClaim(new Claim("LastName", LastName));
+
+            if (this.Phone != null)
+                userIdentity.AddClaim(new Claim("Phone", Phone));
+
+            if (this.Gender != null)
+                userIdentity.AddClaim(new Claim("Gender", Gender));
+
+            if (this.Email != null)
+                userIdentity.AddClaim(new Claim("Email", Email));
+
+            if (this.DateOfBirth != null)
+                userIdentity.AddClaim(new Claim("DateOfBirth", DateOfBirth.ToShortDateString()));
+
             return userIdentity;
         }
     }

@@ -4,6 +4,7 @@ using System.Web.Mvc;
 
 namespace Kaylan.Porperty.Web.Controllers
 {
+    [Authorize]
     public class UserController : Controller
     {
         public ActionResult CreateUserDetails()

@@ -27,7 +27,7 @@ namespace Kaylan.Porperty.Web
             app.UseCookieAuthentication(new CookieAuthenticationOptions
             {
                 AuthenticationType = DefaultAuthenticationTypes.ApplicationCookie,
-                LoginPath = new PathString("/Login/CreateLogin"),
+                LoginPath = new PathString("/Login/SignIn"),
                 Provider = new CookieAuthenticationProvider
                 {
                     // Enables the application to validate the security stamp when the user logs in.
