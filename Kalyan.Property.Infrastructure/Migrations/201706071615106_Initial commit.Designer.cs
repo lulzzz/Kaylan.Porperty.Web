@@ -7,13 +7,13 @@ namespace Kalyan.Property.Infrastructure.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class InitialCommit : IMigrationMetadata
+    public sealed partial class Initialcommit : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialCommit));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Initialcommit));
         
         string IMigrationMetadata.Id
         {
-            get { return "201705311651073_Initial Commit"; }
+            get { return "201706071615106_Initial commit"; }
         }
         
         string IMigrationMetadata.Source

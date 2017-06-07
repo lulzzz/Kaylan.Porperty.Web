@@ -12,26 +12,30 @@ namespace Kalyan.Property.Infrastructure
         {
         }
 
-        public virtual DbSet<AgentInfo> AgentInfoes { get; set; }
-        public virtual DbSet<Amenity> Amenities { get; set; }
+        //public virtual DbSet<AgentInfo> AgentInfoes { get; set; }
+        //public virtual DbSet<Amenity> Amenities { get; set; }
         public virtual DbSet<Area> Areas { get; set; }
         public virtual DbSet<City> City { get; set; }
         public virtual DbSet<Contact> Contacts { get; set; }
         public virtual DbSet<ContractType> ContractTypes { get; set; }
         public virtual DbSet<Country> Countries { get; set; }
         public virtual DbSet<District> Districts { get; set; }
-        public virtual DbSet<Feature> Features { get; set; }
+        //public virtual DbSet<Feature> Features { get; set; }
         public virtual DbSet<LoginPl> LoginPls { get; set; }
-        public virtual DbSet<PropertyDetail> PropertyDetails { get; set; }
-        public virtual DbSet<PropertyImage> PropertyImages { get; set; }
+        //public virtual DbSet<PropertyDetail> PropertyDetails { get; set; }
+        //public virtual DbSet<PropertyImage> PropertyImages { get; set; }
         public virtual DbSet<PropertyRequest> PropertyRequests { get; set; }
-        public virtual DbSet<PropertyType> PropertyTypes { get; set; }
-        public virtual DbSet<Service> Services { get; set; }
+        public virtual DbSet<PropertyType> PropertyType { get; set; }
+        //public virtual DbSet<Service> Services { get; set; }
         public virtual DbSet<State> States { get; set; }
         public virtual DbSet<PropertyRequestContractType> PropertyRequestContractType { get; set; }
         public virtual DbSet<PropertyRequestPrice> PropertyRequestPrice { get; set; }
         public virtual DbSet<PropertyRequestType> PropertyRequestType { get; set; }
         public virtual DbSet<PropertyRequestArea> PropertyRequestArea { get; set; }
+
+        public virtual DbSet<Amenity> Amenity { get; set; }
+        public virtual DbSet<PropertyDetail> PropertyDetail { get; set; }
+        public virtual DbSet<PropertyImage> PropertyImage { get; set; }
 
         public CustomeDbContext(string nameOrConnectionString) : base("DefaultConnection")
         {
@@ -48,22 +52,47 @@ namespace Kalyan.Property.Infrastructure
             modelBuilder.Entity<UserLogin>().ToTable("UserLogins");
             modelBuilder.Entity<UserClaim>().ToTable("UserClaims");
 
-            modelBuilder.Entity<AgentInfo>()
-               .Property(e => e.Phone)
-               .IsFixedLength();
-
-            modelBuilder.Entity<AgentInfo>()
-                .Property(e => e.City)
-                .IsFixedLength();
-
-            modelBuilder.Entity<AgentInfo>()
-                .Property(e => e.State)
-                .IsFixedLength();
 
             modelBuilder.Entity<Amenity>()
-                .HasMany(e => e.PropertyDetails)
-                .WithOptional(e => e.Amenity)
-                .HasForeignKey(e => e.AmenitiesID);
+               .Property(e => e.Name)
+               .IsUnicode(false);
+
+            modelBuilder.Entity<Amenity>()
+                .HasMany(e => e.PropertyAmenityMapping)
+                .WithRequired(e => e.Amenity)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<PropertyDetail>()
+                .HasMany(e => e.PropertyAmenityMappings)
+                .WithRequired(e => e.PropertyDetail)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<PropertyDetail>()
+                .HasMany(e => e.PropertyImages)
+                .WithRequired(e => e.PropertyDetail)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<PropertyImage>()
+                .Property(e => e.ImagePath)
+                .IsUnicode(false);
+
+
+            //modelBuilder.Entity<AgentInfo>()
+            //   .Property(e => e.Phone)
+            //   .IsFixedLength();
+
+            //modelBuilder.Entity<AgentInfo>()
+            //    .Property(e => e.City)
+            //    .IsFixedLength();
+
+            //modelBuilder.Entity<AgentInfo>()
+            //    .Property(e => e.State)
+            //    .IsFixedLength();
+
+            //modelBuilder.Entity<Amenity>()
+            //    .HasMany(e => e.PropertyDetails)
+            //    .WithOptional(e => e.Amenity)
+            //    .HasForeignKey(e => e.AmenitiesID);
 
             modelBuilder.Entity<Contact>()
                 .Property(e => e.Name)
@@ -82,50 +111,50 @@ namespace Kalyan.Property.Infrastructure
             //    .WithRequired(e => e.Country)
             //    .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<Feature>()
-                .HasMany(e => e.Amenities)
-                .WithRequired(e => e.Feature)
-                .WillCascadeOnDelete(false);
+            //modelBuilder.Entity<Feature>()
+            //    .HasMany(e => e.Amenities)
+            //    .WithRequired(e => e.Feature)
+            //    .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<PropertyDetail>()
-                .Property(e => e.Approved)
-                .IsUnicode(false);
+            //modelBuilder.Entity<PropertyDetail>()
+            //    .Property(e => e.Approved)
+            //    .IsUnicode(false);
 
-            modelBuilder.Entity<PropertyDetail>()
-                .Property(e => e.Featured)
-                .IsUnicode(false);
+            //modelBuilder.Entity<PropertyDetail>()
+            //    .Property(e => e.Featured)
+            //    .IsUnicode(false);
 
-            modelBuilder.Entity<PropertyDetail>()
-                .Property(e => e.country)
-                .IsFixedLength();
+            //modelBuilder.Entity<PropertyDetail>()
+            //    .Property(e => e.country)
+            //    .IsFixedLength();
 
-            modelBuilder.Entity<PropertyDetail>()
-                .Property(e => e.city)
-                .IsFixedLength();
+            //modelBuilder.Entity<PropertyDetail>()
+            //    .Property(e => e.city)
+            //    .IsFixedLength();
 
-            modelBuilder.Entity<PropertyDetail>()
-                .Property(e => e.DistrictId)
-                .IsFixedLength();
+            //modelBuilder.Entity<PropertyDetail>()
+            //    .Property(e => e.DistrictId)
+            //    .IsFixedLength();
 
-            modelBuilder.Entity<PropertyDetail>()
-                .HasMany(e => e.AgentInfoes)
-                .WithRequired(e => e.PropertyDetail)
-                .WillCascadeOnDelete(false);
+            //modelBuilder.Entity<PropertyDetail>()
+            //    .HasMany(e => e.AgentInfoes)
+            //    .WithRequired(e => e.PropertyDetail)
+            //    .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<PropertyDetail>()
-                .HasMany(e => e.PropertyImages)
-                .WithRequired(e => e.PropertyDetail)
-                .WillCascadeOnDelete(false);
+            //modelBuilder.Entity<PropertyDetail>()
+            //    .HasMany(e => e.PropertyImages)
+            //    .WithRequired(e => e.PropertyDetail)
+            //    .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<PropertyType>()
-                .HasMany(e => e.PropertyImages)
-                .WithRequired(e => e.PropertyType)
-                .WillCascadeOnDelete(false);
+            //modelBuilder.Entity<PropertyType>()
+            //    .HasMany(e => e.PropertyImages)
+            //    .WithRequired(e => e.PropertyType)
+            //    .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<Service>()
-                .HasMany(e => e.Amenities)
-                .WithRequired(e => e.Service)
-                .WillCascadeOnDelete(false);
+            //modelBuilder.Entity<Service>()
+            //    .HasMany(e => e.Amenities)
+            //    .WithRequired(e => e.Service)
+            //    .WillCascadeOnDelete(false);
 
             //modelBuilder.Entity<State>()
             //    .HasMany(e => e.Cities)

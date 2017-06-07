@@ -7,13 +7,13 @@ namespace Kalyan.Property.Infrastructure.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class Genderadded : IMigrationMetadata
+    public sealed partial class PropertyTypeAdded : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Genderadded));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(PropertyTypeAdded));
         
         string IMigrationMetadata.Id
         {
-            get { return "201706021635078_Gender added"; }
+            get { return "201706071619308_Property Type Added"; }
         }
         
         string IMigrationMetadata.Source

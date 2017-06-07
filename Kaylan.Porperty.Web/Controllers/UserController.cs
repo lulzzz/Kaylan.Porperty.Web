@@ -4,6 +4,7 @@ using Kaylan.Porperty.Web.ViewModel;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using System;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
@@ -14,11 +15,11 @@ namespace Kaylan.Porperty.Web.Controllers
     public class UserController : Controller
     {
         private ApplicationUserManager _userManager;
-        private IUnitOfWork unitOfWork;
+        private IUnitOfWork iUnitOfWork;
 
         public UserController()
         {
-            unitOfWork = new UnitOfWork();
+            iUnitOfWork = new UnitOfWork();
         }
 
         public UserController(ApplicationUserManager userManager)
@@ -80,8 +81,6 @@ namespace Kaylan.Porperty.Web.Controllers
             }
         }
 
-        
-
         public ActionResult CreateUserDetails()
         {
             return View();
@@ -115,22 +114,42 @@ namespace Kaylan.Porperty.Web.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+        [HttpGet]
         public ActionResult PropertyDetail()
         {
-            return View();
+            var country = iUnitOfWork.Repository<Country>().GetAll().Select(x => new SelectListItem { Text = x.Name, Value = Convert.ToString(x.Id) });
+            var state = iUnitOfWork.Repository<State>().GetAll().Select(x => new SelectListItem { Text = x.Name, Value = Convert.ToString(x.Id) });
+            var city = iUnitOfWork.Repository<City>().GetAll().Select(x => new SelectListItem { Text = x.Name, Value = Convert.ToString(x.Id) });
+            var area = iUnitOfWork.Repository<Area>().GetAll().Select(x => new SelectListItem { Text = x.Name, Value = Convert.ToString(x.Id) });
+            var propertyType = iUnitOfWork.Repository<PropertyType>().GetAll().Select(x => new SelectListItem { Text = x.Name, Value = Convert.ToString(x.Id) });
+            var contractType = iUnitOfWork.Repository<ContractType>().GetAll().Select(x => new SelectListItem { Text = x.Name, Value = Convert.ToString(x.Id) });
+            var amenity = iUnitOfWork.Repository<Amenity>().GetAll().Select(x => new SelectListItem { Text = x.Name, Value = Convert.ToString(x.Id) });
+
+            return View(new PropertyDetailViewModel(country, state, city, area, contractType, propertyType, amenity));
+        }
+
+        [HttpPost]
+        public ActionResult PropertyDetail(PropertyDetailViewModel propertyDetail)
+        {
+            var country = iUnitOfWork.Repository<Country>().GetAll().Select(x => new SelectListItem { Text = x.Name, Value = Convert.ToString(x.Id) });
+            var state = iUnitOfWork.Repository<State>().GetAll().Select(x => new SelectListItem { Text = x.Name, Value = Convert.ToString(x.Id) });
+            var city = iUnitOfWork.Repository<City>().GetAll().Select(x => new SelectListItem { Text = x.Name, Value = Convert.ToString(x.Id) });
+            var area = iUnitOfWork.Repository<Area>().GetAll().Select(x => new SelectListItem { Text = x.Name, Value = Convert.ToString(x.Id) });
+            var propertyType = iUnitOfWork.Repository<PropertyType>().GetAll().Select(x => new SelectListItem { Text = x.Name, Value = Convert.ToString(x.Id) });
+            var contractType = iUnitOfWork.Repository<ContractType>().GetAll().Select(x => new SelectListItem { Text = x.Name, Value = Convert.ToString(x.Id) });
+            var amenity = iUnitOfWork.Repository<Amenity>().GetAll().Select(x => new SelectListItem { Text = x.Name, Value = Convert.ToString(x.Id) });
+
+            return View(new PropertyDetailViewModel(country, state, city, area, contractType, propertyType, amenity));
         }
 
         public ActionResult PropertyDetailsList(int Id)
         {
-            PropertyDetail details = unitOfWork.Repository<PropertyDetail>().GetById(Id);
-            if (details == null)
-                Response.Write("<script>alert(' Property details not found')</script>");
+            //PropertyDetail details = unitOfWork.Repository<PropertyDetail>().GetById(Id);
+            //if (details == null)
+            //    Response.Write("<script>alert(' Property details not found')</script>");
 
-           return View(details);
-
-
+            return View();
         }
-
 
         public ActionResult AdminDashboard()
         {
@@ -141,6 +160,5 @@ namespace Kaylan.Porperty.Web.Controllers
         {
             return View();
         }
-
     }
 }

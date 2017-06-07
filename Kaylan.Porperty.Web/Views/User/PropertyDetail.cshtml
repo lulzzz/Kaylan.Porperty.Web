@@ -1,159 +1,161 @@
-﻿@{
+﻿@model Kaylan.Porperty.Web.ViewModel.PropertyDetailViewModel
+@{
     ViewBag.Title = "Create Area";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
-<html lang="en-US" class="no-js">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Kalyan Property World</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
-    <meta name="format-detection" content="telephone=no">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Kalyan Property World</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="format-detection" content="telephone=no">
 
-    <!-- CSS -->
-    <link rel="alternate" type="application/rss+xml" title="Real Spaces - Wordpress Real Estate Theme &raquo; Feed" href="http://preview.imithemes.com/real-spaces-wp/feed/" />
-    <link rel="alternate" type="application/rss+xml" title="Real Spaces - Wordpress Real Estate Theme &raquo; Comments Feed" href="http://preview.imithemes.com/real-spaces-wp/comments/feed/" />
-    <link rel="alternate" type="application/rss+xml" title="Real Spaces - Wordpress Real Estate Theme &raquo; Home Version 1 Comments Feed" href="http://preview.imithemes.com/real-spaces-wp/version-1/feed/" />
-    <link rel='stylesheet' href='@Url.Content("~/content/css/cf8bac.css")' type='text/css' media='all' />
-    <link rel='stylesheet' href='@Url.Content("~/content/css/dsidx-icons.css")' type='text/css' media='all' />
-    <link rel='stylesheet' href='@Url.Content("~/content/css/client.css")' type='text/css' media='all' />
-    <link rel='stylesheet' href='@Url.Content("~/content/css/client1.css")' type='text/css' media='all' />
-    <link rel='stylesheet' href='@Url.Content("~/content/css/settings.css")' type='text/css' media='all' />
-    <link rel='stylesheet' href='@Url.Content("~/content/css/bootstrap.css")' type='text/css' media='all' />
-    <link rel='stylesheet' href='@Url.Content("~/content/css/animations.css")' type='text/css' media='all' />
-    <link rel='stylesheet' href='@Url.Content("~/content/font-awesome-4.5.0/css/font-awesome.min.css")' type='text/css' media='all' />
-    <link rel='stylesheet' href='@Url.Content("~/content/css/style.css")' type='text/css' media='all' />
-    <link rel='stylesheet' href='@Url.Content("~/content/css/style2.css")' type='text/css' media='all' />
-    <link rel='stylesheet' href='@Url.Content("~/content/css/prettyPhoto.css")' type='text/css' media='all' />
-    <link rel='stylesheet' href='@Url.Content("~/content/css/owl.carousel.css")' type='text/css' media='all' />
-    <link rel='stylesheet' href='@Url.Content("~/content/css/owl.theme.css")' type='text/css' media='all' />
-    <link rel="stylesheet" href="@Url.Content("~/content/css/color1.css")" type="text/css">
+<!-- CSS -->
+<link rel="alternate" type="application/rss+xml" title="Real Spaces - Wordpress Real Estate Theme &raquo; Feed" href="http://preview.imithemes.com/real-spaces-wp/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Real Spaces - Wordpress Real Estate Theme &raquo; Comments Feed" href="http://preview.imithemes.com/real-spaces-wp/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Real Spaces - Wordpress Real Estate Theme &raquo; Home Version 1 Comments Feed" href="http://preview.imithemes.com/real-spaces-wp/version-1/feed/" />
+<link rel='stylesheet' href='@Url.Content("~/content/css/cf8bac.css")' type='text/css' media='all' />
+<link rel='stylesheet' href='@Url.Content("~/content/css/dsidx-icons.css")' type='text/css' media='all' />
+<link rel='stylesheet' href='@Url.Content("~/content/css/client.css")' type='text/css' media='all' />
+<link rel='stylesheet' href='@Url.Content("~/content/css/client1.css")' type='text/css' media='all' />
+<link rel='stylesheet' href='@Url.Content("~/content/css/settings.css")' type='text/css' media='all' />
+<link rel='stylesheet' href='@Url.Content("~/content/css/bootstrap.css")' type='text/css' media='all' />
+<link rel='stylesheet' href='@Url.Content("~/content/css/animations.css")' type='text/css' media='all' />
+<link rel='stylesheet' href='@Url.Content("~/content/font-awesome-4.5.0/css/font-awesome.min.css")' type='text/css' media='all' />
+<link rel='stylesheet' href='@Url.Content("~/content/css/style.css")' type='text/css' media='all' />
+<link rel='stylesheet' href='@Url.Content("~/content/css/style2.css")' type='text/css' media='all' />
+<link rel='stylesheet' href='@Url.Content("~/content/css/prettyPhoto.css")' type='text/css' media='all' />
+<link rel='stylesheet' href='@Url.Content("~/content/css/owl.carousel.css")' type='text/css' media='all' />
+<link rel='stylesheet' href='@Url.Content("~/content/css/owl.theme.css")' type='text/css' media='all' />
+<link rel="stylesheet" href="@Url.Content("~/content/css/color1.css")" type="text/css">
 
-    <!-- Scripts -->
-    <script type='text/javascript' src="@Url.Content("~/scripts/jquery.js")"></script>
-    <script type='text/javascript' src="@Url.Content("~/scripts/jquery-migrate.min.js")"></script>
-    <script type='text/javascript' src="@Url.Content("~/scripts/23a23f.js")"></script>
-    <script type='text/javascript' src="@Url.Content("~/scripts/ajax-login-script.js")"></script>
-    <script type='text/javascript' src="@Url.Content("~/scripts/jquery.themepunch.tools.min.js")"></script>
-    <script type='text/javascript' src="@Url.Content("~/scripts/jquery.themepunch.revolution.min.js")"></script>
-    <script type='text/javascript' src="@Url.Content("~/scripts/modernizr.js")"></script>
+<!-- Scripts -->
+<script type='text/javascript' src="@Url.Content("~/scripts/jquery.js")"></script>
+<script type='text/javascript' src="@Url.Content("~/scripts/jquery-migrate.min.js")"></script>
+<script type='text/javascript' src="@Url.Content("~/scripts/23a23f.js")"></script>
+<script type='text/javascript' src="@Url.Content("~/scripts/ajax-login-script.js")"></script>
+<script type='text/javascript' src="@Url.Content("~/scripts/jquery.themepunch.tools.min.js")"></script>
+<script type='text/javascript' src="@Url.Content("~/scripts/jquery.themepunch.revolution.min.js")"></script>
+<script type='text/javascript' src="@Url.Content("~/scripts/modernizr.js")"></script>
 
+<script type='text/javascript' src="@Url.Content("~/scripts/favorite.js")"></script>
+<script type='text/javascript' src="@Url.Content("~/scripts/newslatter.js")"></script>
+<script type='text/javascript' src="@Url.Content("~/scripts/prettyphoto.js")"></script>
+<script type='text/javascript' src="@Url.Content("~/scripts/owl.carousel.min.js")"></script>
+<script type='text/javascript' src="@Url.Content("~/scripts/jquery.flexslider.js")"></script>
+<script type='text/javascript' src="@Url.Content("~/scripts/helper-plugins.js")"></script>
+<script type='text/javascript' src="@Url.Content("~/scripts/bootstrap.js")"></script>
+<script type='text/javascript' src="@Url.Content("~/scripts/waypoints.js")"></script>
+@*<script type='text/javascript' src='@Url.Content("~/scripts/js.js")'></script>*@
+<script type='text/javascript'>
+    /* <![CDATA[ */
+    var urlajax = { "url": "http:\/\/preview.imithemes.com\/real-spaces-wp\/wp-admin\/admin-ajax.php", "tmpurl": "http:\/\/preview.imithemes.com\/real-spaces-wp\/wp-content\/themes\/real-spaces", "is_property": "", "sticky": "1", "is_contact": "", "home_url": "http:\/\/preview.imithemes.com\/real-spaces-wp", "is_payment": "", "register_url": "http:\/\/preview.imithemes.com\/real-spaces-wp\/register-as-agent\/", "is_register": "", "is_login": "", "is_submit_property": "", "basic": "Basic", "advanced": "Advanced" };
+    /* ]]> */
+</script>
+<script type='text/javascript' src='@Url.Content("~/scripts/init.js")'></script>
+<script type='text/javascript' src="@Url.Content("~/scripts/profile_validate.js")"></script>
+<script type='text/javascript' src="@Url.Content("~/scripts/comment-reply.min.js")"></script>
+<script type='text/javascript' src="@Url.Content("~/scripts/wp-embed.min.js")"></script>
+<script type='text/javascript' src="@Url.Content("~/scripts/core.min.js")"></script>
+<script type='text/javascript' src="@Url.Content("~/scripts/widget.min.js")"></script>
+<script type='text/javascript' src="@Url.Content("~/scripts/position.min.js")"></script>
+<script type='text/javascript' src="@Url.Content("~/scripts/menu.min.js")"></script>
+<script type='text/javascript' src="@Url.Content("~/scripts/autocomplete.min.js")"></script>
+<script type='text/javascript' src="@Url.Content("~/scripts/autocomplete.js")"></script>
+<script type='text/javascript' src="@Url.Content("~/scripts/jquery_cookie.js")"></script>
+<script type='text/javascript' src="@Url.Content("~/scripts/script.js")"></script>
+<h2>AllUser</h2>
+<!-- Start Content -->
+<div class="main" role="main">
+    <div id="content" class="content full">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="single-agent">
+                        <!--	  <div class="col-md-6 col-sm-6">
+                                <img src="http://preview.imithemes.com/real-spaces-wp/wp-content/uploads/2015/01/agent41.jpg" alt="Mia Kennedy" class="img-thumbnail">
+                          </div>-->
+                        <div class="col-md-12">
+                            @using (Html.BeginForm("PropertyDetail", "User", FormMethod.Post, new { @id = "form1", @enctype = "multipart/form-data" }))
+                            {
+                                <div class="block-heading" id="details">
+                                    <a href="#additionalinfo" class="btn btn-sm btn-default pull-right">Additional Info <i class="fa fa-chevron-down"></i></a>
+                                    <h4>
+                                        <span class="heading-icon"> <img src="images/faa.png" /></span>
+                                        Property Details
+                                    </h4>
+                                </div>
+                                <div class="padding-as25 margin-20 lgray-bg">
+                                    <div class="row">
+                                        <div class="col-md-3 col-sm-3 submit-property-type">
+                                            @*<select name="type" class="form-control margin-0 selectpicker" style="display: none;">
+                                                <option>Country</option>
+                                                <option>India</option>
+                                                </select>*@
+                                            @Html.DropDownListFor(m => m.SelectedCountryId, new SelectList(Model.CountryList), "..Country...", new { @class = "form-control margin-0 selectpicker" })
+                                            @Html.ValidationMessageFor(m => m.SelectedCountryId)
+                                        </div>
+                                        <div class="col-md-3 col-sm-3 submit-property-type">
+                                            @*<select name="type" class="form-control margin-0 selectpicker" style="display: none;">
+                                                <option>State</option>
+                                                <option>Maharastra</option>
+                                                </select>*@
 
-    <script type='text/javascript' src="@Url.Content("~/scripts/favorite.js")"></script>
-    <script type='text/javascript' src="@Url.Content("~/scripts/newslatter.js")"></script>
-    <script type='text/javascript' src="@Url.Content("~/scripts/prettyphoto.js")"></script>
-    <script type='text/javascript' src="@Url.Content("~/scripts/owl.carousel.min.js")"></script>
-    <script type='text/javascript' src="@Url.Content("~/scripts/jquery.flexslider.js")"></script>
-    <script type='text/javascript' src="@Url.Content("~/scripts/helper-plugins.js")"></script>
-    <script type='text/javascript' src="@Url.Content("~/scripts/bootstrap.js")"></script>
-    <script type='text/javascript' src="@Url.Content("~/scripts/waypoints.js")"></script>
-    @*<script type='text/javascript' src='@Url.Content("~/scripts/js.js")'></script>*@
-    <script type='text/javascript'>
-        /* <![CDATA[ */
-        var urlajax = { "url": "http:\/\/preview.imithemes.com\/real-spaces-wp\/wp-admin\/admin-ajax.php", "tmpurl": "http:\/\/preview.imithemes.com\/real-spaces-wp\/wp-content\/themes\/real-spaces", "is_property": "", "sticky": "1", "is_contact": "", "home_url": "http:\/\/preview.imithemes.com\/real-spaces-wp", "is_payment": "", "register_url": "http:\/\/preview.imithemes.com\/real-spaces-wp\/register-as-agent\/", "is_register": "", "is_login": "", "is_submit_property": "", "basic": "Basic", "advanced": "Advanced" };
-        /* ]]> */
-    </script>
-    <script type='text/javascript' src='@Url.Content("~/scripts/init.js")'></script>
-    <script type='text/javascript' src="@Url.Content("~/scripts/profile_validate.js")"></script>
-    <script type='text/javascript' src="@Url.Content("~/scripts/comment-reply.min.js")"></script>
-    <script type='text/javascript' src="@Url.Content("~/scripts/wp-embed.min.js")"></script>
-    <script type='text/javascript' src="@Url.Content("~/scripts/core.min.js")"></script>
-    <script type='text/javascript' src="@Url.Content("~/scripts/widget.min.js")"></script>
-    <script type='text/javascript' src="@Url.Content("~/scripts/position.min.js")"></script>
-    <script type='text/javascript' src="@Url.Content("~/scripts/menu.min.js")"></script>
-    <script type='text/javascript' src="@Url.Content("~/scripts/autocomplete.min.js")"></script>
-    <script type='text/javascript' src="@Url.Content("~/scripts/autocomplete.js")"></script>
-    <script type='text/javascript' src="@Url.Content("~/scripts/jquery_cookie.js")"></script>
-    <script type='text/javascript' src="@Url.Content("~/scripts/script.js")"></script>
-    <h2>AllUser</h2>
-    <!-- Start Content -->
-    <div class="main" role="main">
-        <div id="content" class="content full">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-9">
-                        <div class="single-agent">
-
-
-
-                            <!--	  <div class="col-md-6 col-sm-6">
-                                    <img src="http://preview.imithemes.com/real-spaces-wp/wp-content/uploads/2015/01/agent41.jpg" alt="Mia Kennedy" class="img-thumbnail">
-                              </div>-->
-                            <div class="col-md-12">
-                                <form>
-                                    <div class="block-heading" id="details">
-                                        <a href="#additionalinfo" class="btn btn-sm btn-default pull-right">Additional Info <i class="fa fa-chevron-down"></i></a>
-                                        <h4>
-                                            <span class="heading-icon"> <img src="images/faa.png" /></span>
-                                            Property Details
-                                        </h4>
+                                            @Html.DropDownListFor(m => m.SelectedStateId, Model.StateList, "..State...", new { @class = "form-control margin-0 selectpicker" })
+                                            @Html.ValidationMessageFor(m => m.SelectedStateId)
+                                        </div>
+                                        <div class="col-md-3 col-sm-3 submit-property-type">
+                                            @*<select name="type" class="form-control margin-0 selectpicker" style="display: none;">
+                                                <option>City</option>
+                                                <option>Kalyan</option>
+                                                </select>*@
+                                            @Html.DropDownListFor(m => m.SelectedCityId, Model.CityList, "..City...", new { @class = "form-control margin-0 selectpicker" })
+                                            @Html.ValidationMessageFor(m => m.SelectedCityId)
+                                        </div>
                                     </div>
-                                    <div class="padding-as25 margin-20 lgray-bg">
-                                        <div class="row">
-                                            <div class="col-md-3 col-sm-3 submit-property-type">
-                                                <select name="type" class="form-control margin-0 selectpicker" style="display: none;">
-                                                    <option>Country</option>
-                                                    <option>India</option>
-                                                    
-                                                </select>
-                                            </div>
-                                            <div class="col-md-3 col-sm-3 submit-property-type">
-                                                <select name="type" class="form-control margin-0 selectpicker" style="display: none;">
-                                                    <option>State</option>
-                                                    <option>Maharastra</option>
+                                    <br />
+                                    <div class="row">
+                                        <div class="col-md-3 col-sm-3 submit-property-type">
+                                            @*<select name="type" class="form-control margin-0 selectpicker" style="display: none;">
+                                                <option>Area</option>
+                                                <option>Khakadpada</option>
+                                                </select>*@
 
-                                                </select>
-                                            </div>
-                                            <div class="col-md-3 col-sm-3 submit-property-type">
-                                                <select name="type" class="form-control margin-0 selectpicker" style="display: none;">
-                                                    <option>City</option>
-                                                    <option>Kalyan</option>
-
-                                                </select>
-                                            </div>
-                                            
-                                            </div>
-                                        <br />
-                                        <div class="row">
-                                            <div class="col-md-3 col-sm-3 submit-property-type">
-                                                <select name="type" class="form-control margin-0 selectpicker" style="display: none;">
-                                                    <option>Area</option>
-                                                    <option>Khakadpada</option>
-
-                                                </select>
-                                            </div>
-                                            
-                                            <div class="col-lg-3 col-md-3 ">
-                                                <select name="type" class="form-control margin-0 selectpicker" style="display: none;">
-                                                    <option>Property Type</option>
-                                                    <option>Villa</option>
-                                                    <option>Single Home</option>
-                                                    <option>Cottage</option>
-                                                    <option>Family House</option>
-                                                    <option>Apartment</option>
-                                                </select>
-                                            </div>
-                                            <div class="col-lg-3 col-md-3 ">
-                                                <select name="type" class="form-control margin-0 selectpicker" style="display: none;">
-                                                    <option>Listed By </option>
-                                                    <option>Owner</option>
-                                                    <option>Agent</option>
-                                                </select>
-                                            </div>
+                                            @Html.DropDownListFor(m => m.SelectedAreaId, Model.AreaList, "..Area...", new { @class = "form-control margin-0 selectpicker" })
+                                            @Html.ValidationMessageFor(m => m.SelectedAreaId)
                                         </div>
-                                        <br />
-                                        <div class="row">
-                                            
-                                            
-                                            <div class="col-lg-3 col-md-3 ">
-                                                <input type="text" class="form-control" placeholder="Property name">
-                                            </div>
-                                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 submit-description">
-                                                <textarea name="description" class="form-control margin-0" rows="2" cols="5" placeholder="Propery Description"></textarea>
-                                            </div>
+
+                                        <div class="col-lg-3 col-md-3 ">
+                                            @*<select name="type" class="form-control margin-0 selectpicker" style="display: none;">
+                                                <option>Property Type</option>
+                                                <option>Villa</option>
+                                                <option>Single Home</option>
+                                                <option>Cottage</option>
+                                                <option>Family House</option>
+                                                <option>Apartment</option>
+                                                </select>*@
+
+                                            @Html.DropDownListFor(m => m.ContractList, Model.PropertyTypeList, "..Property Type...", new { @class = "form-control margin-0 selectpicker" })
+                                            @Html.ValidationMessageFor(m => m.SelectedContractId)
                                         </div>
-                                        
-                                        <br />
+                                        <div class="col-lg-3 col-md-3 ">
+                                            <select name="type" class="form-control margin-0 selectpicker" style="display: none;">
+                                                <option>Listed By </option>
+                                                <option>Owner</option>
+                                                <option>Agent</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <br />
+                                    <div class="row">
+                                        <div class="col-lg-3 col-md-3 ">
+                                            @Html.TextBoxFor(x => x.PropertyName, new { @class = "form-control", @placeholder = "Property name" })
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 submit-description">
+                                            @Html.TextAreaFor(x => x.PropertyDescription, new { @class = "form-control margin-0", @rows = "2", @cols = "5", @placeholder = "Propery Description" })
+                                        </div>
+                                    </div>
+
+                                    <br />
                                     <div class="block-heading" id="additionalinfo">
                                         <a href="#amenities" class="btn btn-sm btn-default pull-right">Enter Amenities <i class="fa fa-chevron-down"></i></a>
                                         <h4><span class="heading-icon"><img src="images/faa.png" /></span>Additional Info</h4>
@@ -161,13 +163,15 @@
                                     <div class="padding-as25 margin-20 lgray-bg">
                                         <div class="row">
 
-                                            
                                             <div class="col-md-4 col-sm-4 submit-contract-type">
-                                                <select name="type" class="form-control margin-0 selectpicker" style="display: none;">
+                                                @*<select name="type" class="form-control margin-0 selectpicker" style="display: none;">
                                                     <option>Contract Type</option>
                                                     <option>For Sale</option>
                                                     <option>Font Rent</option>
-                                                </select>
+                                                    </select>*@
+
+                                                @Html.DropDownListFor(m => m.SelectedContractId, Model.ContractList, "..Contract Type...", new { @class = "form-control margin-0 selectpicker" })
+                                                @Html.ValidationMessageFor(m => m.SelectedContractId)
                                             </div>
                                             <div class="col-md-4 col-sm-4">
                                                 <input type="text" class="form-control" placeholder="Price($)">
@@ -175,28 +179,31 @@
                                         </div>
                                         <div class="row">
                                             <div class="col-md-4 col-sm-4">
-                                                <select name="type" class="form-control selectpicker" style="display: none;">
+                                                @*<select name="type" class="form-control selectpicker" style="display: none;">
                                                     <option>Beds</option>
                                                     <option>1</option>
                                                     <option>2</option>
                                                     <option>3</option>
                                                     <option>4</option>
                                                     <option>5+</option>
-                                                </select>
+                                                    </select>*@
+
+                                                @Html.DropDownListFor(m => m.SelectedBedtId, Model.BedList, "..Beds...", new { @class = "form-control margin-0 selectpicker" })
+                                                @Html.ValidationMessageFor(m => m.SelectedBedtId)
                                             </div>
                                             <div class="col-md-4 col-sm-4">
-                                                <select name="type" class="form-control selectpicker" style="display: none;">
+                                                @*<select name="type" class="form-control selectpicker" style="display: none;">
                                                     <option>Baths</option>
                                                     <option>1</option>
                                                     <option>2</option>
                                                     <option>3</option>
                                                     <option>4</option>
                                                     <option>5+</option>
-                                                </select>
+                                                    </select>*@
+                                                @Html.DropDownListFor(m => m.SelectedBathtId, Model.BathList, "..Baths...", new { @class = "form-control margin-0 selectpicker" })
+                                                @Html.ValidationMessageFor(m => m.SelectedBathtId)
                                             </div>
-                                           
                                         </div>
-                                       
                                         <br>
                                         <div class="row">
                                             <div class="col-md-3 col-sm-3">
@@ -205,15 +212,18 @@
                                             </div>
                                             <div class="col-md-3 col-sm-3 submit-image">
                                                 <div class="image-placeholder">600x400 (JPG)</div>
-                                                <input type="file" name="image1">
+                                                @Html.TextBoxFor(m => m.ImageUploadOne, new { type = "file", @accept = "image/*" })
+                                                @Html.ValidationMessageFor(m => m.ImageUploadOne, "", new { @class = "text-danger" })
                                             </div>
                                             <div class="col-md-3 col-sm-3 submit-image">
                                                 <div class="image-placeholder">600x400 (JPG)</div>
-                                                <input type="file" name="image1">
+                                                @Html.TextBoxFor(m => m.ImageUploadTwo, new { type = "file", @accept = "image/*" })
+                                                @Html.ValidationMessageFor(m => m.ImageUploadTwo, "", new { @class = "text-danger" })
                                             </div>
                                             <div class="col-md-3 col-sm-3 submit-image">
                                                 <div class="image-placeholder">600x400 (JPG)</div>
-                                                <input type="file" name="image1">
+                                                @Html.TextBoxFor(m => m.ImageUploadThree, new { type = "file", @accept = "image/*" })
+                                                @Html.ValidationMessageFor(m => m.ImageUploadThree, "", new { @class = "text-danger" })
                                             </div>
                                         </div>
                                     </div>
@@ -222,91 +232,24 @@
                                         <h4><span class="heading-icon"><img src="images/faa.png" /></span>Amenities</h4>
                                     </div>
                                     <div class="padding-as25 margin-20 lgray-bg">
-                                        <div class="row">
-                                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                        @for (int i = 0; i < Model.Amenity.Count(); i += 1)
+                                        {
+                                            if (i == 0 || i % 3 == 0)
+                                            {
+                                               @:<div class="row">
+                                            }
+                                            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                                                 <label class="checkbox">
-                                                    <input type="checkbox">In Town
+                                                    @Html.CheckBoxFor(m => Model.Amenity[i].Selected)@Html.DisplayFor(m => Model.Amenity[i].Text)
                                                 </label>
                                             </div>
-                                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                                                <label class="checkbox">
-                                                    <input type="checkbox">House Keeping
-                                                </label>
-                                            </div>
-                                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                                                <label class="checkbox">
-                                                    <input type="checkbox">Security
-                                                </label>
-                                            </div>
-                                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                                                <label class="checkbox">
-                                                    <input type="checkbox">Elevator
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                                                <label class="checkbox">
-                                                    <input type="checkbox">Swimming Pool
-                                                </label>
-                                            </div>
-                                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                                                <label class="checkbox">
-                                                    <input type="checkbox">Balcony
-                                                </label>
-                                            </div>
-                                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                                                <label class="checkbox">
-                                                    <input type="checkbox">Gymnasium
-                                                </label>
-                                            </div>
-                                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                                                <label class="checkbox">
-                                                    <input type="checkbox">Covered Parking
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                                                <label class="checkbox">
-                                                    <input type="checkbox">Jacuzzi
-                                                </label>
-                                            </div>
-                                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                                                <label class="checkbox">
-                                                    <input type="checkbox">Laundary Room
-                                                </label>
-                                            </div>
-                                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                                                <label class="checkbox">
-                                                    <input type="checkbox">Fully Furnished
-                                                </label>
-                                            </div>
-                                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                                                <label class="checkbox">
-                                                    <input type="checkbox">Telephone
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                                                <label class="checkbox">
-                                                    <input type="checkbox">Satellite Channels
-                                                </label>
-                                            </div>
-                                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                                                <label class="checkbox">
-                                                    <input type="checkbox">Internet
-                                                </label>
-                                            </div>
-                                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                                                <label class="checkbox">
-                                                    <input type="checkbox">Home Electrics
-                                                </label>
-                                            </div>
-                                        </div>
+                                            if (i % 3 == 2 || i == Model.Amenity.Count - 1)
+                                            {
+                                                @:</div>
+                                            }
+                                        }
+                                      
                                     </div>
-
                                     <div class="block-heading" id="seller">
                                         <a href="#submit-property" class="btn btn-sm btn-default pull-right">Submit Property <i class="fa fa-chevron-down"></i></a>
                                         <h4><span class="heading-icon"><img src="images/faa.png" /></span>Seller Information</h4>
@@ -314,20 +257,24 @@
                                     <div class="padding-as25 margin-20 lgray-bg">
                                         <div class="row">
                                             <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-                                                <input type="text" class="form-control" placeholder="Full name">
+                                                @Html.TextBoxFor(m => m.FullName, new { @class = "form-control", @placeholder = "Full Name" })
+                                                @Html.ValidationMessageFor(m => m.FullName, "", new { @class = "text-danger" })
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-4 col-sm-4">
-                                                <input type="text" class="form-control" placeholder="Email">
+                                                @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @placeholder = "Email" })
+                                                @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
                                             </div>
                                             <div class="col-md-4 col-sm-4">
-                                                <input type="text" class="form-control" placeholder="Phone">
+                                                @Html.TextBoxFor(m => m.Phone, new { @class = "form-control", @placeholder = "Phone" })
+                                                @Html.ValidationMessageFor(m => m.Phone, "", new { @class = "text-danger" })
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 submit-description">
-                                                <textarea name="description" class="form-control margin-0" rows="4" cols="10" placeholder="Comments"></textarea>
+                                                @Html.TextAreaFor(m => m.Comments, new { @class = "form-control margin-0", @rows = "4", @cols = "10", @placeholder = "Comments" })
+                                                @Html.ValidationMessageFor(m => m.Phone, "", new { @class = "text-danger" })
                                             </div>
                                         </div>
                                         <br>
@@ -337,13 +284,8 @@
                                             </div>
                                         </div>
                                     </div>
-
-
-                                </form>
-                            </div>
-
-
-
+                                </div>
+                            }
                         </div>
                         <div class="spacer-20"></div>
                         <!-- Start Related Properties -->
@@ -383,7 +325,6 @@
                             </ul>
                         </div>-->
                     </div>
-
                 </div>
             </div>
         </div>

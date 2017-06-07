@@ -80,21 +80,17 @@
     <Compile Include="BaseRepository\IRepository.cs" />
     <Compile Include="BaseRepository\Repository.cs" />
     <Compile Include="CustomeDbContext.cs" />
-    <Compile Include="Migrations\201705311651073_Initial Commit.cs" />
-    <Compile Include="Migrations\201705311651073_Initial Commit.Designer.cs">
-      <DependentUpon>201705311651073_Initial Commit.cs</DependentUpon>
+    <Compile Include="Migrations\201706071615106_Initial commit.cs" />
+    <Compile Include="Migrations\201706071615106_Initial commit.Designer.cs">
+      <DependentUpon>201706071615106_Initial commit.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201706021635078_Gender added.cs" />
-    <Compile Include="Migrations\201706021635078_Gender added.Designer.cs">
-      <DependentUpon>201706021635078_Gender added.cs</DependentUpon>
+    <Compile Include="Migrations\201706071619308_Property Type Added.cs" />
+    <Compile Include="Migrations\201706071619308_Property Type Added.Designer.cs">
+      <DependentUpon>201706071619308_Property Type Added.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201706070524483_Context changes.cs" />
-    <Compile Include="Migrations\201706070524483_Context changes.Designer.cs">
-      <DependentUpon>201706070524483_Context changes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706071139254_IsActive Added.cs" />
-    <Compile Include="Migrations\201706071139254_IsActive Added.Designer.cs">
-      <DependentUpon>201706071139254_IsActive Added.cs</DependentUpon>
+    <Compile Include="Migrations\201706071723478_Contract type modified.cs" />
+    <Compile Include="Migrations\201706071723478_Contract type modified.Designer.cs">
+      <DependentUpon>201706071723478_Contract type modified.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AgentInfo.cs" />
@@ -127,17 +123,14 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201705311651073_Initial Commit.resx">
-      <DependentUpon>201705311651073_Initial Commit.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201706071615106_Initial commit.resx">
+      <DependentUpon>201706071615106_Initial commit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706021635078_Gender added.resx">
-      <DependentUpon>201706021635078_Gender added.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201706071619308_Property Type Added.resx">
+      <DependentUpon>201706071619308_Property Type Added.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706070524483_Context changes.resx">
-      <DependentUpon>201706070524483_Context changes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706071139254_IsActive Added.resx">
-      <DependentUpon>201706071139254_IsActive Added.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201706071723478_Contract type modified.resx">
+      <DependentUpon>201706071723478_Contract type modified.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

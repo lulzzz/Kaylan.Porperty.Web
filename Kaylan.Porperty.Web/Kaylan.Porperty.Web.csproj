@@ -218,6 +218,7 @@
     <Compile Include="ViewModel\ContactViewModel.cs" />
     <Compile Include="ViewModel\CountryViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
+    <Compile Include="ViewModel\PropertyDetailViewModel.cs" />
     <Compile Include="ViewModel\PropertyRequestViewModel.cs" />
     <Compile Include="ViewModel\ResetPasswordViewModel.cs" />
     <Compile Include="ViewModel\StateViewModel.cs" />
@@ -620,7 +621,6 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\PropertyRequest\CreatePropertyRequest.cshtml" />
     <Content Include="Views\Home\services.cshtml" />
-    <Content Include="Views\Home\Admin.cshtml" />
     <Content Include="Views\Home\Membership.cshtml" />
     <Content Include="Views\Home\Master.cshtml" />
     <Content Include="Views\Home\AllUser.cshtml" />

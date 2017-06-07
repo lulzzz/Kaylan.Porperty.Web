@@ -3,27 +3,32 @@ namespace Kalyan.Property.Infrastructure.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialCommit : DbMigration
+    public partial class Initialcommit : DbMigration
     {
         public override void Up()
         {
             CreateTable(
-                "dbo.AgentInfo",
+                "dbo.Amenity",
                 c => new
                     {
-                        id = c.Int(nullable: false),
-                        PropertyDetailId = c.Int(nullable: false),
-                        FirstName = c.String(maxLength: 50),
-                        LastName = c.String(maxLength: 50),
-                        Phone = c.String(maxLength: 10, fixedLength: true),
-                        IsActive = c.Boolean(),
-                        Address1 = c.String(maxLength: 50),
-                        Address2 = c.String(maxLength: 50),
-                        City = c.String(maxLength: 10, fixedLength: true),
-                        State = c.String(maxLength: 10, fixedLength: true),
+                        Id = c.Int(nullable: false),
+                        Name = c.String(nullable: false, maxLength: 50, unicode: false),
+                        IsActive = c.Boolean(nullable: false),
                     })
-                .PrimaryKey(t => t.id)
+                .PrimaryKey(t => t.Id);
+            
+            CreateTable(
+                "dbo.PropertyAmenityMapping",
+                c => new
+                    {
+                        Id = c.Int(nullable: false),
+                        AmenityId = c.Int(nullable: false),
+                        PropertyDetailId = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.PropertyDetail", t => t.PropertyDetailId)
+                .ForeignKey("dbo.Amenity", t => t.AmenityId)
+                .Index(t => t.AmenityId)
                 .Index(t => t.PropertyDetailId);
             
             CreateTable(
@@ -45,50 +50,15 @@ namespace Kalyan.Property.Infrastructure.Migrations
                         Email = c.String(maxLength: 50),
                         Phone = c.String(maxLength: 50),
                         Comments = c.String(maxLength: 50),
-                        Images = c.String(maxLength: 50),
-                        Approved = c.String(maxLength: 1, unicode: false),
-                        Featured = c.String(maxLength: 1, unicode: false),
-                        Area = c.String(maxLength: 50),
-                        country = c.String(maxLength: 10, fixedLength: true),
-                        State = c.String(maxLength: 50),
-                        agent = c.Boolean(),
-                        city = c.String(maxLength: 10, fixedLength: true),
-                        DistrictId = c.String(maxLength: 10, fixedLength: true),
+                        Approved = c.Boolean(),
+                        IsActive = c.Boolean(),
+                        AreaId = c.Int(nullable: false),
+                        CountryId = c.Int(nullable: false),
+                        StateId = c.Int(nullable: false),
+                        CityId = c.Int(nullable: false),
                         ToPrice = c.String(maxLength: 50),
-                    })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Amenity", t => t.AmenitiesID)
-                .Index(t => t.AmenitiesID);
-            
-            CreateTable(
-                "dbo.Amenity",
-                c => new
-                    {
-                        Id = c.Int(nullable: false),
-                        ServiceId = c.Int(nullable: false),
-                        FeatureId = c.Int(nullable: false),
-                    })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Feature", t => t.FeatureId)
-                .ForeignKey("dbo.Service", t => t.ServiceId)
-                .Index(t => t.ServiceId)
-                .Index(t => t.FeatureId);
-            
-            CreateTable(
-                "dbo.Feature",
-                c => new
-                    {
-                        Id = c.Int(nullable: false),
-                        Name = c.String(maxLength: 50),
-                    })
-                .PrimaryKey(t => t.Id);
-            
-            CreateTable(
-                "dbo.Service",
-                c => new
-                    {
-                        Id = c.Int(nullable: false),
-                        Name = c.String(maxLength: 50),
+                        UserId = c.Int(),
+                        PropertyAmenityMappingId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id);
             
@@ -97,28 +67,13 @@ namespace Kalyan.Property.Infrastructure.Migrations
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        PropertyTypeId = c.Int(nullable: false),
-                        PropertyDetailId = c.Int(nullable: false),
-                        PropertyImage = c.Binary(nullable: false),
-                        Date = c.DateTime(nullable: false),
-                        ImagePath = c.String(maxLength: 50),
+                        ImagePath = c.String(maxLength: 500, unicode: false),
                         IsActive = c.Boolean(nullable: false),
+                        PropertyDetailId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.PropertyType", t => t.PropertyTypeId)
                 .ForeignKey("dbo.PropertyDetail", t => t.PropertyDetailId)
-                .Index(t => t.PropertyTypeId)
                 .Index(t => t.PropertyDetailId);
-            
-            CreateTable(
-                "dbo.PropertyType",
-                c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                        Name = c.String(nullable: false, maxLength: 50),
-                        IsActive = c.Boolean(nullable: false),
-                    })
-                .PrimaryKey(t => t.Id);
             
             CreateTable(
                 "dbo.Area",
@@ -319,7 +274,10 @@ namespace Kalyan.Property.Infrastructure.Migrations
                         FirstName = c.String(),
                         LastName = c.String(),
                         Phone = c.String(),
+                        Gender = c.String(),
                         DateOfBirth = c.DateTime(nullable: false),
+                        IsActive = c.Boolean(nullable: false),
+                        IsApproved = c.Boolean(nullable: false),
                         Email = c.String(maxLength: 256),
                         EmailConfirmed = c.Boolean(nullable: false),
                         PasswordHash = c.String(),
@@ -376,12 +334,9 @@ namespace Kalyan.Property.Infrastructure.Migrations
             DropForeignKey("dbo.State", "CountryId", "dbo.Country");
             DropForeignKey("dbo.City", "StateId", "dbo.State");
             DropForeignKey("dbo.Area", "CityId", "dbo.City");
+            DropForeignKey("dbo.PropertyAmenityMapping", "AmenityId", "dbo.Amenity");
             DropForeignKey("dbo.PropertyImage", "PropertyDetailId", "dbo.PropertyDetail");
-            DropForeignKey("dbo.PropertyImage", "PropertyTypeId", "dbo.PropertyType");
-            DropForeignKey("dbo.Amenity", "ServiceId", "dbo.Service");
-            DropForeignKey("dbo.PropertyDetail", "AmenitiesID", "dbo.Amenity");
-            DropForeignKey("dbo.Amenity", "FeatureId", "dbo.Feature");
-            DropForeignKey("dbo.AgentInfo", "PropertyDetailId", "dbo.PropertyDetail");
+            DropForeignKey("dbo.PropertyAmenityMapping", "PropertyDetailId", "dbo.PropertyDetail");
             DropIndex("dbo.UserLogins", new[] { "UserId" });
             DropIndex("dbo.UserClaims", new[] { "UserId" });
             DropIndex("dbo.Users", "UserNameIndex");
@@ -397,11 +352,8 @@ namespace Kalyan.Property.Infrastructure.Migrations
             DropIndex("dbo.City", new[] { "StateId" });
             DropIndex("dbo.Area", new[] { "CityId" });
             DropIndex("dbo.PropertyImage", new[] { "PropertyDetailId" });
-            DropIndex("dbo.PropertyImage", new[] { "PropertyTypeId" });
-            DropIndex("dbo.Amenity", new[] { "FeatureId" });
-            DropIndex("dbo.Amenity", new[] { "ServiceId" });
-            DropIndex("dbo.PropertyDetail", new[] { "AmenitiesID" });
-            DropIndex("dbo.AgentInfo", new[] { "PropertyDetailId" });
+            DropIndex("dbo.PropertyAmenityMapping", new[] { "PropertyDetailId" });
+            DropIndex("dbo.PropertyAmenityMapping", new[] { "AmenityId" });
             DropTable("dbo.UserLogins");
             DropTable("dbo.UserClaims");
             DropTable("dbo.Users");
@@ -420,13 +372,10 @@ namespace Kalyan.Property.Infrastructure.Migrations
             DropTable("dbo.State");
             DropTable("dbo.City");
             DropTable("dbo.Area");
-            DropTable("dbo.PropertyType");
             DropTable("dbo.PropertyImage");
-            DropTable("dbo.Service");
-            DropTable("dbo.Feature");
-            DropTable("dbo.Amenity");
             DropTable("dbo.PropertyDetail");
-            DropTable("dbo.AgentInfo");
+            DropTable("dbo.PropertyAmenityMapping");
+            DropTable("dbo.Amenity");
         }
     }
 }

@@ -7,13 +7,13 @@ namespace Kalyan.Property.Infrastructure.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class IsActiveAdded : IMigrationMetadata
+    public sealed partial class Contracttypemodified : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(IsActiveAdded));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Contracttypemodified));
         
         string IMigrationMetadata.Id
         {
-            get { return "201706071139254_IsActive Added"; }
+            get { return "201706071723478_Contract type modified"; }
         }
         
         string IMigrationMetadata.Source
