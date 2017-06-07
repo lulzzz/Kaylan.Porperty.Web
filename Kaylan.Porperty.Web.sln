@@ -12,6 +12,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DatabaseScript", "DatabaseS
 		20170527_Data.sql = 20170527_Data.sql
 		20170527_KaylanProperty.sql = 20170527_KaylanProperty.sql
 		20170531_KaylanProperty.sql = 20170531_KaylanProperty.sql
+		20170607_KaylanProperty.sql = 20170607_KaylanProperty.sql
 		KaylanProperty.sql = KaylanProperty.sql
 	EndProjectSection
 EndProject
