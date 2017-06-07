@@ -35,13 +35,13 @@ namespace Kaylan.Porperty.Web.Controllers
 
         // GET: Login
         [HttpGet]
-        public ActionResult CreateLogin()
+        public ActionResult SignIn()
         {
             return View();
         }
 
         [HttpPost]
-        public async Task<ActionResult> CreateLogin(LoginViewModel loginViewModel, string returnUrl)
+        public async Task<ActionResult> SignIn(LoginViewModel loginViewModel, string returnUrl)
         {
             if (!ModelState.IsValid)
             {
