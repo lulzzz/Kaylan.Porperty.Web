@@ -293,7 +293,7 @@ namespace Kaylan.Porperty.Web.Controllers
 
         public ActionResult PropertyRequestDetails(long Id)
         {
-            PropertyDetail details = unitOfWork.Repository<PropertyDetail>().GetById(Id);
+            PropertyRequest details = unitOfWork.Repository<PropertyRequest>().GetById(Id);
             if (details == null)
                 Response.Write("<script>alert(' Property Request details not found')</script>");
 

@@ -1,4 +1,5 @@
-﻿using Kalyan.Property.Infrastructure.Models;
+﻿using Kalyan.Property.Infrastructure;
+using Kalyan.Property.Infrastructure.Models;
 using Kaylan.Porperty.Web.ViewModel;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
@@ -12,9 +13,11 @@ namespace Kaylan.Porperty.Web.Controllers
     public class UserController : Controller
     {
         private ApplicationUserManager _userManager;
+        private IUnitOfWork unitOfWork;
 
         public UserController()
         {
+            unitOfWork = new UnitOfWork();
         }
 
         public UserController(ApplicationUserManager userManager)
@@ -115,6 +118,18 @@ namespace Kaylan.Porperty.Web.Controllers
         {
             return View();
         }
+
+        public ActionResult PropertyDetailsList(int Id)
+        {
+            PropertyDetail details = unitOfWork.Repository<PropertyDetail>().GetById(Id);
+            if (details == null)
+                Response.Write("<script>alert(' Property details not found')</script>");
+
+           return View(details);
+
+
+        }
+
 
         public ActionResult AdminDashboard()
         {

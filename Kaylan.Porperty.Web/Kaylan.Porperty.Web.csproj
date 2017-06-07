@@ -638,7 +638,6 @@
     <Content Include="Views\Utility\_AreaList.cshtml" />
     <Content Include="Scripts\jquery.validate.unobtrusive.bootstrap.min.js.map" />
     <Content Include="Views\User\CreatNewPassword.cshtml" />
-    <Content Include="Views\PropertyRequest\PropertyRequestDetails.cshtml" />
     <Content Include="Views\Home\AdminProfile.cshtml" />
     <Content Include="Views\Home\USerProfile.cshtml" />
     <Content Include="Views\PropertyDetail\CreatePropertyDetails.cshtml" />
@@ -649,6 +648,9 @@
     <Content Include="Views\User\PropertyDetail.cshtml" />
     <Content Include="Views\Home\PropertyRequest.cshtml" />
     <Content Include="Views\User\AdminDashboard.cshtml" />
+    <Content Include="Views\PropertyRequest\PropertyRequestDetails.cshtml" />
+    <Content Include="Views\User\PropertyDetailsList.cshtml" />
+    <Content Include="Views\Home\PropertyRequestDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
