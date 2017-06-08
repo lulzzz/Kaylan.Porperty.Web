@@ -157,11 +157,17 @@ namespace Kaylan.Porperty.Web.Controllers
                     LastName = userViewModel.LastName,
                     FirstName = userViewModel.FirstName,
                     Phone = userViewModel.Phone,
-                    Gender = userViewModel.Gender
+                    Gender = userViewModel.Gender,
+                    
                 };
+
                 var result = await UserManager.CreateAsync(user, userViewModel.Password);
                 if (result.Succeeded)
                 {
+                    var currentUser = UserManager.FindByName(user.UserName);
+
+                    var roleresult = UserManager.AddToRole(currentUser.Id, "Customer");
+
                     ViewBag.Message = "User Created Successfully.";
 
                     return View(new UserViewModel());
