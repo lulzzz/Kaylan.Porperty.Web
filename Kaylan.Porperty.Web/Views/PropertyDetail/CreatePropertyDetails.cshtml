@@ -61,6 +61,57 @@
     <script type='text/javascript' src="@Url.Content("~/scripts/autocomplete.js")"></script>
     <script src="@Url.Content("~/scripts/jquery_cookie.js")"></script>
     <script src="@Url.Content("~/scripts/script.js")"></script>
+    <script>
+            function ShowImage(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        $('#blah')
+                            .attr('src', e.target.result)
+                            .width(150)
+                            .height(100);
+                    };
+
+                    reader.readAsDataURL(input.files[0]);
+                }
+
+            }
+    </script>
+    <script>
+            function ShowImage1(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        $('#blah1')
+                            .attr('src', e.target.result)
+                            .width(150)
+                            .height(100);
+                    };
+
+                    reader.readAsDataURL(input.files[0]);
+                }
+
+            }
+    </script>
+    <script>
+              function ShowImage2(input) {
+                  if (input.files && input.files[0]) {
+                      var reader = new FileReader();
+
+                      reader.onload = function (e) {
+                          $('#blah2')
+                              .attr('src', e.target.result)
+                              .width(150)
+                              .height(100);
+                      };
+
+                      reader.readAsDataURL(input.files[0]);
+                  }
+              }
+    </script>
+
 </head>
 <body class="archive author author-mia-kennedy author-2 ">
     <!--[if lt IE 7]>
