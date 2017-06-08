@@ -201,8 +201,90 @@ namespace Kaylan.Porperty.Web.Controllers
 
         public ActionResult AdminDashboard()
         {
+
+            CustomeDbContext db = new CustomeDbContext();
+
+              IList<Users> UserList = new List<Users>();
+
+              ViewBag.UserList = iUnitOfWork.Repository<Users>().GetAll().ToList().Count();
+
+              IList<PropertyDetail> pendingapproved = new List<PropertyDetail>();
+               ViewBag.approved = pendingapproved.Where(x => x.Approved == null).Count() == 0 ? 0 : pendingapproved.Where(x => x.Approved == null).Count();
+
+              ViewBag.salescount = db.ContractTypes.Select(k => k.Id == 1).Count();
+             ViewBag.rentcount = db.ContractTypes.Select(k=>k.Id==2).Count();
+
+
             return View();
         }
+
+
+        public ActionResult TotalUser()
+        {
+           var list= iUnitOfWork.Repository<Users>().GetAll().ToList();
+            if (list == null)
+                Response.Write("<script>alert(' Property Request details not found')</script>");
+
+            return PartialView(list);
+
+           
+        }
+
+
+        public ActionResult SalesList()
+        {
+            var list = iUnitOfWork.Repository<PropertyDetail>().Get(k => k.ContractType == "For Sale");
+            if (list == null)
+                Response.Write("<script>alert(' Property For Sale not found')</script>");
+
+            return PartialView(list);
+
+
+        }
+
+        public ActionResult RentList()
+        {
+            var list = iUnitOfWork.Repository<PropertyDetail>().GetAll();
+            if (list == null)
+                Response.Write("<script>alert(' Property for Rent not found')</script>");
+
+            return PartialView(list);
+
+
+        }
+
+
+        //public ActionResult NewListing()
+        //{
+        //    var list = iUnitOfWork.Repository<PropertyDetail>().Get(k => k.ContractType == "For Rent");
+        //    if (list == null)
+        //        Response.Write("<script>alert(' Property Request details not found')</script>");
+
+        //    return PartialView(list);
+
+
+        //}
+
+
+
+        public ActionResult PropertyRequestListing()
+        {
+            var list = iUnitOfWork.Repository<PropertyRequest>().GetAll().ToList();
+            if (list == null)
+                Response.Write("<script>alert(' Property Request detailsList  not found')</script>");
+
+            return PartialView(list);
+
+
+        }
+
+
+
+
+
+
+
+
 
         public ActionResult CustomerDashboard()
         {

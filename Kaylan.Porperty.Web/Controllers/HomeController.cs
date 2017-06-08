@@ -101,19 +101,19 @@ namespace Kaylan.Porperty.Web.Controllers
 
         //public ActionResult Admin()
         //{
-        //    //CustomeDbContext db = new CustomeDbContext();
+        //    CustomeDbContext db = new CustomeDbContext();
 
-        //    //IList<Users> UserList = new List<Users>();
+        //   IList<Users> UserList = new List<Users>();
 
-        //    //ViewBag.UserList = unitOfWork.Repository<Users>().GetAll().ToList().Count();
+        //   ViewBag.UserList = unitOfWork.Repository<Users>().GetAll().ToList().Count();
 
-        //    //IList<PropertyDetail> pendingapproved = new List<PropertyDetail>();
-        //    //ViewBag.approved = pendingapproved.Where(x => x.Approved == null).Count() == 0 ? 0 : pendingapproved.Where(x => x.Approved == null).Count();
+        //   IList<PropertyDetail> pendingapproved = new List<PropertyDetail>();
+        //    ViewBag.approved = pendingapproved.Where(x => x.Approved == null).Count() == 0 ? 0 : pendingapproved.Where(x => x.Approved == null).Count();
 
-        //    //ViewBag.salescount = db.ContractTypes.Select(n => n.Sale).Count();
-        //    //ViewBag.rentcount = db.ContractTypes.Select(n => n.Rent).Count();
+        //    ViewBag.salescount = db.ContractTypes.Select(k => k.Id == 1).Count();
+        //  ViewBag.rentcount = db.ContractTypes.Select(k=>k.Id==2).Count();
 
-        //    return View();
+        //   return View();
         //}
 
         public ActionResult Membership()
