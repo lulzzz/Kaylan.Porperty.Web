@@ -1,4 +1,5 @@
 ﻿using Kaylan.Porperty.Web.ViewModel;
+using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using System;
 using System.Web;
@@ -9,14 +10,16 @@ namespace Kaylan.Porperty.Web.Controllers
     public class LoginController : Controller
     {
         private ApplicationSignInManager _signInManager;
-
-        public LoginController(ApplicationSignInManager signInManager)
-        {
-            SignInManager = signInManager;
-        }
+        private ApplicationUserManager _userManager;
 
         public LoginController()
         {
+        }
+
+        public LoginController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
+        {
+            UserManager = userManager;
+            SignInManager = signInManager;
         }
 
         public ApplicationSignInManager SignInManager
@@ -28,6 +31,18 @@ namespace Kaylan.Porperty.Web.Controllers
             private set
             {
                 _signInManager = value;
+            }
+        }
+
+        public ApplicationUserManager UserManager
+        {
+            get
+            {
+                return _userManager ?? HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
+            }
+            private set
+            {
+                _userManager = value;
             }
         }
 
@@ -53,7 +68,10 @@ namespace Kaylan.Porperty.Web.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
-                    if (User.IsInRole("Admin"))
+
+                    var user = UserManager.FindByName(loginViewModel.Email);
+
+                    if (UserManager.IsInRole(user.Id, "Admin"))
                     {
                         return RedirectToAction("AdminDashboard", "User");
                     }

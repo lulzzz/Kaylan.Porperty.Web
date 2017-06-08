@@ -92,6 +92,14 @@
     <Compile Include="Migrations\201706071723478_Contract type modified.Designer.cs">
       <DependentUpon>201706071723478_Contract type modified.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706080436012_Change data type.cs" />
+    <Compile Include="Migrations\201706080436012_Change data type.Designer.cs">
+      <DependentUpon>201706080436012_Change data type.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706080523218_New Check.cs" />
+    <Compile Include="Migrations\201706080523218_New Check.Designer.cs">
+      <DependentUpon>201706080523218_New Check.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AgentInfo.cs" />
     <Compile Include="Models\Amenity.cs" />
@@ -131,6 +139,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706071723478_Contract type modified.resx">
       <DependentUpon>201706071723478_Contract type modified.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706080436012_Change data type.resx">
+      <DependentUpon>201706080436012_Change data type.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706080523218_New Check.resx">
+      <DependentUpon>201706080523218_New Check.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -26,8 +26,6 @@ namespace Kalyan.Property.Infrastructure.Models
         public virtual ICollection<PropertyAmenityMapping> PropertyAmenityMapping { get; set; }
     }
 
-   
-
     [Table("PropertyAmenityMapping")]
     public partial class PropertyAmenityMapping
     {
@@ -35,7 +33,6 @@ namespace Kalyan.Property.Infrastructure.Models
 
         public int PropertyDetailId { get; set; }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Id { get; set; }
 
         public virtual Amenity Amenity { get; set; }

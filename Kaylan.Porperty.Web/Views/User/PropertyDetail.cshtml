@@ -240,7 +240,8 @@
                                             }
                                             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                                                 <label class="checkbox">
-                                                    @Html.CheckBoxFor(m => Model.Amenity[i].Selected)@Html.DisplayFor(m => Model.Amenity[i].Text)
+                                                    @Html.CheckBoxFor(m => Model.Amenity[i].Selected)  @Html.DisplayFor( m => Model.Amenity[i].Text)
+                                                    @Html.HiddenFor(m => Model.Amenity[i].Value)
                                                 </label>
                                             </div>
                                             if (i % 3 == 2 || i == Model.Amenity.Count - 1)

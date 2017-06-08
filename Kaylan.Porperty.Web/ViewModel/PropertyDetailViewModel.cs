@@ -9,19 +9,6 @@ namespace Kaylan.Porperty.Web.ViewModel
     {
         public PropertyDetailViewModel()
         {
-        }
-
-        public PropertyDetailViewModel(
-            IEnumerable<SelectListItem> CountryList,
-            IEnumerable<SelectListItem> StateList,
-            IEnumerable<SelectListItem> CityList,
-            IEnumerable<SelectListItem> AreaList,
-            IEnumerable<SelectListItem> ContractTypeList,
-            IEnumerable<SelectListItem> PropertyTypeList,
-            IEnumerable<SelectListItem> Amenity
-
-            )
-        {
             List<SelectListItem> Bed = new List<SelectListItem>()
             {
               new SelectListItem {Text="1",Value="1" },
@@ -39,57 +26,66 @@ namespace Kaylan.Porperty.Web.ViewModel
               new SelectListItem {Text="4",Value="4"},
               new SelectListItem {Text="+5",Value="+5" },
             };
-
-            this.CountryList = new SelectList(CountryList, "Value", "Text");
-            this.StateList = new SelectList(StateList, "Value", "Text");
-            this.CityList = new SelectList(CityList, "Value", "Text");
-            this.AreaList = new SelectList(AreaList, "Value", "Text");
-            this.ContractList = new SelectList(ContractTypeList, "Value", "Text");
-            this.PropertyTypeList = new SelectList(PropertyTypeList, "Value", "Text");
             this.BedList = new SelectList(Bed, "Value", "Text");
             this.BathList = new SelectList(Bath, "Value", "Text");
-            this.Amenity = new List<SelectListItem>(Amenity);
         }
+
+        //public PropertyDetailViewModel(
+            
+
+        //    )
+        //{
+           
+
+        //    this.CountryList = new SelectList(CountryList, "Value", "Text");
+        //    this.StateList = new SelectList(StateList, "Value", "Text");
+        //    this.CityList = new SelectList(CityList, "Value", "Text");
+        //    this.AreaList = new SelectList(AreaList, "Value", "Text");
+        //    this.ContractList = new SelectList(ContractTypeList, "Value", "Text");
+        //    this.PropertyTypeList = new SelectList(PropertyTypeList, "Value", "Text");
+          
+        //    this.Amenity = new List<SelectListItem>(Amenity);
+        //}
 
         [Required(ErrorMessage = "Property Type Required.")]
         public int SelectedPropertyTypeId { get; set; }
 
-        public SelectList PropertyTypeList { get; set; }
+        public IEnumerable<SelectListItem> PropertyTypeList { get; set; }
 
         [Required(ErrorMessage = "Country Required.")]
         public int SelectedCountryId { get; set; }
 
-        public SelectList CountryList { get; set; }
+        public IEnumerable<SelectListItem> CountryList { get; set; }
 
         [Required(ErrorMessage = "City Required.")]
         public int SelectedCityId { get; set; }
 
-        public SelectList CityList { get; set; }
+        public IEnumerable<SelectListItem> CityList { get; set; }
 
         [Required(ErrorMessage = "State Required.")]
         public int SelectedStateId { get; set; }
 
-        public SelectList StateList { get; set; }
+        public IEnumerable<SelectListItem> StateList { get; set; }
 
         [Required(ErrorMessage = "Area Required.")]
         public int SelectedAreaId { get; set; }
 
-        public SelectList AreaList { get; set; }
+        public IEnumerable<SelectListItem> AreaList { get; set; }
 
         [Required(ErrorMessage = "Contract Required.")]
         public int SelectedContractId { get; set; }
 
-        public SelectList ContractList { get; set; }
+        public IEnumerable<SelectListItem> ContractList { get; set; }
 
         [Required(ErrorMessage = "Beds Required.")]
-        public int SelectedBedtId { get; set; }
+        public string SelectedBedtId { get; set; }
 
-        public SelectList BedList { get; set; }
+        public IEnumerable<SelectListItem> BedList { get; set; }
 
         [Required(ErrorMessage = "Baths Required.")]
-        public int SelectedBathtId { get; set; }
+        public string SelectedBathtId { get; set; }
 
-        public SelectList BathList { get; set; }
+        public IEnumerable<SelectListItem> BathList { get; set; }
 
         [Required(ErrorMessage = "Property Name Required.")]
         public string PropertyName { get; set; }

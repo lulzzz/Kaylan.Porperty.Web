@@ -93,7 +93,6 @@ namespace Kalyan.Property.Infrastructure.Models
     //    }
     //}
 
-
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
@@ -117,15 +116,16 @@ namespace Kalyan.Property.Infrastructure.Models
         [StringLength(50)]
         public string FromPrice { get; set; }
 
-        public int? Bedroom { get; set; }
+        [StringLength(50)]
+        public string Bedroom { get; set; }
 
-        public int? Bathroom { get; set; }
+        [StringLength(50)]
+        public string Bathroom { get; set; }
 
-        public int? Parking { get; set; }
+        [StringLength(50)]
+        public string Parking { get; set; }
 
-        public int? AmenitiesID { get; set; }
-
-        public DateTime? Date { get; set; }
+        public DateTime Date { get; set; }
 
         [StringLength(50)]
         public string PropertyName { get; set; }
