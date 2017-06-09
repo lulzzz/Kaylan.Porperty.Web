@@ -16,10 +16,7 @@
             @Html.DisplayNameFor(model => model.ContactType)
         </th>
         
-        <th>
-            @Html.DisplayNameFor(model => model.CreatedDate)
-        </th>
-        
+      
         <th></th>
     </tr>
 
@@ -39,15 +36,13 @@
             @Html.DisplayFor(modelItem => item.ContactType)
         </td>
        
-        <td>
-            @Html.DisplayFor(modelItem => item.CreatedDate)
-        </td>
+      
       
         <td>
          
             @Html.ActionLink("show", "PropertyRequestDetails", "PropertyRequest", new { id=item.PropertyRequestId }) |
            
-           
+           @*@Html.ActionLink("Show", "PropertyRequestDetails", "User")*@
             
         </td>
     </tr>

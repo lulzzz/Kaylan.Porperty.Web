@@ -16,6 +16,8 @@ namespace Kaylan.Porperty.Web.Controllers
     [Authorize]
     public class UserController : Controller
     {
+        CustomeDbContext db = new CustomeDbContext();
+
         private ApplicationUserManager _userManager;
         private IUnitOfWork iUnitOfWork;
 
@@ -214,6 +216,7 @@ namespace Kaylan.Porperty.Web.Controllers
               ViewBag.salescount = db.ContractTypes.Select(k => k.Id == 1).Count();
              ViewBag.rentcount = db.ContractTypes.Select(k=>k.Id==2).Count();
 
+            ViewBag.propertyRequest = db.PropertyRequests.Count();
 
             return View();
         }
@@ -233,18 +236,16 @@ namespace Kaylan.Porperty.Web.Controllers
 
         public ActionResult SalesList()
         {
-            var list = iUnitOfWork.Repository<PropertyDetail>().Get(k => k.ContractType == "For Sale");
+            var list = iUnitOfWork.Repository<PropertyDetail>().GetMany((k => k.ContractType == "For Sale" && k.ContractType != ""));
+               
             if (list == null)
                 Response.Write("<script>alert(' Property For Sale not found')</script>");
-
             return PartialView(list);
-
-
         }
 
         public ActionResult RentList()
         {
-            var list = iUnitOfWork.Repository<PropertyDetail>().GetAll();
+            var list = iUnitOfWork.Repository<PropertyDetail>().GetMany((k => k.ContractType == "For Rent" && k.ContractType != ""));
             if (list == null)
                 Response.Write("<script>alert(' Property for Rent not found')</script>");
 

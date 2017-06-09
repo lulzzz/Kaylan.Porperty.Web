@@ -648,13 +648,12 @@
     <Content Include="Views\Home\PropertyRequest.cshtml" />
     <Content Include="Views\User\AdminDashboard.cshtml" />
     <Content Include="Views\Home\Register.cshtml" />
-    <Content Include="Views\PropertyRequest\PropertyRequestDetails.cshtml" />
     <Content Include="Views\User\PropertyDetailsList.cshtml" />
     <Content Include="Views\Home\PropertyRequestDetails.cshtml" />
     <Content Include="Views\Shared\Totaluser.cshtml" />
-    <Content Include="Views\User\SalesList.cshtml" />
     <Content Include="Views\User\RentList.cshtml" />
     <Content Include="Views\User\PropertyRequestListing.cshtml" />
+    <Content Include="Views\User\SalesList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
