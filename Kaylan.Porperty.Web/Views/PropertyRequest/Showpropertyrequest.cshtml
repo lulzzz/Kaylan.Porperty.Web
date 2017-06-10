@@ -1,0 +1,107 @@
+﻿@model IEnumerable<Kalyan.Property.Infrastructure.Models.PropertyRequest>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Showpropertyrequest</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PropertyRequestArea.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PropertyRequestContractType.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PropertyRequestPriceMax.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PropertyRequestPriceMin.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PropertyRequestType.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FullName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PhoneNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ContactType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PropertyDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreatedDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsAgree)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PropertyRequestArea.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PropertyRequestContractType.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PropertyRequestPriceMax.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PropertyRequestPriceMin.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PropertyRequestType.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhoneNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContactType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PropertyDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsAgree)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.PropertyRequestId }) |
+                @Html.ActionLink("Details", "Details", new { id=item.PropertyRequestId }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.PropertyRequestId })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

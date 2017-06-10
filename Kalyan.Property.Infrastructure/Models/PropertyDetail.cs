@@ -148,7 +148,7 @@ namespace Kalyan.Property.Infrastructure.Models
         [StringLength(50)]
         public string Comments { get; set; }
 
-        public bool? Approved { get; set; }
+        public bool Approved { get; set; }
 
         public bool? IsActive { get; set; }
 

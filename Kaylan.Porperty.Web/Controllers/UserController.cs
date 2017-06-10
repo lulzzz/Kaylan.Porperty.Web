@@ -215,8 +215,11 @@ namespace Kaylan.Porperty.Web.Controllers
 
               ViewBag.salescount = db.ContractTypes.Select(k => k.Id == 1).Count();
              ViewBag.rentcount = db.ContractTypes.Select(k=>k.Id==2).Count();
-
             ViewBag.propertyRequest = db.PropertyRequests.Count();
+            var dateCriteria = DateTime.Now.Date.AddDays(-7);
+            ViewBag.newlisting = iUnitOfWork.Repository<PropertyRequest>().GetMany(r => r.CreatedDate >= dateCriteria).Count();
+          
+
 
             return View();
         }
@@ -250,9 +253,23 @@ namespace Kaylan.Porperty.Web.Controllers
                 Response.Write("<script>alert(' Property for Rent not found')</script>");
 
             return PartialView(list);
-
-
         }
+
+
+
+
+
+        public ActionResult PendingUser()
+        {
+            var list = iUnitOfWork.Repository<PropertyDetail>().GetMany((k => k.Approved== false && k.Approved !=true));
+            if (list == null)
+                Response.Write("<script>alert(' Approved property For user not Found')</script>");
+
+            return PartialView(list);
+        }
+
+
+
 
 
         //public ActionResult NewListing()
@@ -276,12 +293,29 @@ namespace Kaylan.Porperty.Web.Controllers
 
             return PartialView(list);
 
+        }
+
+        public ActionResult NewListing()
+        {
+            var dateCriteria = DateTime.Now.Date.AddDays(-7);
+            var list = iUnitOfWork.Repository<PropertyRequest>().GetMany(r => r.CreatedDate >= dateCriteria);
+            if (list == null)
+                Response.Write("<script>alert(' Property NewListing  not found')</script>");
+
+            return PartialView(list);
 
         }
 
+        public ActionResult EnquiryforlistedProperty()
+        {
 
+            var list = iUnitOfWork.Repository<PropertyRequest>().GetAll().ToList();
+            if (list == null)
+                Response.Write("<script>alert(' Enquiry for listed Property  not found')</script>");
 
+            return PartialView(list);
 
+        }
 
 
 
@@ -301,5 +335,15 @@ namespace Kaylan.Porperty.Web.Controllers
             file.SaveAs(path);
             return string.Format("~/Images/Server/{0}_{1}", ticks, picture);
         }
+
+
+
+
+
+
+
+
+
+
     }
 }

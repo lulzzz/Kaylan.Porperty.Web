@@ -1,8 +1,9 @@
 ﻿@model IEnumerable<Kalyan.Property.Infrastructure.Models.PropertyRequest>
 
-<table class="table">
+<h3>Property Request List</h3>
+<table class="table table-striped table-bordered" cellspacing="0" width="100%">
     <tr>
-        
+       
         <th>
             @Html.DisplayNameFor(model => model.FullName)
         </th>
@@ -39,11 +40,7 @@
       
       
         <td>
-         
-            @Html.ActionLink("show", "PropertyRequestDetails", "PropertyRequest", new { id=item.PropertyRequestId }) |
-           
-           @*@Html.ActionLink("Show", "PropertyRequestDetails", "User")*@
-            
+            <button type="button" class="btn btn-success" id="myBtn" data-toggle="modal" data-target="#myModal">Details</button>
         </td>
     </tr>
 }

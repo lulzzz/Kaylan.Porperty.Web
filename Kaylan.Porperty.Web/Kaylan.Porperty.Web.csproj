@@ -654,6 +654,10 @@
     <Content Include="Views\User\RentList.cshtml" />
     <Content Include="Views\User\PropertyRequestListing.cshtml" />
     <Content Include="Views\User\SalesList.cshtml" />
+    <Content Include="Views\PropertyRequest\Showpropertyrequest.cshtml" />
+    <Content Include="Views\User\PendingUser.cshtml" />
+    <Content Include="Views\User\NewListing.cshtml" />
+    <Content Include="Views\User\EnquiryforlistedProperty.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
