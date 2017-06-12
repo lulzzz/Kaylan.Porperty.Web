@@ -1,6 +1,7 @@
 ﻿using Kalyan.Property.Infrastructure.Models;
 using System;
 using System.Collections.Generic;
+using System.Web.Mvc;
 
 namespace Kaylan.Porperty.Web.ViewModel
 {
@@ -38,6 +39,8 @@ namespace Kaylan.Porperty.Web.ViewModel
         public int PropertyRequestTypeId { get; set; }
 
         public int PropertyRequestAreaId { get; set; }
+       public IEnumerable<SelectListItem> AreaList { get; set; }
+        public SelectList PropertyRequestArea { get; internal set; }
 
         public PropertyRequest GetPropertyRequest()
         {
@@ -58,5 +61,7 @@ namespace Kaylan.Porperty.Web.ViewModel
                 PropertyRequestAreaId = this.PropertyRequestAreaId
             };
         }
+
+        
     }
 }
