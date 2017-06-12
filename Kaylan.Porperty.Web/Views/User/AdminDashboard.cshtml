@@ -70,8 +70,17 @@ $(document).ready(function () {
 });
 
 $(document).ready(function () {
+    $('#btn7').click(function () {
+        $('#result').load('/User/ApprovedProperty');
+    });
+});
+
+
+
+$(document).ready(function () {
     $('#mytable').DataTable();
 });
+
 
 
 
@@ -157,8 +166,8 @@ $(document).ready(function () {
                 </div>
                 <div class="info-box-content">
                     <span class="info-box-text">
-                        Pending for<br />
-                        Approval
+                        Property Pending <br />
+                        for   Approval
                     </span>
                     <span class="info-box-number"> @ViewBag.approved</span>
                 </div>
@@ -275,6 +284,25 @@ $(document).ready(function () {
 
 
 
+
+        <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="info-box">
+
+                <div id="btn7">
+                    <span class="info-box-icon bg-green" style="cursor: pointer;"><i class="ion ion-ios-people-outline"></i></span>
+                </div>
+
+
+                <div class="info-box-content">
+                    <span class="info-box-text">
+                        Approved Property
+                    </span>
+                    <span class="info-box-number"> @ViewBag.Unapproved </span>
+                </div>
+                <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+        </div>
 
 
        

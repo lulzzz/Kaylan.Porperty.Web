@@ -3,9 +3,24 @@
 @{
     Layout = null;
 }
+<head>
+    <script src="~/Scripts/jQuery-2.2.0.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#checkBoxAll').click(function () {
+                if ($(this).is(":checked"))
+                    $('.chkCheckBoxId').prop('checked', true);
+                else
+                    $('.chkCheckBoxId').prop('checked', false);
+            });
+        });
+        </script>
 
-<h3>PendingUser</h3>
+</head>
 
+<h3>Property Pending For Approval</h3>
+@using (Html.BeginForm("PendingUser", "User",FormMethod.Post))
+{
 <table class="table table-striped table-bordered" cellspacing="0" width="100%">
     <thead>
         <tr>
@@ -15,7 +30,8 @@
             <th>@Html.DisplayNameFor(model => model.Date)</th>
             <th>@Html.DisplayNameFor(model => model.PropertyName)</th>
             <th>@Html.DisplayNameFor(model => model.Address)</th>
-            <th><label>Status</label></th>
+            <th> <label>Status</label><input type="checkbox" id="checkBoxAll" />
+            </th>
 
 
         </tr>
@@ -30,11 +46,12 @@
                 <td>@Html.DisplayFor(modelItem => item.Date)</td>
                 <td>@Html.DisplayFor(modelItem => item.PropertyName)</td>
                 <td>@Html.DisplayFor(modelItem => item.Address)</td>
-                <td>@Html.CheckBoxFor(modelItem => item.Approved)</td>
-               
+                <td><input type="checkbox" class="chkCheckBoxId"  value="@item.Id" name="UserID" /></td>
+
             </tr>
         }
-       
-          </tbody>        
+
+          </tbody>
 </table>
-<div><button type="button" name="btn" class="btn btn-success" onclick="location.href='@Url.Action("Contact", "Home")'">Approved</button></div>
+<div><input type="submit" value="Approved" name="btn" class="btn btn-success" onclick="return confirm('Are you shure?')" /></div>
+}
