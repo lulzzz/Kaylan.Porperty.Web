@@ -30,22 +30,7 @@ namespace Kaylan.Porperty.Web.ViewModel
             this.BathList = new SelectList(Bath, "Value", "Text");
         }
 
-        //public PropertyDetailViewModel(
-            
-
-        //    )
-        //{
-           
-
-        //    this.CountryList = new SelectList(CountryList, "Value", "Text");
-        //    this.StateList = new SelectList(StateList, "Value", "Text");
-        //    this.CityList = new SelectList(CityList, "Value", "Text");
-        //    this.AreaList = new SelectList(AreaList, "Value", "Text");
-        //    this.ContractList = new SelectList(ContractTypeList, "Value", "Text");
-        //    this.PropertyTypeList = new SelectList(PropertyTypeList, "Value", "Text");
-          
-        //    this.Amenity = new List<SelectListItem>(Amenity);
-        //}
+       
 
         [Required(ErrorMessage = "Property Type Required.")]
         public int SelectedPropertyTypeId { get; set; }

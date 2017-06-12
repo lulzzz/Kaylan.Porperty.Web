@@ -267,33 +267,30 @@ namespace Kaylan.Porperty.Web.Controllers
 
             return PartialView(list);
         }
-
-
-
-
-
-        //public ActionResult NewListing()
-        //{
-        //    var list = iUnitOfWork.Repository<PropertyDetail>().Get(k => k.ContractType == "For Rent");
-        //    if (list == null)
-        //        Response.Write("<script>alert(' Property Request details not found')</script>");
-
-        //    return PartialView(list);
-
-
-        //}
-
-
-
         public ActionResult PropertyRequestListing()
         {
+
+            var area = iUnitOfWork.Repository<Area>().GetAll().Select(x => new SelectListItem { Text = x.Name, Value = Convert.ToString(x.Id) });
+
             var list = iUnitOfWork.Repository<PropertyRequest>().GetAll().ToList();
             if (list == null)
                 Response.Write("<script>alert(' Property Request detailsList  not found')</script>");
 
-            return PartialView(list);
+            return PartialView(area);
 
         }
+        //public ActionResult PropertyRequestListing()
+        //{
+        //    var result = from s in iUnitOfWork.Repository<PropertyRequest>().GetAll()
+        //                 join c in iUnitOfWork.Repository<PropertyRequestArea>().GetAll()
+        //                 on s.PropertyRequestAreaId equals c.Id
+
+        //                select new PropertyRequest { PropertyRequestId = s.PropertyRequestId, Email = s.Email, PropertyRequestArea = c  };
+
+
+
+        //    return PartialView(result);
+        //}
 
         public ActionResult NewListing()
         {
