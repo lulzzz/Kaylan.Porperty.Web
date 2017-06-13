@@ -3,6 +3,7 @@ using Kalyan.Property.Infrastructure.Models;
 using Kaylan.Porperty.Web.ViewModel;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
+using Microsoft.Owin;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -210,11 +211,14 @@ namespace Kaylan.Porperty.Web.Controllers
 
               ViewBag.UserList = iUnitOfWork.Repository<Users>().GetAll().ToList().Count();
 
-              IList<PropertyDetail> pendingapproved = new List<PropertyDetail>();
-               ViewBag.approved = pendingapproved.Where(x => x.Approved == null).Count() == 0 ? 0 : pendingapproved.Where(x => x.Approved == null).Count();
+            //IList<PropertyDetail> pendingapproved = new List<PropertyDetail>();
+            // ViewBag.approved = pendingapproved.Where(x => x.Approved == null).Count() == 0 ? 0 : pendingapproved.Where(x => x.Approved == null).Count();
 
-              ViewBag.salescount = db.ContractTypes.Select(k => k.Id == 1).Count();
+            ViewBag.approved = iUnitOfWork.Repository<PropertyDetail>().GetMany((k => k.Approved == false && k.Approved != true)).Count();
+            ViewBag.Unapproved = iUnitOfWork.Repository<PropertyDetail>().GetMany((k => k.Approved == true && k.Approved != false)).Count();
+             ViewBag.salescount = db.ContractTypes.Select(k => k.Id == 1).Count();
              ViewBag.rentcount = db.ContractTypes.Select(k=>k.Id==2).Count();
+            
             ViewBag.propertyRequest = db.PropertyRequests.Count();
             var dateCriteria = DateTime.Now.Date.AddDays(-7);
             ViewBag.newlisting = iUnitOfWork.Repository<PropertyRequest>().GetMany(r => r.CreatedDate >= dateCriteria).Count();
@@ -268,20 +272,50 @@ namespace Kaylan.Porperty.Web.Controllers
             return PartialView(list);
         }
 
+        [HttpPost]
+        public ActionResult PendingUser(System.Web.Mvc.FormCollection formcollection)
+        {
+            CustomeDbContext db = new CustomeDbContext();
+            string[] ids = formcollection["UserID"].Split(new char[] {','});
+            foreach(string id in ids)
+            { 
+                var list1 = iUnitOfWork.Repository<PropertyDetail>().GetById(int.Parse(id));
+                list1.Approved = true;
+                iUnitOfWork.Commit();
+               
+            }
+            var list = iUnitOfWork.Repository<PropertyDetail>().GetMany((k => k.Approved == false && k.Approved != true));
+            return RedirectToAction("AdminDashboard");
+
+        }
 
 
+        public ActionResult ApprovedProperty()
+        {
+            var list = iUnitOfWork.Repository<PropertyDetail>().GetMany((k => k.Approved ==true && k.Approved != false));
+            if (list == null)
+                Response.Write("<script>alert(' Approved property For user not Found')</script>");
+
+            return PartialView(list);
+        }
 
 
-        //public ActionResult NewListing()
-        //{
-        //    var list = iUnitOfWork.Repository<PropertyDetail>().Get(k => k.ContractType == "For Rent");
-        //    if (list == null)
-        //        Response.Write("<script>alert(' Property Request details not found')</script>");
+        [HttpPost]
+        public ActionResult ApprovedProperty(System.Web.Mvc.FormCollection formcollection)
+        {
+            CustomeDbContext db = new CustomeDbContext();
+            string[] ids = formcollection["UserID"].Split(new char[] { ',' });
+            foreach (string id in ids)
+            {
+                var list1 = iUnitOfWork.Repository<PropertyDetail>().GetById(int.Parse(id));
+                list1.Approved = false;
+                iUnitOfWork.Commit();
 
-        //    return PartialView(list);
+            }
+            var list = iUnitOfWork.Repository<PropertyDetail>().GetMany((k => k.Approved == true && k.Approved != false));
+            return RedirectToAction("AdminDashboard");
 
-
-        //}
+        }
 
 
 

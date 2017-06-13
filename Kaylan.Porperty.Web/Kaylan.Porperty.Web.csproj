@@ -658,6 +658,7 @@
     <Content Include="Views\User\PendingUser.cshtml" />
     <Content Include="Views\User\NewListing.cshtml" />
     <Content Include="Views\User\EnquiryforlistedProperty.cshtml" />
+    <Content Include="Views\User\ApprovedProperty.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
