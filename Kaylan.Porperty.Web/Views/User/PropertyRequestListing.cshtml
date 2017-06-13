@@ -47,12 +47,12 @@
 
 
                     <!-- Button trigger modal -->
-                    <button type="button" style="margin-left:30px;" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+                    <button type="button" style="margin-left:30px;" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong-@item.PropertyRequestId">
                         Display Propery Details
                     </button>
 
                     <!-- Modal -->
-                    <div class="modal fade" id="exampleModalLong" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true"
+                    <div class="modal fade" id="exampleModalLong-@item.PropertyRequestId" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true"
                          id="model" style="float:left;">
                         <div class="modal-dialog" role="document" style="float:left;margin-left:0px;margin-top:0px;left: 100px;top:0;">
                             <div class="modal-content" style="width:1150px;left:0px;height:350px;">
@@ -93,7 +93,7 @@
 
                                                 </tr>
 
-                                                @foreach (var items in Model)
+                                                @foreach (var items in Model.Where(x=>x.PropertyRequestId == item.PropertyRequestId))
                                                 {
 
                                                     <tr>
