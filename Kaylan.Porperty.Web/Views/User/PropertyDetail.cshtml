@@ -3,6 +3,11 @@
     ViewBag.Title = "Create Area";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
+
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/jqueryval")
+@Scripts.Render("~/unobtrusive/js")
+
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Kalyan Property World</title>
 <meta charset="UTF-8" />
@@ -65,54 +70,54 @@
 <script type='text/javascript' src="@Url.Content("~/scripts/script.js")"></script>
 <h2>List Your Property</h2>
 <script>
-            function ShowImage(input) {
-                if (input.files && input.files[0]) {
-                    var reader = new FileReader();
+    function ShowImage(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
 
-                    reader.onload = function (e) {
-                        $('#blah')
-                            .attr('src', e.target.result)
-                            .width(150)
-                            .height(100);
-                    };
+            reader.onload = function (e) {
+                $('#blah')
+                    .attr('src', e.target.result)
+                    .width(150)
+                    .height(100);
+            };
 
-                    reader.readAsDataURL(input.files[0]);
-                }
+            reader.readAsDataURL(input.files[0]);
+        }
 
-            }
+    }
 </script>
 <script>
-            function ShowImage1(input) {
-                if (input.files && input.files[0]) {
-                    var reader = new FileReader();
+    function ShowImage1(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
 
-                    reader.onload = function (e) {
-                        $('#blah1')
-                            .attr('src', e.target.result)
-                            .width(150)
-                            .height(100);
-                    };
+            reader.onload = function (e) {
+                $('#blah1')
+                    .attr('src', e.target.result)
+                    .width(150)
+                    .height(100);
+            };
 
-                    reader.readAsDataURL(input.files[0]);
-                }
+            reader.readAsDataURL(input.files[0]);
+        }
 
-            }
+    }
 </script>
 <script>
-              function ShowImage2(input) {
-                  if (input.files && input.files[0]) {
-                      var reader = new FileReader();
+    function ShowImage2(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
 
-                      reader.onload = function (e) {
-                          $('#blah2')
-                              .attr('src', e.target.result)
-                              .width(150)
-                              .height(100);
-                      };
+            reader.onload = function (e) {
+                $('#blah2')
+                    .attr('src', e.target.result)
+                    .width(150)
+                    .height(100);
+            };
 
-                      reader.readAsDataURL(input.files[0]);
-                  }
-              }
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
 </script>
 <!-- Start Content -->
 <div class="main" role="main">
@@ -137,18 +142,18 @@
                                 <div class="padding-as25 margin-20 lgray-bg">
                                     <div class="row">
                                         <div class="col-md-3 col-sm-3 submit-property-type">
-                                           
+
                                             @Html.DropDownListFor(m => m.SelectedCountryId, new SelectList(Model.CountryList), "..Country...", new { @class = "form-control margin-0 selectpicker" })
                                             @Html.ValidationMessageFor(m => m.SelectedCountryId)
                                         </div>
                                         <div class="col-md-3 col-sm-3 submit-property-type">
-                                           
+
 
                                             @Html.DropDownListFor(m => m.SelectedStateId, Model.StateList, "..State...", new { @class = "form-control margin-0 selectpicker" })
                                             @Html.ValidationMessageFor(m => m.SelectedStateId)
                                         </div>
                                         <div class="col-md-3 col-sm-3 submit-property-type">
-                                           
+
                                             @Html.DropDownListFor(m => m.SelectedCityId, Model.CityList, "..City...", new { @class = "form-control margin-0 selectpicker" })
                                             @Html.ValidationMessageFor(m => m.SelectedCityId)
                                         </div>
@@ -156,14 +161,14 @@
                                     <br />
                                     <div class="row">
                                         <div class="col-md-3 col-sm-3 submit-property-type">
-                                          
+
 
                                             @Html.DropDownListFor(m => m.SelectedAreaId, Model.AreaList, "..Area...", new { @class = "form-control margin-0 selectpicker" })
                                             @Html.ValidationMessageFor(m => m.SelectedAreaId)
                                         </div>
 
                                         <div class="col-lg-3 col-md-3 ">
-                                           
+
 
                                             @Html.DropDownListFor(m => m.ContractList, Model.PropertyTypeList, "..Property Type...", new { @class = "form-control margin-0 selectpicker" })
                                             @Html.ValidationMessageFor(m => m.SelectedContractId)
@@ -181,9 +186,11 @@
                                     <div class="row">
                                         <div class="col-lg-3 col-md-3 ">
                                             @Html.TextBoxFor(x => x.PropertyName, new { @class = "form-control", @placeholder = "Property name" })
+                                            @Html.ValidationMessageFor(m => m.PropertyName, "", new { @class = "text-danger" })
                                         </div>
                                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 submit-description">
                                             @Html.TextAreaFor(x => x.PropertyDescription, new { @class = "form-control margin-0", @rows = "2", @cols = "5", @placeholder = "Propery Description" })
+                                            @Html.ValidationMessageFor(m => m.PropertyDescription, "", new { @class = "text-danger" })
                                         </div>
                                     </div>
 
@@ -196,24 +203,25 @@
                                         <div class="row">
 
                                             <div class="col-md-4 col-sm-4 submit-contract-type">
-                                               
+
 
                                                 @Html.DropDownListFor(m => m.SelectedContractId, Model.ContractList, "..Contract Type...", new { @class = "form-control margin-0 selectpicker" })
                                                 @Html.ValidationMessageFor(m => m.SelectedContractId)
                                             </div>
                                             <div class="col-md-4 col-sm-4">
-                                                <input type="text" class="form-control" placeholder="Price($)">
+                                                @Html.TextBoxFor(m => m.Price, new { @class = "form-control" ,@placeholder = "Price($)" , @type = "number" })
+                                                @Html.ValidationMessageFor(m => m.SelectedContractId)
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-4 col-sm-4">
-                                              
+
 
                                                 @Html.DropDownListFor(m => m.SelectedBedtId, Model.BedList, "..Beds...", new { @class = "form-control margin-0 selectpicker" })
                                                 @Html.ValidationMessageFor(m => m.SelectedBedtId)
                                             </div>
                                             <div class="col-md-4 col-sm-4">
-                                              
+
                                                 @Html.DropDownListFor(m => m.SelectedBathtId, Model.BathList, "..Baths...", new { @class = "form-control margin-0 selectpicker" })
                                                 @Html.ValidationMessageFor(m => m.SelectedBathtId)
                                             </div>
@@ -225,27 +233,27 @@
                                                 <p>Upload images that are best clicked for better appearance of your property</p>
                                             </div>
                                             @*<div class="col-md-3 col-sm-3 submit-image">
-                                                <div class="image-placeholder">600x400 (JPG)</div>
-                                              
-                                                @Html.TextBoxFor(m => m.ImageUploadOne, new { type = "file", @accept = "image/*" })
-                                                @Html.ValidationMessageFor(m => m.ImageUploadOne, "", new { @class = "text-danger" })
-                                            </div>*@
+                                                    <div class="image-placeholder">600x400 (JPG)</div>
+
+                                                    @Html.TextBoxFor(m => m.ImageUploadOne, new { type = "file", @accept = "image/*" })
+                                                    @Html.ValidationMessageFor(m => m.ImageUploadOne, "", new { @class = "text-danger" })
+                                                </div>*@
 
                                             <div class="col-md-3 col-sm-3 submit-image">
-                                                <div class="image-placeholder"><img id="blah" src="#" alt="600*400(.jpg)" /></div>                                              
-                                             
-                                                @Html.TextBoxFor(m => m.ImageUploadOne , new { type = "file", @accept = "image/*",onchange= "ShowImage(this)" })                                           
-                                              @Html.ValidationMessageFor(m => m.ImageUploadOne, "", new { @class = "text-danger" })
+                                                <div class="image-placeholder"><img id="blah" src="#" alt="600*400(.jpg)" /></div>
+
+                                                @Html.TextBoxFor(m => m.ImageUploadOne, new { type = "file", @accept = "image/*", onchange = "ShowImage(this)" })
+                                                @Html.ValidationMessageFor(m => m.ImageUploadOne, "", new { @class = "text-danger" })
 
                                             </div>
                                             <div class="col-md-3 col-sm-3 submit-image">
-                                                <div class="image-placeholder"><img id="blah1" src="#" alt="600*400(.jpg)" /></div>  
-                                                @Html.TextBoxFor(m => m.ImageUploadTwo, new { type = "file", @accept = "image/*" , onchange = "ShowImage1(this)" })
+                                                <div class="image-placeholder"><img id="blah1" src="#" alt="600*400(.jpg)" /></div>
+                                                @Html.TextBoxFor(m => m.ImageUploadTwo, new { type = "file", @accept = "image/*", onchange = "ShowImage1(this)" })
                                                 @Html.ValidationMessageFor(m => m.ImageUploadTwo, "", new { @class = "text-danger" })
                                             </div>
                                             <div class="col-md-3 col-sm-3 submit-image">
-                                                <div class="image-placeholder"><img id="blah2" src="#" alt="600*400(.jpg)" /></div>  
-                                                @Html.TextBoxFor(m => m.ImageUploadThree, new { type = "file", @accept = "image/*" , onchange = "ShowImage2(this)" })
+                                                <div class="image-placeholder"><img id="blah2" src="#" alt="600*400(.jpg)" /></div>
+                                                @Html.TextBoxFor(m => m.ImageUploadThree, new { type = "file", @accept = "image/*", onchange = "ShowImage2(this)" })
                                                 @Html.ValidationMessageFor(m => m.ImageUploadThree, "", new { @class = "text-danger" })
                                             </div>
                                         </div>
@@ -259,11 +267,11 @@
                                         {
                                             if (i == 0 || i % 3 == 0)
                                             {
-                                               @:<div class="row">
+                                                @:<div class="row">
                                             }
                                             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                                                 <label class="checkbox">
-                                                    @Html.CheckBoxFor(m => Model.Amenity[i].Selected)  @Html.DisplayFor( m => Model.Amenity[i].Text)
+                                                    @Html.CheckBoxFor(m => Model.Amenity[i].Selected)  @Html.DisplayFor(m => Model.Amenity[i].Text)
                                                     @Html.HiddenFor(m => Model.Amenity[i].Value)
                                                 </label>
                                             </div>
@@ -272,13 +280,13 @@
                                                 @:</div>
                                             }
                                         }
-                                      
+
                                     </div>
                                     <div class="block-heading" id="seller">
                                         <a href="#submit-property" class="btn btn-sm btn-default pull-right">Submit Property <i class="fa fa-chevron-down"></i></a>
                                         <h4><span class="heading-icon"><img src="~/images/faa.png" /></span>Seller Information</h4>
                                     </div>
-                                    
+
                                     <div class="padding-as25 margin-20 lgray-bg">
                                         <div class="row">
                                             <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">

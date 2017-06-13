@@ -174,6 +174,9 @@ namespace Kaylan.Porperty.Web.Controllers
                 Bathroom = propertyDetail.SelectedBathtId,
                 Bedroom = propertyDetail.SelectedBedtId,
                 UserId = User.Identity.GetUserId<int>(),
+                FromPrice = Convert.ToString(propertyDetail.Price),
+                Parking = "2",
+                ContractType = iUnitOfWork.Repository<ContractType>().Get(x => x.Id == propertyDetail.SelectedContractId).Name,
                 PropertyImages = new List<PropertyImage>()
                 {
                     new PropertyImage { ImagePath=imagesOne,IsActive=true},

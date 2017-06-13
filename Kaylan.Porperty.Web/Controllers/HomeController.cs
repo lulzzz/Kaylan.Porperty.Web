@@ -3,6 +3,7 @@ using Kalyan.Property.Infrastructure.Models;
 using Kaylan.Porperty.Web.ViewModel;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
+using PagedList;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,8 +25,7 @@ namespace Kaylan.Porperty.Web.Controllers
         }
 
         private ApplicationUserManager _userManager;
-
-        
+        private int pageSize = 6;
 
         public HomeController(ApplicationUserManager userManager)
         {
@@ -45,15 +45,32 @@ namespace Kaylan.Porperty.Web.Controllers
             }
         }
 
-        public ActionResult Index()
+        public ActionResult Index(int? page)
         {
-            //using (unitOfWork = new UnitOfWork())
-            //{
-            //    unitOfWork.Repository<Countries>().Add(new Countries() { Name = "England" });
-            //    var result = unitOfWork.Commit();
-            //}
+            var result = from pd in unitOfWork.Repository<PropertyDetail>().GetAll()
 
-            return View();
+                         join a in unitOfWork.Repository<Area>().GetAll()
+                         on pd.AreaId equals a.Id
+                         
+                         select new PropertyDetailListViewModel()
+                         {
+                             Bathroom = pd.Bathroom,
+                             Bedroom = pd.Bedroom,
+                             Approved = pd.Approved,
+                             Id = pd.Id,
+                             PropertyName = pd.PropertyName,
+                             Parking = pd.Parking,
+                             AreaName = a.Name,
+                             ContractType = pd.ContractType,
+                             PorpertyImageUrl = unitOfWork.Repository<PropertyImage>().Get(y => y.PropertyDetailId == pd.Id).ImagePath,
+                             Price = pd.FromPrice
+                         };
+
+            var data = result.ToPagedList(page ?? 1, pageSize);
+
+            
+
+            return View(data);
         }
 
         public ActionResult About()
@@ -135,8 +152,6 @@ namespace Kaylan.Porperty.Web.Controllers
             return View();
         }
 
-
-
         // GET: User
         [HttpGet]
         public ActionResult Register()
@@ -158,7 +173,6 @@ namespace Kaylan.Porperty.Web.Controllers
                     FirstName = userViewModel.FirstName,
                     Phone = userViewModel.Phone,
                     Gender = userViewModel.Gender,
-                    
                 };
 
                 var result = await UserManager.CreateAsync(user, userViewModel.Password);
@@ -184,7 +198,6 @@ namespace Kaylan.Porperty.Web.Controllers
                 ModelState.AddModelError("", error);
             }
         }
-
 
         //public ActionResult AllUser()
         //{

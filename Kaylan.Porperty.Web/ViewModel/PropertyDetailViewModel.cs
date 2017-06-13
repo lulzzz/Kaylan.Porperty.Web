@@ -72,21 +72,27 @@ namespace Kaylan.Porperty.Web.ViewModel
 
         public IEnumerable<SelectListItem> BathList { get; set; }
 
+        [MaxLength(50, ErrorMessage = "String length is more than 50")]
         [Required(ErrorMessage = "Property Name Required.")]
         public string PropertyName { get; set; }
 
         [Required(ErrorMessage = "Property Description Required.")]
+        [MaxLength(50,ErrorMessage ="String length is more than 50")]
         public string PropertyDescription { get; set; }
 
+        [MaxLength(50, ErrorMessage = "String length is more than 50")]
         [Required(ErrorMessage = "FullName Required.")]
         public string FullName { get; set; }
 
+        [MaxLength(50, ErrorMessage = "String length is more than 50")]
         [Required(ErrorMessage = "Phone Required.")]
         public string Phone { get; set; }
 
+        [MaxLength(50, ErrorMessage = "String length is more than 50")]
         [Required(ErrorMessage = "Email Required.")]
         public string Email { get; set; }
 
+        [MaxLength(100, ErrorMessage = "String length is more than 100")]
         [Required(ErrorMessage = "Comments Required.")]
         public string Comments { get; set; }
 
@@ -106,5 +112,7 @@ namespace Kaylan.Porperty.Web.ViewModel
         public HttpPostedFileBase ImageUploadThree { get; set; }
 
         public List<SelectListItem> Amenity { set; get; }
+
+        public int Price { get; set; }
     }
 }

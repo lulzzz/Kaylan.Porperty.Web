@@ -1,4 +1,6 @@
-﻿<!DOCTYPE HTML>
+﻿@model PagedList.IPagedList<Kaylan.Porperty.Web.ViewModel.PropertyDetailListViewModel>
+@using PagedList.Mvc;
+<!DOCTYPE HTML>
 <html lang="en-US" class="no-js">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -24,8 +26,8 @@
     <link rel='stylesheet' href='@Url.Content("~/content/css/prettyPhoto.css")' type='text/css' media='all' />
     <link rel='stylesheet' href='@Url.Content("~/content/css/owl.carousel.css")' type='text/css' media='all' />
     <link rel='stylesheet' href='@Url.Content("~/content/css/owl.theme.css")' type='text/css' media='all' />
-    <link rel="stylesheet" href="@Url.Content("~/content/css/color1.css")" type="text/css"/>
-<link rel="stylesheet" href="@Url.Content("~/content/css/dropdown")" type="text/css" />
+    <link rel="stylesheet" href="@Url.Content("~/content/css/color1.css")" type="text/css" />
+    <link rel="stylesheet" href="@Url.Content("~/content/css/dropdown")" type="text/css" />
     <!-- Scripts -->
     <script type='text/javascript' src="@Url.Content("~/scripts/jquery.js")"></script>
     <script type='text/javascript' src="@Url.Content("~/scripts/jquery-migrate.min.js")"></script>
@@ -34,7 +36,6 @@
     <script type='text/javascript' src="@Url.Content("~/scripts/jquery.themepunch.tools.min.js")"></script>
     <script type='text/javascript' src="@Url.Content("~/scripts/jquery.themepunch.revolution.min.js")"></script>
     <script type='text/javascript' src="@Url.Content("~/scripts/modernizr.js")"></script>
-
 
     <script type='text/javascript' src="@Url.Content("~/scripts/favorite.js")"></script>
     <script type='text/javascript' src="@Url.Content("~/scripts/newslatter.js")"></script>
@@ -62,7 +63,6 @@
     <script type='text/javascript' src="@Url.Content("~/scripts/autocomplete.js")"></script>
     <script type='text/javascript' src="@Url.Content("~/scripts/jquery_cookie.js")"></script>
     <script type='text/javascript' src="@Url.Content("~/scripts/script.js")"></script>
-
 </head>
 <body class="home page page-id-223 page-template page-template-template-home page-template-template-home-php ">
     <!--[if lt IE 7]>
@@ -81,7 +81,6 @@
                                     Place your Kalyan property on the best Property Portal
                                 </b>
                             </marquee>
-
                         </div>
 
                         <div class="col-lg-3 col-md-3 col-sm-12">
@@ -92,7 +91,6 @@
                                 <li class="dropdown">
                                     <i class="fa fa-user"></i>
                                     <a href="/Login/SignIn">Login</a>
-
 
                                     <ul class="dropdown-menu">
                                         <li><a href="#" title="Favorite Properties">Favorite Properties</a></li>
@@ -106,14 +104,12 @@
                                     <i class="fa fa-check-circle"></i>
                                     <a href="/Home/Register">Register</a>
                                 </li>
-                                
+
                                 <li class="dropdown">
                                     <a href="/Home/Register">Register</a>
                                     <i class="fa fa-user"></i>
-
                                 </li>
                             </ul>
-
                         </div>
                     </div>
                 </div>
@@ -168,8 +164,6 @@
                                     <li id="menu-item-226" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-226"> <a href="/PropertyDetail/CreatePropertyDetails">List your property</a></li>
                                     <li id="menu-item-209" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-209"> @Html.ActionLink("Membership", "membership", "Home")</li>
                                     <li id="menu-item-240" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-240">@Html.ActionLink("Contact", "Contact", "Home")</li>
-
-
                                 </ul>
                             </nav>
                         </div>
@@ -194,7 +188,7 @@
                     <div class="site-search-module-inside">
                         <form method="get" action="search results.html">
                             <input type="hidden" class="form-control" name="s" id="s" value="Search" />
-                           @*<text class="form-control" name="s" id="s" value="Search1" />*@
+                            @*<text class="form-control" name="s" id="s" value="Search1" />*@
                             <div class="row">
                                 <div class="col-md-8 search-fields">
                                     <div class="search_by">
@@ -237,9 +231,6 @@
                                             <option selected>City</option>
                                             <option value='Mumbai'>Mumbai</option>
                                             <option value='Thane'>Pune</option>
-
-
-
                                         </select>
                                     </div>
                                     <div class="search-field">
@@ -282,7 +273,6 @@
                                             <option value='Unfuenished'>Unfurnished</option>
                                             <option value='Semi Furnished'>Semi Furnished</option>
                                             <option value='Fully Furnished'>Fully Furnished</option>
-
                                         </select>
                                     </div>
                                     <div class="search-field">
@@ -294,7 +284,6 @@
                                             <option value='Ahad Holdings WLL'>Ahad Holdings WLL</option>
                                             <option value='Al Rayes Real Estate'>Al Rayes Real Estate</option>
                                             <option value='Alafif Real Estate'>Alafif Real Estate</option>
-
                                         </select>
                                     </div>
                                     <div class="search-field">
@@ -347,19 +336,18 @@
                                             <option value='Lowest Price First'>Lowest Price First</option>
                                         </select>
                                     </div>
-
                                 </div>
                                 <div class="col-md-4 search-buttons">
                                     <div class="row">
                                         <div class="search-button">
-                                            <button type="submit" class="btn btn-primary btn-block btn-lg"><i class="fa fa-search" ></i>Search </button>
+                                            <button type="submit" class="btn btn-primary btn-block btn-lg"><i class="fa fa-search"></i>Search </button>
                                         </div>
                                         <div class="search-button">
                                             <a href="#" id="ads-trigger" class="btn btn-default btn-block"><i class="fa fa-plus"></i><span>Advanced</span></a>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        
+
                                         <br>
                                         <div class="add-property">
                                             <div class="block-heading">
@@ -385,8 +373,6 @@
                     </div>
                 </div>
             </div>
-
-
         </div>
         <!-- End Showcase -->
         <!-- Start Content -->
@@ -420,107 +406,144 @@
                                 </div>
                             </div>
                             <ul>
-                                <li class="col-md-4 col-sm-6 type-rent">
-                                    <div class="property-block">
-                                        <a href="details.html" class="property-featured-image">
-                                            <img src="" class="attachment-600-400-size size-600-400-size wp-post-image" alt="slide1" srcset="@Url.Content("~/images/s1.jpg") " sizes="(max-width: 600px) 100vw, 600px" />
-                                            <span class="images-count">
-                                                <i class="fa fa-map-signs"></i></strong><span class="">Kahadkpada</span>
-                                                <!--<i class="fa fa-picture-o"></i> 3-->
-                                            </span>
-                                            <span class="badges badge-sale">Sale</span>
-                                        </a>
-                                        <div class="property-info">
-                                            <h4><a href="details.html">Property 1</a></h4><br>
-                                            <div class="price"><strong><i class="fa fa-inr"></i></strong><span class="">10000</span></div>
-                                        </div>
-                                        <div class="property-amenities clearfix"><span class="area">5000<strong></strong>Area</span><span class="baths"><strong>3</strong>Baths</span><span class="beds"><strong>4</strong>Beds</span><span class="parking"><strong>2</strong>Parking</span></div>
-                                    </div>
-                                </li>
-                                <li class="col-md-4 col-sm-6 type-rent">
-                                    <div class="property-block">
-                                        <a href="details.html" class="property-featured-image">
-                                            <img src="#" class="attachment-600-400-size size-600-400-size wp-post-image" alt="slide2" srcset="@Url.Content("~/images/s2.jpg")" sizes="(max-width: 600px) 100vw, 600px" />
-                                            <span class="images-count">
-                                                <i class="fa fa-map-signs"></i></strong><span class="">Kahadkpada</span>
-                                                <!--<i class="fa fa-picture-o"></i> 3-->
-                                            </span>
-                                            <span class="badges badge-rent">Rent</span>
-                                        </a><div class="property-info">
-                                            <h4><a href="details.html">Property 2</a></h4><br>
-                                            <div class="price"><strong><i class="fa fa-inr"></i></strong><span class="">11000</span></div>
-                                        </div>
-                                        <div class="property-amenities clearfix"><span class="area">5000<strong></strong>Area</span><span class="baths"><strong>1</strong>Baths</span><span class="beds"><strong>4</strong>Beds</span><span class="parking"><strong>1</strong>Parking</span></div>
-                                    </div>
-                                </li>
-                                <li class="col-md-4 col-sm-6 type-rent">
-                                    <div class="property-block">
-                                        <a href="details.html" class="property-featured-image">
-                                            <img src="#" class="attachment-600-400-size size-600-400-size wp-post-image" alt="property4" srcset="@Url.Content("~/images/s3.jpg")" sizes="(max-width: 600px) 100vw, 600px" />
-                                            <span class="images-count">
-                                                <i class="fa fa-map-signs"></i></strong><span class="">Kahadkpada</span>
-                                                <!--<i class="fa fa-picture-o"></i> 3-->
-                                            </span>
-                                            <span class="badges badge-sale">Sale</span>
-                                        </a><div class="property-info">
-                                            <h4><a href="details.html">Property 3</a></h4><br>
-                                            <div class="price"><strong><i class="fa fa-inr"></i></strong><span class="">15000</span></div>
-                                        </div>
-                                        <div class="property-amenities clearfix"><span class="area">5000<strong></strong>Area</span><span class="baths"><strong>2</strong>Baths</span><span class="beds"><strong>4</strong>Beds</span><span class="parking"><strong>2</strong>Parking</span></div>
-                                    </div>
-                                </li>
-                                <li class="col-md-4 col-sm-6 type-rent">
-                                    <div class="property-block">
-                                        <a href="details.html" class="property-featured-image">
-                                            <img src="#" class="attachment-600-400-size size-600-400-size wp-post-image" alt="property5" srcset="@Url.Content("~/images/s4.jpg")" sizes="(max-width: 600px) 100vw, 600px" />
-                                            <span class="images-count">
-                                                <i class="fa fa-map-signs"></i></strong><span class="">Kahadkpada</span>
-                                                <!--<i class="fa fa-picture-o"></i> 3-->
-                                            </span>
-                                            <span class="badges badge-rent">Rent</span>
-                                        </a><div class="property-info">
-                                            <h4><a href="details.html">Property 4</a></h4><br>
-                                            </h4><div class="price"><strong><i class="fa fa-inr"></i></strong><span class="">20000</span></div>
-                                        </div>
-                                        <div class="property-amenities clearfix"><span class="area">5000<strong></strong>Area</span><span class="baths"><strong>4</strong>Baths</span><span class="beds"><strong>5</strong>Beds</span><span class="parking"><strong>3</strong>Parking</span></div>
-                                    </div>
-                                </li>
-                                <li class="col-md-4 col-sm-6 type-rent">
-                                    <div class="property-block">
-                                        <a href="details.html" class="property-featured-image">
-                                            <img src="#" class="attachment-600-400-size size-600-400-size wp-post-image" alt="property7" srcset="images/s5.jpg," sizes="(max-width: 600px) 100vw, 600px" />
-                                            <span class="images-count">
-                                                <i class="fa fa-map-signs"></i></strong><span class="">Kahadkpada</span>
-                                                <!--<i class="fa fa-picture-o"></i> 3-->
-                                            </span>
-                                            <span class="badges badge-sale">Sale</span>
-                                        </a><div class="property-info">
-                                            <h4><a href="details.html">Property 5</a></h4><br>
-                                            <div class="price"><strong><i class="fa fa-inr"></i></strong><span class="">25000</span></div>
-                                        </div>
-                                        <div class="property-amenities clearfix"><span class="area">5000<strong></strong>Area</span><span class="baths"><strong>3</strong>Baths</span><span class="beds"><strong>4</strong>Beds</span><span class="parking"><strong>3</strong>Parking</span></div>
-                                    </div>
-                                </li>
-                                <li class="col-md-4 col-sm-6 type-rent">
-                                    <div class="property-block">
-                                        <a href="details.html" class="property-featured-image">
-                                            <img src="#" class="attachment-600-400-size size-600-400-size wp-post-image" alt="slide3" srcset="@Url.Content("~/images/s6.jpg")" sizes="(max-width: 600px) 100vw, 600px" />
-                                            <span class="images-count">
-                                                <!--                                            <i class="fa fa-picture-o"></i> 3-->
-                                                <i class="fa fa-map-signs"></i></strong><span class="">Kahadkpada</span>
-                                            </span>
 
-                                            <span class="badges badge-rent">Rent</span>
-                                        </a><div class="property-info">
-                                            <h4><a href="details.html">Property 6</a></h4><br>
-                                            <div class="price"><strong><i class="fa fa-inr"></i></strong><span class="">2800000</span></div>
+                                @foreach (var property in Model)
+                                {
+                                    <li class="col-md-4 col-sm-6 type-rent">
+                                        <div class="property-block">
+                                            <a href="details.html" class="property-featured-image">
+                                                <img src="" class="attachment-600-400-size size-600-400-size wp-post-image" alt="slide1" srcset="@Url.Content(property.PorpertyImageUrl) " sizes="(max-width: 600px) 100vw, 600px" />
+                                                <span class="images-count">
+                                                    <i class="fa fa-map-signs"></i><span class="">@property.AreaName</span>
+                                                    <!--<i class="fa fa-picture-o"></i> 3-->
+                                                </span>
+                                                <span class="badges badge-sale">@property.ContractType</span>
+                                            </a>
+                                            <div class="property-info">
+                                                <h4><a href="details.html">@property.PropertyName</a></h4><br>
+                                                <div class="price"><strong><i class="fa fa-inr"></i></strong><span class="">@property.Price</span></div>
+                                            </div>
+                                            <div class="property-amenities clearfix"><span class="area">5000<strong></strong>Area</span><span class="baths"><strong>@property.Bathroom</strong>Baths</span><span class="beds"><strong>@property.Bedroom</strong>Beds</span><span class="parking"><strong>@property.Parking</strong>Parking</span></div>
                                         </div>
-                                        <div class="property-amenities clearfix"><span class="area">5000<strong></strong>Area</span><span class="baths"><strong>5</strong>Baths</span><span class="beds"><strong>5</strong>Beds</span><span class="parking"><strong>3</strong>Parking</span></div>
-                                    </div>
-                                </li>
+                                    </li>
+                                }
+                                @*<li class="col-md-4 col-sm-6 type-rent">
+                                        <div class="property-block">
+                                            <a href="details.html" class="property-featured-image">
+                                                <img src="" class="attachment-600-400-size size-600-400-size wp-post-image" alt="slide1" srcset="@Url.Content("~/images/s1.jpg") " sizes="(max-width: 600px) 100vw, 600px" />
+                                                <span class="images-count">
+                                                    <i class="fa fa-map-signs"></i></strong><span class="">Kahadkpada</span>
+                                                    <!--<i class="fa fa-picture-o"></i> 3-->
+                                                </span>
+                                                <span class="badges badge-sale">Sale</span>
+                                            </a>
+                                            <div class="property-info">
+                                                <h4><a href="details.html">Property 1</a></h4><br>
+                                                <div class="price"><strong><i class="fa fa-inr"></i></strong><span class="">10000</span></div>
+                                            </div>
+                                            <div class="property-amenities clearfix">
+                                                <span class="area">
+                                                    5000<strong>
+                                                    </strong>Area
+                                                </span><span class="baths">
+                                                    <strong>3</strong>Baths
+                                                </span>
+                                                <span class="beds">
+                                                    <strong>4</strong>Beds
+                                                </span><span class="parking">
+                                                    <strong>2</strong>Parking
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="col-md-4 col-sm-6 type-rent">
+                                        <div class="property-block">
+                                            <a href="details.html" class="property-featured-image">
+                                                <img src="#" class="attachment-600-400-size size-600-400-size wp-post-image" alt="slide2" srcset="@Url.Content("~/images/s2.jpg")" sizes="(max-width: 600px) 100vw, 600px" />
+                                                <span class="images-count">
+                                                    <i class="fa fa-map-signs"></i></strong><span class="">Kahadkpada</span>
+                                                    <!--<i class="fa fa-picture-o"></i> 3-->
+                                                </span>
+                                                <span class="badges badge-rent">Rent</span>
+                                            </a><div class="property-info">
+                                                <h4><a href="details.html">Property 2</a></h4><br>
+                                                <div class="price"><strong><i class="fa fa-inr"></i></strong><span class="">11000</span></div>
+                                            </div>
+                                            <div class="property-amenities clearfix"><span class="area">5000<strong></strong>Area</span><span class="baths"><strong>1</strong>Baths</span><span class="beds"><strong>4</strong>Beds</span><span class="parking"><strong>1</strong>Parking</span></div>
+                                        </div>
+                                    </li>
+                                    <li class="col-md-4 col-sm-6 type-rent">
+                                        <div class="property-block">
+                                            <a href="details.html" class="property-featured-image">
+                                                <img src="#" class="attachment-600-400-size size-600-400-size wp-post-image" alt="property4" srcset="@Url.Content("~/images/s3.jpg")" sizes="(max-width: 600px) 100vw, 600px" />
+                                                <span class="images-count">
+                                                    <i class="fa fa-map-signs"></i></strong><span class="">Kahadkpada</span>
+                                                    <!--<i class="fa fa-picture-o"></i> 3-->
+                                                </span>
+                                                <span class="badges badge-sale">Sale</span>
+                                            </a><div class="property-info">
+                                                <h4><a href="details.html">Property 3</a></h4><br>
+                                                <div class="price"><strong><i class="fa fa-inr"></i></strong><span class="">15000</span></div>
+                                            </div>
+                                            <div class="property-amenities clearfix"><span class="area">5000<strong></strong>Area</span><span class="baths"><strong>2</strong>Baths</span><span class="beds"><strong>4</strong>Beds</span><span class="parking"><strong>2</strong>Parking</span></div>
+                                        </div>
+                                    </li>
+                                    <li class="col-md-4 col-sm-6 type-rent">
+                                        <div class="property-block">
+                                            <a href="details.html" class="property-featured-image">
+                                                <img src="#" class="attachment-600-400-size size-600-400-size wp-post-image" alt="property5" srcset="@Url.Content("~/images/s4.jpg")" sizes="(max-width: 600px) 100vw, 600px" />
+                                                <span class="images-count">
+                                                    <i class="fa fa-map-signs"></i></strong><span class="">Kahadkpada</span>
+                                                    <!--<i class="fa fa-picture-o"></i> 3-->
+                                                </span>
+                                                <span class="badges badge-rent">Rent</span>
+                                            </a><div class="property-info">
+                                                <h4><a href="details.html">Property 4</a></h4><br>
+                                                </h4><div class="price"><strong><i class="fa fa-inr"></i></strong><span class="">20000</span></div>
+                                            </div>
+                                            <div class="property-amenities clearfix"><span class="area">5000<strong></strong>Area</span><span class="baths"><strong>4</strong>Baths</span><span class="beds"><strong>5</strong>Beds</span><span class="parking"><strong>3</strong>Parking</span></div>
+                                        </div>
+                                    </li>
+                                    <li class="col-md-4 col-sm-6 type-rent">
+                                        <div class="property-block">
+                                            <a href="details.html" class="property-featured-image">
+                                                <img src="#" class="attachment-600-400-size size-600-400-size wp-post-image" alt="property7" srcset="images/s5.jpg," sizes="(max-width: 600px) 100vw, 600px" />
+                                                <span class="images-count">
+                                                    <i class="fa fa-map-signs"></i></strong><span class="">Kahadkpada</span>
+                                                    <!--<i class="fa fa-picture-o"></i> 3-->
+                                                </span>
+                                                <span class="badges badge-sale">Sale</span>
+                                            </a><div class="property-info">
+                                                <h4><a href="details.html">Property 5</a></h4><br>
+                                                <div class="price"><strong><i class="fa fa-inr"></i></strong><span class="">25000</span></div>
+                                            </div>
+                                            <div class="property-amenities clearfix"><span class="area">5000<strong></strong>Area</span><span class="baths"><strong>3</strong>Baths</span><span class="beds"><strong>4</strong>Beds</span><span class="parking"><strong>3</strong>Parking</span></div>
+                                        </div>
+                                    </li>
+                                    <li class="col-md-4 col-sm-6 type-rent">
+                                        <div class="property-block">
+                                            <a href="details.html" class="property-featured-image">
+                                                <img src="#" class="attachment-600-400-size size-600-400-size wp-post-image" alt="slide3" srcset="@Url.Content("~/images/s6.jpg")" sizes="(max-width: 600px) 100vw, 600px" />
+                                                <span class="images-count">
+                                                    <!--                                            <i class="fa fa-picture-o"></i> 3-->
+                                                    <i class="fa fa-map-signs"></i></strong><span class="">Kahadkpada</span>
+                                                </span>
+
+                                                <span class="badges badge-rent">Rent</span>
+                                            </a><div class="property-info">
+                                                <h4><a href="details.html">Property 6</a></h4><br>
+                                                <div class="price"><strong><i class="fa fa-inr"></i></strong><span class="">2800000</span></div>
+                                            </div>
+                                            <div class="property-amenities clearfix"><span class="area">5000<strong></strong>Area</span><span class="baths"><strong>5</strong>Baths</span><span class="beds"><strong>5</strong>Beds</span><span class="parking"><strong>3</strong>Parking</span></div>
+                                        </div>
+                                    </li>*@
                             </ul>
                         </div>
                     </div>
+                </div>
+                <div id="contentPager">
+
+                    @Html.PagedListPager(Model, page => Url.Action("Index", new { page }), PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(new AjaxOptions() { HttpMethod = "GET"}))
                 </div>
                 <div>
                     <div class="container">
@@ -593,8 +616,6 @@
                         </div>
                     </div>
                 </div>
-
-
 
                 <div class="padding-tb45 bottom-blocks">
                     <div class="container">
@@ -738,7 +759,6 @@
 
                     <div class="spacer-20"></div>
 
-
                     <div class="container">
                         <div class="block-heading">
                             <h4><span class="heading-icon"><img src="" @Url.Content("~/images/faa.png") "></span>Our Clients</h4>
@@ -802,7 +822,6 @@
                             <div class="social-icons">
                                 <a href="#"><i class="fa fa-facebook"></i></a>
                                 <a href="#"><i class="fa fa-twitter"></i></a>
-
                             </div>
                         </div>
                     </div>
@@ -811,7 +830,6 @@
             <!-- End Site Footer -->
             <a id="back-to-top"><i class="fa fa-angle-double-up"></i></a>
         </div>
-
 </body>
 </html>
 <!-- Dynamic page generated in 4.267 seconds. -->
