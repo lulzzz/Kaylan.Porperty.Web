@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Kalyan.Property.Infrastructure.Models.PropertyRequest>
+﻿@model IEnumerable<Kaylan.Porperty.Web.ViewModel.PropertyRequestListingViewModel>
 <link rel='stylesheet' id='imic_main-css' href='~/Content/contactus.css' type='text/css' media='all' />
 
 <h3>Property Request List</h3>
@@ -18,15 +18,12 @@
             @Html.DisplayNameFor(model => model.ContactType)
         </th>
 
-
         <th></th>
     </tr>
 
     @foreach (var item in Model)
-    { 
+    {
         <tr>
-
-
             <td>
                 @Html.DisplayFor(modelItem => item.FullName)
             </td>
@@ -39,21 +36,15 @@
             <td>
                 @Html.DisplayFor(modelItem => item.ContactType)
             </td>
-
-
-
             <td>
                 <div class="agent">
-
-
                     <!-- Button trigger modal -->
                     <button type="button" style="margin-left:30px;" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong-@item.PropertyRequestId">
                         Display Propery Details
                     </button>
-
                     <!-- Modal -->
                     <div class="modal fade" id="exampleModalLong-@item.PropertyRequestId" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true"
-                         id="model" style="float:left;">
+                         style="float:left;">
                         <div class="modal-dialog" role="document" style="float:left;margin-left:0px;margin-top:0px;left: 100px;top:0;">
                             <div class="modal-content" style="width:1150px;left:0px;height:350px;">
                                 <div class="modal-header" style="background-color:#FF9800;">
@@ -63,76 +54,49 @@
                                     </button>
                                 </div>
                                 <div class="modal-body">
-
-
                                     <div id="main1" style="width:1000px;height:250px;">
 
                                         <div id="row2" style="float:left;width:300px;height:auto;margin-left:0px;">
                                             <h5>Property Request List</h5>
-
-
-
                                             <table class="table" cellpadding="10">
-
                                                 <tr>
-                                                   
-
-                                                    <th> @Html.DisplayNameFor(model => model.FullName)</th>
-                                                    <th>    @Html.DisplayNameFor(model => model.Email)</th>
+                                                    <th>@Html.DisplayNameFor(model => model.FullName)</th>
+                                                    <th>@Html.DisplayNameFor(model => model.Email)</th>
                                                     <th>@Html.DisplayNameFor(model => model.PhoneNumber)</th>
                                                     <th>@Html.DisplayNameFor(model => model.ContactType)</th>
                                                     <th>@Html.DisplayNameFor(model => model.FromPrice)</th>
                                                     <th>@Html.DisplayNameFor(model => model.ToPrice)</th>
                                                     <th>@Html.DisplayNameFor(model => model.PropertyDescription)</th>
-
                                                     <th>@Html.DisplayNameFor(model => model.CreatedDate)</th>
-                                                   
-
-                                                    <th>@Html.DisplayNameFor(model => model.PropertyRequestAreaId) </th>
-
-
+                                                    <th>@Html.DisplayNameFor(model => model.PropertyRequestArea) </th>
                                                 </tr>
 
-                                                @foreach (var items in Model.Where(x=>x.PropertyRequestId == item.PropertyRequestId))
+                                                @foreach (var items in Model.Where(x => x.PropertyRequestId == item.PropertyRequestId))
                                                 {
-
                                                     <tr>
-                                                      
                                                         <td>@Html.DisplayFor(modelItem => items.FullName)</td>
-                                                        <td> @Html.DisplayFor(modelItem => items.Email) </td>
+                                                        <td>@Html.DisplayFor(modelItem => items.Email) </td>
                                                         <td>@Html.DisplayFor(modelItem => items.PhoneNumber)</td>
-                                                        
                                                         <td>@Html.DisplayFor(modelItem => items.ContactType)</td>
                                                         <td>@Html.DisplayFor(modelItem => items.FromPrice)</td>
                                                         <td>@Html.DisplayFor(modelItem => items.ToPrice)</td>
                                                         <td>@Html.DisplayFor(modelItem => items.PropertyDescription)</td>
                                                         <td>@Html.DisplayFor(modelItem => items.CreatedDate)</td>
-                                                          <td>@Html.DisplayFor(modelItem => items.PropertyRequestAreaId)</td>
-                                                        
-
-
-
-
-
+                                                        <td>@Html.DisplayFor(modelItem => items.PropertyRequestArea)</td>
                                                     </tr>
-
                                                 }
-
-
                                             </table>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="modal-footer" style="background-color:#FF9800;">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </td>
-
         </tr>
     }
-    </table>
+</table>

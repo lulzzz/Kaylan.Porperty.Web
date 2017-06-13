@@ -219,6 +219,7 @@
     <Compile Include="ViewModel\CountryViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\PropertyDetailViewModel.cs" />
+    <Compile Include="ViewModel\PropertyRequestListingViewModel.cs" />
     <Compile Include="ViewModel\PropertyRequestViewModel.cs" />
     <Compile Include="ViewModel\ResetPasswordViewModel.cs" />
     <Compile Include="ViewModel\StateViewModel.cs" />

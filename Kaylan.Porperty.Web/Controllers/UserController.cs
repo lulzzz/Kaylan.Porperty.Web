@@ -3,7 +3,6 @@ using Kalyan.Property.Infrastructure.Models;
 using Kaylan.Porperty.Web.ViewModel;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
-using Microsoft.Owin;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,7 +16,7 @@ namespace Kaylan.Porperty.Web.Controllers
     [Authorize]
     public class UserController : Controller
     {
-        CustomeDbContext db = new CustomeDbContext();
+        private CustomeDbContext db = new CustomeDbContext();
 
         private ApplicationUserManager _userManager;
         private IUnitOfWork iUnitOfWork;
@@ -204,47 +203,40 @@ namespace Kaylan.Porperty.Web.Controllers
 
         public ActionResult AdminDashboard()
         {
-
             CustomeDbContext db = new CustomeDbContext();
 
-              IList<Users> UserList = new List<Users>();
+            IList<Users> UserList = new List<Users>();
 
-              ViewBag.UserList = iUnitOfWork.Repository<Users>().GetAll().ToList().Count();
+            ViewBag.UserList = iUnitOfWork.Repository<Users>().GetAll().ToList().Count();
 
             //IList<PropertyDetail> pendingapproved = new List<PropertyDetail>();
             // ViewBag.approved = pendingapproved.Where(x => x.Approved == null).Count() == 0 ? 0 : pendingapproved.Where(x => x.Approved == null).Count();
 
             ViewBag.approved = iUnitOfWork.Repository<PropertyDetail>().GetMany((k => k.Approved == false && k.Approved != true)).Count();
             ViewBag.Unapproved = iUnitOfWork.Repository<PropertyDetail>().GetMany((k => k.Approved == true && k.Approved != false)).Count();
-             ViewBag.salescount = db.ContractTypes.Select(k => k.Id == 1).Count();
-             ViewBag.rentcount = db.ContractTypes.Select(k=>k.Id==2).Count();
-            
+            ViewBag.salescount = db.ContractTypes.Select(k => k.Id == 1).Count();
+            ViewBag.rentcount = db.ContractTypes.Select(k => k.Id == 2).Count();
+
             ViewBag.propertyRequest = db.PropertyRequests.Count();
             var dateCriteria = DateTime.Now.Date.AddDays(-7);
             ViewBag.newlisting = iUnitOfWork.Repository<PropertyRequest>().GetMany(r => r.CreatedDate >= dateCriteria).Count();
-          
-
 
             return View();
         }
 
-
         public ActionResult TotalUser()
         {
-           var list= iUnitOfWork.Repository<Users>().GetAll().ToList();
+            var list = iUnitOfWork.Repository<Users>().GetAll().ToList();
             if (list == null)
                 Response.Write("<script>alert(' Property Request details not found')</script>");
 
             return PartialView(list);
-
-           
         }
-
 
         public ActionResult SalesList()
         {
             var list = iUnitOfWork.Repository<PropertyDetail>().GetMany((k => k.ContractType == "For Sale" && k.ContractType != ""));
-               
+
             if (list == null)
                 Response.Write("<script>alert(' Property For Sale not found')</script>");
             return PartialView(list);
@@ -259,13 +251,9 @@ namespace Kaylan.Porperty.Web.Controllers
             return PartialView(list);
         }
 
-
-
-
-
         public ActionResult PendingUser()
         {
-            var list = iUnitOfWork.Repository<PropertyDetail>().GetMany((k => k.Approved== false && k.Approved !=true));
+            var list = iUnitOfWork.Repository<PropertyDetail>().GetMany((k => k.Approved == false && k.Approved != true));
             if (list == null)
                 Response.Write("<script>alert(' Approved property For user not Found')</script>");
 
@@ -276,29 +264,25 @@ namespace Kaylan.Porperty.Web.Controllers
         public ActionResult PendingUser(System.Web.Mvc.FormCollection formcollection)
         {
             CustomeDbContext db = new CustomeDbContext();
-            string[] ids = formcollection["UserID"].Split(new char[] {','});
-            foreach(string id in ids)
-            { 
+            string[] ids = formcollection["UserID"].Split(new char[] { ',' });
+            foreach (string id in ids)
+            {
                 var list1 = iUnitOfWork.Repository<PropertyDetail>().GetById(int.Parse(id));
                 list1.Approved = true;
                 iUnitOfWork.Commit();
-               
             }
             var list = iUnitOfWork.Repository<PropertyDetail>().GetMany((k => k.Approved == false && k.Approved != true));
             return RedirectToAction("AdminDashboard");
-
         }
-
 
         public ActionResult ApprovedProperty()
         {
-            var list = iUnitOfWork.Repository<PropertyDetail>().GetMany((k => k.Approved ==true && k.Approved != false));
+            var list = iUnitOfWork.Repository<PropertyDetail>().GetMany((k => k.Approved == true && k.Approved != false));
             if (list == null)
                 Response.Write("<script>alert(' Approved property For user not Found')</script>");
 
             return PartialView(list);
         }
-
 
         [HttpPost]
         public ActionResult ApprovedProperty(System.Web.Mvc.FormCollection formcollection)
@@ -310,23 +294,35 @@ namespace Kaylan.Porperty.Web.Controllers
                 var list1 = iUnitOfWork.Repository<PropertyDetail>().GetById(int.Parse(id));
                 list1.Approved = false;
                 iUnitOfWork.Commit();
-
             }
             var list = iUnitOfWork.Repository<PropertyDetail>().GetMany((k => k.Approved == true && k.Approved != false));
             return RedirectToAction("AdminDashboard");
-
         }
-
-
 
         public ActionResult PropertyRequestListing()
         {
-            var list = iUnitOfWork.Repository<PropertyRequest>().GetAll().ToList();
+            var list = from pr in iUnitOfWork.Repository<PropertyRequest>().GetAll()
+                       join a in iUnitOfWork.Repository<Area>().GetAll()
+                       on pr.PropertyRequestAreaId equals a.Id
+
+                       select new PropertyRequestListingViewModel()
+                       {
+                           FullName = pr.FullName,
+                           Email = pr.Email,
+                           FromPrice = pr.PropertyRequestPriceMin.Price,
+                           ToPrice = pr.PropertyRequestPriceMax.Price,
+                           ContactType = pr.PropertyRequestContractType.Name,
+                           CreatedDate = pr.CreatedDate,
+                           PropertyRequestArea = a.Name,
+                           PropertyDescription = pr.PropertyDescription,
+                           IsAgree = pr.IsAgree,
+                           PhoneNumber = pr.PhoneNumber,
+                           PropertyRequestId = pr.PropertyRequestId
+                       };
             if (list == null)
                 Response.Write("<script>alert(' Property Request detailsList  not found')</script>");
 
             return PartialView(list);
-
         }
 
         public ActionResult NewListing()
@@ -337,23 +333,16 @@ namespace Kaylan.Porperty.Web.Controllers
                 Response.Write("<script>alert(' Property NewListing  not found')</script>");
 
             return PartialView(list);
-
         }
 
         public ActionResult EnquiryforlistedProperty()
         {
-
             var list = iUnitOfWork.Repository<PropertyRequest>().GetAll().ToList();
             if (list == null)
                 Response.Write("<script>alert(' Enquiry for listed Property  not found')</script>");
 
             return PartialView(list);
-
         }
-
-
-
-
 
         public ActionResult CustomerDashboard()
         {
@@ -369,15 +358,5 @@ namespace Kaylan.Porperty.Web.Controllers
             file.SaveAs(path);
             return string.Format("~/Images/Server/{0}_{1}", ticks, picture);
         }
-
-
-
-
-
-
-
-
-
-
     }
 }
