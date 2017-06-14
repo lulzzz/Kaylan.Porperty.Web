@@ -3,6 +3,8 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 
+
+
 namespace Kalyan.Property.Infrastructure
 {
     public class CustomeDbContext : IdentityDbContext<Users, Roles, int, UserLogin, UserRole, UserClaim>
@@ -222,8 +224,11 @@ namespace Kalyan.Property.Infrastructure
         }
 
         public static CustomeDbContext Create()
+
         {
             return new CustomeDbContext();
         }
+
+      
     }
 }

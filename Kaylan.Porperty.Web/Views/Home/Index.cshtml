@@ -409,22 +409,33 @@
 
                                 @foreach (var property in Model)
                                 {
+
+
+                                    @*<a href='@Url.Action("Create", "Home", new { UserName = ?, Password = ?})'>
+                                        <input type="submit" value='Submit' />
+                                    </a>*@
+                               
+
                                     <li class="col-md-4 col-sm-6 type-rent">
                                         <div class="property-block">
-                                            <a href="details.html" class="property-featured-image">
+                                            @*<a href="/Home/propertydetails/" class="property-featured-image" >*@
+                                                
                                                 <img src="" class="attachment-600-400-size size-600-400-size wp-post-image" alt="slide1" srcset="@Url.Content(property.PorpertyImageUrl) " sizes="(max-width: 600px) 100vw, 600px" />
                                                 <span class="images-count">
                                                     <i class="fa fa-map-signs"></i><span class="">@property.AreaName</span>
                                                     <!--<i class="fa fa-picture-o"></i> 3-->
                                                 </span>
                                                 <span class="badges badge-sale">@property.ContractType</span>
-                                            </a>
+                                           @*// </a>*@
                                             <div class="property-info">
                                                 <h4><a href="details.html">@property.PropertyName</a></h4><br>
                                                 <div class="price"><strong><i class="fa fa-inr"></i></strong><span class="">@property.Price</span></div>
                                             </div>
                                             <div class="property-amenities clearfix"><span class="area">5000<strong></strong>Area</span><span class="baths"><strong>@property.Bathroom</strong>Baths</span><span class="beds"><strong>@property.Bedroom</strong>Beds</span><span class="parking"><strong>@property.Parking</strong>Parking</span></div>
                                         </div>
+                                        
+                                        <div>@Html.ActionLink("propertydetails","propertydetails",new {id= property.Id})</div>
+                                        
                                     </li>
                                 }
                                 @*<li class="col-md-4 col-sm-6 type-rent">

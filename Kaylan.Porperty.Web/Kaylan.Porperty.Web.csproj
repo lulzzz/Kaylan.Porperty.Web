@@ -217,6 +217,7 @@
     <Compile Include="ViewModel\CityViewModel.cs" />
     <Compile Include="ViewModel\ContactViewModel.cs" />
     <Compile Include="ViewModel\CountryViewModel.cs" />
+    <Compile Include="ViewModel\ImageListViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\PropertyDetailListViewModel.cs" />
     <Compile Include="ViewModel\PropertyDetailViewModel.cs" />
@@ -643,7 +644,6 @@
     <Content Include="Views\Home\AdminProfile.cshtml" />
     <Content Include="Views\PropertyDetail\CreatePropertyDetails.cshtml" />
     <Content Include="Views\User\CustomerDashboard.cshtml" />
-    <Content Include="Views\Home\propertydetails.cshtml" />
     <Content Include="Views\User\AllUser.cshtml" />
     <Content Include="Views\User\USerProfile.cshtml" />
     <Content Include="Views\User\PropertyDetail.cshtml" />
@@ -661,6 +661,7 @@
     <Content Include="Views\User\NewListing.cshtml" />
     <Content Include="Views\User\EnquiryforlistedProperty.cshtml" />
     <Content Include="Views\User\ApprovedProperty.cshtml" />
+    <Content Include="Views\Home\propertydetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

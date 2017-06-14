@@ -1,4 +1,45 @@
-﻿<!DOCTYPE HTML>
+﻿@*@model IEnumerable<Kaylan.Porperty.Web.ViewModel.ImageListViewModel>
+    
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>propertydetails</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th> @Html.DisplayNameFor(k => k.Id)</th>
+            <th> @Html.DisplayNameFor(k => k.Description)</th>
+            <th> @Html.DisplayNameFor(k => k.PorpertyImageUrl1)</th>
+            <th> @Html.DisplayNameFor(k => k.PorpertyImageUrl2)</th>
+            <th> @Html.DisplayNameFor(k => k.PorpertyImageUrl3)</th>
+        </tr>
+        @foreach (var k in Model)
+        {
+            <tr>
+                <th> @Html.DisplayFor(ki => k.Id)</th>
+                <th> @Html.DisplayFor(ki => k.Description)</th>
+                <th> @Html.DisplayFor(ki => k.PorpertyImageUrl1)</th>
+                <th> @Html.DisplayFor(ki => k.PorpertyImageUrl2)</th>
+                <th> @Html.DisplayFor(ki => k.PorpertyImageUrl3)</th>
+              
+            </tr>
+        }
+    </table>
+</body>
+</html>*@
+
+
+
+@model IEnumerable< Kaylan.Porperty.Web.ViewModel.ImageListViewModel>
+
+<!DOCTYPE HTML>
 <!-- CSS -->
 <link rel="alternate" type="application/rss+xml" title="Real Spaces - Wordpress Real Estate Theme &raquo; Feed" href="http://preview.imithemes.com/real-spaces-wp/feed/" />
 <link rel="alternate" type="application/rss+xml" title="Real Spaces - Wordpress Real Estate Theme &raquo; Comments Feed" href="http://preview.imithemes.com/real-spaces-wp/comments/feed/" />
@@ -58,432 +99,469 @@
     <!--[if lt IE 7]>
         <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
     <![endif]-->
-    <div class="body">
-        <!-- Start Site Header -->
-        <header class="site-header">
-            <div class="top-header hidden-xs">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12 col-sm-12">
-                            <ul class="horiz-nav pull-right">
-                                <li class="dropdown">
-                                    <a href="../Home/Admin">Admin</a>
-                                    <i class="fa fa-user"></i>
-                                <li class="dropdown">
-                                    <a href="/Login/CreateLogin">Logout</a>
-                                    <i class="fa fa-user"></i>
+    @using (Html.BeginForm())
+    {
+    }
+        @*aaaa*@
+        @*<body>
+            <table>
+                @foreach (var k in Model)
+                {
+                    
+                        <th> @Html.DisplayFor(ki => k.Id)</th>
+                        <th> @Html.DisplayFor(ki => k.Description)</th>
+                        <th> @Html.DisplayFor(ki => k.PorpertyImageUrl1)</th>
+                        <th> @Html.DisplayFor(ki => k.PorpertyImageUrl2)</th>
+                        <th> @Html.DisplayFor(ki => k.PorpertyImageUrl3)</th>
 
-                                    <ul class="dropdown-menu">
-                                        <li><a href="#" title="Favorite Properties">Favorite Properties</a></li>
-                                        <li><a href="#" title="Saved Searches">Saved Searches</a></li>
-                                        <li class="register"><a href="#" title="My Profile">My Profile</a></li>
-                                        <li class="login"><a href="#" title="Logout">Logout</a></li>
-                                    </ul>
-                                </li>
-                                </li>
-                                <li class="dropdown">
-                                    <a href="/Home/Register">Register</a>
-                                    <i class="fa fa-user"></i>
+                   
+                }*@
+            @*</table>*@
+        </body>
+   
+    @*aaaa*@
 
-                                </li>
-                            </ul>
 
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <div class="middle-header">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-2 col-sm-8 col-xs-8">
-                            <h1 class="logo">
-                                <a href="#" title="Real Spaces - Wordpress Real Estate Theme">
-                                    <img src="@Url.Content("~/Images/sample-10.png")" alt="Logo">
-                                </a>
-                            </h1>
-                        </div>
 
-                        <div class="col-md-5 col-sm-4 col-xs-4">
+        @*@Html.HiddenFor(k => k.Id)*@
+        <div class="body">
+            <!-- Start Site Header -->
+            <header class="site-header">
+                <div class="top-header hidden-xs">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12">
+                                <ul class="horiz-nav pull-right">
+                                    <li class="dropdown">
+                                        <a href="../Home/Admin">Admin</a>
+                                        <i class="fa fa-user"></i>
+                                    <li class="dropdown">
+                                        <a href="/Login/CreateLogin">Logout</a>
+                                        <i class="fa fa-user"></i>
 
-                            <div class="contact-info-blocks hidden-sm hidden-xs">
-                                <div>
-                                    <i class="fa fa-phone"></i>Free Line For You
-                                    <span>0123456789</span>
-                                </div>
-                                <div>
-                                    <i class="fa fa-envelope"></i>Email Us
-                                    <span>example@gmail.com</span>
-                                </div>
-                                <!-- <div>
-                                        <i class="fa fa-clock-o"></i>Working Hours
-                                <span>09:00 to 17:00</span>
-                                    </div>-->
-                            </div>
-                            <a href="#" class="visible-sm visible-xs menu-toggle"><i class="fa fa-bars"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="main-menu-wrapper">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <nav class="navigation">
-                                <ul id="menu-main-menu" class="sf-menu">
-                                    <li id="menu-item-208" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-208">
-                                        @Html.ActionLink("Account Summary", "CreateLoginDetails", "Login")
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#" title="Favorite Properties">Favorite Properties</a></li>
+                                            <li><a href="#" title="Saved Searches">Saved Searches</a></li>
+                                            <li class="register"><a href="#" title="My Profile">My Profile</a></li>
+                                            <li class="login"><a href="#" title="Logout">Logout</a></li>
+                                        </ul>
                                     </li>
-                                    <li id="menu-item-209" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-209"> @Html.ActionLink("Profile", "Profile1", "User")</li>
-                                    <li id="menu-item-225" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-225"> @Html.ActionLink("Properties","Properties","Home")</li>
-                                                                       <li id="menu-item-283" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-283"><a href="/PropertyRequest/CreatePropertyRequest">PropertyRequest</a></li>
-                                    <li id="menu-item-226" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-226"> <a href="/PropertyDetail/CreatePropertyDetail">List your property</a></li>
-                                    @*      <li id="menu-item-209" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-209"> @Html.ActionLink("Membership", "membership", "Home")</li>
-                                        <li id="menu-item-240" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-240">@Html.ActionLink("Contact", "Contact", "Home")</li>*@
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="/Home/Register">Register</a>
+                                        <i class="fa fa-user"></i>
 
+                                    </li>
                                 </ul>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header>
-        <!-- End Site Header -->
-        <!-- Site Showcase -->
-        <div class="site-showcase">
-            <!-- Start Page Header -->
-            <div class="parallax page-header" style="background-image: url(~/Images/slide31.jpg);">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h1>Property Details</h1>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End Page Header -->
-        </div>
-        <!-- Start Content -->
-        <div class="main" role="main">
-            <div id="content" class="content full">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-8">
-                            <div class="row">
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <div class="single-property">
-                                        <span class="property_zoom_level" id="15"></span>
-                                        <div class="single-agent">
-                                            <div class="block-heading">
-                                                <h4><span class="heading-icon"><img src="~/Images/faa.png"></span>Kalyan Property World</h4>
-                                            </div>
-                                        </div>
 
-                                        <div class="property-slider">
-                                            <div id="property-images" class="flexslider">
-                                                <ul class="slides">
-                                                    <li class="item">
-                                                        <img src="~/Images/slide31-600x400.jpg" alt="">
-                                                    </li>
-                                                    <li class="item">
-                                                        <img src="~/Images/property11-600x400.jpg" alt="">
-                                                    </li>
-                                                    <li class="item">
-                                                        <img src="~/Images/property12-600x400.jpg" alt="">
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div id="property-thumbs" class="flexslider">
-                                                <ul class="slides">
-                                                    <li class="item">
-                                                        <img src="~/Images/slide31-600x400.jpg" alt="">
-                                                    </li>
-                                                    <li class="item">
-                                                        <img src="~/Images/property11-600x400.jpg" alt="">
-                                                    </li>
-                                                    <li class="item">
-                                                        <img src="~/Images/property12-600x400.jpg" alt="">
-                                                    </li>
-                                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="middle-header">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-2 col-sm-8 col-xs-8">
+                                <h1 class="logo">
+                                    <a href="#" title="Real Spaces - Wordpress Real Estate Theme">
+                                        <img src="@Url.Content("~/Images/sample-10.png")" alt="Logo">
+                                    </a>
+                                </h1>
+                            </div>
+
+                            <div class="col-md-5 col-sm-4 col-xs-4">
+
+                                <div class="contact-info-blocks hidden-sm hidden-xs">
+                                    <div>
+                                        <i class="fa fa-phone"></i>Free Line For You
+                                        <span>0123456789</span>
+                                    </div>
+                                    <div>
+                                        <i class="fa fa-envelope"></i>Email Us
+                                        <span>example@gmail.com</span>
+                                    </div>
+                                    <!-- <div>
+                                            <i class="fa fa-clock-o"></i>Working Hours
+                                    <span>09:00 to 17:00</span>
+                                        </div>-->
+                                </div>
+                                <a href="#" class="visible-sm visible-xs menu-toggle"><i class="fa fa-bars"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="main-menu-wrapper">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <nav class="navigation">
+                                    <ul id="menu-main-menu" class="sf-menu">
+                                        <li id="menu-item-208" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-208">
+                                            @Html.ActionLink("Account Summary", "CreateLoginDetails", "Login")
+                                        </li>
+                                        <li id="menu-item-209" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-209"> @Html.ActionLink("Profile", "Profile1", "User")</li>
+                                        <li id="menu-item-225" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-225"> @Html.ActionLink("Properties", "Properties", "Home")</li>
+                                        <li id="menu-item-283" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-283"><a href="/PropertyRequest/CreatePropertyRequest">PropertyRequest</a></li>
+                                        <li id="menu-item-226" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-226"> <a href="/PropertyDetail/CreatePropertyDetail">List your property</a></li>
+                                        @*      <li id="menu-item-209" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-209"> @Html.ActionLink("Membership", "membership", "Home")</li>
+                                            <li id="menu-item-240" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-240">@Html.ActionLink("Contact", "Contact", "Home")</li>*@
+
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- End Site Header -->
+            <!-- Site Showcase -->
+            <div class="site-showcase">
+                <!-- Start Page Header -->
+                <div class="parallax page-header" style="background-image: url(~/Images/slide31.jpg);">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h1>Property Details</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Page Header -->
+            </div>
+            <!-- Start Content -->
+            <body>
+                @* <table>*@
+                @foreach (var k in Model)
+                {
+                    <div class="main" role="main">
+                        <div id="content" class="content full">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <div class="row">
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <div class="single-property">
+                                                    <span class="property_zoom_level" id="15"></span>
+                                                    <div class="single-agent">
+                                                        <div class="block-heading">
+                                                            <h4><span class="heading-icon"><img src="~/Images/faa.png"></span>Kalyan Property World</h4>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="property-slider">
+                                                        <th> @Html.DisplayFor(ki => k.Id)</th>
+                                                        @*<th> @Html.DisplayFor(ki => k.Description)</th>
+                                                        <th> @Html.DisplayFor(ki => k.PorpertyImageUrl1)</th>
+                                                        <th> @Html.DisplayFor(ki => k.PorpertyImageUrl2)</th>
+                                                        <th> @Html.DisplayFor(ki => k.PorpertyImageUrl3)</th>*@
+                                                        <div id="property-images" class="flexslider">
+                                                        <ul class="slides">
+                                                            <li class="item">
+                                                                <img src="" srcset="@Url.Content(k.PorpertyImageUrl1)" alt="">
+                                                            </li>
+                                                            <li class="item">
+                                                                <img src="" srcset="@Url.Content(k.PorpertyImageUrl2)" alt="">
+                                                            </li>
+                                                            <li class="item">
+                                                                <img src="" srcset="@Url.Content(k.PorpertyImageUrl3)" alt="">
+                                                            </li>
+                                                        </ul>
+                                                        </div>
+                                                        <div id="property-thumbs" class="flexslider">
+                                                        <ul class="slides">
+                                                            <li class="item">
+                                                                <img src="~/Images/slide31-600x400.jpg" alt="">
+                                                            </li>
+                                                            <li class="item">
+                                                                <img src="~/Images/property11-600x400.jpg" alt="">
+                                                            </li>
+                                                            <li class="item">
+                                                                <img src="~/Images/property12-600x400.jpg" alt="">
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    </div>
+                                                    <div class="share-bar">
+                                                        <ul class="share-buttons">
+                                                            <li class="share-title"><i class="fa fa-share-alt fa-2x"></i></li>
+                                                            <li class="facebook-share"><a href="#" target="_blank" title="Share on Facebook"><i class="fa fa-facebook"></i></a></li>
+                                                            <li class="twitter-share"><a href="#" target="_blank" title="Tweet"><i class="fa fa-twitter"></i></a></li>
+                                                            <li class="linkedin-share"><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="share-bar">
-                                            <ul class="share-buttons">
-                                                <li class="share-title"><i class="fa fa-share-alt fa-2x"></i></li>
-                                                <li class="facebook-share"><a href="#" target="_blank" title="Share on Facebook"><i class="fa fa-facebook"></i></a></li>
-                                                <li class="twitter-share"><a href="#" target="_blank" title="Tweet"><i class="fa fa-twitter"></i></a></li>
-                                                <li class="linkedin-share"><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                            </ul>
+                                        <div class="row">
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <!-- Start Related Properties -->
+                                                <div id="related-properties-block">
+                                                    <div class="single-agent">
+                                                        <div class="block-heading">
+                                                            <h4><span class="heading-icon"><img src="~/Images/faa.png"></span>Related Properties</h4>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="property-grid">
+                                                        <ul class="row">
+                                                            <li class="col-lg-4 type-Sale">
+                                                                <div class="property-block">
+                                                                    <a href="#" class="property-featured-image">
+
+                                                                        <img src="~/Images/slide31.jpg" class="attachment-600-400-size size-600-400-size wp-post-image" alt="slide1" srcset="images/slide1-600x400.jpg 600w, images/slide1-150x100.jpg 150w" sizes="(max-width: 600px) 100vw, 600px" />
+                                                                        <span class="images-count"><i class="fa fa-picture-o"></i>3</span>
+                                                                        <span class="badges badge-sale">Sale</span>
+                                                                    </a>
+                                                                    <div class="property-info">
+                                                                        <h4><a href="#">Kalyan property world</a></h4>
+                                                                        <a class="accent-color" data-original-title="Waverly" data-toggle="tooltip" style="cursor: default; text-decoration: none;" href="javascript:void(0);"></a>
+                                                                        <div class="price"><strong>&#36;</strong><span class="">10000</span></div>
+                                                                    </div>
+                                                                    <div class="property-amenities clearfix">
+                                                                        <span class="area"><strong>5000</strong>Area</span>
+                                                                        <span class="baths"><strong>3</strong>Baths</span>
+                                                                        <span class="beds"><strong>4</strong>Beds</span>
+                                                                        <span class="parking"><strong>2</strong>Parking</span>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                            <li class="col-lg-4 type-Sale">
+                                                                <div class="property-block">
+                                                                    <a href="#" class="property-featured-image">
+
+                                                                        <img src="~/Images/property4-600x400.jpg" class="attachment-600-400-size size-600-400-size wp-post-image" alt="property4" srcset="images/property4-300x200.jpg 300w,images/property4.jpg 600w,images/property4-150x100.jpg 150w" sizes="(max-width: 600px) 100vw, 600px" />
+                                                                        <span class="images-count"><i class="fa fa-picture-o"></i>3</span>
+                                                                        <span class="badges badge-sale">Sale</span>
+                                                                    </a>
+                                                                    <div class="property-info">
+                                                                        <h4><a href="#">Kalyan property world</a></h4>
+                                                                        <a class="accent-color" data-original-title="" data-toggle="tooltip" style="cursor: default; text-decoration: none;" href="javascript:void(0);"></a>
+                                                                        <div class="price"><strong>&#36;</strong><span class="">15000</span></div>
+                                                                    </div>
+                                                                    <div class="property-amenities clearfix">
+                                                                        <span class="area"><strong>5000</strong>Area</span>
+                                                                        <span class="baths"><strong>2</strong>Baths</span>
+                                                                        <span class="beds"><strong>4</strong>Beds</span>
+                                                                        <span class="parking"><strong>2</strong>Parking</span>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                            <li class="col-lg-4 type-Rent">
+                                                                <div class="property-block">
+                                                                    <a href="#" class="property-featured-image">
+                                                                        <img src="~/Images/property5-600x400.jpg" class="attachment-600-400-size size-600-400-size wp-post-image" alt="property5" srcset="images/property5-300x200.jpg 300w, images/property5.jpg 600w, images/property5-150x100.jpg 150w" sizes="(max-width: 600px) 100vw, 600px" />
+                                                                        <span class="images-count"><i class="fa fa-picture-o"></i>3</span>
+                                                                        <span class="badges badge-rent">Rent</span>
+                                                                    </a>
+                                                                    <div class="property-info">
+                                                                        <h4><a href="#">Kalyan property world</a></h4>
+                                                                        <div class="price">
+                                                                            <strong>&#36;</strong><span class="">20000</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="property-amenities clearfix">
+                                                                        <span class="area"><strong>5000</strong>Area</span>
+                                                                        <span class="baths"><strong>4</strong>Baths</span>
+                                                                        <span class="beds"><strong>5</strong>Beds</span>
+                                                                        <span class="parking"><strong>3</strong>Parking</span>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <!-- Start Related Properties -->
-                                    <div id="related-properties-block">
-                                        <div class="single-agent">
-                                            <div class="block-heading">
-                                                <h4><span class="heading-icon"><img src="~/Images/faa.png"></span>Related Properties</h4>
+                                    <!-- Start Sidebar -->
+
+                                    <div class="sidebar right-sidebar col-md-4">
+                                        <div class="widget">
+                                            <div class="single-agent">
+                                                <div class="block-heading">
+                                                    <h4><span class="heading-icon"><img src="images/faa.png"></span>@k.Description</h4>
+                                                </div>
                                             </div>
-                                        </div>
+                                            
 
-                                        <div class="property-grid">
-                                            <ul class="row">
-                                                <li class="col-lg-4 type-Sale">
-                                                    <div class="property-block">
-                                                        <a href="#" class="property-featured-image">
+                                            <div class="prop" style="float:left;">
 
-                                                            <img src="~/Images/slide31.jpg" class="attachment-600-400-size size-600-400-size wp-post-image" alt="slide1" srcset="images/slide1-600x400.jpg 600w, images/slide1-150x100.jpg 150w" sizes="(max-width: 600px) 100vw, 600px" />
-                                                            <span class="images-count"><i class="fa fa-picture-o"></i>3</span>
-                                                            <span class="badges badge-sale">Sale</span>
-                                                        </a>
-                                                        <div class="property-info">
-                                                            <h4><a href="#">Kalyan property world</a></h4>
-                                                            <a class="accent-color" data-original-title="Waverly" data-toggle="tooltip" style="cursor: default; text-decoration: none;" href="javascript:void(0);"></a>
-                                                            <div class="price"><strong>&#36;</strong><span class="">10000</span></div>
-                                                        </div>
-                                                        <div class="property-amenities clearfix">
-                                                            <span class="area"><strong>5000</strong>Area</span>
-                                                            <span class="baths"><strong>3</strong>Baths</span>
-                                                            <span class="beds"><strong>4</strong>Beds</span>
-                                                            <span class="parking"><strong>2</strong>Parking</span>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li class="col-lg-4 type-Sale">
-                                                    <div class="property-block">
-                                                        <a href="#" class="property-featured-image">
 
-                                                            <img src="~/Images/property4-600x400.jpg" class="attachment-600-400-size size-600-400-size wp-post-image" alt="property4" srcset="images/property4-300x200.jpg 300w,images/property4.jpg 600w,images/property4-150x100.jpg 150w" sizes="(max-width: 600px) 100vw, 600px" />
-                                                            <span class="images-count"><i class="fa fa-picture-o"></i>3</span>
-                                                            <span class="badges badge-sale">Sale</span>
-                                                        </a>
-                                                        <div class="property-info">
-                                                            <h4><a href="#">Kalyan property world</a></h4>
-                                                            <a class="accent-color" data-original-title="" data-toggle="tooltip" style="cursor: default; text-decoration: none;" href="javascript:void(0);"></a>
-                                                            <div class="price"><strong>&#36;</strong><span class="">15000</span></div>
-                                                        </div>
-                                                        <div class="property-amenities clearfix">
-                                                            <span class="area"><strong>5000</strong>Area</span>
-                                                            <span class="baths"><strong>2</strong>Baths</span>
-                                                            <span class="beds"><strong>4</strong>Beds</span>
-                                                            <span class="parking"><strong>2</strong>Parking</span>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li class="col-lg-4 type-Rent">
-                                                    <div class="property-block">
-                                                        <a href="#" class="property-featured-image">
-                                                            <img src="~/Images/property5-600x400.jpg" class="attachment-600-400-size size-600-400-size wp-post-image" alt="property5" srcset="images/property5-300x200.jpg 300w, images/property5.jpg 600w, images/property5-150x100.jpg 150w" sizes="(max-width: 600px) 100vw, 600px" />
-                                                            <span class="images-count"><i class="fa fa-picture-o"></i>3</span>
-                                                            <span class="badges badge-rent">Rent</span>
-                                                        </a>
-                                                        <div class="property-info">
-                                                            <h4><a href="#">Kalyan property world</a></h4>
-                                                            <div class="price">
-                                                                <strong>&#36;</strong><span class="">20000</span>
+                                                <p style="float:left;width:310px;">
+                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
+
+                                                    vehicula dapibus mauris, quis ullamcorper enim aliquet sed. Maecenas quis eget tellus dui. Vivamus condimentum egestas.
+                                                </p>
+                                                <p style="float:left;width:310px;">
+                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+
+                                                    euismod sollicitudin nunc, eget pretium massa. Ut sed adipiscing enim, pellentesque ultrices erat. Integer placerat felis neque, et
+
+                                                    semper augue ullamcorper in. Pellentesque iaculis leo iaculis aliquet ultrices. Suspendisse potenti. Aenean ac magna faucibus,
+
+                                                    consectetur ligula vel, feugiat est. Nullam imperdiet semper neque eget euismod. Nunc commodo volutpat semper.
+                                                </p>
+
+                                            </div>
+
+                                            <div class="agent">
+
+
+                                                <!-- Button trigger modal -->
+                                                <button type="button" style="margin-left:60px;" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+                                                    Display Propery Details
+                                                </button>
+
+                                                <!-- Modal -->
+                                                <div class="modal fade" id="exampleModalLong" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true"
+                                                     id="model" style="float:left;">
+                                                    <div class="modal-dialog" role="document" style="float:left;margin-left:0px;margin-top:0px;left:200px;top:0;">
+                                                        <div class="modal-content" style="width:900px;height:350px;">
+                                                            <div class="modal-header" style="background-color:#FF9800;">
+
+                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body">
+
+
+                                                                <div id="main1" style="width:1000px;height:250px;">
+
+                                                                    <div id="row2" style="float:left;width:300px;height:auto;margin-left:0px;">
+                                                                        <h5>Property Details</h5>
+
+
+
+                                                                        <table class="table" cellpadding="10">
+
+                                                                            <tr>
+
+
+                                                                                <th>Price</th>
+                                                                                <th>State</th>
+                                                                                <th>Area</th>
+                                                                                <th>Anamlities</th>
+                                                                                <th>Locality</th>
+                                                                                <th>Furnishing State</th>
+
+                                                                                <th>Listed By </th>
+                                                                                <th>Agent/Owner </th>
+                                                                                <th>Contract Type</th>
+
+
+                                                                                <th>Listed On</th>
+
+
+                                                                                <th>Buildup Area</th>
+
+
+
+
+                                                                            </tr>
+
+
+                                                                            <tr>
+                                                                                <td>Rs. 210000</td>
+                                                                                <td> Maharashtra </td>
+                                                                                <td>Kalyan</td>
+                                                                                <td>parking</td>
+                                                                                <td>Dahisar(East)</td>
+                                                                                <td>Semi</td>
+
+                                                                                <td>Aditi Parulkar(Owner)</td>
+                                                                                <td>Owner</td>
+                                                                                <td>sale</td>
+
+                                                                                <td>3rd May</td>
+
+                                                                                <td>870 sq.ft</td>
+
+
+
+
+
+
+                                                                            </tr>
+
+
+                                                                        </table>
+                                                                    </div>
+
+                                                                </div>
+
+
+                                                                <!--
+                                                            2 and 3 Bedrooms <br><br>
+                                                            Furnishing State - <strong>Semi</strong><br>
+                                                            Direction Facing -<strong> West</strong><br>
+                                                            Listed By - <strong>Aditi Parulkar(Owner)</strong><br>
+                                                            Property On - <strong>9th floor(of 19 floor)</strong><br>
+                                                            Listed On - <strong>3rd May</strong><br>
+                                                            Flooring Types - <strong>Vitrified Tiles</strong><br>
+                                                            Buildup Area - <strong>870 sq.ft</strong><br>
+                                                            Bachelors Allowed -<strong> Yes </strong><br>
+                                                            Security Deposit - <strong>100000</strong><br>
+                                                            Year of Construction - <strong>2017</strong><br>
+                                                            Pet Allowed - <strong>No</strong><br>
+                                                            Non-Vegatarian - <strong>Yes</strong><br>
+                                                            -->
+
+                                                            </div>
+                                                            <div class="modal-footer" style="background-color:#FF9800;">
+                                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
                                                             </div>
                                                         </div>
-                                                        <div class="property-amenities clearfix">
-                                                            <span class="area"><strong>5000</strong>Area</span>
-                                                            <span class="baths"><strong>4</strong>Baths</span>
-                                                            <span class="beds"><strong>5</strong>Beds</span>
-                                                            <span class="parking"><strong>3</strong>Parking</span>
-                                                        </div>
                                                     </div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Start Sidebar -->
-
-                        <div class="sidebar right-sidebar col-md-4">
-                            <div class="widget">
-                                <div class="single-agent">
-                                    <div class="block-heading">
-                                        <h4><span class="heading-icon"><img src="images/faa.png"></span>Description</h4>
-                                    </div>
-                                </div>
+                                                </div>
 
 
-                                <div class="prop" style="float:left;">
+
+                                            </div><br><br>
+
+                                            <div class="row" style="float:left;left:0px;">
 
 
-                                    <p style="float:left;width:310px;">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
 
-                                        vehicula dapibus mauris, quis ullamcorper enim aliquet sed. Maecenas quis eget tellus dui. Vivamus condimentum egestas.
-                                    </p>
-                                    <p style="float:left;width:310px;">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
-
-                                        euismod sollicitudin nunc, eget pretium massa. Ut sed adipiscing enim, pellentesque ultrices erat. Integer placerat felis neque, et
-
-                                        semper augue ullamcorper in. Pellentesque iaculis leo iaculis aliquet ultrices. Suspendisse potenti. Aenean ac magna faucibus,
-
-                                        consectetur ligula vel, feugiat est. Nullam imperdiet semper neque eget euismod. Nunc commodo volutpat semper.
-                                    </p>
-
-                                </div>
-
-                                <div class="agent">
-
-
-                                    <!-- Button trigger modal -->
-                                    <button type="button" style="margin-left:60px;" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
-                                        Display Propery Details
-                                    </button>
-
-                                    <!-- Modal -->
-                                    <div class="modal fade" id="exampleModalLong" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true"
-                                         id="model" style="float:left;">
-                                        <div class="modal-dialog" role="document" style="float:left;margin-left:0px;margin-top:0px;left:200px;top:0;">
-                                            <div class="modal-content" style="width:900px;height:350px;">
-                                                <div class="modal-header" style="background-color:#FF9800;">
-
-                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
+                                                <!-- <img style="align:center;margin-left:110px;" class="profile-img" src="images/byid.jpg" alt="">--><img src="~/Images/byid.jpg" style="margin-left:100px;" class="img-circle" alt="" width="100" height="100"><h3 style="margin-left:60px;">
+                                                    Suhas Parulkar
+                                                </h3>
+                                                <form class="form-signin" style="width:300px;height:auto;">
+                                                    <input type="text" class="form-control" placeholder="Name" required autofocus>
+                                                    <input type="text" class="form-control" placeholder="Email" required>
+                                                    <input type="text" class="form-control" placeholder="Mobile Number" required>
+                                                    <button class="btn btn-lg btn-primary btn-block" type="submit">
+                                                        Contact Us
                                                     </button>
-                                                </div>
-                                                <div class="modal-body">
-                                                   
 
-                                                    <div id="main1" style="width:1000px;height:250px;">
-                                                       
-                                                        <div id="row2" style="float:left;width:300px;height:auto;margin-left:0px;">
-                                                            <h5>Property Details</h5>
+                                                </form>
 
-
-
-                                                            <table class="table" cellpadding="10">
-
-                                                                <tr>
-
-
-                                                                    <th>Price</th>
-                                                                    <th>State</th>
-                                                                    <th>Area</th>
-                                                                    <th>Anamlities</th>
-                                                                    <th>Locality</th>
-                                                                    <th>Furnishing State</th>
-
-                                                                    <th>Listed By </th>
-                                                                    <th>Agent/Owner </th>
-                                                                    <th>Contract Type</th>
-
-
-                                                                    <th>Listed On</th>
-
-
-                                                                    <th>Buildup Area</th>
-
-
-
-
-                                                                </tr>
-
-
-                                                                <tr>
-                                                                    <td>Rs. 210000</td>
-                                                                    <td> Maharashtra </td>
-                                                                    <td>Kalyan</td>
-                                                                    <td>parking</td>
-                                                                    <td>Dahisar(East)</td>
-                                                                    <td>Semi</td>
-
-                                                                    <td>Aditi Parulkar(Owner)</td>
-                                                                    <td>Owner</td>
-                                                                    <td>sale</td>
-
-                                                                    <td>3rd May</td>
-
-                                                                    <td>870 sq.ft</td>
-
-
-
-
-
-
-                                                                </tr>
-
-
-                                                            </table>
-                                                        </div>
-
-                                                    </div>
-
-
-                                                    <!--
-                                                        2 and 3 Bedrooms <br><br>
-                                                        Furnishing State - <strong>Semi</strong><br>
-                                                        Direction Facing -<strong> West</strong><br>
-                                                        Listed By - <strong>Aditi Parulkar(Owner)</strong><br>
-                                                        Property On - <strong>9th floor(of 19 floor)</strong><br>
-                                                        Listed On - <strong>3rd May</strong><br>
-                                                        Flooring Types - <strong>Vitrified Tiles</strong><br>
-                                                        Buildup Area - <strong>870 sq.ft</strong><br>
-                                                        Bachelors Allowed -<strong> Yes </strong><br>
-                                                        Security Deposit - <strong>100000</strong><br>
-                                                        Year of Construction - <strong>2017</strong><br>
-                                                        Pet Allowed - <strong>No</strong><br>
-                                                        Non-Vegatarian - <strong>Yes</strong><br>
-                                                        -->
-
-                                                </div>
-                                                <div class="modal-footer" style="background-color:#FF9800;">
-                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-
-                                                </div>
                                             </div>
+
+
+
+
+
                                         </div>
+
+
+
+
+
                                     </div>
 
 
 
-                                </div><br><br>
-
-                                <div class="row" style="float:left;left:0px;">
-
-
-
-                                    <!-- <img style="align:center;margin-left:110px;" class="profile-img" src="images/byid.jpg" alt="">--><img src="~/Images/byid.jpg" style="margin-left:100px;" class="img-circle" alt="" width="100" height="100"><h3 style="margin-left:60px;">
-                                        Suhas Parulkar
-                                    </h3>
-                                    <form class="form-signin" style="width:300px;height:auto;">
-                                        <input type="text" class="form-control" placeholder="Name" required autofocus>
-                                        <input type="text" class="form-control" placeholder="Email" required>
-                                        <input type="text" class="form-control" placeholder="Mobile Number" required>
-                                        <button class="btn btn-lg btn-primary btn-block" type="submit">
-                                            Contact Us
-                                        </button>
-
-                                    </form>
-
                                 </div>
-
-
-
-
-
                             </div>
-
-
-
-
-
                         </div>
-
-
-
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
+                  }
+</div>
+    
+    
     <!--Favourite Login Form-->
     <!-- <div id="login-modal" class="modal fade" aria-hidden="true" aria-labelledby="mymodalLabel" role="dialog" tabindex="-1">
                 <div class="modal-dialog">
@@ -558,26 +636,27 @@
                 </div>
             </div>-->
     <!-- Start Site Footer -->
+    <div>
+        <footer class="site-footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="copyrights-col-left col-md-6 col-sm-6">
+                        <p>2016 © <a href="http://mariainfotech.in/">MARIA Infotech Pvt. Ltd. </a>All Rights Reserved.</p>
+                    </div>
+                    <div class="copyrights-col-right col-md-6 col-sm-6">
+                        <div class="social-icons">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
 
-    <footer class="site-footer-bottom">
-        <div class="container">
-            <div class="row">
-                <div class="copyrights-col-left col-md-6 col-sm-6">
-                    <p>2016 © <a href="http://mariainfotech.in/">MARIA Infotech Pvt. Ltd. </a>All Rights Reserved.</p>
-                </div>
-                <div class="copyrights-col-right col-md-6 col-sm-6">
-                    <div class="social-icons">
-                        <a href="#"><i class="fa fa-facebook"></i></a>
-                        <a href="#"><i class="fa fa-twitter"></i></a>
-
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </footer>
-    <!-- End Site Footer -->
-    <a id="back-to-top"><i class="fa fa-angle-double-up"></i></a>
+        </footer>
+        <!-- End Site Footer -->
+        <a id="back-to-top"><i class="fa fa-angle-double-up"></i></a>
     </div>
+
 
 
 </body>
