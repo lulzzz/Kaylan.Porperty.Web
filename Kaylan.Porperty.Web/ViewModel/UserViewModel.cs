@@ -1,6 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
-
+using System.Web;
 namespace Kaylan.Porperty.Web.ViewModel
 {
     public class UserViewModel
@@ -44,5 +44,10 @@ namespace Kaylan.Porperty.Web.ViewModel
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        //[Required]
+        //[DataType(DataType.Upload)]
+        //[Display(Name = "Choose File")]
+        public string profileimage { get; set; }
     }
 }

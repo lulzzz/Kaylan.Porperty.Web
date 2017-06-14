@@ -21,6 +21,7 @@ namespace Kalyan.Property.Infrastructure.Models
         public bool IsActive { get; set; }
 
         public bool IsApproved { get; set; }
+        public string profileimage { get; set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<Users, int> manager)
         {
@@ -47,5 +48,7 @@ namespace Kalyan.Property.Infrastructure.Models
 
             return userIdentity;
         }
+
+      
     }
 }

@@ -7,73 +7,73 @@
 @Scripts.Render("~/bundles/jquery")
 @Scripts.Render("~/unobtrusive/js")
 
-<style>
-    #maincontent {
-        margin: 10px;
-        border: solid 4px;
-        color: white;
-        border-color: #FF9800;
-    }
+<script>
+            function ShowImage(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
 
-    #content {
-        width: 300px;
-        float: left;
-        height: 400px;
-        padding: 5px 15px;
-    }
+                    reader.onload = function (e) {
+                        $('#blah')
+                            .attr('src', e.target.result)
+                            .width(150)
+                            .height(100);
+                    };
 
-    #middle {
-        width: 300px; /* Account for margins + border values */
-        float: left;
-        padding: 5px 15px;
-        height: 400px;
-        margin: 0px 5px 5px 5px;
-    }
+                    reader.readAsDataURL(input.files[0]);
+                }
 
-    #sidebar {
-        width: 300px;
-        padding: 5px 15px;
-        height: 400px;
-        float: left;
-    }
-</style>
-
+            }
+</script>
 <!-- Main content -->
-<section class="content">
+
     <!-- Info boxes -->
-
+@using (Html.BeginForm("UserProfile", "User", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{ 
     <div class="row">
-        <div class="col-md-12">
-            <div class="box">
-                <div class="box-header with-border" id="result">
-                    <div class="panel panel-default" id="maincontent">
-                        <div class="panel-heading" style="background-color:#FF9800;color:white;font-size:20px;">User Profile</div>
-                        <div class="panel-body" style="">
+    <div class="col-md-12">
+        <div class="box">
+            <div class="box-header with-border" id="result">
+                <div class="panel panel-default" id="maincontent">
+                    <div class="panel-heading" style="background-color:#FF9800;color:white;font-size:20px;">User Profile</div>
+                    <div class="panel-body" style="">
 
-                            <div id="main1" style="width:150%;float:left;margin-left:30px;">
-                                <section>
+                        <div class="row">
+                            <div class="col-md-3 col-sm-3">
+                                <div id="main1" style="width:150%;float:left;margin-left:30px;">
+
                                     <div class="col-md-3 col-sm-3 submit-image">
-                                        <img src="~/Images/Tulips.jpg" alt="Smiley face" width="170" height="170">
-                                    </div>
-                                </section>
-                                <section id="content" style="color:black;height:200px;width:300px;">
+                                        <div class="image-placeholder">
+                                            <img id="blah" src="#" alt="Smiley face" width="170" height="170" />
+                                            - <input type="file" Onchange="ShowImage(this)" name="files" value="" multiple="multiple" />
+                                        </div>
 
-                                    <h4>Name :@User.Identity.GetFirstName() @User.Identity.GetFirstName()  </h4>
-                                    <h6>Phone : @User.Identity.GetPhone()</h6>
-                                    <h6>DateOfBirth: @User.Identity.GetDateOfBirth()</h6>
-                                    <h6>Email : @User.Identity.GetEmail()</h6>
-                                   
-                                    <h5>@Html.ActionLink("ChangePassword", "CreatNewPassword", "User")</h5>
-                                    <br>
-                                </section>
 
-                                <section id="content" style="color:black;height:200px;width:300px;">
-                                    <strong style="font-size:15px;">Membership Details :</strong><br>
-                                    Membership Status : PAID <br>
-                                    Membership Ends : 01-NOV-2016<br>
-                                    Membership Level : Business Premium<br>
-                                </section>
-                            </div>
+
+                                    </div><br /><br />
+                                </div><br /><br />
+                            </div><br /><br />
+
+
+                            @*<section id="content" style="color:black;height:200px;width:300px;">*@
+
+                            <h4>Name :@User.Identity.GetFirstName() @User.Identity.GetFirstName()  </h4>
+                            <h6>Phone : @User.Identity.GetPhone()</h6>
+                            <h6>DateOfBirth: @User.Identity.GetDateOfBirth()</h6>
+                            <h6>Email : @User.Identity.GetEmail()</h6>
+
+                            &nbsp; &nbsp; &nbsp; &nbsp;<h5>@Html.ActionLink("ChangePassword", "CreatNewPassword", "User")</h5>
+
+                        </div><br /><br />
+                    </div><br /><br />
+                            @*</section>*@
+
+                            @*<section id="content" style="color:black;height:200px;width:300px;">*@
+                                <strong style="font-size:15px;">Membership Details :</strong><br>
+                                Membership Status : PAID <br>
+                                Membership Ends : 01-NOV-2016<br>
+                                Membership Level : Business Premium<br>
+                            @*</section>*@
+                        </div>
 
                             @*<a id="back-to-top"><i class="fa fa-angle-double-up" style="display:inline"></i></a>*@
                         </div>
@@ -85,6 +85,7 @@
                     </i>
                 </a>
             </div>
-        </div>
-    </div>
-</section>
+            <div class="text-align-center" id="submit-property">
+                <button type="submit" name="submit" class="btn btn-primary btn-lg"><i class="fa fa-check"></i> Submit Now</button>
+            </div>
+}

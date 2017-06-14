@@ -10,6 +10,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using System.Configuration;
+
 
 namespace Kaylan.Porperty.Web.Controllers
 {
@@ -95,12 +97,48 @@ namespace Kaylan.Porperty.Web.Controllers
             return View();
         }
 
-        public ActionResult UserProfile()
+        [HttpGet]
+        public ActionResult UserProfile(int id)
         {
-            return View();
+            CustomeDbContext db = new CustomeDbContext();
+            Users users = db.Users.Find(id);
+            return View(users);
         }
 
-        public ActionResult CreatNewPassword()
+        [HttpPost]
+        public ActionResult UserProfile(Users users, FormCollection frm, HttpPostedFileBase files)
+        {
+           
+            {
+                //var model = db.Users.Find(users.Id);
+                //string oldimage = model.profileimage;
+                if (files != null)
+                {
+                    var adcd = new Kalyan.Property.Infrastructure.Models.Users();
+                    {
+                        string filename = Path.GetFileName(files.FileName);
+                        var path = ConfigurationManager.AppSettings["Photos"].ToString() + "/" + filename;
+                        files.SaveAs(path);
+                        if (users.profileimage == null || users.profileimage == "")
+                            users.profileimage = filename;
+                        else
+                            users.profileimage += "," + filename;
+                    }
+                   // model.profileimage = users.profileimage;
+
+                    iUnitOfWork.Repository<Users>().Add(adcd);
+                    iUnitOfWork.Commit();
+                }
+                
+            }
+            return View();
+        }
+         
+
+        
+    
+
+    public ActionResult CreatNewPassword()
         {
             return View();
         }
