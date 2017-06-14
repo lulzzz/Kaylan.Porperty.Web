@@ -266,16 +266,7 @@ namespace Kaylan.Porperty.Web.Controllers
             return Json(result, JsonRequestBehavior.AllowGet);
         }
 
-        //[HttpGet]
-        //public ActionResult GetStateList()
-        //{
-        //    var result = iUnitOfWork.Repository<State>()
-        //       .GetAll()
-        //       .Select(x => new State { Name = x.Name, Id = x.Id })
-        //          .ToList();
-
-        //    return Json(result, JsonRequestBehavior.AllowGet);
-        //}
+    
 
         [HttpGet]
         public JsonResult GetStateList(int ID)
