@@ -167,9 +167,9 @@ namespace Kaylan.Porperty.Web.Controllers
             return View(result);
 
         }
-        [HttpPost]
-        public ActionResult propertydetail(int? id)
-        {
+       // [HttpPost]
+       // public ActionResult propertydetail(int? id)
+       // {
             //ViewBag.Message = "Your request Page";
             //return View();
 
@@ -194,7 +194,7 @@ namespace Kaylan.Porperty.Web.Controllers
 
 
 
-            return View();
+         //   return View();
 
 
 
@@ -203,7 +203,7 @@ namespace Kaylan.Porperty.Web.Controllers
 
 
 
-        }
+       // }
         // GET: User
         [HttpGet]
         public ActionResult Register()

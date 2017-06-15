@@ -250,7 +250,7 @@
                                                     </div>
 
                                                     <div class="property-slider">
-                                                        <th> @Html.DisplayFor(ki => k.Id)</th>
+                                                         @*@Html.DisplayFor(ki => k.Id)*@
                                                         @*<th> @Html.DisplayFor(ki => k.Description)</th>
                                                         <th> @Html.DisplayFor(ki => k.PorpertyImageUrl1)</th>
                                                         <th> @Html.DisplayFor(ki => k.PorpertyImageUrl2)</th>
@@ -258,7 +258,7 @@
                                                         <div id="property-images" class="flexslider">
                                                         <ul class="slides">
                                                             <li class="item">
-                                                                <img src="" srcset="@Url.Content(k.PorpertyImageUrl1)" alt="">
+                                                                <img src=""srcset="@Url.Content(k.PorpertyImageUrl1)" alt="">
                                                             </li>
                                                             <li class="item">
                                                                 <img src="" srcset="@Url.Content(k.PorpertyImageUrl2)" alt="">
@@ -271,13 +271,13 @@
                                                         <div id="property-thumbs" class="flexslider">
                                                         <ul class="slides">
                                                             <li class="item">
-                                                                <img src="~/Images/slide31-600x400.jpg" alt="">
+                                                                <img src="" srcset="@Url.Content(k.PorpertyImageUrl1)" alt="">
                                                             </li>
                                                             <li class="item">
-                                                                <img src="~/Images/property11-600x400.jpg" alt="">
+                                                                <img src="" srcset="@Url.Content(k.PorpertyImageUrl2)" alt="">
                                                             </li>
                                                             <li class="item">
-                                                                <img src="~/Images/property12-600x400.jpg" alt="">
+                                                                <img src="" srcset="@Url.Content(k.PorpertyImageUrl3)" alt="">
                                                             </li>
                                                         </ul>
                                                     </div>
@@ -380,7 +380,7 @@
                                         <div class="widget">
                                             <div class="single-agent">
                                                 <div class="block-heading">
-                                                    <h4><span class="heading-icon"><img src="images/faa.png"></span>@k.Description</h4>
+                                                    <h4><span class="heading-icon"><img src="images/faa.png"></span>Description</h4>
                                                 </div>
                                             </div>
                                             
@@ -389,18 +389,18 @@
 
 
                                                 <p style="float:left;width:310px;">
-                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
+                                                    @k.Description
+                                                    @*Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
 
                                                     vehicula dapibus mauris, quis ullamcorper enim aliquet sed. Maecenas quis eget tellus dui. Vivamus condimentum egestas.
-                                                </p>
-                                                <p style="float:left;width:310px;">
+                                               
                                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
 
                                                     euismod sollicitudin nunc, eget pretium massa. Ut sed adipiscing enim, pellentesque ultrices erat. Integer placerat felis neque, et
 
                                                     semper augue ullamcorper in. Pellentesque iaculis leo iaculis aliquet ultrices. Suspendisse potenti. Aenean ac magna faucibus,
 
-                                                    consectetur ligula vel, feugiat est. Nullam imperdiet semper neque eget euismod. Nunc commodo volutpat semper.
+                                                    consectetur ligula vel, feugiat est. Nullam imperdiet semper neque eget euismod. Nunc commodo volutpat semper.*@
                                                 </p>
 
                                             </div>
@@ -558,7 +558,8 @@
                             </div>
                         </div>
                     </div>
-                  }
+                    break;
+                }
 </div>
     
     
