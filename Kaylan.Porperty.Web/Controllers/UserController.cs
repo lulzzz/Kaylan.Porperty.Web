@@ -106,7 +106,7 @@ namespace Kaylan.Porperty.Web.Controllers
         }
 
         [HttpPost]
-        public ActionResult UserProfile(Users users, FormCollection frm, HttpPostedFileBase files)
+        public ActionResult UserProfile(int id,Users users, FormCollection frm, HttpPostedFileBase files)
         {
            
             {

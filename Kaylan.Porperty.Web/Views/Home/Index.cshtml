@@ -20,14 +20,14 @@
     <link rel='stylesheet' href='@Url.Content("~/content/css/settings.css")' type='text/css' media='all' />
     <link rel='stylesheet' href='@Url.Content("~/content/css/bootstrap.css")' type='text/css' media='all' />
     <link rel='stylesheet' href='@Url.Content("~/content/css/animations.css")' type='text/css' media='all' />
-    <link rel='stylesheet' href='@Url.Content("~/content/font-awesome-4.5.0/css/font-awesome.min.css")' type='text/css' media='all' />
+    <link rel='stylesheet' href='@Url.Content("~/content/font-awesome-4.6.3/css/font-awesome.min.css")' type='text/css' media='all' />
     <link rel='stylesheet' href='@Url.Content("~/content/css/style.css")' type='text/css' media='all' />
     <link rel='stylesheet' href='@Url.Content("~/content/css/style2.css")' type='text/css' media='all' />
     <link rel='stylesheet' href='@Url.Content("~/content/css/prettyPhoto.css")' type='text/css' media='all' />
     <link rel='stylesheet' href='@Url.Content("~/content/css/owl.carousel.css")' type='text/css' media='all' />
     <link rel='stylesheet' href='@Url.Content("~/content/css/owl.theme.css")' type='text/css' media='all' />
-    <link rel="stylesheet" href="@Url.Content("~/content/css/color1.css")" type="text/css" />
-    <link rel="stylesheet" href="@Url.Content("~/content/css/dropdown")" type="text/css" />
+    <link rel="stylesheet" href="@Url.Content("~/content/css/color1.css")" type="text/css">
+
     <!-- Scripts -->
     <script type='text/javascript' src="@Url.Content("~/scripts/jquery.js")"></script>
     <script type='text/javascript' src="@Url.Content("~/scripts/jquery-migrate.min.js")"></script>
@@ -36,6 +36,7 @@
     <script type='text/javascript' src="@Url.Content("~/scripts/jquery.themepunch.tools.min.js")"></script>
     <script type='text/javascript' src="@Url.Content("~/scripts/jquery.themepunch.revolution.min.js")"></script>
     <script type='text/javascript' src="@Url.Content("~/scripts/modernizr.js")"></script>
+
 
     <script type='text/javascript' src="@Url.Content("~/scripts/favorite.js")"></script>
     <script type='text/javascript' src="@Url.Content("~/scripts/newslatter.js")"></script>
@@ -63,6 +64,7 @@
     <script type='text/javascript' src="@Url.Content("~/scripts/autocomplete.js")"></script>
     <script type='text/javascript' src="@Url.Content("~/scripts/jquery_cookie.js")"></script>
     <script type='text/javascript' src="@Url.Content("~/scripts/script.js")"></script>
+
 </head>
 <body class="home page page-id-223 page-template page-template-template-home page-template-template-home-php ">
     <!--[if lt IE 7]>
@@ -85,9 +87,9 @@
 
                         <div class="col-lg-3 col-md-3 col-sm-12">
                             <ul class="horiz-nav pull-right">
-                                <li class="dropdown">
+                                @*<li class="dropdown">
                                     <a href="../Home/Admin">Admin</a>
-                                </li>
+                                </li>*@
                                 <li class="dropdown">
                                     <i class="fa fa-user"></i>
                                     <a href="/Login/SignIn">Login</a>
@@ -105,10 +107,7 @@
                                     <a href="/Home/Register">Register</a>
                                 </li>
 
-                                <li class="dropdown">
-                                    <a href="/Home/Register">Register</a>
-                                    <i class="fa fa-user"></i>
-                                </li>
+                              
                             </ul>
                         </div>
                     </div>
@@ -161,7 +160,7 @@
                                     <li id="menu-item-209" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-209"> @Html.ActionLink("About", "About", "Home")</li>
                                     <li id="menu-item-225" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-225"> @Html.ActionLink("Services", "Services", "Home")</li>
                                     <li id="menu-item-283" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-283"><a href="/PropertyRequest/CreatePropertyRequest">PropertyRequest</a></li>
-                                    <li id="menu-item-226" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-226"> <a href="/PropertyDetail/CreatePropertyDetails">List your property</a></li>
+                                    @*<li id="menu-item-226" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-226"> <a href="/PropertyDetail/CreatePropertyDetails">List your property</a></li>*@
                                     <li id="menu-item-209" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-209"> @Html.ActionLink("Membership", "membership", "Home")</li>
                                     <li id="menu-item-240" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-240">@Html.ActionLink("Contact", "Contact", "Home")</li>
                                 </ul>
@@ -178,8 +177,8 @@
             <!-- Start Hero Slider -->
             <div class="hero-slider flexslider clearfix" data-autoplay="yes" data-pagination="no" data-arrows="yes" data-style="fade" data-pause="yes">
                 <ul class="slides">
-                    <li class="parallax" style="background-image:url('~/Images/slide1-1200x500.jpg')"></li>
-                    <li class="parallax" style="background-image:url('~/Images/slide2-1200x500.jpg')"></li>
+                    <li class=" parallax" style="background-image: url(/../images/slide1-1200x500.jpg)"></li>
+                    <li class=" parallax" style="background-image: url(/../images/slide2-1200x500.jpg)"></li>
                 </ul>
             </div>
             <!-- Site Search Module -->
