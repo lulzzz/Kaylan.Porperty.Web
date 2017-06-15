@@ -118,25 +118,18 @@
                         <div class="row">
                             <div class="col-md-12 col-sm-12">
                                 <ul class="horiz-nav pull-right">
-                                    <li class="dropdown">
-                                        <a href="../Home/Admin">Admin</a>
+                                    @*<li class="dropdown">
+                                        <a href="../Home/Admin">Admin</a>*@
                                         <i class="fa fa-user"></i>
                                     <li class="dropdown">
-                                        <a href="/Login/CreateLogin">Logout</a>
                                         <i class="fa fa-user"></i>
+                                        <a href="/Login/SignIn">Login</a>
 
-                                        <ul class="dropdown-menu">
-                                            <li><a href="#" title="Favorite Properties">Favorite Properties</a></li>
-                                            <li><a href="#" title="Saved Searches">Saved Searches</a></li>
-                                            <li class="register"><a href="#" title="My Profile">My Profile</a></li>
-                                            <li class="login"><a href="#" title="Logout">Logout</a></li>
-                                        </ul>
                                     </li>
-                                    </li>
+
                                     <li class="dropdown">
+                                        <i class="fa fa-check-circle"></i>
                                         <a href="/Home/Register">Register</a>
-                                        <i class="fa fa-user"></i>
-
                                     </li>
                                 </ul>
 
@@ -183,14 +176,14 @@
                                 <nav class="navigation">
                                     <ul id="menu-main-menu" class="sf-menu">
                                         <li id="menu-item-208" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-208">
-                                            @Html.ActionLink("Account Summary", "CreateLoginDetails", "Login")
+                                            @Html.ActionLink("Home", "Index", "Home")
                                         </li>
-                                        <li id="menu-item-209" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-209"> @Html.ActionLink("Profile", "Profile1", "User")</li>
-                                        <li id="menu-item-225" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-225"> @Html.ActionLink("Properties", "Properties", "Home")</li>
+                                        <li id="menu-item-209" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-209"> @Html.ActionLink("About", "About", "Home")</li>
+                                        <li id="menu-item-225" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-225"> @Html.ActionLink("Services", "Services", "Home")</li>
                                         <li id="menu-item-283" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-283"><a href="/PropertyRequest/CreatePropertyRequest">PropertyRequest</a></li>
-                                        <li id="menu-item-226" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-226"> <a href="/PropertyDetail/CreatePropertyDetail">List your property</a></li>
-                                        @*      <li id="menu-item-209" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-209"> @Html.ActionLink("Membership", "membership", "Home")</li>
-                                            <li id="menu-item-240" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-240">@Html.ActionLink("Contact", "Contact", "Home")</li>*@
+                                        @*<li id="menu-item-226" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-226"> <a href="/PropertyDetail/CreatePropertyDetails">List your property</a></li>*@
+                                        <li id="menu-item-209" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-209"> @Html.ActionLink("Membership", "membership", "Home")</li>
+                                        <li id="menu-item-240" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-240">@Html.ActionLink("Contact", "Contact", "Home")</li>
 
                                     </ul>
                                 </nav>

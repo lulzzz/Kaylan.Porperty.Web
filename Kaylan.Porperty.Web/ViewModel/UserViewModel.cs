@@ -5,6 +5,8 @@ namespace Kaylan.Porperty.Web.ViewModel
 {
     public class UserViewModel
     {
+        public int id { get; set; }
+
         [Required(ErrorMessage = "First Name Required")]
         [Display(Name = "First Name")]
         public string FirstName { get; set; }
