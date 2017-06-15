@@ -172,5 +172,7 @@ namespace Kalyan.Property.Infrastructure.Models
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PropertyImage> PropertyImages { get; set; }
+        public virtual State Name { get; set; }
+
     }
 }

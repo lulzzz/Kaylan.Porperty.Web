@@ -38,7 +38,6 @@
 
 
 @model IEnumerable< Kaylan.Porperty.Web.ViewModel.ImageListViewModel>
-
 <!DOCTYPE HTML>
 <!-- CSS -->
 <link rel="alternate" type="application/rss+xml" title="Real Spaces - Wordpress Real Estate Theme &raquo; Feed" href="http://preview.imithemes.com/real-spaces-wp/feed/" />
@@ -102,29 +101,15 @@
     @using (Html.BeginForm())
     {
     }
-        @*aaaa*@
-        @*<body>
-            <table>
-                @foreach (var k in Model)
-                {
-                    
-                        <th> @Html.DisplayFor(ki => k.Id)</th>
-                        <th> @Html.DisplayFor(ki => k.Description)</th>
-                        <th> @Html.DisplayFor(ki => k.PorpertyImageUrl1)</th>
-                        <th> @Html.DisplayFor(ki => k.PorpertyImageUrl2)</th>
-                        <th> @Html.DisplayFor(ki => k.PorpertyImageUrl3)</th>
-
-                   
-                }*@
-            @*</table>*@
+      
         </body>
    
-    @*aaaa*@
+  
 
 
 
 
-        @*@Html.HiddenFor(k => k.Id)*@
+       
         <div class="body">
             <!-- Start Site Header -->
             <header class="site-header">
@@ -380,7 +365,7 @@
                                         <div class="widget">
                                             <div class="single-agent">
                                                 <div class="block-heading">
-                                                    <h4><span class="heading-icon"><img src="images/faa.png"></span>Description</h4>
+                                                    <h4><span class="heading-icon"><img src="~/images/faa.png"></span>Description</h4>
                                                 </div>
                                             </div>
                                             
@@ -404,6 +389,7 @@
                                                 </p>
 
                                             </div>
+
 
                                             <div class="agent">
 
@@ -443,42 +429,22 @@
                                                                                 <th>State</th>
                                                                                 <th>Area</th>
                                                                                 <th>Anamlities</th>
-                                                                                <th>Locality</th>
-                                                                                <th>Furnishing State</th>
-
-                                                                                <th>Listed By </th>
-                                                                                <th>Agent/Owner </th>
+                                                                                <th>Parking</th>
                                                                                 <th>Contract Type</th>
-
-
                                                                                 <th>Listed On</th>
-
-
-                                                                                <th>Buildup Area</th>
-
-
-
 
                                                                             </tr>
 
 
                                                                             <tr>
-                                                                                <td>Rs. 210000</td>
-                                                                                <td> Maharashtra </td>
-                                                                                <td>Kalyan</td>
-                                                                                <td>parking</td>
-                                                                                <td>Dahisar(East)</td>
-                                                                                <td>Semi</td>
-
-                                                                                <td>Aditi Parulkar(Owner)</td>
-                                                                                <td>Owner</td>
-                                                                                <td>sale</td>
-
-                                                                                <td>3rd May</td>
-
-                                                                                <td>870 sq.ft</td>
-
-
+                                                                                
+                                                                                <th>Price</th>
+                                                                                <th>State</th>
+                                                                                <th>Area</th>
+                                                                                <th>Anamlities</th>
+                                                                                <th>Parking</th>
+                                                                                <th>Contract Type</th>
+                                                                                <th>Listed On</th>
 
 
 

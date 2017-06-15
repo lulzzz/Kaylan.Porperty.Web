@@ -28,6 +28,33 @@
     <link rel='stylesheet' href='@Url.Content("~/content/css/owl.theme.css")' type='text/css' media='all' />
     <link rel="stylesheet" href="@Url.Content("~/content/css/color1.css")" type="text/css" />
     <link rel="stylesheet" href="@Url.Content("~/content/css/dropdown")" type="text/css" />
+    <style>
+    .hilight h2{
+    font-family: Helvetica, Verdana;
+    color: #FFF;
+    z-index: 200;
+    }
+
+    .property-block {
+    position: relative;
+    }
+    .property-block img {
+    z-index: 1;
+    }
+
+    .hilight {
+ background-color: rgba(0,0,0,0.3);
+ position: absolute;
+ height: 30px;
+ width: 328px;
+ font-family: Verdana, Geneva, sans-serif;
+ color: #FFF;
+ bottom: 170px;
+ z-index: 1;
+}
+
+</style>
+
     <!-- Scripts -->
     <script type='text/javascript' src="@Url.Content("~/scripts/jquery.js")"></script>
     <script type='text/javascript' src="@Url.Content("~/scripts/jquery-migrate.min.js")"></script>
@@ -374,6 +401,7 @@
                 </div>
             </div>
         </div>
+
         <!-- End Showcase -->
         <!-- Start Content -->
         <div class="main" role="main">
@@ -417,24 +445,32 @@
                                
 
                                     <li class="col-md-4 col-sm-6 type-rent">
-                                        <div class="property-block">
+                                        <div class="property-block" style="cursor: pointer;"  >
                                             @*<a href="/Home/propertydetails/" class="property-featured-image" >*@
                                                 
                                                 <img src="" class="attachment-600-400-size size-600-400-size wp-post-image" alt="slide1" srcset="@Url.Content(property.PorpertyImageUrl) " sizes="(max-width: 600px) 100vw, 600px" />
-                                                <span class="images-count">
+                                            <div class="hilight">
+                                                <p style="text-align:center;"><span style="font-weight:bold">  @Html.ActionLink("View property Image", "propertydetails", new { id = property.Id },new {@style="color:White;" })</span></p>
+                                                
+                                            </div>   
+                                             <span class="images-count">
                                                     <i class="fa fa-map-signs"></i><span class="">@property.AreaName</span>
                                                     <!--<i class="fa fa-picture-o"></i> 3-->
                                                 </span>
+                                           
                                                 <span class="badges badge-sale">@property.ContractType</span>
                                            @*// </a>*@
                                             <div class="property-info">
                                                 <h4><a href="details.html">@property.PropertyName</a></h4><br>
+                                               
                                                 <div class="price"><strong><i class="fa fa-inr"></i></strong><span class="">@property.Price</span></div>
                                             </div>
-                                            <div class="property-amenities clearfix"><span class="area">5000<strong></strong>Area</span><span class="baths"><strong>@property.Bathroom</strong>Baths</span><span class="beds"><strong>@property.Bedroom</strong>Beds</span><span class="parking"><strong>@property.Parking</strong>Parking</span></div>
+                                          
+                                              <div class="property-amenities clearfix"><span class="area">5000<strong></strong>Area</span><span class="baths"><strong>@property.Bathroom</strong>Baths</span><span class="beds"><strong>@property.Bedroom</strong>Beds</span><span class="parking"><strong>@property.Parking</strong>Parking</span></div>
+                                       
                                         </div>
                                         
-                                        <div>@Html.ActionLink("propertydetails","propertydetails",new {id= property.Id})</div>
+                                        @*<div>@Html.ActionLink("propertydetails","propertydetails",new {id= property.Id})</div>*@
                                         
                                     </li>
                                 }
