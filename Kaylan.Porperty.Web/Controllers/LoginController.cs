@@ -77,7 +77,7 @@ namespace Kaylan.Porperty.Web.Controllers
                     }
                     else
                     {
-                        return RedirectToAction("CustomerDashboard", "User");
+                        return RedirectToAction("CustomerDashboard", "User", new { id = user.Id });
                     }
 
                 case SignInStatus.Failure:

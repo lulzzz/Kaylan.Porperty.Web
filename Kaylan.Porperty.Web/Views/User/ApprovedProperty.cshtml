@@ -30,6 +30,7 @@
                 <th>@Html.DisplayNameFor(model => model.Date)</th>
                 <th>@Html.DisplayNameFor(model => model.PropertyName)</th>
                 <th>@Html.DisplayNameFor(model => model.Address)</th>
+                 <td>@Html.DisplayNameFor(model=> model.UserId)</td>
                 <th>
                     <label>Status</label><input type="checkbox" id="checkBoxAll" />
                 </th>
@@ -47,6 +48,7 @@
                     <td>@Html.DisplayFor(modelItem => item.Date)</td>
                     <td>@Html.DisplayFor(modelItem => item.PropertyName)</td>
                     <td>@Html.DisplayFor(modelItem => item.Address)</td>
+                    <td>@Html.DisplayFor(modelItem => item.UserId)</td>
                     <td><input type="checkbox" class="chkCheckBoxId" value="@item.Id" name="UserID" /></td>
 
                 </tr>

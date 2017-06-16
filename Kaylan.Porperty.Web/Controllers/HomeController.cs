@@ -116,22 +116,7 @@ namespace Kaylan.Porperty.Web.Controllers
             return new HttpStatusCodeResult(HttpStatusCode.BadRequest);  // OK = 400
         }
 
-        //public ActionResult Admin()
-        //{
-        //    CustomeDbContext db = new CustomeDbContext();
-
-        //   IList<Users> UserList = new List<Users>();
-
-        //   ViewBag.UserList = unitOfWork.Repository<Users>().GetAll().ToList().Count();
-
-        //   IList<PropertyDetail> pendingapproved = new List<PropertyDetail>();
-        //    ViewBag.approved = pendingapproved.Where(x => x.Approved == null).Count() == 0 ? 0 : pendingapproved.Where(x => x.Approved == null).Count();
-
-        //    ViewBag.salescount = db.ContractTypes.Select(k => k.Id == 1).Count();
-        //  ViewBag.rentcount = db.ContractTypes.Select(k=>k.Id==2).Count();
-
-        //   return View();
-        //}
+       
 
         public ActionResult Membership()
         {
@@ -167,44 +152,7 @@ namespace Kaylan.Porperty.Web.Controllers
             return View(result);
 
         }
-       // [HttpPost]
-       // public ActionResult propertydetail(int? id)
-       // {
-            //ViewBag.Message = "Your request Page";
-            //return View();
-
-
-
-            //var result = from pd in unitOfWork.Repository<PropertyDetail>().GetMany((k => k.Id == id))
-
-            //             join a in unitOfWork.Repository<PropertyImage>().GetMany((k => k.Id == id))
-            //            on pd.Id equals a.PropertyDetailId
-
-            //             select new ImageListViewModel()
-            //             {
-            //                 Description = pd.PropertyDescription,
-            //                 Id = pd.Id,
-            //                 PorpertyImageUrl1 = unitOfWork.Repository<PropertyImage>().Get(y => y.PropertyDetailId == pd.Id).ImagePath,
-            //                 PorpertyImageUrl2 = unitOfWork.Repository<PropertyImage>().Get(y => y.PropertyDetailId == pd.Id).ImagePath,
-            //                 PorpertyImageUrl3 = unitOfWork.Repository<PropertyImage>().Get(y => y.PropertyDetailId == pd.Id).ImagePath,
-                             
-            //             };
-
-           // var data = result.ToPagedList(page ?? 1, pageSize);
-
-
-
-         //   return View();
-
-
-
-
-
-
-
-
-       // }
-        // GET: User
+       
         [HttpGet]
         public ActionResult Register()
         {
@@ -443,15 +391,7 @@ namespace Kaylan.Porperty.Web.Controllers
         }
 
 
-        //public ActionResult ApprovedPropertydetails( )
-        //{
-        //    var list = unitOfWork.Repository<PropertyDetailList>().GetMany((k => k.Approved == true && k.Approved != false));
-        //    if (list == null)
-        //        Response.Write("<script>alert(' Approved property For user not Found')</script>");
-
-        //    return View(list);
-        //}
-
+       
 
 
 

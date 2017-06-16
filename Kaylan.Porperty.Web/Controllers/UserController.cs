@@ -385,10 +385,45 @@ namespace Kaylan.Porperty.Web.Controllers
             return PartialView(list);
         }
 
-        public ActionResult CustomerDashboard()
-        {
+        public ActionResult CustomerDashboard(int id)
+           {
+        
+            CustomeDbContext db = new CustomeDbContext();
+
+            //IList<Users> UserList = new List<Users>();
+
+            //ViewBag.UserList = iUnitOfWork.Repository<Users>().GetAll().ToList().Count();
+
+            ////IList<PropertyDetail> pendingapproved = new List<PropertyDetail>();
+            //// ViewBag.approved = pendingapproved.Where(x => x.Approved == null).Count() == 0 ? 0 : pendingapproved.Where(x => x.Approved == null).Count();
+
+            //= iUnitOfWork.Repository<PropertyDetail>().GetMany(r => r.UserId)
+            ViewBag.userapproved = iUnitOfWork.Repository<PropertyDetail>().GetMany(r => r.UserId == id).Select(k => k.Approved == true).Count();
+
+
+            //ViewBag.Unapproved = iUnitOfWork.Repository<PropertyDetail>().GetMany((k => k.Approved == true && k.Approved != false)).Count();
+            //ViewBag.salescount = db.ContractTypes.Select(k => k.Id == 1).Count();
+            //ViewBag.rentcount = db.ContractTypes.Select(k => k.Id == 2).Count();
+
+            //ViewBag.propertyRequest = db.PropertyRequests.Count();
+            //var dateCriteria = DateTime.Now.Date.AddDays(-7);
+            //ViewBag.newlisting = iUnitOfWork.Repository<PropertyRequest>().GetMany(r => r.CreatedDate >= dateCriteria).Count();
+
+
             return View();
         }
+
+            //CustomerDashboard
+
+
+
+
+
+
+
+
+            //CustomerDashboard
+
 
         private string SaveImgae(HttpPostedFileBase file)
         {

@@ -163,7 +163,7 @@ namespace Kalyan.Property.Infrastructure.Models
         [StringLength(50)]
         public string ToPrice { get; set; }
 
-        public int? UserId { get; set; }
+        public int UserId { get; set; }
 
         public int PropertyAmenityMappingId { get; set; }
 
