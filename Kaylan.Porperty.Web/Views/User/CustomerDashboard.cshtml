@@ -1,10 +1,39 @@
-﻿@{
+﻿@model IEnumerable<Kaylan.Porperty.Web.ViewModel.PropertyDetailListViewModel>
+
+@{
     ViewBag.Title = "Customer Dashboard";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
+<input type="hidden" id="temp" name="temp" value="@TempData["type"]" />
 
 @Scripts.Render("~/bundles/jquery")
 @Scripts.Render("~/unobtrusive/js")
+<head>
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css">
+    <script type="text/javascript" src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="~/Scripts/jQuery-2.2.0.min.js"></script>
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+
+$(document).ready(function () {
+    $('#btn4').click(function () {
+        $('#result').load('/User/pendingapproveofcust');
+    });
+});
+    </script>
+</head>
 
 <h2>Custome Dashboard</h2>
 
@@ -40,19 +69,40 @@
 </style>
 
 <section class="content-header">
-    <h1>
-        User Dashboard
-    </h1>
+   
 </section>
+@*< !--Main content -->*@
 
-<!-- Main content -->
-<section class="content">
     <!-- Info boxes -->
+@using (Html.BeginForm())
+{
+   
+
+    <section class="content">
     <div class="row">
         <div class="col-md-3 col-sm-6 col-xs-12">
             <div class="info-box">
+                <div id="btn4">
+                    <span class="info-box-icon bg-red" style="cursor: pointer;"><i class="fa fa-google-plus"></i></span>
+                </div>
+                <div class="info-box-content">
+                    <span class="info-box-text">
+                        Property Pending <br />
+                        for   Approval
+                    </span>
+                    <span class="info-box-number"> @ViewBag.userapproved</span>
+                </div><div class="text-align-center" id="submit-property">
+    <button type="submit" name="submit" class="btn btn-primary btn-lg"><i class="fa fa-check"></i> Submit Now</button>
+</div>
+                <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+        </div>
+        @*<div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="info-box">
+                <div id="btn4">
                 <span class="info-box-icon bg-aqua"><i class="ion ion-checkmark-circled"></i></span>
-
+                </div>
                 <div class="info-box-content">
                     <span class="info-box-text" id="app">Approved</span>
                     <span class="info-box-number">@ViewBag.userapproved</span>
@@ -60,7 +110,7 @@
                 <!-- /.info-box-content -->
             </div>
             <!-- /.info-box -->
-        </div>
+        </div>*@
         <!-- /.col -->
         <div class="col-md-3 col-sm-6 col-xs-12">
             <div class="info-box">
@@ -68,7 +118,7 @@
 
                 <div class="info-box-content">
                     <span class="info-box-text">Pending Approved</span>
-                    <span class="info-box-number">41,410</span>
+                    <span class="info-box-number">@ViewBag.pendindapprove</span>
                 </div>
                 <!-- /.info-box-content -->
             </div>
@@ -84,7 +134,7 @@
 
                 <div class="info-box-content">
                     <span class="info-box-text">New Enquiry</span>
-                    <span class="info-box-number">760</span>
+                    <span class="info-box-number">@ViewBag.newenquiry </span>
                 </div>
                 <!-- /.info-box-content -->
             </div>
@@ -105,5 +155,17 @@
         </div>
         <!-- /.col -->
     </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box">
+                <div class="box-header with-border" id="result">
+
+                    this is Patial view
+
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- /.row -->
 </section>
+}

@@ -291,6 +291,18 @@ namespace Kaylan.Porperty.Web.Controllers
 
             return PartialView(list);
         }
+       
+        
+       
+        public ActionResult pendingapproveofcust(int id)
+        {
+
+            var list = iUnitOfWork.Repository<PropertyDetail>().GetMany(m => m.UserId == id).Where(m => m.Approved == true && m.Approved != false);
+            if (list == null)
+                Response.Write("<script>alert(' No List Found ')</script>");
+
+            return PartialView(list);
+        }
 
         public ActionResult SalesList()
         {
@@ -408,40 +420,16 @@ namespace Kaylan.Porperty.Web.Controllers
         
             CustomeDbContext db = new CustomeDbContext();
 
-            //IList<Users> UserList = new List<Users>();
+            ViewBag.userapproved = iUnitOfWork.Repository<PropertyDetail>().GetMany(k=>k.UserId==id).Where( k => k.Approved == true && k.Approved != false).Count();
+            
+            ViewBag.pendindapprove = iUnitOfWork.Repository<PropertyDetail>().GetMany(r => r.UserId == id).Where(k => k.Approved == false).Count();
 
-            //ViewBag.UserList = iUnitOfWork.Repository<Users>().GetAll().ToList().Count();
-
-            ////IList<PropertyDetail> pendingapproved = new List<PropertyDetail>();
-            //// ViewBag.approved = pendingapproved.Where(x => x.Approved == null).Count() == 0 ? 0 : pendingapproved.Where(x => x.Approved == null).Count();
-
-            //= iUnitOfWork.Repository<PropertyDetail>().GetMany(r => r.UserId)
-            ViewBag.userapproved = iUnitOfWork.Repository<PropertyDetail>().GetMany(r => r.UserId == id).Select(k => k.Approved == true).Count();
-
-
-            //ViewBag.Unapproved = iUnitOfWork.Repository<PropertyDetail>().GetMany((k => k.Approved == true && k.Approved != false)).Count();
-            //ViewBag.salescount = db.ContractTypes.Select(k => k.Id == 1).Count();
-            //ViewBag.rentcount = db.ContractTypes.Select(k => k.Id == 2).Count();
-
-            //ViewBag.propertyRequest = db.PropertyRequests.Count();
-            //var dateCriteria = DateTime.Now.Date.AddDays(-7);
-            //ViewBag.newlisting = iUnitOfWork.Repository<PropertyRequest>().GetMany(r => r.CreatedDate >= dateCriteria).Count();
-
+            ViewBag.newenquiry = iUnitOfWork.Repository<PropertyDetail>().GetMany(m => m.UserId == id).Count();
 
             return View();
         }
 
-            //CustomerDashboard
-
-
-
-
-
-
-
-
-            //CustomerDashboard
-
+          
 
         private string SaveImgae(HttpPostedFileBase file)
         {
