@@ -229,6 +229,6 @@ namespace Kalyan.Property.Infrastructure
             return new CustomeDbContext();
         }
 
-      
+        
     }
 }

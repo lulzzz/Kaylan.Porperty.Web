@@ -229,17 +229,35 @@ namespace Kaylan.Porperty.Web.Controllers
             iUnitOfWork.Commit();
 
             PropertyDetailViewModel viewModel = GetPropertyDetailViewModel();
-
+            ModelState.Clear();
             return View(viewModel);
+            
         }
 
-        public ActionResult PropertyDetailsList(int Id)
+        public ActionResult PropertyDetailsList(int id)
         {
-            //PropertyDetail details = unitOfWork.Repository<PropertyDetail>().GetById(Id);
-            //if (details == null)
-            //    Response.Write("<script>alert(' Property details not found')</script>");
+            var list = from r in iUnitOfWork.Repository<PropertyDetail>().GetMany(r => r.Id == id).Where(b => b.Approved == true)
+                       //join a in iUnitOfWork.Repository<Users>().GetMany(r => r.Id == id)on r.UserId equals a.Id
+                       join z in iUnitOfWork.Repository<PropertyImage>().GetMany(r => r.PropertyDetailId == id) on r.Id equals z.PropertyDetailId
+                     //  join k in iUnitOfWork.Repository<PropertyAmenityMapping>().GetMany(r => r.PropertyDetailId == id) on r.Id equals k.PropertyDetailId
+                       select new Approvepropertydetails()
+                       {
+                           PropertyDescription = r.PropertyDescription,
+                           PorpertyImageUrl1 = iUnitOfWork.Repository<PropertyImage>().Get(y => y.PropertyDetailId == r.Id).ImagePath,
+                           PorpertyImageUrl2 = iUnitOfWork.Repository<PropertyImage>().Get(y => y.PropertyDetailId == r.Id).ImagePath,
+                           PorpertyImageUrl3 = iUnitOfWork.Repository<PropertyImage>().Get(y => y.PropertyDetailId == r.Id).ImagePath,
+                           PropertyName = r.PropertyName,
+                           AreaId = r.AreaId,
+                           CityId = r.CityId,
+                           Bedroom = r.Bedroom,
+                           Bathroom = r.Bedroom,
+                           Parking = r.Parking,
+                          // AmenityId=k.AmenityId,
 
-            return View();
+                       };
+          
+           
+            return View(list);
         }
 
         public ActionResult AdminDashboard()
@@ -318,10 +336,10 @@ namespace Kaylan.Porperty.Web.Controllers
 
         public ActionResult ApprovedProperty()
         {
-            var list = iUnitOfWork.Repository<PropertyDetail>().GetMany((k => k.Approved == true && k.Approved != false));
-            if (list == null)
-                Response.Write("<script>alert(' Approved property For user not Found')</script>");
-
+         var list = iUnitOfWork.Repository<PropertyDetail>().GetMany((k => k.Approved == true && k.Approved != false));
+           if (list == null)
+               Response.Write("<script>alert(' Approved property For user not Found')</script>");
+            
             return PartialView(list);
         }
 

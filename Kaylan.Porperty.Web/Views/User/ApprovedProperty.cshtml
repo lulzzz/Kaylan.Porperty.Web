@@ -29,11 +29,13 @@
                 <th>@Html.DisplayNameFor(model => model.Phone)</th>
                 <th>@Html.DisplayNameFor(model => model.Date)</th>
                 <th>@Html.DisplayNameFor(model => model.PropertyName)</th>
-                <th>@Html.DisplayNameFor(model => model.Address)</th>
+                
                  <td>@Html.DisplayNameFor(model=> model.UserId)</td>
                 <th>
                     <label>Status</label><input type="checkbox" id="checkBoxAll" />
                 </th>
+                <td> </td>
+               
 
 
             </tr>
@@ -47,14 +49,23 @@
                     <td>@Html.DisplayFor(modelItem => item.Phone)</td>
                     <td>@Html.DisplayFor(modelItem => item.Date)</td>
                     <td>@Html.DisplayFor(modelItem => item.PropertyName)</td>
-                    <td>@Html.DisplayFor(modelItem => item.Address)</td>
                     <td>@Html.DisplayFor(modelItem => item.UserId)</td>
                     <td><input type="checkbox" class="chkCheckBoxId" value="@item.Id" name="UserID" /></td>
+                    <td>
+
+                        <button type="button" style="margin-left:30px;" class="btn btn-info"  onclick="location.href='@Url.Action("PropertyDetailsList","User",new { id = item.Id })'" >
+                            Display Propery Details
+                        </button>
+                    </td>
+                   
 
                 </tr>
             }
 
         </tbody>
     </table>
-    <div><input type="submit" value="UnApproved" name="btn" class="btn btn-danger" onclick="return confirm('Are you shure?')" /></div>
+
+    <div>
+        <input type="submit" value="UnApproved" name="btn" class="btn btn-danger" onclick="return confirm('Are you shure?')" />
+    </div>
 }
