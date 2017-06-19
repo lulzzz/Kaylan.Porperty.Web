@@ -1,131 +1,352 @@
-﻿`@model IEnumerable<Kaylan.Porperty.Web.ViewModel.Approvepropertydetails>
-@{
-    ViewBag.Title = "Property details List";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
-}
+﻿@model IEnumerable<Kaylan.Porperty.Web.ViewModel.Approvepropertydetails>
+    <!DOCTYPE HTML>
+    <!-- CSS -->
+    <link rel="alternate" type="application/rss+xml" title="Real Spaces - Wordpress Real Estate Theme &raquo; Feed" href="http://preview.imithemes.com/real-spaces-wp/feed/" />
+    <link rel="alternate" type="application/rss+xml" title="Real Spaces - Wordpress Real Estate Theme &raquo; Comments Feed" href="http://preview.imithemes.com/real-spaces-wp/comments/feed/" />
+    <link rel="alternate" type="application/rss+xml" title="Real Spaces - Wordpress Real Estate Theme &raquo; Home Version 1 Comments Feed" href="http://preview.imithemes.com/real-spaces-wp/version-1/feed/" />
+    <link rel='stylesheet' href='@Url.Content("~/content/css/cf8bac.css")' type='text/css' media='all' />
+    <link rel='stylesheet' href='@Url.Content("~/content/css/dsidx-icons.css")' type='text/css' media='all' />
+    <link rel='stylesheet' href='@Url.Content("~/content/css/client.css")' type='text/css' media='all' />
+    <link rel='stylesheet' href='@Url.Content("~/content/css/client1.css")' type='text/css' media='all' />
+    <link rel='stylesheet' href='@Url.Content("~/content/css/settings.css")' type='text/css' media='all' />
+    <link rel='stylesheet' href='@Url.Content("~/content/css/bootstrap.css")' type='text/css' media='all' />
+    <link rel='stylesheet' href='@Url.Content("~/content/css/animations.css")' type='text/css' media='all' />
+    <link rel='stylesheet' href='@Url.Content("~/content/font-awesome-4.5.0/css/font-awesome.min.css")' type='text/css' media='all' />
+    <link rel='stylesheet' href='@Url.Content("~/content/css/style.css")' type='text/css' media='all' />
+    <link rel='stylesheet' href='@Url.Content("~/content/css/style2.css")' type='text/css' media='all' />
+    <link rel='stylesheet' href='@Url.Content("~/content/css/prettyPhoto.css")' type='text/css' media='all' />
+    <link rel='stylesheet' href='@Url.Content("~/content/css/owl.carousel.css")' type='text/css' media='all' />
+    <link rel='stylesheet' href='@Url.Content("~/content/css/owl.theme.css")' type='text/css' media='all' />
+    <link rel="stylesheet" href="@Url.Content("~/content/css/color1.css")" type="text/css">
+    <link rel='stylesheet' id='imic_main-css' href='~/Content/contactus.css' type='text/css' media='all' />
+    <!-- Scripts -->
+    <script type='text/javascript' src="@Url.Content("~/scripts/jquery.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/jquery-migrate.min.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/23a23f.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/ajax-login-script.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/jquery.themepunch.tools.min.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/jquery.themepunch.revolution.min.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/modernizr.js")"></script>
 
-@Scripts.Render("~/bundles/jquery")
-@Scripts.Render("~/bundles/jqueryval")
-@Scripts.Render("~/unobtrusive/js")
 
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>Kalyan Property World</title>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
-<meta name="format-detection" content="telephone=no">
-
-<!-- CSS -->
-<link rel="alternate" type="application/rss+xml" title="Real Spaces - Wordpress Real Estate Theme &raquo; Feed" href="http://preview.imithemes.com/real-spaces-wp/feed/" />
-<link rel="alternate" type="application/rss+xml" title="Real Spaces - Wordpress Real Estate Theme &raquo; Comments Feed" href="http://preview.imithemes.com/real-spaces-wp/comments/feed/" />
-<link rel="alternate" type="application/rss+xml" title="Real Spaces - Wordpress Real Estate Theme &raquo; Home Version 1 Comments Feed" href="http://preview.imithemes.com/real-spaces-wp/version-1/feed/" />
-<link rel='stylesheet' href='@Url.Content("~/content/css/cf8bac.css")' type='text/css' media='all' />
-<link rel='stylesheet' href='@Url.Content("~/content/css/dsidx-icons.css")' type='text/css' media='all' />
-<link rel='stylesheet' href='@Url.Content("~/content/css/client.css")' type='text/css' media='all' />
-<link rel='stylesheet' href='@Url.Content("~/content/css/client1.css")' type='text/css' media='all' />
-<link rel='stylesheet' href='@Url.Content("~/content/css/settings.css")' type='text/css' media='all' />
-<link rel='stylesheet' href='@Url.Content("~/content/css/bootstrap.css")' type='text/css' media='all' />
-<link rel='stylesheet' href='@Url.Content("~/content/css/animations.css")' type='text/css' media='all' />
-<link rel='stylesheet' href='@Url.Content("~/content/font-awesome-4.5.0/css/font-awesome.min.css")' type='text/css' media='all' />
-<link rel='stylesheet' href='@Url.Content("~/content/css/style.css")' type='text/css' media='all' />
-<link rel='stylesheet' href='@Url.Content("~/content/css/style2.css")' type='text/css' media='all' />
-<link rel='stylesheet' href='@Url.Content("~/content/css/prettyPhoto.css")' type='text/css' media='all' />
-<link rel='stylesheet' href='@Url.Content("~/content/css/owl.carousel.css")' type='text/css' media='all' />
-<link rel='stylesheet' href='@Url.Content("~/content/css/owl.theme.css")' type='text/css' media='all' />
-<link rel="stylesheet" href="@Url.Content("~/content/css/color1.css")" type="text/css">
-
-<!-- Scripts -->
-<script type='text/javascript' src="@Url.Content("~/scripts/jquery.js")"></script>
-<script type='text/javascript' src="@Url.Content("~/scripts/jquery-migrate.min.js")"></script>
-<script type='text/javascript' src="@Url.Content("~/scripts/23a23f.js")"></script>
-<script type='text/javascript' src="@Url.Content("~/scripts/ajax-login-script.js")"></script>
-<script type='text/javascript' src="@Url.Content("~/scripts/jquery.themepunch.tools.min.js")"></script>
-<script type='text/javascript' src="@Url.Content("~/scripts/jquery.themepunch.revolution.min.js")"></script>
-<script type='text/javascript' src="@Url.Content("~/scripts/modernizr.js")"></script>
-
-<script type='text/javascript' src="@Url.Content("~/scripts/favorite.js")"></script>
-<script type='text/javascript' src="@Url.Content("~/scripts/newslatter.js")"></script>
-<script type='text/javascript' src="@Url.Content("~/scripts/prettyphoto.js")"></script>
-<script type='text/javascript' src="@Url.Content("~/scripts/owl.carousel.min.js")"></script>
-<script type='text/javascript' src="@Url.Content("~/scripts/jquery.flexslider.js")"></script>
-<script type='text/javascript' src="@Url.Content("~/scripts/helper-plugins.js")"></script>
-<script type='text/javascript' src="@Url.Content("~/scripts/bootstrap.js")"></script>
-<script type='text/javascript' src="@Url.Content("~/scripts/waypoints.js")"></script>
-@*<script type='text/javascript' src='@Url.Content("~/scripts/js.js")'></script>*@
-<script type='text/javascript'>
-    /* <![CDATA[ */
-    var urlajax = { "url": "http:\/\/preview.imithemes.com\/real-spaces-wp\/wp-admin\/admin-ajax.php", "tmpurl": "http:\/\/preview.imithemes.com\/real-spaces-wp\/wp-content\/themes\/real-spaces", "is_property": "", "sticky": "1", "is_contact": "", "home_url": "http:\/\/preview.imithemes.com\/real-spaces-wp", "is_payment": "", "register_url": "http:\/\/preview.imithemes.com\/real-spaces-wp\/register-as-agent\/", "is_register": "", "is_login": "", "is_submit_property": "", "basic": "Basic", "advanced": "Advanced" };
-    /* ]]> */
-</script>
-<script type='text/javascript' src='@Url.Content("~/scripts/init.js")'></script>
-<script type='text/javascript' src="@Url.Content("~/scripts/profile_validate.js")"></script>
-<script type='text/javascript' src="@Url.Content("~/scripts/comment-reply.min.js")"></script>
-<script type='text/javascript' src="@Url.Content("~/scripts/wp-embed.min.js")"></script>
-<script type='text/javascript' src="@Url.Content("~/scripts/core.min.js")"></script>
-<script type='text/javascript' src="@Url.Content("~/scripts/widget.min.js")"></script>
-<script type='text/javascript' src="@Url.Content("~/scripts/position.min.js")"></script>
-<script type='text/javascript' src="@Url.Content("~/scripts/menu.min.js")"></script>
-<script type='text/javascript' src="@Url.Content("~/scripts/autocomplete.min.js")"></script>
-<script type='text/javascript' src="@Url.Content("~/scripts/autocomplete.js")"></script>
-<script type='text/javascript' src="@Url.Content("~/scripts/jquery_cookie.js")"></script>
-<script type='text/javascript' src="@Url.Content("~/scripts/script.js")"></script>
-<body>
-    <div>
+    <script type='text/javascript' src="@Url.Content("~/scripts/favorite.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/newslatter.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/prettyphoto.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/owl.carousel.min.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/jquery.flexslider.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/helper-plugins.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/bootstrap.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/waypoints.js")"></script>
+    @*<script type='text/javascript' src='@Url.Content("~/scripts/js.js")'></script>*@
+    <script type='text/javascript'>
+        /* <![CDATA[ */
+        var urlajax = { "url": "http:\/\/preview.imithemes.com\/real-spaces-wp\/wp-admin\/admin-ajax.php", "tmpurl": "http:\/\/preview.imithemes.com\/real-spaces-wp\/wp-content\/themes\/real-spaces", "is_property": "", "sticky": "1", "is_contact": "", "home_url": "http:\/\/preview.imithemes.com\/real-spaces-wp", "is_payment": "", "register_url": "http:\/\/preview.imithemes.com\/real-spaces-wp\/register-as-agent\/", "is_register": "", "is_login": "", "is_submit_property": "", "basic": "Basic", "advanced": "Advanced" };
+        /* ]]> */
+    </script>
+    <script type='text/javascript' src='@Url.Content("~/scripts/init.js")'></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/profile_validate.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/comment-reply.min.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/wp-embed.min.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/core.min.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/widget.min.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/position.min.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/menu.min.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/autocomplete.min.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/autocomplete.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/jquery_cookie.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/scripts/script.js")"></script>
+    <body class="archive author author-mia-kennedy author-2 ">
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+        <![endif]-->
         @using (Html.BeginForm())
         {
-        }    
-    </div>
-    <div>
-        <table>
-            <tr>
-                <th> @Html.DisplayNameFor(k => k.PropertyDescription)</th></tr>
-               <tr> <th> @Html.DisplayNameFor(k => k.PropertyName)</th></tr>
-            <tr>
-                <th> @Html.DisplayNameFor(k => k.PorpertyImageUrl1)<br /></th></tr>
-            <tr>
-               <tr> <th> @Html.DisplayNameFor(k => k.PorpertyImageUrl2)</th></tr>
-              <tr>  <th> @Html.DisplayNameFor(k => k.PorpertyImageUrl3)</th></tr>
-             <tr   <th> @Html.DisplayNameFor(k => k.AreaId)</th>
-                <th> @Html.DisplayNameFor(k => k.CityId)</th>
-                <th> @Html.DisplayNameFor(k => k.Bedroom)</th>
-                <th> @Html.DisplayNameFor(k => k.Bathroom)</th>
-                <th> @Html.DisplayNameFor(k => k.Parking)</th>
-               @*<th> @Html.DisplayNameFor(k => k.AmenityId)</th>*@
-            </tr>
+        }
+
+    </body>
+
+
+
+
+
+
+
+    <div class="body">
+        <!-- Start Site Header -->
+        <header class="site-header">
+            <div class="top-header hidden-xs">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12">
+                            <ul class="horiz-nav pull-right">
+                              
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="middle-header">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-2 col-sm-8 col-xs-8">
+                            <h1 class="logo">
+                                <a href="#" title="Real Spaces - Wordpress Real Estate Theme">
+                                    <img src="@Url.Content("~/Images/sample-10.png")" alt="Logo">
+                                </a>
+                            </h1>
+                        </div>
+
+                        <div class="col-md-5 col-sm-4 col-xs-4">
+
+                            <div class="contact-info-blocks hidden-sm hidden-xs">
+                                <div>
+                                    <i class="fa fa-phone"></i>Free Line For You
+                                    <span>0123456789</span>
+                                </div>
+                                <div>
+                                    <i class="fa fa-envelope"></i>Email Us
+                                    <span>example@gmail.com</span>
+                                </div>
+                                <!-- <div>
+                                        <i class="fa fa-clock-o"></i>Working Hours
+                                <span>09:00 to 17:00</span>
+                                    </div>-->
+                            </div>
+                            <a href="#" class="visible-sm visible-xs menu-toggle"><i class="fa fa-bars"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-menu-wrapper">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <nav class="navigation">
+                                <ul id="menu-main-menu" class="sf-menu">
+                                    <li id="menu-item-208" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-208">
+                                        @Html.ActionLink("Home", "Index", "Home")
+                                    </li>
+                                    <li id="menu-item-209" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-209"> @Html.ActionLink(" Back Dashboard","AdminDashboard","User")</li>
+                                    @*<li id="menu-item-225" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-225"> @Html.ActionLink("Services", "Services", "Home")</li>
+                                    <li id="menu-item-283" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-283"><a href="/PropertyRequest/CreatePropertyRequest">PropertyRequest</a></li>
+                                    @*<li id="menu-item-226" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-226"> <a href="/PropertyDetail/CreatePropertyDetails">List your property</a></li>*@
+                                    @*<li id="menu-item-209" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-209"> @Html.ActionLink("Membership", "membership", "Home")</li>
+                                    <li id="menu-item-240" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-240">@Html.ActionLink("Contact", "Contact", "Home")</li>*@
+
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- End Site Header -->
+        <!-- Site Showcase -->
+        <div class="site-showcase">
+            <!-- Start Page Header -->
+            <div class="parallax page-header" style="background-image: url(~/Images/slide31.jpg);">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1>Property Details</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Page Header -->
+        </div>
+        <!-- Start Content -->
+        <body>
+           
             @foreach (var k in Model)
             {
-                <tr>
-         
-                    <th> @Html.DisplayFor(ki => k.PropertyDescription)</th></tr>
-                 <tr>   <th> @Html.DisplayFor(ki=> k.PropertyName)</th></tr>
-                    <tr>
-                    <th>
-                    
-                        <img src="" srcset="@Url.Content(k.PorpertyImageUrl1)" width="250" height="80" alt=""><br />
-                    </th></tr>
-                    <tr>
-                    <th>
+                <div class="main" role="main">
+                    <div id="content" class="content full">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <div class="single-property">
+                                                <span class="property_zoom_level" id="15"></span>
+                                                <div class="single-agent">
+                                                    <div class="block-heading">
+                                                        <h4><span class="heading-icon"><img src="~/Images/faa.png"></span>Kalyan Property World</h4>
+                                                    </div>
+                                                </div>
 
-                        <img src="" srcset="@Url.Content(k.PorpertyImageUrl2)"  width="250" height="80"alt="">
-                    </th></tr>
-                 <tr>   <th>
+                                                <div class="property-slider">
+           
+                                                    <div id="property-images" class="flexslider">
+                                                        <ul class="slides">
+                                                            <li class="item">
+                                                                <img src="" srcset="@Url.Content(k.PorpertyImageUrl1)" alt="">
+                                                            </li>
+                                                            <li class="item">
+                                                                <img src="" srcset="@Url.Content(k.PorpertyImageUrl2)" alt="">
+                                                            </li>
+                                                            <li class="item">
+                                                                <img src="" srcset="@Url.Content(k.PorpertyImageUrl3)" alt="">
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div id="property-thumbs" class="flexslider">
+                                                        <ul class="slides">
+                                                            <li class="item">
+                                                                <img src="" srcset="@Url.Content(k.PorpertyImageUrl1)" alt="">
+                                                            </li>
+                                                            <li class="item">
+                                                                <img src="" srcset="@Url.Content(k.PorpertyImageUrl2)" alt="">
+                                                            </li>
+                                                            <li class="item">
+                                                                <img src="" srcset="@Url.Content(k.PorpertyImageUrl3)" alt="">
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="share-bar">
+                                                    <ul class="share-buttons">
+                                                        <li class="share-title"><i class="fa fa-share-alt fa-2x"></i></li>
+                                                        <li class="facebook-share"><a href="#" target="_blank" title="Share on Facebook"><i class="fa fa-facebook"></i></a></li>
+                                                        <li class="twitter-share"><a href="#" target="_blank" title="Tweet"><i class="fa fa-twitter"></i></a></li>
+                                                        <li class="linkedin-share"><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                   
+                                </div>
+                                <!-- Start Sidebar -->
 
-                        <img src="" srcset="@Url.Content(k.PorpertyImageUrl3)" width="250" height="80" alt="">
-                    </th></tr>
-                    @*<th> @Html.DisplayFor(ki => k.PorpertyImageUrl1)</th>
-                    <th> @Html.DisplayFor(ki => k.PorpertyImageUrl2)</th>
-                    <th> @Html.DisplayFor(ki => k.PorpertyImageUrl3)</th>*@
-               <tr>     <th> @Html.DisplayFor(ki => k.AreaId)</th>
-                    <th> @Html.DisplayFor(ki => k.CityId)</th>
-                    <th> @Html.DisplayFor(ki=> k.Bedroom)</th>
-                    <th> @Html.DisplayFor(ki => k.Bathroom)</th>
-                    <th> @Html.DisplayFor(ki => k.Parking)</th>
-                    @*<th> @Html.DisplayFor(ki => k.AmenityId)</th>*@
-                </tr>
+                                <div class="sidebar right-sidebar col-md-4">
+                                    <div class="widget">
+                                        <div class="single-agent">
+                                            <div class="block-heading">
+                                                <h4><span class="heading-icon"><img src="~/images/faa.png"></span>Description</h4>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="container-fluid">
+                                            <table class="table table-hover">
+                                                <thead>
+
+                                                <td>
+
+
+                                                <tr>
+                                                    <td>@Html.DisplayNameFor(r => r.PropertyDetailId)</td>
+                                                    <td> @Html.DisplayFor(ki => k.PropertyDetailId)</td>
+                                                    
+                                                <tr />
+
+                                                <tr>
+                                                    <td>@Html.DisplayNameFor(r =>r.PropertyDescription)</td>
+                                                   <td> @Html.DisplayFor(ki => k.PropertyDescription)</td>
+                                                <tr />
+                                                <tr>
+                                                    <td>@Html.DisplayNameFor(r=>r.PropertyName)</td>
+                                                    <td> @Html.DisplayFor(ki => k.PropertyName)</td>
+                                                <tr />
+                                                <tr>
+                                                    <td>@Html.DisplayNameFor(r=>r.AreaId)</td>
+                                                    <td> @Html.DisplayFor(ki => k.AreaId)</td>
+                                                <tr />
+
+                                                <tr>
+                                                    <td>@Html.DisplayNameFor(r => r.CityId)</td>
+                                                    <td> @Html.DisplayFor(ki => k.CityId)</td>
+                                                <tr />
+
+
+                                                <tr>
+                                                    <td>@Html.DisplayNameFor(r => r.Bathroom)</td>
+                                                    <td> @Html.DisplayFor(ki => k.Bathroom)</td>
+                                                <tr />
+
+                                                <tr>
+                                                    <td>@Html.DisplayNameFor(r => r.Bedroom)</td>
+                                                    <td> @Html.DisplayFor(ki => k.Bedroom)</td>
+                                                <tr />
+
+
+                                                <tr>
+                                                    <td>@Html.DisplayNameFor(r => r.Parking)</td>
+                                                    <td> @Html.DisplayFor(ki => k.Parking)</td>
+                                                <tr />
+
+                                                <tr>
+                                                    <td>@Html.DisplayNameFor(r => r.Phone)</td>
+                                                    <td> @Html.DisplayFor(ki => k.Phone)</td>
+                                                <tr />
+
+
+                                                </td>
+
+
+                                                </thead>
+                                                <tbody>
+                                                    <tr></tr>
+
+
+                                                </tbody>
+                                            </table>
+
+                                         
+
+                                        </div>
+
+                                     
+
+
+
+
+
+
+                                        </div>
+
+
+
+
+
+                                </div>
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 break;
             }
-        </table>
-</body>
-   
+    </div>
 
-</html>
-                        
+    <!-- Start Site Footer -->
+    <div>
+        <footer class="site-footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="copyrights-col-left col-md-6 col-sm-6">
+                        <p>2016 © <a href="http://mariainfotech.in/">MARIA Infotech Pvt. Ltd. </a>All Rights Reserved.</p>
+                    </div>
+                    <div class="copyrights-col-right col-md-6 col-sm-6">
+                        <div class="social-icons">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- End Site Footer -->
+        <a id="back-to-top"><i class="fa fa-angle-double-up"></i></a>
+    </div>
+
+
+
+  
+    
+                    

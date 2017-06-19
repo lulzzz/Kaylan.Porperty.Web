@@ -52,10 +52,16 @@
                     <td>@Html.DisplayFor(modelItem => item.UserId)</td>
                     <td><input type="checkbox" class="chkCheckBoxId" value="@item.Id" name="UserID" /></td>
                     <td>
-
-                        <button type="button" style="margin-left:30px;" class="btn btn-info"  onclick="location.href='@Url.Action("PropertyDetailsList","User",new { id = item.Id })'" >
+                        @if(@item.Id==0)
+                        {
+                            Response.Write("<script>alert(' Approved propertyId  not Found')</script>");
+                        }
+                        else
+                        {
+                        <button type="button" style="margin-left:30px;" class="btn btn-info"  onclick="location.href='@Url.Action("PropertyDetailsList", "User", new { id = item.Id })'" >
                             Display Propery Details
                         </button>
+                        }
                     </td>
                    
 

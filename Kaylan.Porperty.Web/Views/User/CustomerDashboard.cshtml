@@ -27,17 +27,21 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript">
 
-$(document).ready(function () {
-    $('#btn4').click(function () {
-        $('#result').load('/User/pendingapproveofcust');
-    });
-});
+      
+        $('#btn4').click(function () {
+            var tpid=2;
+            $.getJSON('@Url.Action("pendingapproveofcust", "User")',{ Id: tpid } , function (data) {
+
+                $('#result').append(data);
+            });
+        });
     </script>
+    
 </head>
 
 <h2>Custome Dashboard</h2>
 
-<style>
+@*<style>
     #maincontent {
         margin: 10px;
         border: solid 4px;
@@ -66,7 +70,7 @@ $(document).ready(function () {
         height: 400px;
         float: left;
     }
-</style>
+</style>*@
 
 <section class="content-header">
    
@@ -91,9 +95,9 @@ $(document).ready(function () {
                         for   Approval
                     </span>
                     <span class="info-box-number"> @ViewBag.userapproved</span>
-                </div><div class="text-align-center" id="submit-property">
-    <button type="submit" name="submit" class="btn btn-primary btn-lg"><i class="fa fa-check"></i> Submit Now</button>
-</div>
+                </div>
+              
+
                 <!-- /.info-box-content -->
             </div>
             <!-- /.info-box -->

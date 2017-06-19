@@ -243,9 +243,9 @@ namespace Kaylan.Porperty.Web.Controllers
                        select new Approvepropertydetails()
                        {
                            PropertyDescription = r.PropertyDescription,
-                           PorpertyImageUrl1 = iUnitOfWork.Repository<PropertyImage>().Get(y => y.PropertyDetailId == r.Id).ImagePath,
-                           PorpertyImageUrl2 = iUnitOfWork.Repository<PropertyImage>().Get(y => y.PropertyDetailId == r.Id).ImagePath,
-                           PorpertyImageUrl3 = iUnitOfWork.Repository<PropertyImage>().Get(y => y.PropertyDetailId == r.Id).ImagePath,
+                           PorpertyImageUrl1 = iUnitOfWork.Repository<PropertyImage>().Get(y => y.PropertyDetailId == id).ImagePath,
+                           PorpertyImageUrl2 = iUnitOfWork.Repository<PropertyImage>().Get(y => y.PropertyDetailId ==id).ImagePath,
+                           PorpertyImageUrl3 = iUnitOfWork.Repository<PropertyImage>().Get(y => y.PropertyDetailId == id).ImagePath,
                            PropertyName = r.PropertyName,
                            AreaId = r.AreaId,
                            CityId = r.CityId,
@@ -255,8 +255,8 @@ namespace Kaylan.Porperty.Web.Controllers
                           // AmenityId=k.AmenityId,
 
                        };
-          
-           
+
+            list = list.Distinct().ToList();
             return View(list);
         }
 
@@ -294,16 +294,7 @@ namespace Kaylan.Porperty.Web.Controllers
        
         
        
-        public ActionResult pendingapproveofcust(int id)
-        {
-
-            var list = iUnitOfWork.Repository<PropertyDetail>().GetMany(m => m.UserId == id).Where(m => m.Approved == true && m.Approved != false);
-            if (list == null)
-                Response.Write("<script>alert(' No List Found ')</script>");
-
-            return PartialView(list);
-        }
-
+       
         public ActionResult SalesList()
         {
             var list = iUnitOfWork.Repository<PropertyDetail>().GetMany((k => k.ContractType == "For Sale" && k.ContractType != ""));
@@ -324,6 +315,8 @@ namespace Kaylan.Porperty.Web.Controllers
 
         public ActionResult PendingUser()
         {
+
+
             var list = iUnitOfWork.Repository<PropertyDetail>().GetMany((k => k.Approved == false && k.Approved != true));
             if (list == null)
                 Response.Write("<script>alert(' Approved property For user not Found')</script>");
@@ -414,7 +407,19 @@ namespace Kaylan.Porperty.Web.Controllers
 
             return PartialView(list);
         }
+        private string SaveImgae(HttpPostedFileBase file)
+        {
+            string picture = Path.GetFileName(file.FileName);
+            long ticks = DateTime.UtcNow.Ticks;
+            string path = Path.Combine(Server.MapPath("~/Images/Server"), string.Format("{0}_{1}", ticks, picture));
 
+            file.SaveAs(path);
+            return string.Format("~/Images/Server/{0}_{1}", ticks, picture);
+        }
+
+
+
+        //from here customer dashboard starts
         public ActionResult CustomerDashboard(int id)
            {
         
@@ -429,16 +434,27 @@ namespace Kaylan.Porperty.Web.Controllers
             return View();
         }
 
-          
 
-        private string SaveImgae(HttpPostedFileBase file)
+        //public ActionResult pendingapproveofcust(int id)
+        //{
+
+        //    var list = iUnitOfWork.Repository<PropertyDetail>().GetMany(m => m.UserId == id).Where(m => m.Approved == true && m.Approved != false);
+        //    if (list == null)
+        //        Response.Write("<script>alert(' No List Found ')</script>");
+
+        //    return PartialView(list);
+        //}
+        public JsonResult pendingapproveofcust(int Id)
         {
-            string picture = Path.GetFileName(file.FileName);
-            long ticks = DateTime.UtcNow.Ticks;
-            string path = Path.Combine(Server.MapPath("~/Images/Server"), string.Format("{0}_{1}", ticks, picture));
-
-            file.SaveAs(path);
-            return string.Format("~/Images/Server/{0}_{1}", ticks, picture);
+            CustomeDbContext db = new CustomeDbContext();
+            var result = from r in db.PropertyDetail
+                         where r.UserId == Id && r.Approved == true
+                         select new { r.FullName, r.Email, r.PropertyDescription, r.PropertyName, r.ContractType };
+            return Json(result, JsonRequestBehavior.AllowGet);
         }
+
+
+
+
     }
 }
