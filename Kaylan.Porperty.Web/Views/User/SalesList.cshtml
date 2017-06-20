@@ -1,10 +1,17 @@
 ﻿@model IEnumerable<Kalyan.Property.Infrastructure.Models.PropertyDetail>
+<head>
+    <style>
+        .m_title:first-letter {
+            text-transform: uppercase;
+        }
+    </style>
 
+</head>
 <h3>SalesList</h3>
 <table class="table table-striped table-bordered" cellspacing="0" width="100%">
     <thead>
         <tr>
-            <th>@Html.DisplayNameFor(model => model.FullName)</th>
+            <th >@Html.DisplayNameFor(model => model.FullName)</th>
             <th>@Html.DisplayNameFor(model => model.Email)</th>
             <th>@Html.DisplayNameFor(model => model.ContractType)</th>
             <th>@Html.DisplayNameFor(model => model.Address)</th>
@@ -15,7 +22,7 @@
         @foreach (var item in Model)
         {
             <tr>
-               <td>@Html.DisplayFor(modelItem => item.FullName)</td> 
+               <td class="m_title">@Html.DisplayFor(modelItem => item.FullName)</td> 
                 <td>@Html.DisplayFor(modelItem => item.Email)</td>
                 <td>@Html.DisplayFor(modelItem => item.ContractType)</td>
                 <td>@Html.DisplayNameFor(model => model.Address)</td>

@@ -238,9 +238,7 @@ namespace Kaylan.Porperty.Web.Controllers
         public ActionResult PropertyDetailsList(int id)
         {
             var list = from r in iUnitOfWork.Repository<PropertyDetail>().GetMany(r => r.Id == id).Where(b => b.Approved == true)
-                       //join a in iUnitOfWork.Repository<Users>().GetMany(r => r.Id == id)on r.UserId equals a.Id
                        join z in iUnitOfWork.Repository<PropertyImage>().GetMany(r => r.PropertyDetailId == id) on r.Id equals z.PropertyDetailId
-                     //  join k in iUnitOfWork.Repository<PropertyAmenityMapping>().GetMany(r => r.PropertyDetailId == id) on r.Id equals k.PropertyDetailId
                        select new Approvepropertydetails()
                        {
                            PropertyDescription = r.PropertyDescription,
@@ -382,7 +380,41 @@ namespace Kaylan.Porperty.Web.Controllers
             var list = iUnitOfWork.Repository<PropertyDetail>().GetMany((k => k.Approved == true && k.Approved != false));
             return RedirectToAction("AdminDashboard");
         }
+        public ActionResult PendingUser1(int id)
+        {
+            var list = from r in iUnitOfWork.Repository<PropertyDetail>().GetMany(r => r.Id == id).Where(b => b.Approved == false)
+                       join z in iUnitOfWork.Repository<PropertyImage>().GetMany(r => r.PropertyDetailId == id)
+                       on r.Id equals z.PropertyDetailId
+            // var areaname = iUnitOfWork.Repository<Area>().GetAll();
+            //from r in iUnitOfWork.Repository<PropertyDetail>().GetMany(r => r.Id == id).Where(b => b.Approved == false)
+            //join z in iUnitOfWork.Repository<PropertyImage>().GetMany(r => r.PropertyDetailId == id)
+            //on r.Id equals z.PropertyDetailId
+            //join t in db.Areas on r.Id equals t.Id
+            //where r.Id == z.
+            select new Approvepropertydetails()
+            {
+            
+                PropertyDescription = r.PropertyDescription,
+                PorpertyImageUrl1 = iUnitOfWork.Repository<PropertyImage>().Get(y => y.PropertyDetailId == id).ImagePath,
+                PorpertyImageUrl2 = iUnitOfWork.Repository<PropertyImage>().Get(y => y.PropertyDetailId == id).ImagePath,
+                PorpertyImageUrl3 = iUnitOfWork.Repository<PropertyImage>().Get(y => y.PropertyDetailId == id).ImagePath,
+                PropertyName = r.PropertyName,
+                AreaId = r.AreaId,
+                CityId = r.CityId,
+                Bedroom = r.Bedroom,
+                Bathroom = r.Bedroom,
+                Parking = r.Parking,
+                FullName = r.FullName,
+                Phone = r.Phone,
+                // AmenityId=k.AmenityId,
 
+            };
+
+            list = list.Distinct().ToList();
+            return View(list);
+
+
+        }
         public ActionResult PropertyRequestListing()
         {
             var list = from pr in iUnitOfWork.Repository<PropertyRequest>().GetAll()

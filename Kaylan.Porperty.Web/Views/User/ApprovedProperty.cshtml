@@ -14,8 +14,12 @@
                     $('.chkCheckBoxId').prop('checked', false);
             });
         });
-    </script>
-
+   </script>
+    <style>
+        .m_title:first-letter {
+            text-transform: uppercase;
+        }
+    </style>
 </head>
 
 <h3>Approved Property</h3>
@@ -44,7 +48,7 @@
             @foreach (var item in Model)
             {
                 <tr>
-                    <td>@Html.DisplayFor(modelItem => item.FullName)</td>
+                    <td class="m_title">@Html.DisplayFor(modelItem => item.FullName)</td>
                     <td>@Html.DisplayFor(modelItem => item.Email)</td>
                     <td>@Html.DisplayFor(modelItem => item.Phone)</td>
                     <td>@Html.DisplayFor(modelItem => item.Date)</td>
