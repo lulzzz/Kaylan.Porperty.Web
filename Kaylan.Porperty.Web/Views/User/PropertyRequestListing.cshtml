@@ -1,6 +1,13 @@
 ﻿@model IEnumerable<Kaylan.Porperty.Web.ViewModel.PropertyRequestListingViewModel>
 <link rel='stylesheet' id='imic_main-css' href='~/Content/contactus.css' type='text/css' media='all' />
+<head>
+    <style>
+    .m_title:first-letter {
+        text-transform: uppercase;
+    }
+</style>
 
+    </head>
 <h3>Property Request List</h3>
 <table class="table table-striped table-bordered" cellspacing="0" width="100%">
     <tr>
@@ -24,7 +31,7 @@
     @foreach (var item in Model)
     {
         <tr>
-            <td>
+            <td class=".m_title">
                 @Html.DisplayFor(modelItem => item.FullName)
             </td>
             <td>
@@ -74,7 +81,7 @@
                                                 @foreach (var items in Model.Where(x => x.PropertyRequestId == item.PropertyRequestId))
                                                 {
                                                     <tr>
-                                                        <td>@Html.DisplayFor(modelItem => items.FullName)</td>
+                                                        <td class=".m_title">@Html.DisplayFor(modelItem => items.FullName)</td>
                                                         <td>@Html.DisplayFor(modelItem => items.Email) </td>
                                                         <td>@Html.DisplayFor(modelItem => items.PhoneNumber)</td>
                                                         <td>@Html.DisplayFor(modelItem => items.ContactType)</td>

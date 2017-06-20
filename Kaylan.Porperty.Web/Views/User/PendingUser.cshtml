@@ -16,6 +16,11 @@
             });
         });
         </script>
+    <style>
+        .m_title:first-letter {
+            text-transform: uppercase;
+        }
+    </style>
 
 </head>
 
@@ -41,7 +46,7 @@
         @foreach (var item in Model)
         {
             <tr>
-                <td>@Html.DisplayFor(modelItem => item.FullName)</td>
+                <td class="m_title">@Html.DisplayFor(modelItem => item.FullName)</td>
                 <td>@Html.DisplayFor(modelItem => item.Email)</td>
                 <td>@Html.DisplayFor(modelItem => item.Phone)</td>
                 <td>@Html.DisplayFor(modelItem => item.Date)</td>
@@ -49,15 +54,26 @@
                 <td>@Html.DisplayFor(modelItem => item.Address)</td>
                 <td><input type="checkbox" class="chkCheckBoxId"  value="@item.Id" name="UserID" /></td>
                 <td>
-                    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Large Modal</button>
+                    @if (@item.Id == 0)
+                    {
+                        Response.Write("<script>alert(' Approved propertyId  not Found')</script>");
+                    }
+                    else
+                    {
+                        <button type="button" style="margin-left:30px;" class="btn btn-info" onclick="location.href='@Url.Action("PendingUser1", "User", new { id = item.Id })'">
+                            Display Propery Details
+                        </button>
+                    }
                 </td>
+
+
 
             </tr>
         }
 
           </tbody>
 </table>
-<div class="modal fade" id="myModal" role="dialog">
+@*<div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
@@ -72,6 +88,6 @@
             </div>
         </div>
     </div>
-</div>
+</div>*@
 <div><input type="submit" value="Approved" name="btn" class="btn btn-success" onclick="return confirm('Are you shure?')" /></div>
 }
