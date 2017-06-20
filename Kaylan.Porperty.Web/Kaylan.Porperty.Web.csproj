@@ -663,6 +663,9 @@
     <Content Include="Views\User\ApprovedProperty.cshtml" />
     <Content Include="Views\Home\propertydetails.cshtml" />
     <Content Include="Views\User\PropertyDetailsList.cshtml" />
+    <Content Include="Views\User\pendingapproveofcust.cshtml" />
+    <Content Include="Views\User\approvepropertyofcust.cshtml" />
+    <Content Include="Views\User\propertyrequestofcust.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

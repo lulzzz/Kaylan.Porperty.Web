@@ -1,10 +1,14 @@
-﻿@model IEnumerable<Kaylan.Porperty.Web.ViewModel.PropertyDetailListViewModel>
+﻿@model Kaylan.Porperty.Web.ViewModel.UserViewModel
 
 @{
     ViewBag.Title = "Customer Dashboard";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 <input type="hidden" id="temp" name="temp" value="@TempData["type"]" />
+@*<input type="text" id="name" name="temp" value="@" />*@
+<input type="hidden" value="@Session["UserId"]" id="userid" />  
+
+
 
 @Scripts.Render("~/bundles/jquery")
 @Scripts.Render("~/unobtrusive/js")
@@ -27,14 +31,29 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript">
 
-      
-        $('#btn4').click(function () {
-            var tpid=2;
-            $.getJSON('@Url.Action("pendingapproveofcust", "User")',{ Id: tpid } , function (data) {
 
-                $('#result').append(data);
+
+        $(document).ready(function () {
+            $('#btn4').click(function () {
+                $('#result').load('/User/pendingapproveofcust/@Session["UserId"]');
             });
         });
+
+        $(document).ready(function () {
+            $('#btn3').click(function () {
+                $('#result').load('/User/approvepropertyofcust/@Session["UserId"]');
+            });
+        });
+
+        $(document).ready(function () {
+            $('#btn2').click(function () {
+                $('#result').load('/User/propertyrequestofcust/@Session["UserId"]');
+            });
+        });
+
+
+
+
     </script>
     
 </head>
@@ -78,88 +97,109 @@
 @*< !--Main content -->*@
 
     <!-- Info boxes -->
-@using (Html.BeginForm())
-{
+
    
 
     <section class="content">
-    <div class="row">
-        <div class="col-md-3 col-sm-6 col-xs-12">
-            <div class="info-box">
-                <div id="btn4">
-                    <span class="info-box-icon bg-red" style="cursor: pointer;"><i class="fa fa-google-plus"></i></span>
-                </div>
-                <div class="info-box-content">
-                    <span class="info-box-text">
-                        Property Pending <br />
-                        for   Approval
-                    </span>
-                    <span class="info-box-number"> @ViewBag.userapproved</span>
-                </div>
-              
+        <div class="row">
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="info-box">
+                    <div id="btn4">
+                        <span class="info-box-icon bg-red" style="cursor: pointer;"><i class="fa fa-chevron-right"></i></span>
+                    </div>
+                    <div class="info-box-content">
+                        <span class="info-box-text">
+                            Property Pending <br />
+                            for   Approval
+                        </span>
+                        <span class="info-box-number"> @ViewBag.userapproved</span>
+                    </div>
 
-                <!-- /.info-box-content -->
-            </div>
-            <!-- /.info-box -->
-        </div>
-        @*<div class="col-md-3 col-sm-6 col-xs-12">
-            <div class="info-box">
-                <div id="btn4">
-                <span class="info-box-icon bg-aqua"><i class="ion ion-checkmark-circled"></i></span>
-                </div>
-                <div class="info-box-content">
-                    <span class="info-box-text" id="app">Approved</span>
-                    <span class="info-box-number">@ViewBag.userapproved</span>
-                </div>
-                <!-- /.info-box-content -->
-            </div>
-            <!-- /.info-box -->
-        </div>*@
-        <!-- /.col -->
-        <div class="col-md-3 col-sm-6 col-xs-12">
-            <div class="info-box">
-                <span class="info-box-icon bg-red"><i class="fa fa-minus-circle"></i></span>
 
-                <div class="info-box-content">
-                    <span class="info-box-text">Pending Approved</span>
-                    <span class="info-box-number">@ViewBag.pendindapprove</span>
+                    <!-- /.info-box-content -->
                 </div>
-                <!-- /.info-box-content -->
+                <!-- /.info-box -->
             </div>
-            <!-- /.info-box -->
-        </div>
-        <!-- /.col -->
-        <!-- fix for small devices only -->
-        <div class="clearfix visible-sm-block"></div>
 
-        <div class="col-md-3 col-sm-6 col-xs-12">
-            <div class="info-box">
-                <span class="info-box-icon bg-green"><i class="fa fa-info-circle"></i></span>
 
-                <div class="info-box-content">
-                    <span class="info-box-text">New Enquiry</span>
-                    <span class="info-box-number">@ViewBag.newenquiry </span>
+
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="info-box">
+                    <div id="btn3">
+                        <span class="info-box-icon bg-green" style="cursor: pointer;"><i class="fa fa-chevron-right"></i></span>
+                    </div>
+                    <div class="info-box-content">
+                        <span class="info-box-text">
+                            Approved property
+                        </span>
+                        <span class="info-box-number"> @ViewBag.userapproved</span>
+                    </div>
+
+
+                    <!-- /.info-box-content -->
                 </div>
-                <!-- /.info-box-content -->
+                <!-- /.info-box -->
             </div>
-            <!-- /.info-box -->
-        </div>
-        <!-- /.col -->
-        <div class="col-md-3 col-sm-6 col-xs-12">
-            <div class="info-box">
-                <span class="info-box-icon bg-yellow"><i class="ion ion-ios-people-outline"></i></span>
 
-                <div class="info-box-content">
-                    <span class="info-box-text">List All Property</span>
-                    <span class="info-box-number">2,000</span>
+
+
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="info-box">
+                    <div id="btn2">
+                        <span class="info-box-icon bg-yellow" style="cursor: pointer;"><i class="fa fa-chevron-right"></i></span>
+                    </div>
+                    <div class="info-box-content">
+                        <span class="info-box-text">
+                           Property Request
+                        </span>
+                        <span class="info-box-number"> @ViewBag.userapproved</span>
+                    </div>
+
+
+                    <!-- /.info-box-content -->
                 </div>
-                <!-- /.info-box-content -->
+                <!-- /.info-box -->
             </div>
-            <!-- /.info-box -->
-        </div>
-        <!-- /.col -->
-    </div>
-    <div class="row">
+
+
+
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="info-box">
+                    <div id="btn1">
+                        <span class="info-box-icon bg-blue" style="cursor: pointer;"><i class="fa fa-chevron-right"></i></span>
+                    </div>
+                    <div class="info-box-content">
+                        <span class="info-box-text">
+                            Property Enquiry
+                        </span>
+                        <span class="info-box-number"> @ViewBag.userapproved</span>
+                    </div>
+
+
+                    <!-- /.info-box-content -->
+                </div>
+                <!-- /.info-box -->
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+        </div> 
+        
+        
+
+
+
+
+
+        <div class="row">
         <div class="col-md-12">
             <div class="box">
                 <div class="box-header with-border" id="result">
@@ -172,4 +212,3 @@
     </div>
     <!-- /.row -->
 </section>
-}

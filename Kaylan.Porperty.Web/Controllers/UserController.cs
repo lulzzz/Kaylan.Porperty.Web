@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using System.Configuration;
+using PagedList;
 
 
 namespace Kaylan.Porperty.Web.Controllers
@@ -304,13 +305,32 @@ namespace Kaylan.Porperty.Web.Controllers
             return PartialView(list);
         }
 
-        public ActionResult RentList()
+        public ActionResult RentList(string sortorder, int? page)
         {
-            var list = iUnitOfWork.Repository<PropertyDetail>().GetMany((k => k.ContractType == "For Rent" && k.ContractType != ""));
+      
+            ViewBag.Currentsort = sortorder;
+            // var list = iUnitOfWork.Repository<PropertyDetail>().GetMany((k => k.ContractType == "For Rent" && k.ContractType != ""));
+            var list = iUnitOfWork.Repository<PropertyDetail>().GetMany((k => k.Approved == true && k.Approved != false));
+
+            switch (sortorder)
+            {
+                case "Address":
+                    list = list.OrderByDescending(s => s.Email);
+                    break;
+
+                default:
+                    list = list.OrderByDescending(s => s.Email);
+                    break;
+            }
+            int pageSize = 2;
+            int pageNumber = (page ?? 1);
+
+
             if (list == null)
                 Response.Write("<script>alert(' Property for Rent not found')</script>");
 
-            return PartialView(list);
+            return PartialView(list.ToPagedList(pageNumber, pageSize));
+
         }
 
         public ActionResult PendingUser()
@@ -444,17 +464,35 @@ namespace Kaylan.Porperty.Web.Controllers
 
         //    return PartialView(list);
         //}
-        public JsonResult pendingapproveofcust(int Id)
+        public ActionResult pendingapproveofcust(int id)
         {
-            CustomeDbContext db = new CustomeDbContext();
-            var result = from r in db.PropertyDetail
-                         where r.UserId == Id && r.Approved == true
-                         select new { r.FullName, r.Email, r.PropertyDescription, r.PropertyName, r.ContractType };
-            return Json(result, JsonRequestBehavior.AllowGet);
+
+            var list = iUnitOfWork.Repository<PropertyDetail>().GetMany((k => k.Approved == false && k.Approved != true));
+            if (list == null)
+            Response.Write("<script>alert(' No Properties Pending for approval')</script>");
+
+            return PartialView(list);
+        }
+
+        public ActionResult approvepropertyofcust(int id)
+        {
+
+            var list = iUnitOfWork.Repository<PropertyDetail>().GetMany((k => k.Approved == true && k.Approved != false));
+            if (list == null)
+                Response.Write("<script>alert(' No  Approved Property Found ')</script>");
+
+            return PartialView(list);
         }
 
 
+        public ActionResult propertyrequestofcust(int id)
+        {
 
+            var list = iUnitOfWork.Repository<PropertyRequest>().GetAll().ToList();
+            if (list == null)
+                Response.Write("<script>alert('  Property  request not found')</script>");
 
+            return PartialView(list);
+        }
     }
 }

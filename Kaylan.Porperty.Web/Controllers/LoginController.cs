@@ -68,9 +68,10 @@ namespace Kaylan.Porperty.Web.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
-
+                   
                     var user = UserManager.FindByName(loginViewModel.Email);
-
+                    Session["UserId"] = user.Id;
+                   
                     if (UserManager.IsInRole(user.Id, "Admin"))
                     {
                         return RedirectToAction("AdminDashboard", "User");
@@ -85,6 +86,7 @@ namespace Kaylan.Porperty.Web.Controllers
                 default:
                     ModelState.AddModelError("", "Invalid login attempt.");
                     return View(loginViewModel);
+                    
             }
         }
 
@@ -96,6 +98,17 @@ namespace Kaylan.Porperty.Web.Controllers
         public ActionResult CreateLoginDetails()
         {
             return View();
+        }
+
+
+        public ActionResult Logout(int id)
+        {
+            Session.Abandon();
+            Session.Clear();
+            Response.Cookies.Clear();
+            Session.RemoveAll();
+            //Session["SignIn"] == null;
+            return RedirectToAction("Index", "Home");
         }
     }
 }

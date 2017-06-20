@@ -1,48 +1,55 @@
-﻿@model IEnumerable<Kalyan.Property.Infrastructure.Models.PropertyDetail>
+﻿@model PagedList.IPagedList<Kalyan.Property.Infrastructure.Models.PropertyDetail>
+     @using PagedList.Mvc;
+   
+    <link href="~/Content/PagedList.css" rel="stylesheet" />
+    <h3>RentList</h3>
+    <table class="table table-striped table-bordered" cellspacing="0" width="100%">
+        <tr>
 
-<h3>RentList</h3>
-<table class="table table-striped table-bordered" cellspacing="0" width="100%">
-    <tr>
-       
-        <th>
-            @Html.DisplayNameFor(model => model.Date)
-        </th>
-       
-        <th>
-            @Html.DisplayNameFor(model => model.FullName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Email)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Phone)
-        </th>
-       
-       
-      
-        <th></th>
-    </tr>
+            <th>
+               date
+            </th>
 
-@foreach (var item in Model) {
-    <tr>
-        
-        <td>
-            @Html.DisplayFor(modelItem => item.Date)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FullName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Email)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Phone)
-        </td>
-       
-        
-       
-       
-    </tr>
-}
+            <th>
+               Fullname
+            </th>
+            <th>
+               Email
+            </th>
+            <th>
+               Phone
+            </th>
 
-</table>
+
+
+            <th></th>
+        </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </td>
+
+
+
+
+        </tr>
+    }
+
+    </table>
+    Page @(Model.PageCount<Model.PageNumber?0:Model.PageNumber)of @Model.PageCount
+
+    @Html.PagedListPager(Model,page=>Url.Action("RentList",
+        new { page, sortorder =ViewBag.Currentsort, CurrentFilter = ViewBag.CurrentFilter}))
+
