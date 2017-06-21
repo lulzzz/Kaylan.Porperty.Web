@@ -409,37 +409,69 @@
 
 
 
-                                                                        <table class="table" cellpadding="10">
-
+                                                                        <table class="table table-striped table-bordered" cellspacing="0" width="100%">
                                                                             <tr>
 
 
-                                                                                <th>Price</th>
-                                                                                <th>State</th>
-                                                                                <th>Area</th>
-                                                                                <th>Anamlities</th>
-                                                                                <th>Parking</th>
-                                                                                <th>Contract Type</th>
-                                                                                <th>Listed On</th>
 
+                                                                                <th>
+                                                                                    @Html.DisplayNameFor(model => model.PropertyName)
+                                                                                </th>
+                                                                                <th>
+                                                                                    @Html.DisplayNameFor(model => model.Bedroom)
+                                                                                </th>
+                                                                                <th>
+                                                                                    @Html.DisplayNameFor(model => model.Bathroom)
+                                                                                </th>
+                                                                                <th>
+                                                                                    @Html.DisplayNameFor(model => model.Parking)
+                                                                                </th>
+                                                                                <th>
+                                                                                    @Html.DisplayNameFor(model => model.PropertyAmenityMappingId)
+                                                                                </th>
+                                                                                <th>
+                                                                                    @Html.DisplayNameFor(model => model.ToPrice)
+                                                                                </th>
+                                                                                <th>
+                                                                                    @Html.DisplayNameFor(model => model.AreaId)
+                                                                                </th>
+                                                                                <th>
+                                                                                    @Html.DisplayNameFor(model => model.CityId)
+                                                                                </th>
                                                                             </tr>
 
+                                                                            @foreach (var item in Model)
+                                                                            {
+                                                                                <tr>
+                                                                                    <td class="m_title">
+                                                                                        @Html.DisplayFor(modelItem => item.PropertyName)
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        @Html.DisplayFor(modelItem => item.Bedroom)
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        @Html.DisplayFor(modelItem => item.Bathroom)
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        @Html.DisplayFor(modelItem => item.Parking)
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        @Html.DisplayFor(modelItem => item.PropertyAmenityMappingId)
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        @Html.DisplayFor(modelItem => item.ToPrice)
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        @Html.DisplayFor(modelItem => item.AreaId)
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        @Html.DisplayFor(modelItem => item.CityId)
+                                                                                    </td>
 
-                                                                            <tr>
-                                                                                
-                                                                                <th>Price</th>
-                                                                                <th>State</th>
-                                                                                <th>Area</th>
-                                                                                <th>Anamlities</th>
-                                                                                <th>Parking</th>
-                                                                                <th>Contract Type</th>
-                                                                                <th>Listed On</th>
 
-
-
-
-                                                                            </tr>
-
+                                                                                </tr>
+                                                                                break;
+                                                                            }
 
                                                                         </table>
                                                                     </div>

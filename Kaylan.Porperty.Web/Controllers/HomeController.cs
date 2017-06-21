@@ -136,7 +136,7 @@ namespace Kaylan.Porperty.Web.Controllers
         {
             var result = from pd in unitOfWork.Repository<PropertyDetail>().GetMany((k => k.Id == id))
 
-                         join a in unitOfWork.Repository<PropertyImage>().GetMany((k => k.PropertyDetailId== id))
+                         join a in unitOfWork.Repository<PropertyImage>().GetMany((k => k.PropertyDetailId == id))
                         on pd.Id equals a.PropertyDetailId
 
                          select new ImageListViewModel()
@@ -146,7 +146,14 @@ namespace Kaylan.Porperty.Web.Controllers
                              PorpertyImageUrl1 = unitOfWork.Repository<PropertyImage>().Get(y => y.PropertyDetailId == pd.Id).ImagePath,
                              PorpertyImageUrl2 = unitOfWork.Repository<PropertyImage>().Get(y => y.PropertyDetailId == pd.Id).ImagePath,
                              PorpertyImageUrl3 = unitOfWork.Repository<PropertyImage>().Get(y => y.PropertyDetailId == pd.Id).ImagePath,
-
+                             AreaId =pd.AreaId,
+                             Bedroom=pd.Bedroom,
+                             Bathroom=pd.Bathroom,
+                             CityId=pd.CityId,
+                             Parking= pd.Parking,
+                             PropertyName= pd.PropertyName,
+                             PropertyAmenityMappingId=pd.PropertyAmenityMappingId,
+                             ToPrice=pd.ToPrice
                          };
 
             return View(result);
