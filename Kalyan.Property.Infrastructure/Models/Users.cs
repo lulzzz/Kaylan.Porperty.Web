@@ -49,6 +49,6 @@ namespace Kalyan.Property.Infrastructure.Models
             return userIdentity;
         }
 
-      
+       
     }
 }

@@ -6,6 +6,7 @@ using Microsoft.AspNet.Identity.Owin;
 using PagedList;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
@@ -171,7 +172,8 @@ namespace Kaylan.Porperty.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new Users
+                var imagesOne = SaveImgae(userViewModel.ImageUploadOne);
+                var user = new Kalyan.Property.Infrastructure.Models.Users()
                 {
                     UserName = userViewModel.Email,
                     Email = userViewModel.Email,
@@ -180,6 +182,7 @@ namespace Kaylan.Porperty.Web.Controllers
                     FirstName = userViewModel.FirstName,
                     Phone = userViewModel.Phone,
                     Gender = userViewModel.Gender,
+                    //profileimage =userViewModel.ImageUploadOne,
                 };
 
                 var result = await UserManager.CreateAsync(user, userViewModel.Password);
@@ -396,9 +399,17 @@ namespace Kaylan.Porperty.Web.Controllers
 
             return View(details);
         }
+        private string SaveImgae(HttpPostedFileBase file)
+        {
+            string picture = Path.GetFileName(file.FileName);
+            long ticks = DateTime.UtcNow.Ticks;
+            string path = Path.Combine(Server.MapPath("~/Images/Server"), string.Format("{0}_{1}", ticks, picture));
+
+            file.SaveAs(path);
+            return string.Format("~/Images/Server/{0}_{1}", ticks, picture);
+        }
 
 
-       
 
 
 
