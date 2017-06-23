@@ -1,8 +1,15 @@
 ﻿@using Kaylan.Porperty.Web.Utility;
-@using System.Security.Claims
+@using Kaylan.Porperty.Web.Controllers
 <!DOCTYPE html>
+<input type="hidden" value="@Session["UserId"]" id="userid" />
+<input type="hidden" value="@TempData["temp"]" id="useridt" />
 <html>
+
+
 <head>
+    
+    
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>AdminLTE 2 | Dashboard</title>
@@ -32,7 +39,7 @@
     <![endif]-->
    
 </head>
-</head>
+
 
 <body class="hold-transition skin-blue sidebar-mini">
     <div class="wrapper">
@@ -46,7 +53,8 @@
                 <!-- logo for regular state and mobile devices -->
                 <span class="logo-lg">
                     @if (User.IsInRole("Admin"))
-                    {
+                    {    
+                       
                         <b>Admin</b><span>LTE</span>
                     }
                     else
@@ -159,6 +167,7 @@
                                                 </div>
                                             <div>
                                                 <label>@User.Identity.GetFirstName()@User.Identity.GetLastName()</label>
+                                               
                                             </div>
                                            <div class="pull-right">
                                             @Html.ActionLink("Sign Out", "LogOut", "Login")
@@ -173,8 +182,8 @@
                                               @Html.ActionLink("Change Password", "CreatNewPassword", "User")
                                         </div>
                                         <div class="pull-left">
-
-                                            @Html.ActionLink("UserProfile", "UserProfile", "User")
+                                            @*@Html.ActionLink("UserProfile", "UserProfile", new { id = 2 }, new { @style = "color:White;" })*@
+                                            @*@Html.ActionLink("UserProfile", "UserProfile", "User",new {id= 2})*@
                                         </div>
                                         
                                     </li>
@@ -251,8 +260,8 @@
                     </li>
 
                     <li class="active treeview">
-                        <a href="@Url.Action("UserProfile","User")">
-                            <i class="fa fa-dashboard"></i> <span>USer Profile</span><i class="fa fa-angle-left pull-right"></i>
+                        <a href="@Url.Action("UserProfile","User",new { id= @Session["UserId"]})" >
+                            <i class="fa fa-dashboard"></i> <span> Edit User Profile</span><i class="fa fa-angle-left pull-right"></i>
                         </a>
                     </li>
                     @if (User.IsInRole("Admin"))
@@ -276,6 +285,7 @@
             </section>
             <!-- /.sidebar -->
         </aside>
+
 
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">

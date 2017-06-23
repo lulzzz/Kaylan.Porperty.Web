@@ -12,7 +12,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Configuration;
 using PagedList;
-
+using System.Data.Entity;
 
 namespace Kaylan.Porperty.Web.Controllers
 {
@@ -98,48 +98,80 @@ namespace Kaylan.Porperty.Web.Controllers
             return View();
         }
 
-        [HttpGet]
-        public ActionResult UserProfile(int id)
+        
+        public ActionResult UserProfile(int Id)
         {
-            CustomeDbContext db = new CustomeDbContext();
-            Users users = db.Users.Find(id);
-            return View(users);
+            // CustomeDbContext db = new CustomeDbContext();
+            //Users users = db.Users.Find(id);
+            //
+            var users = iUnitOfWork.Repository<Users>().GetById(Id);
+                return View(users);
         }
 
         [HttpPost]
-        public ActionResult UserProfile(int id,Users users, FormCollection frm, HttpPostedFileBase files)
+        public ActionResult UserProfile(Users u)
         {
-           
+            //if (ModelState.IsValid)
+            //{
+            //    db.Entry(u).State = EntityState.Modified;
+            //    db.SaveChanges();
+            //    return RedirectToAction("Index");
+            //}
+            //return View(u);
+            try
             {
-                //var model = db.Users.Find(users.Id);
-                //string oldimage = model.profileimage;
-                if (files != null)
+                if (ModelState.IsValid)
                 {
-                    var adcd = new Kalyan.Property.Infrastructure.Models.Users();
-                    {
-                        string filename = Path.GetFileName(files.FileName);
-                        var path = ConfigurationManager.AppSettings["Photos"].ToString() + "/" + filename;
-                        files.SaveAs(path);
-                        if (users.profileimage == null || users.profileimage == "")
-                            users.profileimage = filename;
-                        else
-                            users.profileimage += "," + filename;
-                    }
-                   // model.profileimage = users.profileimage;
-
-                    iUnitOfWork.Repository<Users>().Add(adcd);
+                    iUnitOfWork.Repository<Users>().Update(u);
                     iUnitOfWork.Commit();
+                    Response.Write("<script>alert('UserProfile Data Save Succefully')</script>");
+                    return RedirectToAction("Index","Home");
+                   
                 }
-                
+
             }
-            return View();
+            catch
+            {
+
+                ModelState.AddModelError("", "Unable to save changes. Try again, " +
+                  "and if the problem persists see your system administrator.");
+            }
+            return View(u);
         }
-         
+        //[HttpPost]
+        //public ActionResult UserProfile(int id,Users users, FormCollection frm, HttpPostedFileBase files)
+        //{
 
-        
-    
+        //    {
+        //        var model = db.Users.Find(users.Id);
+        //        string oldimage = model.profileimage;
+        //        if (files != null)
+        //        {
+        //            var adcd = new Kalyan.Property.Infrastructure.Models.Users();
+        //            {
+        //                string filename = Path.GetFileName(files.FileName);
+        //                var path = ConfigurationManager.AppSettings["Photos"].ToString() + "/" + filename;
+        //                files.SaveAs(path);
+        //                if (users.profileimage == null || users.profileimage == "")
+        //                    users.profileimage = filename;
+        //                else
+        //                    users.profileimage += "," + filename;
+        //            }
+        //            model.profileimage = users.profileimage;
 
-    public ActionResult CreatNewPassword()
+        //            iUnitOfWork.Repository<Users>().Add(adcd);
+        //            iUnitOfWork.Commit();
+        //        }
+
+        //    }
+        //    return View();
+        //}
+
+
+
+
+
+        public ActionResult CreatNewPassword()
         {
             return View();
         }

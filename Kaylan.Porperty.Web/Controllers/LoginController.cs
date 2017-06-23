@@ -71,7 +71,9 @@ namespace Kaylan.Porperty.Web.Controllers
                    
                     var user = UserManager.FindByName(loginViewModel.Email);
                     Session["UserId"] = user.Id;
-                   
+                    TempData["temp"] = user.Id;
+
+
                     if (UserManager.IsInRole(user.Id, "Admin"))
                     {
                         return RedirectToAction("AdminDashboard", "User");
@@ -107,6 +109,7 @@ namespace Kaylan.Porperty.Web.Controllers
             Session.Clear();
             Response.Cookies.Clear();
             Session.RemoveAll();
+            Session["UserId"] = null;
             //Session["SignIn"] == null;
             return RedirectToAction("Index", "Home");
         }
