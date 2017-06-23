@@ -119,6 +119,7 @@
     <Compile Include="Models\Service.cs" />
     <Compile Include="Models\State.cs" />
     <Compile Include="Models\UserClaim.cs" />
+    <Compile Include="Models\Userenquiery.cs" />
     <Compile Include="Models\UserLogin.cs" />
     <Compile Include="Models\UserRole.cs" />
     <Compile Include="Models\Users.cs" />
