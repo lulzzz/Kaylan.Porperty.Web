@@ -70,6 +70,12 @@ namespace Kaylan.Porperty.Web.ViewModel
         public int? UserId { get; set; }
 
         public int PropertyAmenityMappingId { get; set; }
+        public int Userenquieryid { get; set; }
+        public string Namees { get; set; }
+        public string Emailes { get; set; }
+        public string MobileNumber { get; set; }
+        public int PropertyDetailId { get; set; }
+
 
     }
 }

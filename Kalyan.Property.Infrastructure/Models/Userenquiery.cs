@@ -10,7 +10,7 @@ namespace Kalyan.Property.Infrastructure.Models
     [Table("Userenquiery")]
     public partial class Userenquiery
     {
-        public int userid;
+       // public int userid;
 
         public int Userenquieryid { get; set; }
         public string Name { get; set; }

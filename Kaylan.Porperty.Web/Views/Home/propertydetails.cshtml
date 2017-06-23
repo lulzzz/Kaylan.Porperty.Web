@@ -479,21 +479,7 @@
                                                                 </div>
 
 
-                                                                <!--
-                                                            2 and 3 Bedrooms <br><br>
-                                                            Furnishing State - <strong>Semi</strong><br>
-                                                            Direction Facing -<strong> West</strong><br>
-                                                            Listed By - <strong>Aditi Parulkar(Owner)</strong><br>
-                                                            Property On - <strong>9th floor(of 19 floor)</strong><br>
-                                                            Listed On - <strong>3rd May</strong><br>
-                                                            Flooring Types - <strong>Vitrified Tiles</strong><br>
-                                                            Buildup Area - <strong>870 sq.ft</strong><br>
-                                                            Bachelors Allowed -<strong> Yes </strong><br>
-                                                            Security Deposit - <strong>100000</strong><br>
-                                                            Year of Construction - <strong>2017</strong><br>
-                                                            Pet Allowed - <strong>No</strong><br>
-                                                            Non-Vegatarian - <strong>Yes</strong><br>
-                                                            -->
+                                                   
 
                                                             </div>
                                                             <div class="modal-footer" style="background-color:#FF9800;">
@@ -507,37 +493,39 @@
 
 
                                             </div><br><br>
+    @using (Html.BeginForm("enqueryregister", "Home", FormMethod.Post, new { @id = "form1", @enctype = "multipart/form-data" }))
+    {
+        <div class="block-heading" id="details">
 
-                                            <div class="row" style="float:left;left:0px;">
 
-
-
-                                                <!-- <img style="align:center;margin-left:110px;" class="profile-img" src="images/byid.jpg" alt="">--><img src="~/Images/byid.jpg" style="margin-left:100px;" class="img-circle" alt="" width="100" height="100"><h3 style="margin-left:60px;">
-                                                    Suhas Parulkar
-                                                </h3>
-                                                <form class="form-signin" style="width:300px;height:auto;">
-                                                    <input type="text" class="form-control" placeholder="Name" required autofocus>
-                                                    <input type="text" class="form-control" placeholder="Email" required>
-                                                    <input type="text" class="form-control" placeholder="Mobile Number" required>
-                                                    <button class="btn btn-lg btn-primary btn-block" type="submit">
-                                                        Contact Us
-                                                    </button>
-
-                                                </form>
-
-                                            </div>
+            <div class="row" style="float:left;left:0px;">
 
 
 
+                <!-- <img style="align:center;margin-left:110px;" class="profile-img" src="images/byid.jpg" alt="">--><img src="~/Images/byid.jpg" style="margin-left:100px;" class="img-circle" alt="" width="100" height="100"><h3 style="margin-left:60px;"></h3>
+                <form class="form-signin" style="width:300px;height:auto;">
+                    @*@Html.TextBoxFor(x => x., new { @class = "form-control", @placeholder = "Property name" })*@
+                    <input type="text" class="form-control" placeholder="Email" required>
+                    <input type="text" class="form-control" placeholder="Mobile Number" required>
+                    <button class="btn btn-lg btn-primary btn-block" type="submit">
+                        Contact Us
+                    </button>
+
+                </form>
+
+            </div>
 
 
-                                        </div>
+            </div>
+
+
+            }
 
 
 
 
 
-                                    </div>
+        </div>
 
 
 
@@ -548,8 +536,8 @@
                     break;
                 }
 </div>
-    
-    
+
+
     <!--Favourite Login Form-->
     <!-- <div id="login-modal" class="modal fade" aria-hidden="true" aria-labelledby="mymodalLabel" role="dialog" tabindex="-1">
                 <div class="modal-dialog">
@@ -623,6 +611,7 @@
                     </div>
                 </div>
             </div>-->
+                }
     <!-- Start Site Footer -->
     <div>
         <footer class="site-footer-bottom">

@@ -184,6 +184,27 @@ namespace Kaylan.Porperty.Web.Controllers
             return PartialView(result);
         }
 
+        [HttpGet]
+        public ActionResult enqueryregister()
+        {
+            return View();
+        }
+
+        public ActionResult enqueryregister(ImageListViewModel userenquery,int? id)
+        {
+            var Listed = unitOfWork.Repository<PropertyDetail>().GetMany(m => m.Id == id);
+                {
+                var list = new Kalyan.Property.Infrastructure.Models.Userenquiery()
+                {
+                    Name = userenquery.Namees,
+                    Email = userenquery.Emailes,
+                    MobileNumber = userenquery.MobileNumber,
+                    PropertyDetailId = userenquery.PropertyDetailId,
+
+                };
+            }
+            return View(Listed);
+        }
 
         [HttpGet]
         public ActionResult Register()
