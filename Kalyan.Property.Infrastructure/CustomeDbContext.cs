@@ -38,6 +38,7 @@ namespace Kalyan.Property.Infrastructure
         public virtual DbSet<Amenity> Amenity { get; set; }
         public virtual DbSet<PropertyDetail> PropertyDetail { get; set; }
         public virtual DbSet<PropertyImage> PropertyImage { get; set; }
+        public virtual DbSet<Userenquiery> Userenquiery { get; set; }
 
         public CustomeDbContext(string nameOrConnectionString) : base("DefaultConnection")
         {
@@ -195,6 +196,9 @@ namespace Kalyan.Property.Infrastructure
                 .HasForeignKey(x => x.PropertyRequestTypeId)
                 .WillCascadeOnDelete(false);
 
+
+           
+
             modelBuilder.Entity<PropertyRequestArea>()
                .HasMany(e => e.PropertyRequests)
                .WithRequired(e => e.PropertyRequestArea)
@@ -216,6 +220,11 @@ namespace Kalyan.Property.Infrastructure
                 .HasMany(e => e.State)
                 .WithRequired(e => e.Country)
                 .WillCascadeOnDelete(false);
+
+            //modelBuilder.Entity<Userenquiery>()
+            //    .HasKey(e => e.PropertyDetailId)
+            //  .HasRequired(e => e.Name);
+             
 
             modelBuilder.Entity<State>()
                 .HasMany(e => e.City)

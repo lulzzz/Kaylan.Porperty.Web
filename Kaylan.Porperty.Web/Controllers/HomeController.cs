@@ -155,12 +155,36 @@ namespace Kaylan.Porperty.Web.Controllers
                              PropertyName= pd.PropertyName,
                              PropertyAmenityMappingId=pd.PropertyAmenityMappingId,
                              ToPrice=pd.ToPrice
+                             
                          };
 
             return View(result);
 
         }
-       
+
+        public ActionResult UserEnquiry(int? id)
+        {
+           // ViewBag.enquiry = unitOfWork.Repository<Userenquiery>().GetAll().Count();
+                var result = from a in unitOfWork.Repository<PropertyDetail>().GetMany(k=>k.UserId==id)
+                         join p in unitOfWork.Repository<Userenquiery>().GetAll()
+                         on a.Id equals p.PropertyDetailId
+                         select new UserenqueryViewModel()
+                         {
+                             Name = p.Name,
+                             MobileNumber = p.MobileNumber,
+                             Email = a.Email,
+                             userid = a.UserId,
+                             PropertyName = a.PropertyName,
+                             AreaId =a.AreaId
+                         };
+
+           
+
+
+            return PartialView(result);
+        }
+
+
         [HttpGet]
         public ActionResult Register()
         {

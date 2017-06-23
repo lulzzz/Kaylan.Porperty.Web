@@ -50,6 +50,11 @@
                 $('#result').load('/User/propertyrequestofcust/@Session["UserId"]');
             });
         });
+        $(document).ready(function () {
+            $('#btn1').click(function () {
+                $('#result').load('/Home/UserEnquiry/@Session["UserId"]');
+            });
+        });
 
 
 
@@ -172,7 +177,7 @@
                         <span class="info-box-text">
                             Property Enquiry
                         </span>
-                        <span class="info-box-number"> @ViewBag.userapproved</span>
+                        <span class="info-box-number"> @ViewBag.enquiry</span>
                     </div>
 
 

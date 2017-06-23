@@ -482,7 +482,7 @@ namespace Kaylan.Porperty.Web.Controllers
             ViewBag.pendindapprove = iUnitOfWork.Repository<PropertyDetail>().GetMany(r => r.UserId == id).Where(k => k.Approved == false).Count();
 
             ViewBag.newenquiry = iUnitOfWork.Repository<PropertyDetail>().GetMany(m => m.UserId == id).Count();
-
+            
             return View();
         }
 

@@ -226,6 +226,7 @@
     <Compile Include="ViewModel\PropertyRequestViewModel.cs" />
     <Compile Include="ViewModel\ResetPasswordViewModel.cs" />
     <Compile Include="ViewModel\StateViewModel.cs" />
+    <Compile Include="ViewModel\UserenqueryViewModel.cs" />
     <Compile Include="ViewModel\UserViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -667,6 +668,7 @@
     <Content Include="Views\User\propertyrequestofcust.cshtml" />
     <Content Include="Views\User\Profile1.cshtml" />
     <Content Include="Views\User\PendingUser1.cshtml" />
+    <Content Include="Views\Home\UserEnquiry.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
