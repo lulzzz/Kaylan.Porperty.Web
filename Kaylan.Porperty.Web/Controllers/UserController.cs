@@ -111,6 +111,8 @@ namespace Kaylan.Porperty.Web.Controllers
         [HttpPost]
         public ActionResult UserProfile(Users u)
         {
+
+           
             //if (ModelState.IsValid)
             //{
             //    db.Entry(u).State = EntityState.Modified;
@@ -122,6 +124,7 @@ namespace Kaylan.Porperty.Web.Controllers
             {
                 if (ModelState.IsValid)
                 {
+                    
                     iUnitOfWork.Repository<Users>().Update(u);
                     iUnitOfWork.Commit();
                     Response.Write("<script>alert('UserProfile Data Save Succefully')</script>");
