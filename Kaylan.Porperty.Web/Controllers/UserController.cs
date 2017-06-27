@@ -101,9 +101,7 @@ namespace Kaylan.Porperty.Web.Controllers
         
         public ActionResult UserProfile(int Id)
         {
-            // CustomeDbContext db = new CustomeDbContext();
-            //Users users = db.Users.Find(id);
-            //
+            
             var users = iUnitOfWork.Repository<Users>().GetById(Id);
                 return View(users);
         }
