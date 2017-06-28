@@ -190,22 +190,27 @@ namespace Kaylan.Porperty.Web.Controllers
             return View();
         }
 
-        public ActionResult enqueryregister(ImageListViewModel userenquery,int? id)
+        public ActionResult enqueryregister(UserenqueryViewModel userenquery,int? id)
         {
-            var Listed = unitOfWork.Repository<PropertyDetail>().GetMany(m => m.Id == id);
-                {
-                var list = new Kalyan.Property.Infrastructure.Models.Userenquiery()
-                {
-                    Name = userenquery.Namees,
-                    Email = userenquery.Emailes,
-                    MobileNumber = userenquery.MobileNumber,
-                    PropertyDetailId = userenquery.PropertyDetailId,
 
-                };
-            }
-            return View(Listed);
+
+            var data = new Kalyan.Property.Infrastructure.Models.Userenquiery()
+            {
+                Name = userenquery.Name,
+                Email = userenquery.Email,
+                Date = DateTime.Now,
+                MobileNumber = userenquery.MobileNumber,
+                
+            };
+          var  PropertyDetailId = unitOfWork.Repository<PropertyDetail>().GetMany(m => m.Id == id);
+
+            unitOfWork.Repository<Userenquiery>().Add(data);
+            unitOfWork.Commit();
+            
+            ModelState.Clear();
+            return View();
         }
-
+        
         [HttpGet]
         public ActionResult Register()
         {

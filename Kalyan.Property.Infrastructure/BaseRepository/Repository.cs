@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using Kalyan.Property.Infrastructure.Models;
 
 namespace Kalyan.Property.Infrastructure.BaseRepository
 {
@@ -72,6 +73,10 @@ namespace Kalyan.Property.Infrastructure.BaseRepository
             var query = this.DbContext.Set<T>().SqlQuery(procName).ToList();
             return query;
         }
-       
+
+        public void Add(IEnumerable<Userenquiery> result)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

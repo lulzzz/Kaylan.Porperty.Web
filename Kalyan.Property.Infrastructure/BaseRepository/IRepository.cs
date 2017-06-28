@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Kalyan.Property.Infrastructure.Models;
 
 namespace Kalyan.Property.Infrastructure.BaseRepository
 {
@@ -26,5 +27,6 @@ namespace Kalyan.Property.Infrastructure.BaseRepository
         List<T> ExecuteCustomStoredProcByParam(string procName, object[] parameter);
 
         List<T> ExecuteCustomStoredProc(string procName);
+        void Add(IEnumerable<Userenquiery> result);
     }
 }

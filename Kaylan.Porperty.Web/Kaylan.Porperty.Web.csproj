@@ -669,6 +669,7 @@
     <Content Include="Views\User\PendingUser1.cshtml" />
     <Content Include="Views\Home\UserEnquiry.cshtml" />
     <Content Include="Views\User\UserProfile.cshtml" />
+    <Content Include="Views\Home\enqueryregister.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
